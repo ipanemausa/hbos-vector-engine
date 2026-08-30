@@ -1,0 +1,22 @@
+{
+  "name": "hbos-vector-engine",
+  "version": "1.0.0",
+  "description": "OmniRouter HBOS con 45 casos de uso y motor vectorial",
+  "type": "module",
+  "main": "omnirouter_hbos.js",
+  "scripts": {
+    "start": "node omnirouter_hbos.js",
+    "dev": "node --watch omnirouter_hbos.js",
+    "load-casos": "node seed_cases.js"
+  },
+  "keywords": ["hbos", "omnirouter", "deepseek", "alexavi", "vector"],
+  "author": "HBOS",
+  "license": "MIT",
+  "dependencies": {
+    "@huggingface/transformers": "^3.7.2",
+    "@qdrant/qdrant-js": "^1.15.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  }
+}
