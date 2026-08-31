@@ -3,7 +3,10 @@ import { pipeline } from "@huggingface/transformers";
 
 class VectorEngine {
   constructor() {
-    this.qdrant = new QdrantClient({ url: process.env.QDRANT_URL });
+    this.qdrant = new QdrantClient({
+      url: process.env.QDRANT_URL,
+      apiKey: process.env.QDRANT_API_KEY
+    });
     this.embedder = null;
     this.collection = "casos_uso_hbos";
   }
