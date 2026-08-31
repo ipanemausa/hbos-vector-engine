@@ -14,7 +14,9 @@ const modelos = [
   { nombre: "groq_llama", proveedor: "groq", estado: "activo", prioridad: 6 }
 ];
 
-app.get("/", (req, res) => res.json({ status: "OmniRouter HBOS activo", casos_totales: 45, costo: 0 }));
+app.get("/", (req, res) => {
+  res.json({ status: "OmniRouter HBOS activo", casos_totales: 45, costo: 0 });
+});
 
 app.get("/v1/combos/best_free_plus", (req, res) => {
   res.json({ nombre: "best_free_plus", jerarquia: modelos, estado: "activo", costo: 0 });
@@ -41,6 +43,24 @@ app.post("/v1/casos/20-auditar-web", (req, res) => {
 app.post("/v1/casos/43-animar-historias", (req, res) => {
   const { guion } = req.body;
   res.json({ caso: 43, nombre: "animar-historias", plugin: "google_flow", guion, costo: 0 });
+});
+
+// Webhook de Telegram
+app.post("/", async (req, res) => {
+  try {
+    const texto = req.body?.message?.text || "";
+    if (texto === "/start") {
+      res.json({
+        method: "sendMessage",
+        chat_id: req.body?.message?.chat?.id,
+        text: "HBOS está en línea",
+      });
+    } else {
+      res.json({ status: "recibido" });
+    }
+  } catch (e) {
+    res.json({ status: "error" });
+  }
 });
 
 export default app;
