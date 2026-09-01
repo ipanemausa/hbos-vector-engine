@@ -8,7 +8,7 @@ app.use(cors());
 app.use(express.json());
 
 const VECTOR_SIZE  = 384;
-const GEMINI_URL   = "https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:embedContent?key=${process.env.GEMINI_API_KEY}";
+const GEMINI_URL   = "https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:embedContent?key=" + process.env.GEMINI_API_KEY;
 const QDRANT_URL   = process.env.QDRANT_URL;
 const QDRANT_KEY   = process.env.QDRANT_API_KEY;
 const COLLECTION   = "casos_uso_hbos";
@@ -39,13 +39,13 @@ async function embedGemini(texto) {
     signal: AbortSignal.timeout(6000)
   });
 
-  if (!res.ok) throw new Error(`Gemini API ${res.status}`: ``);
+  if (!res.ok) throw new Error("Gemini API " + res.status + ": " + (await res.text()));
 
   const data = await res.json();
   const vector = data.embedding?.values;
   
   if (!Array.isArray(vector) || vector.length !== VECTOR_SIZE) {
-    throw new Error(`Gemini vector inesperado: dims=``);
+    throw new Error("Gemini vector inesperado: dims=" + (vector ? vector.length : 0));
   }
   return vector;
 }
@@ -61,14 +61,14 @@ function embedFallback(texto) {
 }
 
 async function qdrantSearch(vector, topK) {
-  const url = ```/collections/``/points/search`;
+  const url = QDRANT_URL + "/collections/" + COLLECTION + "/points/search";
   const res = await fetch(url, {
     method: "POST",
     headers: { "Content-Type": "application/json", "api-key": QDRANT_KEY },
     body: JSON.stringify({ vector, limit: topK, with_payload: true }),
     signal: AbortSignal.timeout(6000)
   });
-  if (!res.ok) throw new Error(`Qdrant ``: ``);
+  if (!res.ok) throw new Error("Qdrant " + res.status + ": " + (await res.text()));
   const data = await res.json();
   return data.result ?? [];
 }
