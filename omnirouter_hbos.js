@@ -9,11 +9,9 @@ app.use(express.json());
 
 // ── CONSTANTES R384 ─────────────────────────────────────────────────────────────
 const VECTOR_SIZE  = 384;
-const HF_MODEL     = "sentence-transformers/all-MiniLM-L6-v2";
-const HF_API_URL   = `https://api-inference.huggingface.co/pipeline/feature-extraction/${HF_MODEL}`;
+const GEMINI_URL   = "https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:embedContent?key=${process.env.GEMINI_API_KEY}";
 const QDRANT_URL   = process.env.QDRANT_URL;
 const QDRANT_KEY   = process.env.QDRANT_API_KEY;
-const HF_TOKEN     = process.env.HF_API_TOKEN; // Vercel Secret — opcional pero recomendado
 const COLLECTION   = "casos_uso_hbos";
 
 // ── MODELOS ────────────────────────────────────────────────────────────────────
@@ -26,52 +24,56 @@ const modelos = [
   { nombre: "groq_llama",      proveedor: "groq",               estado: "activo", prioridad: 6 }
 ];
 
-// ── EMBEDDING: HuggingFace Inference API (fetch, sin SDK) ───────────────────
-async function embedHF(texto) {
+// ── EMBEDDING: Gemini API (fetch, sin SDK) ─────────────────────────────────────
+async function embedGemini(texto) {
+  if (!process.env.GEMINI_API_KEY) throw new Error("GEMINI_API_KEY no configurada en Vercel Secrets");
   const headers = { "Content-Type": "application/json" };
-  if (HF_TOKEN) headers["Authorization"] = `Bearer ${HF_TOKEN}`;
+  
+  const body = {
+    model: "models/text-embedding-004",
+    content: { parts: [{ text: texto }] },
+    outputDimensionality: VECTOR_SIZE
+  };
 
-  const res = await fetch(HF_API_URL, {
+  const res = await fetch(GEMINI_URL, {
     method: "POST",
     headers,
-    body: JSON.stringify({ inputs: texto, options: { wait_for_model: true } }),
-    signal: AbortSignal.timeout(8000)
+    body: JSON.stringify(body),
+    signal: AbortSignal.timeout(6000)
   });
 
-  if (!res.ok) throw new Error(`HF API ${res.status}: ${await res.text()}`);
+  if (!res.ok) throw new Error(Gemini API ${res.status}: ${await res.text()});
 
   const data = await res.json();
-  // La API devuelve [[...384 floats...]] o [...384 floats...]
-  const vector = Array.isArray(data[0]) ? data[0] : data;
+  const vector = data.embedding?.values;
+  
   if (!Array.isArray(vector) || vector.length !== VECTOR_SIZE) {
-    throw new Error(`HF vector inesperado: dims=${vector?.length}`);
+    throw new Error(Gemini vector inesperado: dims=${vector?.length});
   }
   return vector;
 }
 
 // ── FALLBACK DETERMINÍSTICO: SHA-256 → 384 floats ────────────────────────────
 function embedFallback(texto) {
-  // Genera 384 floats determinísticos a partir del hash del texto
-  // No es semántico, pero garantiza 384 dims válidas y el endpoint no rompe
   const seed = createHash("sha256").update(texto).digest();
   const vector = [];
   for (let i = 0; i < VECTOR_SIZE; i++) {
     const byte = seed[i % seed.length];
-    vector.push((byte / 255) * 2 - 1); // rango [-1, 1]
+    vector.push((byte / 255) * 2 - 1);
   }
   return vector;
 }
 
 // ── QDRANT SEARCH: REST directo (sin SDK, sin overhead) ───────────────────
 async function qdrantSearch(vector, topK) {
-  const url = `${QDRANT_URL}/collections/${COLLECTION}/points/search`;
+  const url = ${QDRANT_URL}/collections//points/search;
   const res = await fetch(url, {
     method: "POST",
     headers: { "Content-Type": "application/json", "api-key": QDRANT_KEY },
     body: JSON.stringify({ vector, limit: topK, with_payload: true }),
     signal: AbortSignal.timeout(6000)
   });
-  if (!res.ok) throw new Error(`Qdrant ${res.status}: ${await res.text()}`);
+  if (!res.ok) throw new Error(Qdrant ${res.status}: ${await res.text()});
   const data = await res.json();
   return data.result ?? [];
 }
@@ -82,14 +84,14 @@ app.get("/", (req, res) => {
     status: "OmniRouter HBOS activo",
     casos_totales: 45,
     protocolo: "R384",
-    embedder: "MiniLM-L6-v2 via HF Inference API",
+    embedder: "text-embedding-004 via Gemini API",
     vector_db: "Qdrant Cloud",
     endpoints: ["/v1/buscar", "/v1/qdrant/collections", "/v1/combos/best_free_plus"],
     costo: 0
   });
 });
 
-// ── BÚSQL SEMANTICA: POST /v1/buscar ───────────────────────────────────────────
+// ── BÚSQUEDA SEMANTICA: POST /v1/buscar ───────────────────────────────────────────
 app.post("/v1/buscar", async (req, res) => {
   const { query, top_k = 5 } = req.body ?? {};
 
@@ -111,12 +113,12 @@ app.post("/v1/buscar", async (req, res) => {
   let fuente_embedding;
 
   try {
-    vector = await embedHF(query.trim());
-    fuente_embedding = "huggingface";
-  } catch (hfErr) {
+    vector = await embedGemini(query.trim());
+    fuente_embedding = "gemini";
+  } catch (err) {
     vector = embedFallback(query.trim());
     fuente_embedding = "fallback_sha256";
-    console.warn("[HBOS] HF API falló, usando fallback:", hfErr.message);
+    console.warn("[HBOS] Gemini API falló, usando fallback:", err.message);
   }
 
   try {
