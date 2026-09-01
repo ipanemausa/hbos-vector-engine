@@ -1,49 +1,79 @@
 import { QdrantClient } from "@qdrant/qdrant-js";
-import { pipeline } from "@huggingface/transformers";
+
+// ─── VALIDACION DE CREDENCIALES (Vercel Secrets) ───────────────────────────
+const QDRANT_URL = process.env.QDRANT_URL;
+const QDRANT_API_KEY = process.env.QDRANT_API_KEY;
+
+if (!QDRANT_URL) throw new Error("[HBOS] QDRANT_URL no está definida en Vercel Secrets.");
+if (!QDRANT_API_KEY) throw new Error("[HBOS] QDRANT_API_KEY no está definida en Vercel Secrets.");
+
+// ─── R768: BAAI/bge-m3 — 768 dimensiones, distancia Cosine ───────────────
+const COLLECTION_NAME = "casos_uso_hbos";
+const VECTOR_SIZE = 768; // Protocolo R768 — BAAI/bge-m3
+const VECTOR_DISTANCE = "Cosine";
+const SIMILARITY_THRESHOLD = 0.82; // filtro mínimo R768
 
 class VectorEngine {
   constructor() {
     this.qdrant = new QdrantClient({
-      url: process.env.QDRANT_URL,
-      apiKey: process.env.QDRANT_API_KEY
+      url: QDRANT_URL,
+      apiKey: QDRANT_API_KEY
     });
-    this.embedder = null;
-    this.collection = "casos_uso_hbos";
+    this.collection = COLLECTION_NAME;
   }
 
-  async init() {
-    this.embedder = await pipeline("feature-extraction", "sentence-transformers/all-MiniLM-L6-v2");
-    await this.ensureCollection();
-  }
-
-  async ensureCollection() {
+  /** Verifica la conexión con Qdrant — consulta /collections */
+  async checkConnection() {
     try {
-      const collections = await this.qdrant.getCollections();
-      if (!collections.collections.some(c => c.name === this.collection)) {
-        await this.qdrant.createCollection(this.collection, {
-          vectors: { size: 384, distance: "Cosine" }
-        });
-      }
+      const result = await this.qdrant.getCollections();
+      return {
+        ok: true,
+        collections: result.collections.map(c => c.name),
+        count: result.collections.length
+      };
     } catch (e) {
-      console.log("Colección lista o error:", e.message);
+      const msg = e.message || String(e);
+      if (msg.includes("403"))  return { ok: false, error: "403_FORBIDDEN", detail: msg };
+      if (msg.includes("ENOTFOUND")) return { ok: false, error: "ENOTFOUND_URL", detail: msg };
+      if (msg.includes("timeout")) return { ok: false, error: "TIMEOUT", detail: msg };
+      return { ok: false, error: "UNKNOWN", detail: msg };
     }
   }
 
-  async embed(texto) {
-    const output = await this.embedder(texto, { pooling: "mean", normalize: true });
-    return Array.from(output.data);
+  /** Verifica si la colección principal existe (NO la crea) */
+  async checkCollection() {
+    try {
+      const result = await this.qdrant.getCollections();
+      const exists = result.collections.some(c => c.name === this.collection);
+      return { exists, collection: this.collection };
+    } catch (e) {
+      return { exists: false, error: e.message };
+    }
   }
 
-  async addCase(id, descripcion, herramientas, modelos, categoria) {
-    const vector = await this.embed(descripcion);
-    await this.qdrant.upsert(this.collection, {
-      points: [{ id, vector, payload: { descripcion, herramientas, modelos, categoria } }]
+  /** Busca vectores similares — R768 requiere vectores de 768 dims */
+  async searchSimilar(vector, limit = 5) {
+    if (!Array.isArray(vector) || vector.length !== VECTOR_SIZE) {
+      throw new Error(`[R768] El vector debe tener ${VECTOR_SIZE} dimensiones. Recibido: ${vector?.length}`);
+    }
+    const results = await this.qdrant.search(this.collection, {
+      vector,
+      limit,
+      with_payload: true,
+      score_threshold: SIMILARITY_THRESHOLD
     });
+    return results;
   }
 
-  async searchSimilar(texto, limit = 5) {
-    const vector = await this.embed(texto);
-    return await this.qdrant.search(this.collection, { vector, limit, with_payload: true });
+  /** Inserta un caso de uso — acepta vector pre-generado de 768 dims */
+  async addCase(id, descripcion, vector, payload = {}) {
+    if (!Array.isArray(vector) || vector.length !== VECTOR_SIZE) {
+      throw new Error(`[R768] Vector inválido. Se requieren ${VECTOR_SIZE} dimensiones.`);
+    }
+    await this.qdrant.upsert(this.collection, {
+      points: [{ id, vector, payload: { descripcion, ...payload } }]
+    });
+    return { ok: true, id, collection: this.collection };
   }
 }
 
