@@ -7,14 +7,12 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// ── CONSTANTES R384 ─────────────────────────────────────────────────────────────
 const VECTOR_SIZE  = 384;
 const GEMINI_URL   = "https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:embedContent?key=${process.env.GEMINI_API_KEY}";
 const QDRANT_URL   = process.env.QDRANT_URL;
 const QDRANT_KEY   = process.env.QDRANT_API_KEY;
 const COLLECTION   = "casos_uso_hbos";
 
-// ── MODELOS ────────────────────────────────────────────────────────────────────
 const modelos = [
   { nombre: "deepseek_v4",     proveedor: "deepseek",           estado: "activo", prioridad: 1 },
   { nombre: "qwen_3.8",        proveedor: "alibaba",            estado: "activo", prioridad: 2 },
@@ -24,7 +22,6 @@ const modelos = [
   { nombre: "groq_llama",      proveedor: "groq",               estado: "activo", prioridad: 6 }
 ];
 
-// ── EMBEDDING: Gemini API (fetch, sin SDK) ─────────────────────────────────────
 async function embedGemini(texto) {
   if (!process.env.GEMINI_API_KEY) throw new Error("GEMINI_API_KEY no configurada en Vercel Secrets");
   const headers = { "Content-Type": "application/json" };
@@ -42,18 +39,17 @@ async function embedGemini(texto) {
     signal: AbortSignal.timeout(6000)
   });
 
-  if (!res.ok) throw new Error(Gemini API ${res.status}: ${await res.text()});
+  if (!res.ok) throw new Error(`Gemini API ${res.status}`: ``);
 
   const data = await res.json();
   const vector = data.embedding?.values;
   
   if (!Array.isArray(vector) || vector.length !== VECTOR_SIZE) {
-    throw new Error(Gemini vector inesperado: dims=${vector?.length});
+    throw new Error(`Gemini vector inesperado: dims=``);
   }
   return vector;
 }
 
-// ── FALLBACK DETERMINÍSTICO: SHA-256 → 384 floats ────────────────────────────
 function embedFallback(texto) {
   const seed = createHash("sha256").update(texto).digest();
   const vector = [];
@@ -64,21 +60,19 @@ function embedFallback(texto) {
   return vector;
 }
 
-// ── QDRANT SEARCH: REST directo (sin SDK, sin overhead) ───────────────────
 async function qdrantSearch(vector, topK) {
-  const url = ${QDRANT_URL}/collections//points/search;
+  const url = ```/collections/``/points/search`;
   const res = await fetch(url, {
     method: "POST",
     headers: { "Content-Type": "application/json", "api-key": QDRANT_KEY },
     body: JSON.stringify({ vector, limit: topK, with_payload: true }),
     signal: AbortSignal.timeout(6000)
   });
-  if (!res.ok) throw new Error(Qdrant ${res.status}: ${await res.text()});
+  if (!res.ok) throw new Error(`Qdrant ``: ``);
   const data = await res.json();
   return data.result ?? [];
 }
 
-// ── HEALTH CHECK ─────────────────────────────────────────────────────────────────
 app.get("/", (req, res) => {
   res.json({
     status: "OmniRouter HBOS activo",
@@ -91,7 +85,6 @@ app.get("/", (req, res) => {
   });
 });
 
-// ── BÚSQUEDA SEMANTICA: POST /v1/buscar ───────────────────────────────────────────
 app.post("/v1/buscar", async (req, res) => {
   const { query, top_k = 5 } = req.body ?? {};
 
@@ -145,7 +138,6 @@ app.post("/v1/buscar", async (req, res) => {
   }
 });
 
-// ── QDRANT: VERIFICACION DE CONEXION ───────────────────────────────────────
 app.get("/v1/qdrant/collections", async (req, res) => {
   try {
     const conexion = await vectorEngine.checkConnection();
@@ -168,12 +160,10 @@ app.get("/v1/qdrant/collections", async (req, res) => {
   }
 });
 
-// ── MODELOS ───────────────────────────────────────────────────────────────────────────
 app.get("/v1/combos/best_free_plus", (req, res) => {
   res.json({ nombre: "best_free_plus", jerarquia: modelos, estado: "activo", costo: 0 });
 });
 
-// ── ARBITRATOR ───────────────────────────────────────────────────────────────────
 app.post("/v1/arbitrator/failover", (req, res) => {
   const { modelo } = req.body;
   const idx = modelos.findIndex(m => m.nombre === modelo);
@@ -182,7 +172,6 @@ app.post("/v1/arbitrator/failover", (req, res) => {
   res.json({ failover: modelo, siguiente, costo: 0 });
 });
 
-// ── CASOS DE USO ─────────────────────────────────────────────────────────────────
 app.post("/v1/casos/28-modo-estudio", (req, res) => {
   const { tema } = req.body;
   res.json({ caso: 28, nombre: "modo-estudio", modelo: "deepseek_v4", tema, costo: 0 });
@@ -198,7 +187,6 @@ app.post("/v1/casos/43-animar-historias", (req, res) => {
   res.json({ caso: 43, nombre: "animar-historias", plugin: "google_flow", guion, costo: 0 });
 });
 
-// ── WEBHOOK TELEGRAM ────────────────────────────────────────────────────────────
 app.post("/webhook/telegram", async (req, res) => {
   try {
     const texto = req.body?.message?.text || "";
