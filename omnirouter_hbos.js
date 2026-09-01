@@ -8,7 +8,7 @@ app.use(cors());
 app.use(express.json());
 
 const VECTOR_SIZE  = 384;
-const GEMINI_URL   = "https://generativelanguage.googleapis.com/v1beta/models/text-embedding-004:embedContent?key=" + process.env.GEMINI_API_KEY;
+const GEMINI_URL   = "https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-2:embedContent?key=" + process.env.GEMINI_API_KEY;
 const QDRANT_URL   = process.env.QDRANT_URL;
 const QDRANT_KEY   = process.env.QDRANT_API_KEY;
 const COLLECTION   = "casos_uso_hbos";
@@ -27,7 +27,7 @@ async function embedGemini(texto) {
   const headers = { "Content-Type": "application/json" };
   
   const body = {
-    model: "models/text-embedding-004",
+    model: "models/gemini-embedding-2",
     content: { parts: [{ text: texto }] },
     outputDimensionality: VECTOR_SIZE
   };
@@ -78,7 +78,7 @@ app.get("/", (req, res) => {
     status: "OmniRouter HBOS activo",
     casos_totales: 45,
     protocolo: "R384",
-    embedder: "text-embedding-004 via Gemini API",
+    embedder: "gemini-embedding-2 via Gemini API",
     vector_db: "Qdrant Cloud",
     endpoints: ["/v1/buscar", "/v1/qdrant/collections", "/v1/combos/best_free_plus"],
     costo: 0
