@@ -1,5 +1,21 @@
 {
   "version": 2,
-  "builds": [{ "src": "omnirouter_hbos.js", "use": "@vercel/node" }],
-  "routes": [{ "src": "/(.*)", "dest": "omnirouter_hbos.js" }]
+  "builds": [
+    {
+      "src": "omnirouter_hbos.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "omnirouter_hbos.js"
+    }
+  ],
+  "crons": [
+    {
+      "path": "/v1/health",
+      "schedule": "0 0 * * *"
+    }
+  ]
 }
