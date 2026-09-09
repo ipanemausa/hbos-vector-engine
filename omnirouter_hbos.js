@@ -188,6 +188,31 @@ app.post("/v1/openclaw/orquestar", async (req, res) => {
   }
 });
 
+// ── ENDPOINTS ARBITRAJE 0 COSTO & HITL v6.3 ───────────────────────────
+app.get("/v1/openclaw/arbitraje", (req, res) => {
+  res.json({
+    principio: "No estamos inventando. Estamos adquiriendo tecnicas probadas y gratuitas.",
+    costo_total: "$0.00",
+    arbitraje_herramientas: [
+      { especialista: "Investigador", herramientas: "VidIQ GPT + Google Trends", plan: "Free", fail_strategy: "MAXIMO_ESFUERZO" },
+      { especialista: "Escritor", herramientas: "Harpa AI + Antigravity Gemini", plan: "Free Tier", fail_strategy: "FALLO_RAPIDO" },
+      { especialista: "Narrador", herramientas: "ElevenLabs + NotebookLM", plan: "Free Tier (Caracteres/Mes)", fail_strategy: "FALLO_RAPIDO" },
+      { especialista: "Animador", herramientas: "Vidu IA + Bedo + Runway/Pika", plan: "Free Tiers", fail_strategy: "MAXIMO_ESFUERZO" },
+      { especialista: "Editor", herramientas: "CapCut Web Creador IA", plan: "100% Free", fail_strategy: "FALLO_RAPIDO" },
+      { especialista: "Publicador", herramientas: "Make.com (1000 ops) + Buffer", plan: "Free Tier", hitl: "OBLIGATORIO" }
+    ]
+  });
+});
+
+app.post("/v1/openclaw/hitl/aprobar", (req, res) => {
+  const { task_id, aprobador } = req.body ?? {};
+  if (!task_id) {
+    return res.status(400).json({ error: "task_id_requerido" });
+  }
+  const resultado = openclawOrchestrator.aprobarHITL(task_id, aprobador);
+  res.json(resultado);
+});
+
 app.get("/v1/openclaw/status", (req, res) => {
   res.json(openclawOrchestrator.getStatus());
 });
