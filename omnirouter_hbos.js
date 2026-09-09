@@ -152,6 +152,42 @@ app.post("/v1/buscar", async (req, res) => {
 });
 
 // ── ENDPOINTS OPENCLAW ORCHESTRATOR (CAPA 2) ──────────────────────────
+// ── ENDPOINTS DE ESPECIALISTAS Y PATRONES v5.1 ───────────────────────
+app.get("/v1/openclaw/especialistas", (req, res) => {
+  res.json({
+    total: 6,
+    principio: "Un solo agente no es especialista en todo. La maestria esta en la orquestacion.",
+    especialistas: [
+      { id: 1, rol: "Investigador de Nicho y Tendencias", herramientas: ["VidIQ GPT", "Google Trends", "Antigravity"], output: "{ temas: [], viralidad_score: 0-10 }" },
+      { id: 2, rol: "Escritor de Guiones y Estructuras", herramientas: ["Harpa AI", "Antigravity Gemini", "LTX Studio"], output: "{ titulo, escenas: [], duracion_estimada }" },
+      { id: 3, rol: "Narrador y Clonador de Voz", herramientas: ["ElevenLabs", "NotebookLM", "Google TTS"], output: "{ audio_url, duracion_segundos, emocion_detectada }" },
+      { id: 4, rol: "Animador y Generador de Clips", herramientas: ["Vidu IA", "Bedo", "Runway", "Pika"], output: "{ clips: [{ escena, url, duracion }] }" },
+      { id: 5, rol: "Editor y Post-Producción", herramientas: ["CapCut AI Studio", "DaVinci API"], output: "{ video_url, duracion_total, formatos_disponibles }" },
+      { id: 6, rol: "Publicador y Distribuidor", herramientas: ["Make.com", "Buffer", "Hootsuite"], output: "{ publicado: true, plataformas: [], metricas: {} }" }
+    ]
+  });
+});
+
+app.get("/v1/openclaw/patrones", (req, res) => {
+  res.json({
+    patrones: [
+      { id: "PIPELINE", tipo: "Secuencial", regla: "Cada especialista espera el output del anterior" },
+      { id: "FAN_OUT_FAN_IN", tipo: "Paralelo + Agregación", regla: "Lanza subtareas independientes y agrega resultados" },
+      { id: "ROUTING", tipo: "Enrutamiento por Tipo", regla: "Clasifica según categoría de macro-tarea" },
+      { id: "ORCHESTRATOR_WORKER", tipo: "Decisión Dinámica", regla: "Analiza y asigna orden y agentes dinámicamente" }
+    ]
+  });
+});
+
+app.post("/v1/openclaw/orquestar", async (req, res) => {
+  try {
+    const resultado = await openclawOrchestrator.orquestarEspecialistas(req.body);
+    res.json(resultado);
+  } catch (e) {
+    res.status(500).json({ error: "orchestration_v5_failed", detalle: e.message });
+  }
+});
+
 app.get("/v1/openclaw/status", (req, res) => {
   res.json(openclawOrchestrator.getStatus());
 });
