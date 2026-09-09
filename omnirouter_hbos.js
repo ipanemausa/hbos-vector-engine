@@ -1,183 +1,263 @@
-import express from "express";
+﻿import express from "express";
 import cors from "cors";
 import { createHash } from "crypto";
 import vectorEngine from "./vector_engine.js";
+import openclawOrchestrator from "./openclaw-orchestrator.js";
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-const VECTOR_SIZE  = 384;
-const GEMINI_URL   = "https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-2:embedContent?key=" + process.env.GEMINI_API_KEY;
-const QDRANT_URL   = process.env.QDRANT_URL;
-const QDRANT_KEY   = process.env.QDRANT_API_KEY;
-const COLLECTION   = "casos_uso_hbos";
+const VECTOR_SIZE = 384;
+const GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-2:embedContent?key=" + (process.env.GEMINI_API_KEY || "");
+const QDRANT_URL = process.env.QDRANT_URL;
+const QDRANT_KEY = process.env.QDRANT_API_KEY;
+const COLLECTION = "casos_uso_hbos";
 
-async function generarEmbedding(texto) {
-  if (!process.env.GEMINI_API_KEY) {
-    throw new Error("GEMINI_API_KEY no configurada");
-  }
+const modelos = [
+  { nombre: "deepseek_v4",      proveedor: "deepseek",           estado: "activo", prioridad: 1 },
+  { nombre: "qwen_3.8",         proveedor: "alibaba",            estado: "activo", prioridad: 2 },
+  { nombre: "gemini_flash",     proveedor: "google_antigravity", estado: "activo", prioridad: 3 },
+  { nombre: "perplexity",       proveedor: "perplexity",         estado: "activo", prioridad: 4 },
+  { nombre: "openrouter_llama", proveedor: "openrouter",         estado: "activo", prioridad: 5 },
+  { nombre: "groq_llama",       proveedor: "groq",               estado: "activo", prioridad: 6 }
+];
+
+async function embedGemini(texto) {
+  if (!process.env.GEMINI_API_KEY) throw new Error("GEMINI_API_KEY no configurada en Vercel Secrets");
+  const headers = { "Content-Type": "application/json" };
   const body = {
     model: "models/gemini-embedding-2",
     content: { parts: [{ text: texto }] },
     outputDimensionality: VECTOR_SIZE
   };
+
   const res = await fetch(GEMINI_URL, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(body)
+    headers,
+    body: JSON.stringify(body),
+    signal: AbortSignal.timeout(6000)
   });
+
   if (!res.ok) throw new Error("Gemini API " + res.status + ": " + (await res.text()));
+
   const data = await res.json();
-  const rawValues = data?.embedding?.values;
-  if (!rawValues || rawValues.length === 0) throw new Error("Respuesta de Gemini sin valores");
-  return rawValues.slice(0, VECTOR_SIZE);
+  const vector = data.embedding?.values;
+  if (!Array.isArray(vector) || vector.length !== VECTOR_SIZE) {
+    throw new Error("Gemini vector inesperado: dims=" + (vector ? vector.length : 0));
+  }
+  return vector;
 }
 
-async function buscarEnQdrant(vector, limit = 5) {
-  if (!QDRANT_URL || !QDRANT_KEY) {
-    throw new Error("Credenciales de Qdrant no configuradas");
+function embedFallback(texto) {
+  const seed = createHash("sha256").update(texto).digest();
+  const vector = [];
+  for (let i = 0; i < VECTOR_SIZE; i++) {
+    const byte = seed[i % seed.length];
+    vector.push((byte / 255) * 2 - 1);
   }
+  return vector;
+}
+
+async function qdrantSearch(vector, topK) {
   const url = QDRANT_URL + "/collections/" + COLLECTION + "/points/search";
-  const body = {
-    vector,
-    limit,
-    with_payload: true,
-    with_vector: false
-  };
   const res = await fetch(url, {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "api-key": QDRANT_KEY
-    },
-    body: JSON.stringify(body)
+    headers: { "Content-Type": "application/json", "api-key": QDRANT_KEY },
+    body: JSON.stringify({ vector, limit: topK, with_payload: true }),
+    signal: AbortSignal.timeout(6000)
   });
   if (!res.ok) throw new Error("Qdrant " + res.status + ": " + (await res.text()));
   const data = await res.json();
-  return data.result || [];
+  return data.result ?? [];
 }
 
+// ── ENDPOINTS PRINCIPALES ─────────────────────────────────────────────
 app.get("/", (req, res) => {
   res.json({
     status: "OmniRouter HBOS activo",
+    arquitectura: "Blueprint 5 Capas (HBOS v4.0)",
+    orquestador: "OpenClaw Layer 2 Orchestrator",
     casos_totales: 45,
-    protocolo: "R384",
+    protocolo: "R768 / R384",
     embedder: "gemini-embedding-2 via Gemini API",
     vector_db: "Qdrant Cloud",
-    endpoints: ["/v1/buscar", "/v1/qdrant/collections", "/v1/combos/best_free_plus"],
+    endpoints: [
+      "/v1/health",
+      "/v1/buscar",
+      "/v1/openclaw/status",
+      "/v1/openclaw/cpm",
+      "/v1/openclaw/orchestrate",
+      "/v1/ecosistema/trazabilidad",
+      "/v1/ecosistema/registrar",
+      "/v1/qdrant/collections",
+      "/v1/combos/best_free_plus"
+    ],
     costo: 0
   });
 });
 
+// Búsqueda Semántica Vectorial
 app.post("/v1/buscar", async (req, res) => {
+  const { query, top_k = 5 } = req.body ?? {};
+
+  if (!query || typeof query !== "string" || query.trim() === "") {
+    return res.status(400).json({
+      error: "query_requerida",
+      mensaje: "El campo 'query' es obligatorio y debe ser texto no vacio."
+    });
+  }
+
+  if (!QDRANT_URL || !QDRANT_KEY) {
+    return res.status(503).json({
+      error: "credenciales_faltantes",
+      mensaje: "QDRANT_URL o QDRANT_API_KEY no estan en Vercel Secrets."
+    });
+  }
+
+  let vector;
+  let fuente_embedding;
+
   try {
-    const { query, limite } = req.body;
-    if (!query) {
-      return res.status(400).json({
-        error: "Parametro 'query' requerido",
-        ejemplo: { query: "crear avatar de video", limite: 5 }
-      });
-    }
-    if (!process.env.GEMINI_API_KEY) {
-      return res.status(503).json({
-        error: "GEMINI_API_KEY no configurada en Vercel",
-        solucion: "Configurar GEMINI_API_KEY en Vercel Settings -> Environment Variables"
-      });
-    }
-    const limit = Math.min(parseInt(limite) || 5, 20);
-    const vector = await generarEmbedding(query);
-    const resultados = await buscarEnQdrant(vector, limit);
+    vector = await embedGemini(query.trim());
+    fuente_embedding = "gemini";
+  } catch (err) {
+    vector = embedFallback(query.trim());
+    fuente_embedding = "fallback_sha256";
+    console.warn("[HBOS] Gemini API fallo, usando fallback:", err.message);
+  }
+
+  try {
+    const resultados = await qdrantSearch(vector, Math.min(Number(top_k) || 5, 20));
     return res.json({
       query,
-      fuente_embedding: "gemini",
+      fuente_embedding,
       vector_dims: vector.length,
       top_k: resultados.length,
-      resultados: resultados.map((r) => ({
+      resultados: resultados.map(r => ({
         id: r.id,
         score: r.score,
         payload: r.payload
       }))
     });
-  } catch (err) {
-    const msg = err.message || "";
-    let code = 500;
-    if (msg.includes("Gemini API")) code = 502;
-    if (msg.includes("Qdrant")) code = 503;
+  } catch (qdErr) {
+    const msg = qdErr.message || "";
+    const code = msg.includes("403") ? 403 : msg.includes("ENOTFOUND") ? 502 : 500;
     return res.status(code).json({
-      error: "Fallo en pipeline de busqueda",
-      detalle: msg,
-      timestamp: new Date().toISOString()
+      error: "qdrant_error",
+      codigo: code,
+      detalle: msg
     });
   }
 });
 
+// ── ENDPOINTS OPENCLAW ORCHESTRATOR (CAPA 2) ──────────────────────────
+app.get("/v1/openclaw/status", (req, res) => {
+  res.json(openclawOrchestrator.getStatus());
+});
+
+app.get("/v1/openclaw/cpm", (req, res) => {
+  res.json(openclawOrchestrator.evaluateCPM());
+});
+
+app.post("/v1/openclaw/orchestrate", async (req, res) => {
+  try {
+    const resultado = await openclawOrchestrator.orchestrate(req.body);
+    res.json(resultado);
+  } catch (e) {
+    res.status(500).json({ error: "orchestration_failed", detalle: e.message });
+  }
+});
+
+// ── ENDPOINTS TRAZABILIDAD QDRANT CLOUD (CAPA 4) ───────────────────────
+app.get("/v1/ecosistema/trazabilidad", async (req, res) => {
+  const limit = Math.min(Number(req.query.limit) || 20, 100);
+  const data = await vectorEngine.getTrazabilidad(limit);
+  res.json(data);
+});
+
+app.post("/v1/ecosistema/registrar", async (req, res) => {
+  const { evento, payload, operation_id } = req.body ?? {};
+  if (!evento) {
+    return res.status(400).json({ error: "evento_requerido" });
+  }
+  const resultado = await vectorEngine.registrarTrazabilidad(evento, payload || {}, operation_id);
+  res.json(resultado);
+});
+
+// ── ENDPOINT INFO COLECCION ──────────────────────────────────────────
+app.get("/v1/qdrant/info/:name", async (req, res) => {
+  try {
+    const client = vectorEngine.getClient();
+    const info = await client.getCollection(req.params.name);
+    res.json(info);
+  } catch (e) {
+    res.status(500).json({ error: e.message });
+  }
+});
+
+// ── ENDPOINT COLECCIONES QDRANT ───────────────────────────────────────
 app.get("/v1/qdrant/collections", async (req, res) => {
   try {
-    if (!QDRANT_URL || !QDRANT_KEY) {
+    const conexion = await vectorEngine.checkConnection();
+    if (!conexion.ok) {
       return res.status(502).json({
         evento: "conexion_qdrant",
-        estado: "ERROR",
-        detalle: "QDRANT_URL o QDRANT_API_KEY ausente en variables de entorno Vercel",
+        estado: "FALLIDO",
+        error_code: conexion.error,
+        detalle: conexion.detail,
         timestamp: new Date().toISOString()
       });
     }
-    const info = await vectorEngine.verificarConexion();
-    res.json(info);
+    const coleccion = await vectorEngine.checkCollection();
+    res.json({
+      evento: "conexion_qdrant",
+      estado: "OK",
+      collections: conexion.collections,
+      total: conexion.count,
+      coleccion_principal: coleccion,
+      protocolo: "R768/R384",
+      timestamp: new Date().toISOString()
+    });
   } catch (e) {
     res.status(500).json({ evento: "conexion_qdrant", estado: "ERROR", detalle: e.message, timestamp: new Date().toISOString() });
   }
 });
 
+// ── ENDPOINTS COMPLEMENTARIOS DE CASOS DE USO ─────────────────────────
 app.get("/v1/combos/best_free_plus", (req, res) => {
-  res.json({
-    nombre: "best_free_plus",
-    jerarquia: [
-      { nombre: "deepseek_v4", proveedor: "deepseek", estado: "activo", prioridad: 1 },
-      { nombre: "qwen_3.8", proveedor: "alibaba", estado: "activo", prioridad: 2 },
-      { nombre: "gemini_flash", proveedor: "google_antigravity", estado: "activo", prioridad: 3 },
-      { nombre: "perplexity", proveedor: "perplexity", estado: "activo", prioridad: 4 }
-    ],
-    failover_automatico: true,
-    costo_operativo: 0
-  });
+  res.json({ nombre: "best_free_plus", jerarquia: modelos, estado: "activo", costo: 0 });
 });
 
 app.post("/v1/arbitrator/failover", (req, res) => {
-  res.json({
-    status: "FAILOVER_READY",
-    active_engine: "groq_ultra_fast",
-    backup_engine: "openrouter_free_tier",
-    switch_latency_ms: 45
-  });
+  const { modelo } = req.body;
+  const idx = modelos.findIndex(m => m.nombre === modelo);
+  if (idx !== -1) modelos[idx].estado = "fallido";
+  const siguiente = modelos.find(m => m.estado === "activo");
+  res.json({ failover: modelo, siguiente, costo: 0 });
 });
 
 app.post("/v1/casos/28-modo-estudio", (req, res) => {
-  res.json({
-    status: "SUCCESS",
-    mode: "STUDY_ORCHESTRATOR",
-    prompt_injected: true
-  });
+  const { tema } = req.body;
+  res.json({ caso: 28, nombre: "modo-estudio", modelo: "deepseek_v4", tema, costo: 0 });
 });
 
 app.post("/v1/casos/20-auditar-web", (req, res) => {
-  res.json({
-    status: "AUDIT_INITIALIZED",
-    protocol: "DEEPSEEK_HARNESS_V5"
-  });
+  const { url } = req.body;
+  res.json({ caso: 20, nombre: "auditar-web", plugin: "antigravity", url, costo: 0 });
 });
 
 app.post("/v1/casos/43-animar-historias", (req, res) => {
-  res.json({
-    status: "DISPATCHED",
-    target: "WAN_2_1_LOCAL_VLLM"
-  });
+  const { guion } = req.body;
+  res.json({ caso: 43, nombre: "animar-historias", plugin: "google_flow", guion, costo: 0 });
 });
 
 app.post("/webhook/telegram", async (req, res) => {
   try {
-    const update = req.body;
-    if (update && update.message) {
+    const texto = req.body?.message?.text || "";
+    if (texto === "/start") {
+      res.json({ method: "sendMessage", chat_id: req.body?.message?.chat?.id, text: "HBOS esta en linea" });
+    } else {
       res.json({ status: "recibido" });
     }
   } catch (e) {
@@ -185,20 +265,19 @@ app.post("/webhook/telegram", async (req, res) => {
   }
 });
 
-// ── ENDPOINT HEALTH CHECK & CRON WORKER ──────────────────────────────
+// ── ENDPOINT HEALTH CHECK & CRON WORKER 24/7 ──────────────────────────
 app.get(["/v1/health", "/api/health", "/health"], (req, res) => {
   res.json({
     status: "HEALTHY",
     service: "HBOS OmniRouter Worker 24/7",
     timestamp: new Date().toISOString(),
     cron: "VERCEL_CRON_ACTIVE",
-    protocolo: "R384",
+    schedule: "0 0 * * *",
+    protocolo: "R768/R384",
     uptime: process.uptime(),
-    vector_db: "Qdrant Cloud"
+    vector_db: "Qdrant Cloud",
+    orchestrator: openclawOrchestrator.getStatus().estado
   });
 });
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log("OmniRouter HBOS activo en puerto " + PORT);
-});
+export default app;
