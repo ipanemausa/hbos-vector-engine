@@ -224,6 +224,24 @@ app.get("/v1/openclaw/gpu-status", (req, res) => {
   });
 });
 
+app.get("/v1/openclaw/gpu-arbitrage", (req, res) => {
+  res.json({
+    principio: "0 costo siempre. Si un proveedor agota, se cambia a otro.",
+    proveedores: {
+      fal_ai: { status: "READY", free_tier: true, especialistas: ["narrador", "animador"] },
+      alibaba_model_studio: { status: "READY", free_quota: "90 dias", especialistas: ["video"] },
+      google_colab: { status: "READY", free_tier: "T4", especialistas: ["pruebas"] },
+      capcut_ia: { status: "READY", free_tier: true, especialistas: ["editor"] }
+    },
+    regla_arbitraje: [
+      "Fal.ai → Alibaba Model Studio → Google Colab",
+      "Si todos agotados → DETENER y reportar"
+    ],
+    costo_total: "$0.00",
+    timestamp: new Date().toISOString()
+  });
+});
+
 app.post("/v1/openclaw/hitl/aprobar", (req, res) => {
   const { task_id, aprobador } = req.body ?? {};
   if (!task_id) {

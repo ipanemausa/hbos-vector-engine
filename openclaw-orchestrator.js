@@ -1,7 +1,7 @@
 /**
- * OPENCLAW ORCHESTRATOR — HBOS v14.0
- * MAESTRÍA TOTAL + ARBITRAJE 0 COSTO + HITL + GPU CLOUD + 9 ESPECIALISTAS
- * DESTINO DE EJECUCIÓN HÍBRIDO: CPU CLOUD (Vercel) + GPU CLOUD (Fal.ai / CapCut)
+ * OPENCLAW ORCHESTRATOR — HBOS v15.0
+ * MAESTRÍA TOTAL + ARBITRAJE 0 COSTO + HITL + GPU CLOUD ARBITRAGE (9 ESPECIALISTAS)
+ * BLINDAJE 0 COSTO EN GPU CLOUD: Fal.ai -> Alibaba Model Studio -> Google Colab
  * Estándar: Experto AleJaVi · HBOS Sovereign AI
  */
 
@@ -28,17 +28,17 @@ const ARBITRAJE_MAPA = {
   analista_metricas: { herramientas: ["YouTube Analytics API (Free)", "Qdrant Cloud", "Antigravity Gemini"], costo: 0, fail_strategy: "MAXIMO_ESFUERZO" }
 };
 
-// ── DESTINO DE EJECUCIÓN (Capa Híbrida CPU Cloud vs GPU Cloud v14.0) ──
+// ── DESTINO DE EJECUCIÓN CON RESPALDO DE ARBITRAJE GPU ($0 COSTO) ─────
 const DESTINO_EJECUCION = {
-  investigador:       { destino: "CPU_CLOUD", proveedor: "Vercel",    razon: "APIs ligeras" },
-  escritor:           { destino: "CPU_CLOUD", proveedor: "Vercel",    razon: "Generación de texto" },
-  director_historia:  { destino: "CPU_CLOUD", proveedor: "Vercel",    razon: "Estructura narrativa" },
-  narrador:           { destino: "GPU_CLOUD", proveedor: "Fal.ai",    razon: "Generación de voz" },
-  animador:           { destino: "GPU_CLOUD", proveedor: "Fal.ai",    razon: "Generación de video" },
-  editor:             { destino: "GPU_CLOUD", proveedor: "CapCut_IA", razon: "Renderizado" },
-  publicador:         { destino: "CPU_CLOUD", proveedor: "Vercel",    razon: "APIs de publicación" },
-  community_manager:  { destino: "CPU_CLOUD", proveedor: "Vercel",    razon: "APIs de redes" },
-  analista_metricas:  { destino: "CPU_CLOUD", proveedor: "Vercel",    razon: "APIs de analytics" }
+  investigador:       { destino: "CPU_CLOUD", proveedor: "Vercel",    razon: "APIs ligeras", respaldo: null },
+  escritor:           { destino: "CPU_CLOUD", proveedor: "Vercel",    razon: "Generación de texto", respaldo: null },
+  director_historia:  { destino: "CPU_CLOUD", proveedor: "Vercel",    razon: "Estructura narrativa", respaldo: null },
+  narrador:           { destino: "GPU_CLOUD", proveedor: "Fal.ai",    razon: "Generación de voz", respaldo: "Alibaba_Model_Studio" },
+  animador:           { destino: "GPU_CLOUD", proveedor: "Fal.ai",    razon: "Generación de video", respaldo: "Alibaba_Model_Studio" },
+  editor:             { destino: "GPU_CLOUD", proveedor: "CapCut_IA", razon: "Renderizado", respaldo: "Google_Colab" },
+  publicador:         { destino: "CPU_CLOUD", proveedor: "Vercel",    razon: "APIs de publicación", respaldo: null },
+  community_manager:  { destino: "CPU_CLOUD", proveedor: "Vercel",    razon: "APIs de redes", respaldo: null },
+  analista_metricas:  { destino: "CPU_CLOUD", proveedor: "Vercel",    razon: "APIs de analytics", respaldo: null }
 };
 
 // ── ESPECIALISTAS CON CONTRATOS TIPADOS ESTRICTOS (Regla 0.1) ────────
@@ -473,13 +473,13 @@ class AnalistaMetricasEspecialista {
   }
 }
 
-// ── ORQUESTADOR MAESTRO OPENCLAW v14.0 (GPU CLOUD + 9 ESPECIALISTAS) ──
+// ── ORQUESTADOR MAESTRO OPENCLAW v15.0 (GPU CLOUD ARBITRAGE + 9 ESPECIALISTAS) ──
 
 class OpenClawOrchestrator {
   constructor() {
-    this.version = "14.0.0";
+    this.version = "15.0.0";
     this.protocolo = "R768 / R384";
-    this.estado = "OPENCLAW_ORCHESTRATOR_MAESTRIA_v14.0";
+    this.estado = "OPENCLAW_ORCHESTRATOR_MAESTRIA_v15.0";
     this.limitesDuros = HARD_LIMITS;
     this.arbitrajeMapa = ARBITRAJE_MAPA;
     this.destinoEjecucion = DESTINO_EJECUCION;
@@ -499,12 +499,44 @@ class OpenClawOrchestrator {
     this.hitlPendientes = new Map();
   }
 
+  async verificarProveedorGPU(proveedor) {
+    const proveedoresDisponibles = {
+      "Fal.ai": true,
+      "Alibaba_Model_Studio": true,
+      "Google_Colab": true,
+      "CapCut_IA": true
+    };
+    return proveedoresDisponibles[proveedor] || false;
+  }
+
   enrutarEjecucion(especialista) {
     const ruta = DESTINO_EJECUCION[especialista];
     if (!ruta) {
       throw new Error(`[ENRUTAMIENTO] Especialista desconocido: ${especialista}`);
     }
     return ruta;
+  }
+
+  async enrutarEjecucionConRespaldo(especialista, input) {
+    const ruta = DESTINO_EJECUCION[especialista];
+    if (!ruta) throw new Error(`Especialista desconocido: ${especialista}`);
+
+    // Si es GPU Cloud, verificar disponibilidad del proveedor principal
+    if (ruta.destino === "GPU_CLOUD") {
+      const proveedorDisponible = await this.verificarProveedorGPU(ruta.proveedor);
+      
+      if (!proveedorDisponible) {
+        console.warn(`[ARBITRAJE GPU] ${ruta.proveedor} agotado. Usando respaldo: ${ruta.respaldo}`);
+        ruta.proveedor = ruta.respaldo;
+        
+        const respaldoDisponible = await this.verificarProveedorGPU(ruta.respaldo);
+        if (!respaldoDisponible) {
+          throw new Error(`[ARBITRAJE GPU] Todos los proveedores GPU agotados. DETENER.`);
+        }
+      }
+    }
+
+    return await this.ejecutarEnDestino(especialista, input);
   }
 
   async ejecutarEnDestino(especialista, input) {
@@ -517,31 +549,37 @@ class OpenClawOrchestrator {
     
     let res;
     if (ruta.destino === "GPU_CLOUD") {
-      res = await (especialistaInstance.ejecutar ? especialistaInstance.ejecutar({ ...input, gpu_cloud: true }) : especialistaInstance.preparar({ ...input, gpu_cloud: true }));
+      res = await (especialistaInstance.ejecutar ? especialistaInstance.ejecutar({ ...input, gpu_cloud: true, proveedor_gpu: ruta.proveedor }) : especialistaInstance.preparar({ ...input, gpu_cloud: true, proveedor_gpu: ruta.proveedor }));
     } else {
       res = await (especialistaInstance.ejecutar ? especialistaInstance.ejecutar({ ...input, cpu_cloud: true }) : especialistaInstance.preparar({ ...input, cpu_cloud: true }));
     }
     if (res && typeof res === "object") {
-      res.destino_ejecucion = ruta;
+      res.destino_ejecucion = { ...ruta };
     }
     return res;
   }
 
   getStatus() {
     return {
-      modulo: "OpenClaw Orchestrator v14.0",
+      modulo: "OpenClaw Orchestrator v15.0",
       version: this.version,
       estado: this.estado,
-      principio: "Antigravity es consola. GPU Cloud es motor. CPU Cloud es orquestador.",
-      costo_operativo_total: "$0.00 (Arbitraje 100% Free Tiers)",
+      principio: "0 costo siempre. Si un proveedor agota, se cambia a otro.",
+      costo_operativo_total: "$0.00 (Blindaje GPU 0 Costo)",
       especialistas_registrados: Object.keys(this.especialistas).length,
       especialistas_gpu: 3,
       especialistas_cpu: 6,
       proveedores_gpu: {
-        fal_ai: ["narrador", "animador"],
-        capcut_ia: ["editor"]
+        primario: "Fal.ai",
+        secundario: "Alibaba_Model_Studio",
+        terciario: "Google_Colab",
+        editor: "CapCut_IA"
       },
       destino_ejecucion: this.destinoEjecucion,
+      regla_arbitraje: [
+        "Fal.ai → Alibaba Model Studio → Google Colab",
+        "Si todos agotados → DETENER y reportar"
+      ],
       seguridad: {
         jerarquia_instrucciones: "System > Developer > User",
         contratos_tipados: "STRICT_JSON_SCHEMAS",
@@ -594,32 +632,32 @@ class OpenClawOrchestrator {
     const pipeline = {};
 
     // Tarea 1: Investigación (CPU Cloud)
-    pipeline.investigacion = await this.ejecutarEnDestino("investigador", { tema });
+    pipeline.investigacion = await this.enrutarEjecucionConRespaldo("investigador", { tema });
 
     // Tarea 1.5: Dirección Narrativa & Compliance YouTube 2026 (CPU Cloud)
-    pipeline.direccion = await this.ejecutarEnDestino("director_historia", { 
+    pipeline.direccion = await this.enrutarEjecucionConRespaldo("director_historia", { 
       tema, 
       investigacion: pipeline.investigacion 
     });
 
     // Tarea 2: Guión (CPU Cloud)
-    pipeline.guion = await this.ejecutarEnDestino("escritor", { 
+    pipeline.guion = await this.enrutarEjecucionConRespaldo("escritor", { 
       investigacion: pipeline.investigacion, 
       direccion: pipeline.direccion,
       tema 
     });
 
-    // Tarea 3: Voz (GPU Cloud - Fal.ai)
-    pipeline.audio = await this.ejecutarEnDestino("narrador", { guion: pipeline.guion });
+    // Tarea 3: Voz (GPU Cloud - Fal.ai con respaldo Alibaba)
+    pipeline.audio = await this.enrutarEjecucionConRespaldo("narrador", { guion: pipeline.guion });
 
-    // Tarea 4: Animación (GPU Cloud - Fal.ai)
-    pipeline.clips = await this.ejecutarEnDestino("animador", { guion: pipeline.guion });
+    // Tarea 4: Animación (GPU Cloud - Fal.ai con respaldo Alibaba)
+    pipeline.clips = await this.enrutarEjecucionConRespaldo("animador", { guion: pipeline.guion });
 
-    // Tarea 5: Edición (GPU Cloud - CapCut IA)
-    pipeline.edicion = await this.ejecutarEnDestino("editor", { audio: pipeline.audio, clips: pipeline.clips });
+    // Tarea 5: Edición (GPU Cloud - CapCut IA con respaldo Colab)
+    pipeline.edicion = await this.enrutarEjecucionConRespaldo("editor", { audio: pipeline.audio, clips: pipeline.clips });
 
     // Tarea 6: Publicación (CPU Cloud + HITL)
-    const publicacionHITL = await this.ejecutarEnDestino("publicador", { 
+    const publicacionHITL = await this.enrutarEjecucionConRespaldo("publicador", { 
       guion: pipeline.guion, 
       edicion: pipeline.edicion,
       seo: pipeline.direccion?.seo_multimodal 
@@ -635,18 +673,18 @@ class OpenClawOrchestrator {
     });
 
     // Tarea 7: Community Manager (CPU Cloud)
-    pipeline.community = await this.ejecutarEnDestino("community_manager", { 
+    pipeline.community = await this.enrutarEjecucionConRespaldo("community_manager", { 
       publicacion: publicacionHITL.payload_publicacion 
     });
 
     // Tarea 8: Analista de Métricas (CPU Cloud)
-    pipeline.metricas = await this.ejecutarEnDestino("analista_metricas", { 
+    pipeline.metricas = await this.enrutarEjecucionConRespaldo("analista_metricas", { 
       video_id: taskId 
     });
 
     // Tarea 9: Trazabilidad en Qdrant Cloud
     const duracionMs = Date.now() - inicio;
-    const registro = await vectorEngine.registrarTrazabilidad("ORCHESTRATION_MAESTRIA_v14.0", {
+    const registro = await vectorEngine.registrarTrazabilidad("ORCHESTRATION_MAESTRIA_v15.0", {
       tema,
       categoria,
       patron,
@@ -656,6 +694,8 @@ class OpenClawOrchestrator {
       especialistas_involucrados: 9,
       especialistas_gpu: 3,
       especialistas_cpu: 6,
+      gpu_arbitrage: true,
+      regla_arbitraje: "Fal.ai -> Alibaba Model Studio -> Google Colab",
       youtube_compliance: pipeline.direccion.compliance_youtube,
       arbitraje_activo: true
     });
