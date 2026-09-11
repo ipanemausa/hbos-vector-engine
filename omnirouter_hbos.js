@@ -152,10 +152,10 @@ app.post("/v1/buscar", async (req, res) => {
 });
 
 // ── ENDPOINTS OPENCLAW ORCHESTRATOR (CAPA 2) ──────────────────────────
-// ── ENDPOINTS DE ESPECIALISTAS Y PATRONES v11.0 ──────────────────────
+// ── ENDPOINTS DE ESPECIALISTAS Y PATRONES v13.0 (9 ESPECIALISTAS) ─────
 app.get("/v1/openclaw/especialistas", (req, res) => {
   res.json({
-    total: 7,
+    total: 9,
     principio: "Un solo agente no es especialista en todo. La maestria esta en la orquestacion.",
     especialistas: [
       { id: 1, rol: "Investigador de Nicho y Tendencias", herramientas: ["VidIQ GPT", "Google Trends", "Antigravity"], output: "{ temas: [], viralidad_score: 0-10 }" },
@@ -164,7 +164,9 @@ app.get("/v1/openclaw/especialistas", (req, res) => {
       { id: 4, rol: "Narrador y Clonador de Voz", herramientas: ["ElevenLabs", "NotebookLM", "Google TTS"], output: "{ audio_url, duracion_segundos, emocion_detectada }" },
       { id: 5, rol: "Animador y Generador de Clips", herramientas: ["Vidu IA", "Bedo", "Runway", "Pika"], output: "{ clips: [{ escena, url, duracion }] }" },
       { id: 6, rol: "Editor y Post-Producción", herramientas: ["CapCut AI Studio", "DaVinci API"], output: "{ video_url, duracion_total, formatos_disponibles }" },
-      { id: 7, rol: "Publicador y Distribuidor", herramientas: ["Make.com", "Buffer", "Hootsuite"], output: "{ publicado: true, plataformas: [], metricas: {} }" }
+      { id: 7, rol: "Publicador y Distribuidor", herramientas: ["Make.com", "Buffer", "Hootsuite"], output: "{ publicado: true, plataformas: [], metricas: {} }" },
+      { id: 8, rol: "Community Manager y Engagement", herramientas: ["Make.com", "Buffer", "Antigravity Gemini"], output: "{ comentarios_respondidos, engagement_generado, oportunidades_contenido }" },
+      { id: 9, rol: "Analista de Métricas y Mejora Continua", herramientas: ["YouTube Analytics API", "Qdrant Cloud", "Antigravity Gemini"], output: "{ video_id, metricas, analisis, recomendaciones }" }
     ]
   });
 });
@@ -185,11 +187,11 @@ app.post("/v1/openclaw/orquestar", async (req, res) => {
     const resultado = await openclawOrchestrator.orquestarEspecialistas(req.body);
     res.json(resultado);
   } catch (e) {
-    res.status(500).json({ error: "orchestration_v11_failed", detalle: e.message });
+    res.status(500).json({ error: "orchestration_v13_failed", detalle: e.message });
   }
 });
 
-// ── ENDPOINTS ARBITRAJE 0 COSTO & HITL v11.0 ──────────────────────────
+// ── ENDPOINTS ARBITRAJE 0 COSTO & HITL v13.0 ──────────────────────────
 app.get("/v1/openclaw/arbitraje", (req, res) => {
   res.json({
     principio: "No estamos inventando. Estamos adquiriendo tecnicas probadas y gratuitas.",
@@ -201,7 +203,9 @@ app.get("/v1/openclaw/arbitraje", (req, res) => {
       { especialista: "Narrador", herramientas: "ElevenLabs + NotebookLM", plan: "Free Tier (Caracteres/Mes)", fail_strategy: "FALLO_RAPIDO" },
       { especialista: "Animador", herramientas: "Vidu IA + Bedo + Runway/Pika", plan: "Free Tiers", fail_strategy: "MAXIMO_ESFUERZO" },
       { especialista: "Editor", herramientas: "CapCut Web Creador IA", plan: "100% Free", fail_strategy: "FALLO_RAPIDO" },
-      { especialista: "Publicador", herramientas: "Make.com (1000 ops) + Buffer", plan: "Free Tier", hitl: "OBLIGATORIO" }
+      { especialista: "Publicador", herramientas: "Make.com (1000 ops) + Buffer", plan: "Free Tier", hitl: "OBLIGATORIO" },
+      { especialista: "Community Manager", herramientas: "Make.com (Free) + Buffer (Free) + Gemini", plan: "Free Tier", fail_strategy: "MAXIMO_ESFUERZO" },
+      { especialista: "Analista de Métricas", herramientas: "YouTube Analytics API + Qdrant Cloud + Gemini", plan: "Free Tier", fail_strategy: "MAXIMO_ESFUERZO" }
     ]
   });
 });
@@ -217,6 +221,17 @@ app.post("/v1/openclaw/hitl/aprobar", (req, res) => {
 
 app.get("/v1/openclaw/status", (req, res) => {
   res.json(openclawOrchestrator.getStatus());
+});
+
+app.get("/v1/openclaw/metricas", async (req, res) => {
+  const videoId = req.query.video_id || "hbos_master_render_2026";
+  const resultado = await openclawOrchestrator.getMetricas(videoId);
+  res.json(resultado);
+});
+
+app.get("/v1/openclaw/community", async (req, res) => {
+  const resultado = await openclawOrchestrator.getCommunity();
+  res.json(resultado);
 });
 
 app.get("/v1/openclaw/cpm", (req, res) => {
