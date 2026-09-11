@@ -16,6 +16,10 @@
     {
       "path": "/v1/health",
       "schedule": "0 0 * * *"
+    },
+    {
+      "path": "/v1/recursos/verificar",
+      "schedule": "0 1 * * *"
     }
   ]
 }

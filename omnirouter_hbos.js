@@ -304,6 +304,85 @@ app.post("/v1/openclaw/orchestrate", async (req, res) => {
   }
 });
 
+// ── ENDPOINTS DE DESCUBRIMIENTO DE RECURSOS EN LA MATRIX (DAG v17.0) ───
+app.get("/v1/recursos/voz", async (req, res) => {
+  const data = await vectorEngine.getRecursos("VOZ");
+  res.json({
+    ok: data.ok,
+    tipo: "VOZ",
+    total: data.total,
+    recursos: data.items,
+    timestamp: new Date().toISOString()
+  });
+});
+
+app.get("/v1/recursos/avatares", async (req, res) => {
+  const data = await vectorEngine.getRecursos("AVATAR");
+  const items = data.items || [];
+  res.json({
+    ok: data.ok,
+    tipo: "AVATAR",
+    total: data.total,
+    desglose: {
+      base: items.filter(i => (i.ruta || "").includes("/base/")).length,
+      slots: items.filter(i => (i.ruta || "").includes("/slots/")).length,
+      videos: items.filter(i => (i.ruta || "").includes("/videos/")).length
+    },
+    recursos: items,
+    timestamp: new Date().toISOString()
+  });
+});
+
+app.get("/v1/recursos/modelos", async (req, res) => {
+  const data = await vectorEngine.getRecursos("MODELO");
+  res.json({
+    ok: data.ok,
+    tipo: "MODELO",
+    total: data.total,
+    recursos: data.items,
+    timestamp: new Date().toISOString()
+  });
+});
+
+app.get("/v1/recursos/servicios", async (req, res) => {
+  const dataServicios = await vectorEngine.getRecursos("SERVICIO");
+  const dataHerramientas = await vectorEngine.getRecursos("HERRAMIENTA");
+  const todos = [...(dataServicios.items || []), ...(dataHerramientas.items || [])];
+  res.json({
+    ok: true,
+    total: todos.length,
+    activos: todos.filter(s => s.disponible === true),
+    descartados_de_pago: todos.filter(s => s.disponible === false),
+    recursos: todos,
+    timestamp: new Date().toISOString()
+  });
+});
+
+app.get("/v1/recursos/arbitraje", (req, res) => {
+  res.json({
+    principio: "No buscamos dos veces lo mismo. El descubrimiento se hace una vez, se registra en la Matrix (Qdrant) y se consulta siempre desde allí.",
+    regla_oro: "0 costo siempre. NUNCA pagar por cómputo GPU ni suscripciones.",
+    cadena_arbitraje_gpu: [
+      { prioridad: 1, proveedor: "Alibaba Model Studio", cuota: "90 días (Singapur)", estado: "PRIMARIO_ACTIVO" },
+      { prioridad: 2, proveedor: "Fal.ai", cuota: "Créditos iniciales free", estado: "SECUNDARIO_RESPALDO" },
+      { prioridad: 3, proveedor: "Google Colab", cuota: "T4 GPU Free", estado: "TERCIARIO_RESPALDO" },
+      { prioridad: 4, condicion: "Si todos se agotan", accion: "DETENER_Y_REPORTAR", regla: "NUNCA PAGAR" }
+    ],
+    costo_total: "$0.00",
+    servicios_descartados_por_pago: [
+      { nombre: "HeyGen", razon: "Plan de pago $29-$89/mes" },
+      { nombre: "D-ID", razon: "Cobro por crédito/minuto" },
+      { nombre: "Oracle Cloud", razon: "Tarjeta de crédito obligatoria" }
+    ],
+    timestamp: new Date().toISOString()
+  });
+});
+
+app.post("/v1/recursos/verificar", async (req, res) => {
+  const resultado = await vectorEngine.verificarRecursos();
+  res.json(resultado);
+});
+
 // ── ENDPOINTS TRAZABILIDAD QDRANT CLOUD (CAPA 4) ───────────────────────
 app.get("/v1/ecosistema/trazabilidad", async (req, res) => {
   const limit = Math.min(Number(req.query.limit) || 20, 100);

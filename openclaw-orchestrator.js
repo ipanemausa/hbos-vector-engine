@@ -1,8 +1,8 @@
 /**
- * OPENCLAW ORCHESTRATOR — HBOS v16.0
- * MAESTRÍA TOTAL + ARBITRAJE 0 COSTO + HITL + ALIBABA MODEL STUDIO GPU PRIMARIO (9 ESPECIALISTAS)
+ * OPENCLAW ORCHESTRATOR — HBOS v17.0
+ * MAESTRÍA TOTAL + DESCUBRIMIENTO AUTOMATIZADO + ARBITRAJE 0 COSTO (9 ESPECIALISTAS)
  * BLINDAJE 0 COSTO: Alibaba Model Studio (90D Free Quota) -> Fal.ai -> Google Colab
- * Wan 2.1/3.0 Video + Qwen TTS + Qwen LLM
+ * Wan 2.1/3.0 Video + Qwen TTS + Qwen LLM + Recursos Matrix
  * Estándar: Experto AleJaVi · HBOS Sovereign AI
  */
 
@@ -492,13 +492,13 @@ class AnalistaMetricasEspecialista {
   }
 }
 
-// ── ORQUESTADOR MAESTRO OPENCLAW v16.0 (ALIBABA MODEL STUDIO GPU PRIMARIO) ──
+// ── ORQUESTADOR MAESTRO OPENCLAW v17.0 (DESCUBRIMIENTO AUTOMATIZADO) ──
 
 class OpenClawOrchestrator {
   constructor() {
-    this.version = "16.0.0";
+    this.version = "17.0.0";
     this.protocolo = "R768 / R384";
-    this.estado = "OPENCLAW_ORCHESTRATOR_MAESTRIA_v16.0";
+    this.estado = "OPENCLAW_ORCHESTRATOR_MAESTRIA_v17.0";
     this.limitesDuros = HARD_LIMITS;
     this.arbitrajeMapa = ARBITRAJE_MAPA;
     this.destinoEjecucion = DESTINO_EJECUCION;
@@ -581,10 +581,10 @@ class OpenClawOrchestrator {
 
   getStatus() {
     return {
-      modulo: "OpenClaw Orchestrator v16.0",
+      modulo: "OpenClaw Orchestrator v17.0",
       version: this.version,
       estado: this.estado,
-      principio: "0 costo siempre con Alibaba Model Studio (Free quota 90 días).",
+      principio: "0 costo siempre. Descubrimiento automatizado registrado en la Matrix (Qdrant).",
       costo_operativo_total: "$0.00 (Blindaje GPU 0 Costo)",
       proveedor_gpu_primario: "Alibaba_Model_Studio",
       free_quota_90_dias: true,
@@ -710,7 +710,7 @@ class OpenClawOrchestrator {
 
     // Tarea 9: Trazabilidad en Qdrant Cloud
     const duracionMs = Date.now() - inicio;
-    const registro = await vectorEngine.registrarTrazabilidad("ORCHESTRATION_MAESTRIA_v16.0", {
+    const registro = await vectorEngine.registrarTrazabilidad("ORCHESTRATION_MAESTRIA_v17.0", {
       tema,
       categoria,
       patron,

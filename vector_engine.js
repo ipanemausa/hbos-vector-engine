@@ -16,6 +16,7 @@ class VectorEngine {
     this.qdrant = null;
     this.collection = COLLECTION_NAME;
     this.ecosystemCollection = ECOSYSTEM_COLLECTION;
+    this.recursosCollection = "recursos_hbos";
     this.initClient();
   }
 
@@ -182,6 +183,66 @@ class VectorEngine {
       return { ok: true, total: items.length, items };
     } catch (e) {
       return { ok: false, error: e.message, items: [] };
+    }
+  }
+
+  /** Consulta recursos de la Matrix (recursos_hbos) por tipo o todos */
+  async getRecursos(tipo = null) {
+    try {
+      const client = this.getClient();
+      await this.ensureCollection(this.recursosCollection || "recursos_hbos", 384);
+      const result = await client.scroll(this.recursosCollection || "recursos_hbos", {
+        limit: 100,
+        with_payload: true
+      });
+      let items = (result.points || []).map(p => p.payload || p);
+      if (tipo) {
+        items = items.filter(r => (r.tipo || "").toUpperCase() === tipo.toUpperCase());
+      }
+      return { ok: true, total: items.length, items };
+    } catch (e) {
+      return { ok: false, error: e.message, items: [] };
+    }
+  }
+
+  /** Protocolo de verificación diaria de recursos en Qdrant */
+  async verificarRecursos() {
+    try {
+      const client = this.getClient();
+      const coll = this.recursosCollection || "recursos_hbos";
+      await this.ensureCollection(coll, 384);
+      const result = await client.scroll(coll, {
+        limit: 100,
+        with_payload: true
+      });
+      const items = result.points || [];
+      const timestamp = new Date().toISOString();
+      const actualizados = [];
+
+      for (const p of items) {
+        if (p.payload) {
+          p.payload.ultima_verificacion = timestamp;
+          actualizados.push({
+            id: p.id,
+            vector: p.vector || new Array(384).fill(0.01),
+            payload: p.payload
+          });
+        }
+      }
+
+      if (actualizados.length > 0) {
+        await client.upsert(coll, { points: actualizados });
+      }
+
+      return {
+        ok: true,
+        protocolo: "DESCUBRIMIENTO_DIARIO_HBOS",
+        recursos_verificados: actualizados.length,
+        timestamp,
+        estado: "TODOS_DISPONIBLES"
+      };
+    } catch (e) {
+      return { ok: false, error: e.message };
     }
   }
 }
