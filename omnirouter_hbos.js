@@ -304,6 +304,26 @@ app.post("/v1/openclaw/orchestrate", async (req, res) => {
   }
 });
 
+// ── PIPELINE SIMPLIFICADO: 3 ESPECIALISTAS (DAG R768 v18.0) ───────────
+app.post("/v1/openclaw/video-simple", async (req, res) => {
+  try {
+    const { tema, avatar } = req.body || {};
+    const resultado = await openclawOrchestrator.generarVideoSimple({
+      tema: tema || "HBOS Sovereign AI - Primer video simplificado",
+      avatar: avatar || "guillermo_studio_mic.png"
+    });
+    res.json(resultado);
+  } catch (e) {
+    res.status(500).json({
+      ok: false,
+      error: "video_simple_failed",
+      detalle: e.message,
+      costo: "$0.00",
+      timestamp: new Date().toISOString()
+    });
+  }
+});
+
 // ── ENDPOINTS DE DESCUBRIMIENTO DE RECURSOS EN LA MATRIX (DAG v17.0) ───
 app.get("/v1/recursos/voz", async (req, res) => {
   const data = await vectorEngine.getRecursos("VOZ");
