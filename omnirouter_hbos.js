@@ -209,12 +209,37 @@ app.get("/v1/openclaw/arbitraje", (req, res) => {
   });
 });
 
+app.get("/v1/openclaw/alibaba-status", (req, res) => {
+  res.json({
+    proveedor: "Alibaba Model Studio",
+    region: "Singapur",
+    free_quota: {
+      video: "10-50 segundos por modelo",
+      tts: "110,000 caracteres",
+      llm: "1,000,000 tokens",
+      validez: "90 días desde activación"
+    },
+    modelos: {
+      video_t2v: "wan2.7-t2v-2026-06-12",
+      video_i2v: "wan2.7-i2v-2026-04-25",
+      video_r2v: "wan2.7-r2v-2026-06-12",
+      tts: "qwen3-tts-flash",
+      llm: "qwen3-max"
+    },
+    status: "READY",
+    regla: "0 costo con free quota 90 días",
+    timestamp: new Date().toISOString()
+  });
+});
+
 app.get("/v1/openclaw/gpu-status", (req, res) => {
   res.json({
     principio: "Todo cálculo pesado (GPU, vectorización, renderizado) vive en GPU Cloud.",
+    proveedor_primario: "Alibaba Model Studio (Singapur)",
     proveedores: {
-      fal_ai: { status: "READY", especialistas: ["narrador", "animador"] },
-      capcut_ia: { status: "READY", especialistas: ["editor"] }
+      alibaba_model_studio: { status: "READY", rol: "PRIMARIO", free_quota: "90 días", especialistas: ["narrador", "animador", "editor"] },
+      fal_ai: { status: "READY", rol: "SECUNDARIO_RESPALDO", especialistas: ["narrador", "animador"] },
+      google_colab: { status: "READY", rol: "TERCIARIO_RESPALDO", free_tier: "T4", especialistas: ["pruebas", "render"] }
     },
     especialistas_gpu: 3,
     especialistas_cpu: 6,
@@ -227,14 +252,14 @@ app.get("/v1/openclaw/gpu-status", (req, res) => {
 app.get("/v1/openclaw/gpu-arbitrage", (req, res) => {
   res.json({
     principio: "0 costo siempre. Si un proveedor agota, se cambia a otro.",
+    proveedor_primario: "Alibaba Model Studio (Free Quota 90 días)",
     proveedores: {
-      fal_ai: { status: "READY", free_tier: true, especialistas: ["narrador", "animador"] },
-      alibaba_model_studio: { status: "READY", free_quota: "90 dias", especialistas: ["video"] },
-      google_colab: { status: "READY", free_tier: "T4", especialistas: ["pruebas"] },
-      capcut_ia: { status: "READY", free_tier: true, especialistas: ["editor"] }
+      alibaba_model_studio: { status: "READY", rol: "PRIMARIO", free_quota: "90 dias", especialistas: ["narrador", "animador", "editor"] },
+      fal_ai: { status: "READY", rol: "SECUNDARIO_RESPALDO", free_tier: true, especialistas: ["narrador", "animador"] },
+      google_colab: { status: "READY", rol: "TERCIARIO_RESPALDO", free_tier: "T4", especialistas: ["pruebas"] }
     },
     regla_arbitraje: [
-      "Fal.ai → Alibaba Model Studio → Google Colab",
+      "Alibaba Model Studio → Fal.ai → Google Colab",
       "Si todos agotados → DETENER y reportar"
     ],
     costo_total: "$0.00",

@@ -1,7 +1,8 @@
 /**
- * OPENCLAW ORCHESTRATOR — HBOS v15.0
- * MAESTRÍA TOTAL + ARBITRAJE 0 COSTO + HITL + GPU CLOUD ARBITRAGE (9 ESPECIALISTAS)
- * BLINDAJE 0 COSTO EN GPU CLOUD: Fal.ai -> Alibaba Model Studio -> Google Colab
+ * OPENCLAW ORCHESTRATOR — HBOS v16.0
+ * MAESTRÍA TOTAL + ARBITRAJE 0 COSTO + HITL + ALIBABA MODEL STUDIO GPU PRIMARIO (9 ESPECIALISTAS)
+ * BLINDAJE 0 COSTO: Alibaba Model Studio (90D Free Quota) -> Fal.ai -> Google Colab
+ * Wan 2.1/3.0 Video + Qwen TTS + Qwen LLM
  * Estándar: Experto AleJaVi · HBOS Sovereign AI
  */
 
@@ -15,14 +16,32 @@ const HARD_LIMITS = {
   hitl_timeout_ms: 3600000 // 1 hora
 };
 
+// ── CONFIGURACIÓN ALIBABA MODEL STUDIO (PROVEEDOR GPU PRIMARIO) ──────
+const ALIBABA_MODEL_STUDIO = {
+  endpoint: "https://dashscope-intl.aliyuncs.com/api/v1/services/aigc/video-generation/video-synthesis",
+  api_key: process.env.DASHSCOPE_API_KEY,
+  modelos: {
+    video: "wan2.7-t2v-2026-06-12",      // Text-to-Video
+    video_i2v: "wan2.7-i2v-2026-04-25",  // Image-to-Video
+    video_r2v: "wan2.7-r2v-2026-06-12",  // Reference-to-Video
+    tts: "qwen3-tts-flash",              // Text-to-Speech
+    llm: "qwen3-max"                     // LLM
+  },
+  free_quota: {
+    video: "10-50 segundos por modelo",
+    tts: "110,000 caracteres",
+    llm: "1,000,000 tokens"
+  }
+};
+
 // ── MAPA DE ARBITRAJE $0 COSTO (Herramientas Validadas) ──────────────
 const ARBITRAJE_MAPA = {
   investigador:      { herramientas: ["VidIQ GPT (Free)", "Google Trends (Free)", "Antigravity Audit"], costo: 0, fail_strategy: "MAXIMO_ESFUERZO" },
   director_historia: { herramientas: ["NotebookLM (100% Free)", "Antigravity Gemini (Free Tier)", "LTX Studio"], costo: 0, fail_strategy: "FALLO_RAPIDO" },
   escritor:          { herramientas: ["Harpa AI (Chrome Extension)", "Antigravity Gemini (Free Tier)", "LTX Studio"], costo: 0, fail_strategy: "FALLO_RAPIDO" },
-  narrador:          { herramientas: ["ElevenLabs (Free Tier)", "NotebookLM (100% Free)"], costo: 0, fail_strategy: "FALLO_RAPIDO" },
-  animador:          { herramientas: ["Vidu IA (Free)", "Bedo (Free)", "Runway / Pika (Free Tiers)"], costo: 0, fail_strategy: "MAXIMO_ESFUERZO" },
-  editor:            { herramientas: ["CapCut Web (Creador de Videos IA - 100% Free)"], costo: 0, fail_strategy: "FALLO_RAPIDO" },
+  narrador:          { herramientas: ["Qwen TTS (Alibaba Free)", "ElevenLabs (Free Tier)", "NotebookLM"], costo: 0, fail_strategy: "FALLO_RAPIDO" },
+  animador:          { herramientas: ["Wan 2.7 Video (Alibaba Free)", "Vidu IA (Free)", "Bedo (Free)"], costo: 0, fail_strategy: "MAXIMO_ESFUERZO" },
+  editor:            { herramientas: ["Alibaba Video Synthesis (Free)", "CapCut Web IA"], costo: 0, fail_strategy: "FALLO_RAPIDO" },
   publicador:        { herramientas: ["Make.com (1000 ops/mes Free)", "Buffer (3 cuentas Free)"], costo: 0, fail_strategy: "MAXIMO_ESFUERZO", hitl_requerido: true },
   community_manager: { herramientas: ["Make.com (Free)", "Buffer (Free)", "Antigravity Gemini"], costo: 0, fail_strategy: "MAXIMO_ESFUERZO" },
   analista_metricas: { herramientas: ["YouTube Analytics API (Free)", "Qdrant Cloud", "Antigravity Gemini"], costo: 0, fail_strategy: "MAXIMO_ESFUERZO" }
@@ -33,9 +52,9 @@ const DESTINO_EJECUCION = {
   investigador:       { destino: "CPU_CLOUD", proveedor: "Vercel",    razon: "APIs ligeras", respaldo: null },
   escritor:           { destino: "CPU_CLOUD", proveedor: "Vercel",    razon: "Generación de texto", respaldo: null },
   director_historia:  { destino: "CPU_CLOUD", proveedor: "Vercel",    razon: "Estructura narrativa", respaldo: null },
-  narrador:           { destino: "GPU_CLOUD", proveedor: "Fal.ai",    razon: "Generación de voz", respaldo: "Alibaba_Model_Studio" },
-  animador:           { destino: "GPU_CLOUD", proveedor: "Fal.ai",    razon: "Generación de video", respaldo: "Alibaba_Model_Studio" },
-  editor:             { destino: "GPU_CLOUD", proveedor: "CapCut_IA", razon: "Renderizado", respaldo: "Google_Colab" },
+  narrador:           { destino: "GPU_CLOUD", proveedor: "Alibaba_Model_Studio", razon: "Qwen TTS", respaldo: "Fal.ai" },
+  animador:           { destino: "GPU_CLOUD", proveedor: "Alibaba_Model_Studio", razon: "Wan 2.1/3.0 Video", respaldo: "Fal.ai" },
+  editor:             { destino: "GPU_CLOUD", proveedor: "Alibaba_Model_Studio", razon: "Renderizado", respaldo: "Google_Colab" },
   publicador:         { destino: "CPU_CLOUD", proveedor: "Vercel",    razon: "APIs de publicación", respaldo: null },
   community_manager:  { destino: "CPU_CLOUD", proveedor: "Vercel",    razon: "APIs de redes", respaldo: null },
   analista_metricas:  { destino: "CPU_CLOUD", proveedor: "Vercel",    razon: "APIs de analytics", respaldo: null }
@@ -473,16 +492,17 @@ class AnalistaMetricasEspecialista {
   }
 }
 
-// ── ORQUESTADOR MAESTRO OPENCLAW v15.0 (GPU CLOUD ARBITRAGE + 9 ESPECIALISTAS) ──
+// ── ORQUESTADOR MAESTRO OPENCLAW v16.0 (ALIBABA MODEL STUDIO GPU PRIMARIO) ──
 
 class OpenClawOrchestrator {
   constructor() {
-    this.version = "15.0.0";
+    this.version = "16.0.0";
     this.protocolo = "R768 / R384";
-    this.estado = "OPENCLAW_ORCHESTRATOR_MAESTRIA_v15.0";
+    this.estado = "OPENCLAW_ORCHESTRATOR_MAESTRIA_v16.0";
     this.limitesDuros = HARD_LIMITS;
     this.arbitrajeMapa = ARBITRAJE_MAPA;
     this.destinoEjecucion = DESTINO_EJECUCION;
+    this.alibabaModelStudio = ALIBABA_MODEL_STUDIO;
 
     this.especialistas = {
       investigador: new InvestigadorEspecialista(),
@@ -501,9 +521,9 @@ class OpenClawOrchestrator {
 
   async verificarProveedorGPU(proveedor) {
     const proveedoresDisponibles = {
-      "Fal.ai": true,
-      "Alibaba_Model_Studio": true,
-      "Google_Colab": true,
+      "Alibaba_Model_Studio": true,  // Free quota 90 días
+      "Fal.ai": true,                // Créditos iniciales
+      "Google_Colab": true,          // Free T4
       "CapCut_IA": true
     };
     return proveedoresDisponibles[proveedor] || false;
@@ -561,23 +581,29 @@ class OpenClawOrchestrator {
 
   getStatus() {
     return {
-      modulo: "OpenClaw Orchestrator v15.0",
+      modulo: "OpenClaw Orchestrator v16.0",
       version: this.version,
       estado: this.estado,
-      principio: "0 costo siempre. Si un proveedor agota, se cambia a otro.",
+      principio: "0 costo siempre con Alibaba Model Studio (Free quota 90 días).",
       costo_operativo_total: "$0.00 (Blindaje GPU 0 Costo)",
+      proveedor_gpu_primario: "Alibaba_Model_Studio",
+      free_quota_90_dias: true,
       especialistas_registrados: Object.keys(this.especialistas).length,
       especialistas_gpu: 3,
       especialistas_cpu: 6,
       proveedores_gpu: {
-        primario: "Fal.ai",
-        secundario: "Alibaba_Model_Studio",
-        terciario: "Google_Colab",
-        editor: "CapCut_IA"
+        primario: "Alibaba_Model_Studio",
+        secundario: "Fal.ai",
+        terciario: "Google_Colab"
+      },
+      alibaba_model_studio: {
+        region: "Singapur",
+        modelos: ALIBABA_MODEL_STUDIO.modelos,
+        free_quota: ALIBABA_MODEL_STUDIO.free_quota
       },
       destino_ejecucion: this.destinoEjecucion,
       regla_arbitraje: [
-        "Fal.ai → Alibaba Model Studio → Google Colab",
+        "Alibaba Model Studio → Fal.ai → Google Colab",
         "Si todos agotados → DETENER y reportar"
       ],
       seguridad: {
@@ -647,13 +673,13 @@ class OpenClawOrchestrator {
       tema 
     });
 
-    // Tarea 3: Voz (GPU Cloud - Fal.ai con respaldo Alibaba)
+    // Tarea 3: Voz (GPU Cloud - Alibaba Model Studio Qwen TTS con respaldo Fal.ai)
     pipeline.audio = await this.enrutarEjecucionConRespaldo("narrador", { guion: pipeline.guion });
 
-    // Tarea 4: Animación (GPU Cloud - Fal.ai con respaldo Alibaba)
+    // Tarea 4: Animación (GPU Cloud - Alibaba Model Studio Wan 2.7 con respaldo Fal.ai)
     pipeline.clips = await this.enrutarEjecucionConRespaldo("animador", { guion: pipeline.guion });
 
-    // Tarea 5: Edición (GPU Cloud - CapCut IA con respaldo Colab)
+    // Tarea 5: Edición (GPU Cloud - Alibaba Model Studio Render con respaldo Colab)
     pipeline.edicion = await this.enrutarEjecucionConRespaldo("editor", { audio: pipeline.audio, clips: pipeline.clips });
 
     // Tarea 6: Publicación (CPU Cloud + HITL)
@@ -684,7 +710,7 @@ class OpenClawOrchestrator {
 
     // Tarea 9: Trazabilidad en Qdrant Cloud
     const duracionMs = Date.now() - inicio;
-    const registro = await vectorEngine.registrarTrazabilidad("ORCHESTRATION_MAESTRIA_v15.0", {
+    const registro = await vectorEngine.registrarTrazabilidad("ORCHESTRATION_MAESTRIA_v16.0", {
       tema,
       categoria,
       patron,
@@ -695,7 +721,9 @@ class OpenClawOrchestrator {
       especialistas_gpu: 3,
       especialistas_cpu: 6,
       gpu_arbitrage: true,
-      regla_arbitraje: "Fal.ai -> Alibaba Model Studio -> Google Colab",
+      proveedor_gpu_primario: "Alibaba_Model_Studio",
+      free_quota: "90 dias",
+      regla_arbitraje: "Alibaba Model Studio -> Fal.ai -> Google Colab",
       youtube_compliance: pipeline.direccion.compliance_youtube,
       arbitraje_activo: true
     });
@@ -716,6 +744,9 @@ class OpenClawOrchestrator {
       ok: true,
       operation_id: registro.operation_id || registro.fallback_op,
       version: this.version,
+      proveedor_gpu_primario: "Alibaba_Model_Studio",
+      free_quota_90_dias: true,
+      modelos_gpu: this.alibabaModelStudio.modelos,
       categoria,
       patron,
       costo_operativo: "$0.00",
