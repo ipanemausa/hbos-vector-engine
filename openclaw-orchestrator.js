@@ -1,7 +1,7 @@
 /**
- * OPENCLAW ORCHESTRATOR — HBOS v13.0
- * MAESTRÍA TOTAL + ARBITRAJE 0 COSTO + HITL + CONTRATOS TIPADOS
- * 9 ESPECIALISTAS AUTÓNOMOS + COMMUNITY MANAGER + ANALISTA MÉTRICAS
+ * OPENCLAW ORCHESTRATOR — HBOS v14.0
+ * MAESTRÍA TOTAL + ARBITRAJE 0 COSTO + HITL + GPU CLOUD + 9 ESPECIALISTAS
+ * DESTINO DE EJECUCIÓN HÍBRIDO: CPU CLOUD (Vercel) + GPU CLOUD (Fal.ai / CapCut)
  * Estándar: Experto AleJaVi · HBOS Sovereign AI
  */
 
@@ -26,6 +26,19 @@ const ARBITRAJE_MAPA = {
   publicador:        { herramientas: ["Make.com (1000 ops/mes Free)", "Buffer (3 cuentas Free)"], costo: 0, fail_strategy: "MAXIMO_ESFUERZO", hitl_requerido: true },
   community_manager: { herramientas: ["Make.com (Free)", "Buffer (Free)", "Antigravity Gemini"], costo: 0, fail_strategy: "MAXIMO_ESFUERZO" },
   analista_metricas: { herramientas: ["YouTube Analytics API (Free)", "Qdrant Cloud", "Antigravity Gemini"], costo: 0, fail_strategy: "MAXIMO_ESFUERZO" }
+};
+
+// ── DESTINO DE EJECUCIÓN (Capa Híbrida CPU Cloud vs GPU Cloud v14.0) ──
+const DESTINO_EJECUCION = {
+  investigador:       { destino: "CPU_CLOUD", proveedor: "Vercel",    razon: "APIs ligeras" },
+  escritor:           { destino: "CPU_CLOUD", proveedor: "Vercel",    razon: "Generación de texto" },
+  director_historia:  { destino: "CPU_CLOUD", proveedor: "Vercel",    razon: "Estructura narrativa" },
+  narrador:           { destino: "GPU_CLOUD", proveedor: "Fal.ai",    razon: "Generación de voz" },
+  animador:           { destino: "GPU_CLOUD", proveedor: "Fal.ai",    razon: "Generación de video" },
+  editor:             { destino: "GPU_CLOUD", proveedor: "CapCut_IA", razon: "Renderizado" },
+  publicador:         { destino: "CPU_CLOUD", proveedor: "Vercel",    razon: "APIs de publicación" },
+  community_manager:  { destino: "CPU_CLOUD", proveedor: "Vercel",    razon: "APIs de redes" },
+  analista_metricas:  { destino: "CPU_CLOUD", proveedor: "Vercel",    razon: "APIs de analytics" }
 };
 
 // ── ESPECIALISTAS CON CONTRATOS TIPADOS ESTRICTOS (Regla 0.1) ────────
@@ -369,6 +382,9 @@ class PublicadorEspecialista {
       herramienta_usada: "Make.com + Buffer"
     };
   }
+  async ejecutar(input) {
+    return await this.preparar(input);
+  }
 }
 
 class CommunityManagerEspecialista {
@@ -457,15 +473,16 @@ class AnalistaMetricasEspecialista {
   }
 }
 
-// ── ORQUESTADOR MAESTRO OPENCLAW v13.0 (9 ESPECIALISTAS) ──────────────
+// ── ORQUESTADOR MAESTRO OPENCLAW v14.0 (GPU CLOUD + 9 ESPECIALISTAS) ──
 
 class OpenClawOrchestrator {
   constructor() {
-    this.version = "13.0.0";
+    this.version = "14.0.0";
     this.protocolo = "R768 / R384";
-    this.estado = "OPENCLAW_ORCHESTRATOR_MAESTRIA_v13.0";
+    this.estado = "OPENCLAW_ORCHESTRATOR_MAESTRIA_v14.0";
     this.limitesDuros = HARD_LIMITS;
     this.arbitrajeMapa = ARBITRAJE_MAPA;
+    this.destinoEjecucion = DESTINO_EJECUCION;
 
     this.especialistas = {
       investigador: new InvestigadorEspecialista(),
@@ -482,14 +499,49 @@ class OpenClawOrchestrator {
     this.hitlPendientes = new Map();
   }
 
+  enrutarEjecucion(especialista) {
+    const ruta = DESTINO_EJECUCION[especialista];
+    if (!ruta) {
+      throw new Error(`[ENRUTAMIENTO] Especialista desconocido: ${especialista}`);
+    }
+    return ruta;
+  }
+
+  async ejecutarEnDestino(especialista, input) {
+    const ruta = this.enrutarEjecucion(especialista);
+    const especialistaInstance = this.especialistas[especialista];
+    
+    if (!especialistaInstance) {
+      throw new Error(`[PIPELINE] Especialista no registrado: ${especialista}`);
+    }
+    
+    let res;
+    if (ruta.destino === "GPU_CLOUD") {
+      res = await (especialistaInstance.ejecutar ? especialistaInstance.ejecutar({ ...input, gpu_cloud: true }) : especialistaInstance.preparar({ ...input, gpu_cloud: true }));
+    } else {
+      res = await (especialistaInstance.ejecutar ? especialistaInstance.ejecutar({ ...input, cpu_cloud: true }) : especialistaInstance.preparar({ ...input, cpu_cloud: true }));
+    }
+    if (res && typeof res === "object") {
+      res.destino_ejecucion = ruta;
+    }
+    return res;
+  }
+
   getStatus() {
     return {
-      modulo: "OpenClaw Orchestrator v13.0",
+      modulo: "OpenClaw Orchestrator v14.0",
       version: this.version,
       estado: this.estado,
-      principio: "No estamos inventando. Estamos adquiriendo tecnicas probadas y gratuitas.",
+      principio: "Antigravity es consola. GPU Cloud es motor. CPU Cloud es orquestador.",
       costo_operativo_total: "$0.00 (Arbitraje 100% Free Tiers)",
       especialistas_registrados: Object.keys(this.especialistas).length,
+      especialistas_gpu: 3,
+      especialistas_cpu: 6,
+      proveedores_gpu: {
+        fal_ai: ["narrador", "animador"],
+        capcut_ia: ["editor"]
+      },
+      destino_ejecucion: this.destinoEjecucion,
       seguridad: {
         jerarquia_instrucciones: "System > Developer > User",
         contratos_tipados: "STRICT_JSON_SCHEMAS",
@@ -529,7 +581,7 @@ class OpenClawOrchestrator {
   }
 
   /**
-   * Orquestación Completa con Pipeline de 9 Especialistas y HITL
+   * Orquestación Completa con Pipeline de 9 Especialistas Híbrido (CPU + GPU Cloud) y HITL
    */
   async orquestarMaestria(macroTarea) {
     const inicio = Date.now();
@@ -541,37 +593,39 @@ class OpenClawOrchestrator {
 
     const pipeline = {};
 
-    // Tarea 1: Investigación (Máximo Esfuerzo)
-    pipeline.investigacion = await this.especialistas.investigador.ejecutar({ tema });
+    // Tarea 1: Investigación (CPU Cloud)
+    pipeline.investigacion = await this.ejecutarEnDestino("investigador", { tema });
 
-    // Tarea 2: Dirección Narrativa & Compliance YouTube 2026 (Fallo Rápido)
-    pipeline.direccion = await this.especialistas.director_historia.ejecutar({ 
+    // Tarea 1.5: Dirección Narrativa & Compliance YouTube 2026 (CPU Cloud)
+    pipeline.direccion = await this.ejecutarEnDestino("director_historia", { 
       tema, 
       investigacion: pipeline.investigacion 
     });
 
-    // Tarea 3: Guión (Hereda Dirección Narrativa y Prompt Cronológico)
-    pipeline.guion = await this.especialistas.escritor.ejecutar({ 
+    // Tarea 2: Guión (CPU Cloud)
+    pipeline.guion = await this.ejecutarEnDestino("escritor", { 
       investigacion: pipeline.investigacion, 
       direccion: pipeline.direccion,
       tema 
     });
 
-    // Tarea 4: Voz (Fallo Rápido)
-    pipeline.audio = await this.especialistas.narrador.ejecutar({ guion: pipeline.guion });
+    // Tarea 3: Voz (GPU Cloud - Fal.ai)
+    pipeline.audio = await this.ejecutarEnDestino("narrador", { guion: pipeline.guion });
 
-    // Tarea 5: Animación (Máximo Esfuerzo)
-    pipeline.clips = await this.especialistas.animador.ejecutar({ guion: pipeline.guion });
+    // Tarea 4: Animación (GPU Cloud - Fal.ai)
+    pipeline.clips = await this.ejecutarEnDestino("animador", { guion: pipeline.guion });
 
-    // Tarea 6: Edición (Fallo Rápido)
-    pipeline.edicion = await this.especialistas.editor.ejecutar({ audio: pipeline.audio, clips: pipeline.clips });
+    // Tarea 5: Edición (GPU Cloud - CapCut IA)
+    pipeline.edicion = await this.ejecutarEnDestino("editor", { audio: pipeline.audio, clips: pipeline.clips });
 
-    // Tarea 7: Publicación (HITL Obligatorio con SEO Multimodal)
-    const publicacionHITL = await this.especialistas.publicador.preparar({ 
+    // Tarea 6: Publicación (CPU Cloud + HITL)
+    const publicacionHITL = await this.ejecutarEnDestino("publicador", { 
       guion: pipeline.guion, 
       edicion: pipeline.edicion,
       seo: pipeline.direccion?.seo_multimodal 
     });
+    pipeline.publicacion = publicacionHITL;
+
     const taskId = "hitl_" + Date.now();
     this.hitlPendientes.set(taskId, {
       macroTarea,
@@ -580,19 +634,19 @@ class OpenClawOrchestrator {
       creado_en: Date.now()
     });
 
-    // Tarea 8: Community Manager (Post-Publicación / Engagement)
-    pipeline.community = await this.especialistas.community_manager.ejecutar({
-      publicacion: publicacionHITL.payload_publicacion
+    // Tarea 7: Community Manager (CPU Cloud)
+    pipeline.community = await this.ejecutarEnDestino("community_manager", { 
+      publicacion: publicacionHITL.payload_publicacion 
     });
 
-    // Tarea 9: Analista de Métricas (Telemetría & Mejora Continua 24h)
-    pipeline.metricas = await this.especialistas.analista_metricas.ejecutar({
-      video_id: taskId
+    // Tarea 8: Analista de Métricas (CPU Cloud)
+    pipeline.metricas = await this.ejecutarEnDestino("analista_metricas", { 
+      video_id: taskId 
     });
 
-    // Tarea 10: Trazabilidad en Qdrant Cloud
+    // Tarea 9: Trazabilidad en Qdrant Cloud
     const duracionMs = Date.now() - inicio;
-    const registro = await vectorEngine.registrarTrazabilidad("ORCHESTRATION_MAESTRIA_v13.0", {
+    const registro = await vectorEngine.registrarTrazabilidad("ORCHESTRATION_MAESTRIA_v14.0", {
       tema,
       categoria,
       patron,
@@ -600,9 +654,23 @@ class OpenClawOrchestrator {
       hitl_task_id: taskId,
       duracion_ms: duracionMs,
       especialistas_involucrados: 9,
+      especialistas_gpu: 3,
+      especialistas_cpu: 6,
       youtube_compliance: pipeline.direccion.compliance_youtube,
       arbitraje_activo: true
     });
+
+    const desgloseDestinos = {
+      investigador: pipeline.investigacion.destino_ejecucion,
+      director_historia: pipeline.direccion.destino_ejecucion,
+      escritor: pipeline.guion.destino_ejecucion,
+      narrador: pipeline.audio.destino_ejecucion,
+      animador: pipeline.clips.destino_ejecucion,
+      editor: pipeline.edicion.destino_ejecucion,
+      publicador: pipeline.publicacion.destino_ejecucion,
+      community_manager: pipeline.community.destino_ejecucion,
+      analista_metricas: pipeline.metricas.destino_ejecucion
+    };
 
     return {
       ok: true,
@@ -613,6 +681,9 @@ class OpenClawOrchestrator {
       costo_operativo: "$0.00",
       duracion_total_ms: duracionMs,
       especialistas_ejecutados: 9,
+      especialistas_gpu: 3,
+      especialistas_cpu: 6,
+      desglose_destinos: desgloseDestinos,
       compliance_youtube: pipeline.direccion.compliance_youtube,
       estructura_narrativa: pipeline.direccion.estructura_narrativa,
       seo_multimodal: pipeline.direccion.seo_multimodal,

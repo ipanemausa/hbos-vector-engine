@@ -151,22 +151,21 @@ app.post("/v1/buscar", async (req, res) => {
   }
 });
 
-// ── ENDPOINTS OPENCLAW ORCHESTRATOR (CAPA 2) ──────────────────────────
-// ── ENDPOINTS DE ESPECIALISTAS Y PATRONES v13.0 (9 ESPECIALISTAS) ─────
+// ── ENDPOINTS DE ESPECIALISTAS Y PATRONES v14.0 (GPU CLOUD + 9 ESPECIALISTAS)
 app.get("/v1/openclaw/especialistas", (req, res) => {
   res.json({
     total: 9,
     principio: "Un solo agente no es especialista en todo. La maestria esta en la orquestacion.",
     especialistas: [
-      { id: 1, rol: "Investigador de Nicho y Tendencias", herramientas: ["VidIQ GPT", "Google Trends", "Antigravity"], output: "{ temas: [], viralidad_score: 0-10 }" },
-      { id: 2, rol: "Director de Historia y Cumplimiento de YouTube", herramientas: ["NotebookLM", "Antigravity Gemini", "LTX Studio"], output: "{ estructura_narrativa, compliance_youtube, seo_multimodal }" },
-      { id: 3, rol: "Escritor de Guiones y Estructuras", herramientas: ["Harpa AI", "Antigravity Gemini", "LTX Studio"], output: "{ titulo, escenas: [], duracion_estimada }" },
-      { id: 4, rol: "Narrador y Clonador de Voz", herramientas: ["ElevenLabs", "NotebookLM", "Google TTS"], output: "{ audio_url, duracion_segundos, emocion_detectada }" },
-      { id: 5, rol: "Animador y Generador de Clips", herramientas: ["Vidu IA", "Bedo", "Runway", "Pika"], output: "{ clips: [{ escena, url, duracion }] }" },
-      { id: 6, rol: "Editor y Post-Producción", herramientas: ["CapCut AI Studio", "DaVinci API"], output: "{ video_url, duracion_total, formatos_disponibles }" },
-      { id: 7, rol: "Publicador y Distribuidor", herramientas: ["Make.com", "Buffer", "Hootsuite"], output: "{ publicado: true, plataformas: [], metricas: {} }" },
-      { id: 8, rol: "Community Manager y Engagement", herramientas: ["Make.com", "Buffer", "Antigravity Gemini"], output: "{ comentarios_respondidos, engagement_generado, oportunidades_contenido }" },
-      { id: 9, rol: "Analista de Métricas y Mejora Continua", herramientas: ["YouTube Analytics API", "Qdrant Cloud", "Antigravity Gemini"], output: "{ video_id, metricas, analisis, recomendaciones }" }
+      { id: 1, rol: "Investigador de Nicho y Tendencias", destino: "CPU_CLOUD", proveedor: "Vercel", herramientas: ["VidIQ GPT", "Google Trends", "Antigravity"], output: "{ temas: [], viralidad_score: 0-10 }" },
+      { id: 2, rol: "Director de Historia y Cumplimiento de YouTube", destino: "CPU_CLOUD", proveedor: "Vercel", herramientas: ["NotebookLM", "Antigravity Gemini", "LTX Studio"], output: "{ estructura_narrativa, compliance_youtube, seo_multimodal }" },
+      { id: 3, rol: "Escritor de Guiones y Estructuras", destino: "CPU_CLOUD", proveedor: "Vercel", herramientas: ["Harpa AI", "Antigravity Gemini", "LTX Studio"], output: "{ titulo, escenas: [], duracion_estimada }" },
+      { id: 4, rol: "Narrador y Clonador de Voz", destino: "GPU_CLOUD", proveedor: "Fal.ai", herramientas: ["ElevenLabs", "NotebookLM", "Google TTS"], output: "{ audio_url, duracion_segundos, emocion_detectada }" },
+      { id: 5, rol: "Animador y Generador de Clips", destino: "GPU_CLOUD", proveedor: "Fal.ai", herramientas: ["Vidu IA", "Bedo", "Runway", "Pika"], output: "{ clips: [{ escena, url, duracion }] }" },
+      { id: 6, rol: "Editor y Post-Producción", destino: "GPU_CLOUD", proveedor: "CapCut_IA", herramientas: ["CapCut AI Studio", "DaVinci API"], output: "{ video_url, duracion_total, formatos_disponibles }" },
+      { id: 7, rol: "Publicador y Distribuidor", destino: "CPU_CLOUD", proveedor: "Vercel", herramientas: ["Make.com", "Buffer", "Hootsuite"], output: "{ publicado: true, plataformas: [], metricas: {} }" },
+      { id: 8, rol: "Community Manager y Engagement", destino: "CPU_CLOUD", proveedor: "Vercel", herramientas: ["Make.com", "Buffer", "Antigravity Gemini"], output: "{ comentarios_respondidos, engagement_generado, oportunidades_contenido }" },
+      { id: 9, rol: "Analista de Métricas y Mejora Continua", destino: "CPU_CLOUD", proveedor: "Vercel", herramientas: ["YouTube Analytics API", "Qdrant Cloud", "Antigravity Gemini"], output: "{ video_id, metricas, analisis, recomendaciones }" }
     ]
   });
 });
@@ -187,26 +186,41 @@ app.post("/v1/openclaw/orquestar", async (req, res) => {
     const resultado = await openclawOrchestrator.orquestarEspecialistas(req.body);
     res.json(resultado);
   } catch (e) {
-    res.status(500).json({ error: "orchestration_v13_failed", detalle: e.message });
+    res.status(500).json({ error: "orchestration_v14_failed", detalle: e.message });
   }
 });
 
-// ── ENDPOINTS ARBITRAJE 0 COSTO & HITL v13.0 ──────────────────────────
+// ── ENDPOINTS ARBITRAJE 0 COSTO & HITL v14.0 ──────────────────────────
 app.get("/v1/openclaw/arbitraje", (req, res) => {
   res.json({
     principio: "No estamos inventando. Estamos adquiriendo tecnicas probadas y gratuitas.",
     costo_total: "$0.00",
     arbitraje_herramientas: [
-      { especialista: "Investigador", herramientas: "VidIQ GPT + Google Trends", plan: "Free", fail_strategy: "MAXIMO_ESFUERZO" },
-      { especialista: "Director de Historia", herramientas: "NotebookLM + Antigravity Gemini + LTX Studio", plan: "Free / 100% YouTube Compliant", fail_strategy: "FALLO_RAPIDO" },
-      { especialista: "Escritor", herramientas: "Harpa AI + Antigravity Gemini", plan: "Free Tier", fail_strategy: "FALLO_RAPIDO" },
-      { especialista: "Narrador", herramientas: "ElevenLabs + NotebookLM", plan: "Free Tier (Caracteres/Mes)", fail_strategy: "FALLO_RAPIDO" },
-      { especialista: "Animador", herramientas: "Vidu IA + Bedo + Runway/Pika", plan: "Free Tiers", fail_strategy: "MAXIMO_ESFUERZO" },
-      { especialista: "Editor", herramientas: "CapCut Web Creador IA", plan: "100% Free", fail_strategy: "FALLO_RAPIDO" },
-      { especialista: "Publicador", herramientas: "Make.com (1000 ops) + Buffer", plan: "Free Tier", hitl: "OBLIGATORIO" },
-      { especialista: "Community Manager", herramientas: "Make.com (Free) + Buffer (Free) + Gemini", plan: "Free Tier", fail_strategy: "MAXIMO_ESFUERZO" },
-      { especialista: "Analista de Métricas", herramientas: "YouTube Analytics API + Qdrant Cloud + Gemini", plan: "Free Tier", fail_strategy: "MAXIMO_ESFUERZO" }
+      { especialista: "Investigador", herramientas: "VidIQ GPT + Google Trends", plan: "Free", fail_strategy: "MAXIMO_ESFUERZO", destino: "CPU_CLOUD" },
+      { especialista: "Director de Historia", herramientas: "NotebookLM + Antigravity Gemini + LTX Studio", plan: "Free / 100% YouTube Compliant", fail_strategy: "FALLO_RAPIDO", destino: "CPU_CLOUD" },
+      { especialista: "Escritor", herramientas: "Harpa AI + Antigravity Gemini", plan: "Free Tier", fail_strategy: "FALLO_RAPIDO", destino: "CPU_CLOUD" },
+      { especialista: "Narrador", herramientas: "ElevenLabs + NotebookLM", plan: "Free Tier (Caracteres/Mes)", fail_strategy: "FALLO_RAPIDO", destino: "GPU_CLOUD" },
+      { especialista: "Animador", herramientas: "Vidu IA + Bedo + Runway/Pika", plan: "Free Tiers", fail_strategy: "MAXIMO_ESFUERZO", destino: "GPU_CLOUD" },
+      { especialista: "Editor", herramientas: "CapCut Web Creador IA", plan: "100% Free", fail_strategy: "FALLO_RAPIDO", destino: "GPU_CLOUD" },
+      { especialista: "Publicador", herramientas: "Make.com (1000 ops) + Buffer", plan: "Free Tier", hitl: "OBLIGATORIO", destino: "CPU_CLOUD" },
+      { especialista: "Community Manager", herramientas: "Make.com (Free) + Buffer (Free) + Gemini", plan: "Free Tier", fail_strategy: "MAXIMO_ESFUERZO", destino: "CPU_CLOUD" },
+      { especialista: "Analista de Métricas", herramientas: "YouTube Analytics API + Qdrant Cloud + Gemini", plan: "Free Tier", fail_strategy: "MAXIMO_ESFUERZO", destino: "CPU_CLOUD" }
     ]
+  });
+});
+
+app.get("/v1/openclaw/gpu-status", (req, res) => {
+  res.json({
+    principio: "Todo cálculo pesado (GPU, vectorización, renderizado) vive en GPU Cloud.",
+    proveedores: {
+      fal_ai: { status: "READY", especialistas: ["narrador", "animador"] },
+      capcut_ia: { status: "READY", especialistas: ["editor"] }
+    },
+    especialistas_gpu: 3,
+    especialistas_cpu: 6,
+    total_especialistas: 9,
+    regla: "Antigravity es consola. GPU Cloud es motor.",
+    timestamp: new Date().toISOString()
   });
 });
 
