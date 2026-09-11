@@ -1,4 +1,4 @@
-﻿import express from "express";
+import express from "express";
 import cors from "cors";
 import { createHash } from "crypto";
 import vectorEngine from "./vector_engine.js";
@@ -152,18 +152,19 @@ app.post("/v1/buscar", async (req, res) => {
 });
 
 // ── ENDPOINTS OPENCLAW ORCHESTRATOR (CAPA 2) ──────────────────────────
-// ── ENDPOINTS DE ESPECIALISTAS Y PATRONES v5.1 ───────────────────────
+// ── ENDPOINTS DE ESPECIALISTAS Y PATRONES v11.0 ──────────────────────
 app.get("/v1/openclaw/especialistas", (req, res) => {
   res.json({
-    total: 6,
+    total: 7,
     principio: "Un solo agente no es especialista en todo. La maestria esta en la orquestacion.",
     especialistas: [
       { id: 1, rol: "Investigador de Nicho y Tendencias", herramientas: ["VidIQ GPT", "Google Trends", "Antigravity"], output: "{ temas: [], viralidad_score: 0-10 }" },
-      { id: 2, rol: "Escritor de Guiones y Estructuras", herramientas: ["Harpa AI", "Antigravity Gemini", "LTX Studio"], output: "{ titulo, escenas: [], duracion_estimada }" },
-      { id: 3, rol: "Narrador y Clonador de Voz", herramientas: ["ElevenLabs", "NotebookLM", "Google TTS"], output: "{ audio_url, duracion_segundos, emocion_detectada }" },
-      { id: 4, rol: "Animador y Generador de Clips", herramientas: ["Vidu IA", "Bedo", "Runway", "Pika"], output: "{ clips: [{ escena, url, duracion }] }" },
-      { id: 5, rol: "Editor y Post-Producción", herramientas: ["CapCut AI Studio", "DaVinci API"], output: "{ video_url, duracion_total, formatos_disponibles }" },
-      { id: 6, rol: "Publicador y Distribuidor", herramientas: ["Make.com", "Buffer", "Hootsuite"], output: "{ publicado: true, plataformas: [], metricas: {} }" }
+      { id: 2, rol: "Director de Historia y Cumplimiento de YouTube", herramientas: ["NotebookLM", "Antigravity Gemini", "LTX Studio"], output: "{ estructura_narrativa, compliance_youtube, seo_multimodal }" },
+      { id: 3, rol: "Escritor de Guiones y Estructuras", herramientas: ["Harpa AI", "Antigravity Gemini", "LTX Studio"], output: "{ titulo, escenas: [], duracion_estimada }" },
+      { id: 4, rol: "Narrador y Clonador de Voz", herramientas: ["ElevenLabs", "NotebookLM", "Google TTS"], output: "{ audio_url, duracion_segundos, emocion_detectada }" },
+      { id: 5, rol: "Animador y Generador de Clips", herramientas: ["Vidu IA", "Bedo", "Runway", "Pika"], output: "{ clips: [{ escena, url, duracion }] }" },
+      { id: 6, rol: "Editor y Post-Producción", herramientas: ["CapCut AI Studio", "DaVinci API"], output: "{ video_url, duracion_total, formatos_disponibles }" },
+      { id: 7, rol: "Publicador y Distribuidor", herramientas: ["Make.com", "Buffer", "Hootsuite"], output: "{ publicado: true, plataformas: [], metricas: {} }" }
     ]
   });
 });
@@ -184,17 +185,18 @@ app.post("/v1/openclaw/orquestar", async (req, res) => {
     const resultado = await openclawOrchestrator.orquestarEspecialistas(req.body);
     res.json(resultado);
   } catch (e) {
-    res.status(500).json({ error: "orchestration_v5_failed", detalle: e.message });
+    res.status(500).json({ error: "orchestration_v11_failed", detalle: e.message });
   }
 });
 
-// ── ENDPOINTS ARBITRAJE 0 COSTO & HITL v6.3 ───────────────────────────
+// ── ENDPOINTS ARBITRAJE 0 COSTO & HITL v11.0 ──────────────────────────
 app.get("/v1/openclaw/arbitraje", (req, res) => {
   res.json({
     principio: "No estamos inventando. Estamos adquiriendo tecnicas probadas y gratuitas.",
     costo_total: "$0.00",
     arbitraje_herramientas: [
       { especialista: "Investigador", herramientas: "VidIQ GPT + Google Trends", plan: "Free", fail_strategy: "MAXIMO_ESFUERZO" },
+      { especialista: "Director de Historia", herramientas: "NotebookLM + Antigravity Gemini + LTX Studio", plan: "Free / 100% YouTube Compliant", fail_strategy: "FALLO_RAPIDO" },
       { especialista: "Escritor", herramientas: "Harpa AI + Antigravity Gemini", plan: "Free Tier", fail_strategy: "FALLO_RAPIDO" },
       { especialista: "Narrador", herramientas: "ElevenLabs + NotebookLM", plan: "Free Tier (Caracteres/Mes)", fail_strategy: "FALLO_RAPIDO" },
       { especialista: "Animador", herramientas: "Vidu IA + Bedo + Runway/Pika", plan: "Free Tiers", fail_strategy: "MAXIMO_ESFUERZO" },
