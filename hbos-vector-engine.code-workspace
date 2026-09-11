@@ -1,0 +1,26 @@
+{
+  "folders": [
+    {
+      "path": "C:\\Users\\ipane\\hbos-deploy\\hbos-vector-engine"
+    }
+  ],
+  "settings": {
+    "terminal.integrated.defaultProfile.windows": "PowerShell",
+    "git.autofetch": false,
+    "files.autoSave": "afterDelay",
+    "editor.formatOnSave": true,
+    "files.exclude": {
+      "**/openclaw-operativo-2026": true,
+      "**/hb-jewelry": true,
+      "**/b jewelry": true,
+      "**/.legacy": true
+    }
+  },
+  "extensions": {
+    "recommendations": [
+      "dbaeumer.vscode-eslint",
+      "esbenp.prettier-vscode",
+      "ms-vscode.powershell"
+    ]
+  }
+}
