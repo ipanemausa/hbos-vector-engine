@@ -1,12 +1,86 @@
 import express from "express";
 import cors from "cors";
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
 import { createHash } from "crypto";
 import vectorEngine from "./vector_engine.js";
 import openclawOrchestrator from "./openclaw-orchestrator.js";
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 const app = express();
 app.use(cors());
 app.use(express.json());
+
+// ── SERVIDOR DE STREAMING DE MEDIOS (VIDEO, AUDIO, AVATARES) ──────────
+app.get("/media/:filename", (req, res) => {
+  try {
+    const filename = path.basename(req.params.filename);
+    const possiblePaths = [
+      path.join(__dirname, "media", filename),
+      path.join(process.cwd(), "media", filename),
+      path.join(__dirname, "assets", "avatars", "videos", filename),
+      path.join(__dirname, "assets", "voice", filename),
+      path.join(__dirname, "assets", "avatars", "base", filename)
+    ];
+
+    let targetPath = null;
+    for (const p of possiblePaths) {
+      if (fs.existsSync(p)) {
+        targetPath = p;
+        break;
+      }
+    }
+
+    if (!targetPath) {
+      return res.status(404).send(`Media no encontrada: ${filename}`);
+    }
+
+    const stat = fs.statSync(targetPath);
+    const fileSize = stat.size;
+    const range = req.headers.range;
+    const ext = path.extname(filename).toLowerCase();
+
+    const mimeTypes = {
+      ".mp4": "video/mp4",
+      ".wav": "audio/wav",
+      ".mp3": "audio/mpeg",
+      ".aac": "audio/aac",
+      ".png": "image/png",
+      ".jpg": "image/jpeg",
+      ".jpeg": "image/jpeg"
+    };
+    const contentType = mimeTypes[ext] || "application/octet-stream";
+
+    if (range) {
+      const parts = range.replace(/bytes=/, "").split("-");
+      const start = parseInt(parts[0], 10);
+      const end = parts[1] ? parseInt(parts[1], 10) : fileSize - 1;
+      const chunksize = (end - start) + 1;
+      const fileStream = fs.createReadStream(targetPath, { start, end });
+      res.writeHead(206, {
+        "Content-Range": `bytes ${start}-${end}/${fileSize}`,
+        "Accept-Ranges": "bytes",
+        "Content-Length": chunksize,
+        "Content-Type": contentType,
+        "Access-Control-Allow-Origin": "*"
+      });
+      fileStream.pipe(res);
+    } else {
+      res.writeHead(200, {
+        "Content-Length": fileSize,
+        "Content-Type": contentType,
+        "Accept-Ranges": "bytes",
+        "Access-Control-Allow-Origin": "*"
+      });
+      fs.createReadStream(targetPath).pipe(res);
+    }
+  } catch (err) {
+    res.status(500).send(`Error reproduciendo media: ${err.message}`);
+  }
+});
 
 const VECTOR_SIZE = 384;
 const GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-2:embedContent?key=" + (process.env.GEMINI_API_KEY || "");
