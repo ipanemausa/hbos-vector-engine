@@ -5,7 +5,7 @@
       "src": "omnirouter_hbos.js",
       "use": "@vercel/node",
       "config": {
-        "includeFiles": ["media/**"]
+        "includeFiles": ["media/**", "public/**"]
       }
     }
   ],

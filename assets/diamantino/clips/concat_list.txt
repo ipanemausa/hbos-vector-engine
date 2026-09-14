@@ -1,0 +1,6 @@
+file 'C:/Users/ipane/hbos-deploy/hbos-vector-engine/assets/diamantino/clips/ep01_plano_01.mp4'
+file 'C:/Users/ipane/hbos-deploy/hbos-vector-engine/assets/diamantino/clips/ep01_plano_02.mp4'
+file 'C:/Users/ipane/hbos-deploy/hbos-vector-engine/assets/diamantino/clips/ep01_plano_03.mp4'
+file 'C:/Users/ipane/hbos-deploy/hbos-vector-engine/assets/diamantino/clips/ep01_plano_04.mp4'
+file 'C:/Users/ipane/hbos-deploy/hbos-vector-engine/assets/diamantino/clips/ep01_plano_05.mp4'
+file 'C:/Users/ipane/hbos-deploy/hbos-vector-engine/assets/diamantino/clips/ep01_plano_06.mp4'

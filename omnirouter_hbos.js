@@ -15,12 +15,30 @@ app.use(cors());
 app.use(express.json());
 
 // ── SERVIDOR DE STREAMING DE MEDIOS (VIDEO, AUDIO, AVATARES) ──────────
-app.get("/media/:filename", (req, res) => {
+app.get(["/media/:filename", "/media/*"], (req, res) => {
   try {
-    const filename = path.basename(req.params.filename);
+    const rawPath = req.params[0] || req.params.filename || "";
+    const cleanPath = rawPath.replace(/^\/+/, "");
+    const filename = path.basename(cleanPath);
+
     const possiblePaths = [
+      // 1. Ruta exacta solicitada relativa a media y public/media
+      path.join(__dirname, "media", cleanPath),
+      path.join(process.cwd(), "media", cleanPath),
+      path.join(__dirname, "public", "media", cleanPath),
+      path.join(process.cwd(), "public", "media", cleanPath),
+      // 2. Subcarpeta diamantino específica
+      path.join(__dirname, "media", "diamantino", filename),
+      path.join(process.cwd(), "media", "diamantino", filename),
+      path.join(__dirname, "assets", "diamantino", "episodes", filename),
+      path.join(process.cwd(), "assets", "diamantino", "episodes", filename),
+      path.join(__dirname, "assets", "diamantino", "clips", filename),
+      path.join(__dirname, "assets", "diamantino", "audio", filename),
+      path.join(__dirname, "assets", "diamantino", "generated", filename),
+      // 3. Raíz de media
       path.join(__dirname, "media", filename),
       path.join(process.cwd(), "media", filename),
+      // 4. Avatares y voces
       path.join(__dirname, "assets", "avatars", "videos", filename),
       path.join(__dirname, "assets", "voice", filename),
       path.join(__dirname, "assets", "avatars", "base", filename)
