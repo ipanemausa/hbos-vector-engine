@@ -34,16 +34,33 @@ const ALIBABA_MODEL_STUDIO = {
   }
 };
 
+// ── CONFIGURACIÓN MUSE SPARK & AGENT (META AI & OPENCODE ZEN) ────────
+const MUSE_CONFIG = {
+  proveedor: "OpenCode_Zen",
+  base_url: "https://opencode.ai/zen/go/v1",
+  api_key: process.env.PI_AI_API_KEY || null,
+  modelos: {
+    razonamiento: "muse-spark-1.3-contributor",
+    agente_accion: "muse-agent-v1",
+    contexto_max: 1000000 // 1M tokens
+  },
+  tailscale: {
+    exit_node: "washington-exit-node",
+    region: "us-east-dc",
+    activo: false
+  }
+};
+
 // ── MAPA DE ARBITRAJE $0 COSTO (Herramientas Validadas) ──────────────
 const ARBITRAJE_MAPA = {
-  investigador:      { herramientas: ["VidIQ GPT (Free)", "Google Trends (Free)", "Antigravity Audit"], costo: 0, fail_strategy: "MAXIMO_ESFUERZO" },
-  director_historia: { herramientas: ["NotebookLM (100% Free)", "Antigravity Gemini (Free Tier)", "LTX Studio"], costo: 0, fail_strategy: "FALLO_RAPIDO" },
-  escritor:          { herramientas: ["Harpa AI (Chrome Extension)", "Antigravity Gemini (Free Tier)", "LTX Studio"], costo: 0, fail_strategy: "FALLO_RAPIDO" },
+  investigador:      { herramientas: ["Muse Spark 1.3 (OpenCode Zen)", "VidIQ GPT (Free)", "Google Trends (Free)", "Antigravity Audit"], costo: 0, fail_strategy: "MAXIMO_ESFUERZO" },
+  director_historia: { herramientas: ["Muse Spark 1.3 (1M context)", "NotebookLM (100% Free)", "Antigravity Gemini (Free Tier)", "LTX Studio"], costo: 0, fail_strategy: "FALLO_RAPIDO" },
+  escritor:          { herramientas: ["Muse Spark 1.3 (OpenCode Zen)", "Harpa AI (Chrome Extension)", "Antigravity Gemini (Free Tier)"], costo: 0, fail_strategy: "FALLO_RAPIDO" },
   narrador:          { herramientas: ["Qwen TTS (Alibaba Free)", "ElevenLabs (Free Tier)", "NotebookLM"], costo: 0, fail_strategy: "FALLO_RAPIDO" },
   animador:          { herramientas: ["Wan 2.7 Video (Alibaba Free)", "Vidu IA (Free)", "Bedo (Free)"], costo: 0, fail_strategy: "MAXIMO_ESFUERZO" },
   editor:            { herramientas: ["Alibaba Video Synthesis (Free)", "CapCut Web IA"], costo: 0, fail_strategy: "FALLO_RAPIDO" },
-  publicador:        { herramientas: ["Make.com (1000 ops/mes Free)", "Buffer (3 cuentas Free)"], costo: 0, fail_strategy: "MAXIMO_ESFUERZO", hitl_requerido: true },
-  community_manager: { herramientas: ["Make.com (Free)", "Buffer (Free)", "Antigravity Gemini"], costo: 0, fail_strategy: "MAXIMO_ESFUERZO" },
+  publicador:        { herramientas: ["Muse Agent v1", "Make.com (1000 ops/mes Free)", "Buffer (3 cuentas Free)"], costo: 0, fail_strategy: "MAXIMO_ESFUERZO", hitl_requerido: true },
+  community_manager: { herramientas: ["Muse Agent v1", "Make.com (Free)", "Buffer (Free)"], costo: 0, fail_strategy: "MAXIMO_ESFUERZO" },
   analista_metricas: { herramientas: ["YouTube Analytics API (Free)", "Qdrant Cloud", "Antigravity Gemini"], costo: 0, fail_strategy: "MAXIMO_ESFUERZO" }
 };
 
@@ -625,6 +642,7 @@ class OpenClawOrchestrator {
         limites_duros: this.limitesDuros
       },
       arbitraje: this.arbitrajeMapa,
+      muse_spark_agent: MUSE_CONFIG,
       hitl_activos: this.hitlPendientes.size,
       timestamp: new Date().toISOString()
     };
