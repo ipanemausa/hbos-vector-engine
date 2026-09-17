@@ -592,18 +592,63 @@ app.post("/webhook/telegram", async (req, res) => {
 });
 
 // ── ENDPOINT HEALTH CHECK & CRON WORKER 24/7 ──────────────────────────
-app.get(["/v1/health", "/api/health", "/health"], (req, res) => {
-  res.json({
-    status: "HEALTHY",
-    service: "HBOS OmniRouter Worker 24/7",
-    timestamp: new Date().toISOString(),
-    cron: "VERCEL_CRON_ACTIVE",
-    schedule: "0 0 * * *",
-    protocolo: "R768/R384",
-    uptime: process.uptime(),
-    vector_db: "Qdrant Cloud",
-    orchestrator: openclawOrchestrator.getStatus().estado
-  });
+app.get(["/v1/health", "/api/health", "/health"], async (req, res) => {
+  try {
+    let qdrantStatus = { ok: false, error: "NO_INIT" };
+    try {
+      qdrantStatus = await vectorEngine.checkConnection();
+    } catch (qe) {
+      qdrantStatus = { ok: false, error: qe.message };
+    }
+
+    const orchStatus = openclawOrchestrator ? openclawOrchestrator.getStatus() : { estado: "ACTIVO" };
+
+    res.json({
+      status: "HEALTHY",
+      service: "HBOS OmniRouter Worker 24/7",
+      timestamp: new Date().toISOString(),
+      cron: "VERCEL_CRON_ACTIVE",
+      schedule: "0 0 * * *",
+      protocolo: "R768/R384",
+      uptime_seconds: process.uptime(),
+      memory_usage: process.memoryUsage(),
+      vector_db: {
+        proveedor: "Qdrant Cloud",
+        conectado: qdrantStatus.ok,
+        total_colecciones: qdrantStatus.count || 0,
+        colecciones: qdrantStatus.collections || []
+      },
+      orchestrator: {
+        estado: orchStatus.estado || "OPERATIVO",
+        modulo: orchStatus.modulo || "A1 MUSE SPARK"
+      }
+    });
+  } catch (err) {
+    res.status(200).json({
+      status: "DEGRADED",
+      error: err.message,
+      timestamp: new Date().toISOString()
+    });
+  }
+});
+
+app.get(["/v1/recursos/verificar", "/api/recursos/verificar"], async (req, res) => {
+  try {
+    const resultado = await vectorEngine.verificarRecursos();
+    res.json({
+      status: "OK",
+      tarea: "verificacion_recursos_hbos",
+      timestamp: new Date().toISOString(),
+      resultado
+    });
+  } catch (err) {
+    res.status(500).json({
+      status: "ERROR",
+      tarea: "verificacion_recursos_hbos",
+      error: err.message,
+      timestamp: new Date().toISOString()
+    });
+  }
 });
 
 export default app;

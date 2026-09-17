@@ -1,0 +1,49 @@
+{
+  "episodio": "ep01",
+  "titulo": "La Tabla Periodica es una Mentira",
+  "duracion_total_segundos": 90,
+  "planos": [
+    {
+      "plano": 1,
+      "segundos": 15,
+      "descripcion": "Diamantino frente a tabla periodica holografica en laboratorio cuantico",
+      "imagen_base": "DIAMANTINO_HERO_01.png",
+      "clip_animado": "wan21_plano_01.mp4"
+    },
+    {
+      "plano": 2,
+      "segundos": 15,
+      "descripcion": "Diamantino sosteniendo atomo cuantico con electrones gema orbitando",
+      "imagen_base": "DIAMANTINO_PARTICULAS_02.png",
+      "clip_animado": "wan21_plano_02.mp4"
+    },
+    {
+      "plano": 3,
+      "segundos": 15,
+      "descripcion": "Diamantino disolviendose en ondas toroidales de luz cian violeta y dorada",
+      "imagen_base": "DIAMANTINO_ENERGIA_03.png",
+      "clip_animado": "wan21_plano_03.mp4"
+    },
+    {
+      "plano": 4,
+      "segundos": 15,
+      "descripcion": "Contraste grafito oscuro bajo presion vs diamante refractando espectro",
+      "imagen_base": "DIAMANTINO_CARBONO_02.png",
+      "clip_animado": "wan21_plano_04.mp4"
+    },
+    {
+      "plano": 5,
+      "segundos": 15,
+      "descripcion": "Microchip cuantico de diamante con compuertas doradas y circuitos neuronales",
+      "imagen_base": "DIAMANTINO_LOGICA_03.png",
+      "clip_animado": "wan21_plano_05.mp4"
+    },
+    {
+      "plano": 6,
+      "segundos": 15,
+      "descripcion": "Diamantino en cuspide cosmica con Tierra y Via Lactea de fondo",
+      "imagen_base": "DIAMANTINO_NUCLEO_01.png",
+      "clip_animado": "wan21_plano_06.mp4"
+    }
+  ]
+}

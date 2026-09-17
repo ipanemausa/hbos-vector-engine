@@ -1,0 +1,10 @@
+{
+  "ep_id": "ep02",
+  "titulo": "El Agente: Lo Que Huang Realmente Dijo",
+  "estado": "en_produccion",
+  "herramientas": ["DashScope", "ElevenLabs", "FFmpeg", "Vercel", "Qdrant"],
+  "personajes": ["diamantino", "rubi", "zafir", "citrilo", "obsidiana", "cuarzo", "amatista"],
+  "lecciones_aplicadas": [34],
+  "kv_cache": "vacio_al_iniciar",
+  "regla": "no_cargar_contexto_de_ep01_solo_lecciones_de_qdrant"
+}

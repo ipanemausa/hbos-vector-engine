@@ -1,0 +1,9 @@
+Orchestral cinematic sci-fi soundtrack, 90 seconds duration, 120 BPM, key of D minor.
+6 narrative blocks of 15s each:
+Block 1 (0-15s): Dark mysterious tension, deep synth sub-bass, organic ticking, scientific mystery.
+Block 2 (15-30s): Harmonic revelation, crystalline arpeggios, pulsing strings, atomic elegance.
+Block 3 (30-45s): Ascending cosmic energy, brass swell, choir vocalizations, radiant expansion.
+Block 4 (45-60s): Deep pressure and graphite clash, percussive transmutation, explosive prismatic drop.
+Block 5 (60-75s): Cybernetic quantum leap, hyper-fast electronic pulses, futuristic computational drive.
+Block 6 (75-90s): Epic cosmic manifesto climax, full orchestra, triumphant brass, soaring crystal synths.
+Audio master: 320 kbps, 48 kHz stereo, loudness normalized to EBU R128 (I=-16 LUFS, TP=-1.5 dBFS).

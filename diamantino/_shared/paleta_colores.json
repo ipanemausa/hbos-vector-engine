@@ -1,0 +1,21 @@
+{
+  "paleta_maestra": {
+    "diamante_primario": "#E0F7FA",
+    "diamante_destello_cian": "#00E5FF",
+    "diamante_reflejo_dorado": "#FFD700",
+    "rubi_carmesi": "#D50000",
+    "rubi_resplandor": "#FF1744",
+    "zafir_azul_profundo": "#0D47A1",
+    "zafir_cian_circuito": "#2979FF",
+    "citrilo_amarillo_electrico": "#FFD600",
+    "obsidiana_negro_espejo": "#121212",
+    "obsidiana_purpura": "#4A148C",
+    "cuarzo_blanco_puro": "#FFFFFF",
+    "amatista_violeta": "#AA00FF"
+  },
+  "iluminacion_cinematica": {
+    "key_light": "Foco direccional 5600K blanco puro con causticas de refraccion",
+    "fill_light": "Luz ambiental cian y violeta difusa",
+    "rim_light": "Luz dorada cálida 3200K para destacar bordes facetados"
+  }
+}

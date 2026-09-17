@@ -1,8 +1,41 @@
-node_modules/
+# Multimedia pesado (vive en Google Drive, no en Git)
+*.mp4
+*.mov
+*.avi
+*.wav
+*.mp3
+*.flac
+*.png
+*.jpg
+*.jpeg
+*.webp
+
+# Excepción: imágenes de documentación pequeñas
+!docs/**/*.png
+!docs/**/*.jpg
+
+# Temporales de producción
+*.tmp
+*.log
+*.cache
+scratch/
+temp/
+tmp/
+
+# Entornos y secretos
 .env
 .env.*
 !.env.example
-.vercel/
+*.key
+*.pem
+
+# Dependencias
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Sistema
 .DS_Store
-npm-debug.log*
-.env*
+Thumbs.db

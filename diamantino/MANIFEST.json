@@ -1,0 +1,31 @@
+{
+  "proyecto": "Universo Diamantino",
+  "entorno": "hbos-vector-engine",
+  "ultima_actualizacion": "2026-09-17T23:07:00.000Z",
+  "episodios": {
+    "ep01": {
+      "titulo": "La Tabla Periodica es una Mentira",
+      "estado": "completo",
+      "duracion": 90,
+      "archivado_en": "G:\\My Drive\\HBOS-Diamantino\\Ep01-LaTablaPeriodica",
+      "streaming": "https://hbos-vector-engine.vercel.app/media/diamantino/ep01.mp4",
+      "operation_id_qdrant": 34,
+      "peso_mb": 45.01
+    },
+    "ep02": {
+      "titulo": "El Agente: Lo Que Huang Realmente Dijo",
+      "estado": "guion_aprobado",
+      "duracion_objetivo": 300,
+      "personajes": ["diamantino", "rubi", "zafir", "citrilo", "obsidiana", "cuarzo", "amatista"],
+      "fase_actual": "produccion_imagenes",
+      "operation_id_qdrant_objetivo": 35
+    }
+  },
+  "guard_rails": {
+    "entorno_unico": "hbos-vector-engine",
+    "prohibidos": ["openclaw", "openclaw-operativo-2026", "hb-jewelry", "b jewelry"],
+    "multimedia_en_drive": true,
+    "git_solo_codigo": true,
+    "drive_carpeta": "G:\\My Drive\\HBOS-Diamantino"
+  }
+}

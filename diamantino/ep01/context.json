@@ -1,0 +1,15 @@
+{
+  "episodio": "ep01",
+  "titulo": "La Tabla Periodica es una Mentira",
+  "duracion_segundos": 90,
+  "planos": 6,
+  "fps": 30,
+  "resolucion": "1920x1080 Full HD",
+  "operation_id_qdrant": 34,
+  "coleccion": "registro_ecosistema",
+  "streaming_url": "https://hbos-vector-engine.vercel.app/media/diamantino/ep01.mp4",
+  "drive_path": "G:\\My Drive\\HBOS-Diamantino\\Ep01-LaTablaPeriodica",
+  "motor_animacion": "Wan 2.1 I2V Turbo (DashScope)",
+  "motor_audio": "ElevenLabs TTS + FFmpeg BGM orquestal loudnorm I=-16, TP=-1.5",
+  "costo_total": "$0 (cuotas libres)"
+}

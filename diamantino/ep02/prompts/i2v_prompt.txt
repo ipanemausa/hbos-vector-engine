@@ -1,0 +1,23 @@
+# PROMPTS MAESTROS WAN 2.1 I2V TURBO — EPISODIO 02
+
+MOTOR: Alibaba Model Studio DashScope (wan2.1-i2v-turbo)
+DURACIÓN BASE: 15s por clip (450 frames @ 30fps)
+TOTAL: 20 clips para ensamblar 300 segundos (5 minutos)
+
+BLOQUE 1:
+- Plano 01: "Silicio clásico con grietas y humo sobrecalentado junto a Grafito saturado de cadenas de texto brillantes, atmosfera oscura de datacenter colapsando, 15s, 30fps"
+- Plano 02: "Diamantino entrando con paso firme al centro del colapso, proyectando aura de proteccion cristalina, camara lenta cinematografica, 15s, 30fps"
+
+BLOQUE 2:
+- Plano 03: "Rack monolitico de cristal líquido activandose, Diamantino y Rubi sincronizando sus frecuencias de luz, 15s, 30fps"
+- Plano 04: "Zafir ordenando torrentes de tensores de memoria en estructuras cubicas flotantes de luz azul, 15s, 30fps"
+- Plano 05: "Citrilo acelerando a velocidad de rayo amarillo por conductos de fibra optica sin friccion, 15s, 30fps"
+- Plano 06: "Obsidiana conectando los 7 personajes mediante filamentos negros superconductores reflejantes, 15s, 30fps"
+
+BLOQUE 3:
+- Plano 07: "Inmersion macro en refrigeracion liquida fluyendo sobre chips de diamante y rubi con burbujas de calor controlado, 15s, 30fps"
+- Plano 08: "Buses masivos de 800 voltios directos zumbando con energia pura de color cian y violeta, 15s, 30fps"
+
+BLOQUE 4:
+- Plano 09: "Estacion de trabajo compacta RTX Spark en habitacion elegante, Diamantino proyectandose en holograma sobre el escritorio, 15s, 30fps"
+- Plano 10: "Los 7 personajes de gemas reunidos en circulo triunfal alrededor del globo terraqueo con la leyenda HBOS SOBERANO, 15s, 30fps"

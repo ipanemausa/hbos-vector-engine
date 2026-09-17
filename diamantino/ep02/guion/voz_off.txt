@@ -1,0 +1,94 @@
+================================================================================
+GUION CINEMATOGRÁFICO (5 MINUTOS / 300 SEGUNDOS)
+TÍTULO: "EL AGENTE: LO QUE HUANG REALMENTE DIJO"
+UNIVERSO DIAMANTINO — EPISODIO 02
+================================================================================
+
+REPARTO DE PERSONAJES:
+1. DIAMANTINO (Diamante cristalino) — Vera CPU — El Coordinador y Orquestador Central
+2. RUBÍ (Rubí carmesí incandescente) — Rubin GPU — El Razonador Profundo
+3. ZAFIR (Zafiro azul profundo) — BlueField-4 DPU — El Gestor de Memoria y KV Cache
+4. CITRILO (Citrino amarillo electrizante) — Groq 3 LPU — El Acelerador de Latencia Cero
+5. OBSIDIANA (Obsidiana negra reflectante) — NVLink 6 — El Conector Interno Ultrarrápido
+6. CUARZO (Cuarzo óptico transparente) — Spectrum-6 — El Conector Externo Global
+7. AMATISTA (Amatista violeta brillante) — ConnectX-9 — El Enlace de Red y Telemetría
+
+--------------------------------------------------------------------------------
+BLOQUE 1 (0:00 - 1:15) — EL PROBLEMA: SILICIO AGOTADO, GRAFITO SOBRECARGADO
+--------------------------------------------------------------------------------
+(Visual: Centro de cómputo colapsando. Niebla de calor, chispas rojas. El viejo Silicio está arrodillado con grietas en su chasis. Grafito tose cubierto de cadenas de tokens que se desbordan como ceniza).
+
+DIAMANTINO:
+"Miren a su alrededor. El Silicio clásico llegó a la pared térmica. La ley de Moore no murió por falta de ambición; murió asfixiada en calor. Y el pobre Grafito está ahogado bajo gigabytes de KV Cache que ninguna memoria estándar puede sostener.
+Todos creyeron que la inteligencia artificial se resolvería haciendo el chip más y más grande. Pero Jensen Huang subió al escenario y dijo la verdad incómoda: la IA útil ya no corre sobre un chip. Corre sobre una factoría completa. Corre sobre un sistema de agentes."
+
+EL SILICIO (Agotado):
+"No puedo disipar más vatios... las compuertas cuánticas se abren solas..."
+
+EL GRAFITO (Asfixiado):
+"Cada token que genera un LLM se acumula en mi espalda... Si el contexto supera cien mil tokens, mi memoria explota en latencia..."
+
+DIAMANTINO:
+"Tranquilos, hermanos. Su sacrificio abrió el camino. Pero hoy la computación deja de ser un monólogo para convertirse en una sinfonía de siete gemas cristalinas."
+
+--------------------------------------------------------------------------------
+BLOQUE 2 (1:15 - 2:30) — EL SISTEMA: 7 CHIPS, CADA UNO CON UNA FUNCIÓN
+--------------------------------------------------------------------------------
+(Visual: Aparece el rack monolítico de cristal líquido. Se iluminan los 7 personajes alrededor del núcleo holográfico).
+
+DIAMANTINO (Vera CPU):
+"Vera Rubin no es un procesador; es una federación. Yo soy Diamantino, Vera CPU. No compito por hacer multiplicaciones de matrices. Mi tarea es gobernar: orquestar agentes, planificar el DAG y mantener la soberanía del flujo de control."
+
+RUBÍ (Rubin GPU):
+"Y cuando la orquesta me da la entrada, yo entro al fuego. Soy Rubí, Rubin GPU. Mi propósito no es esperar en buffers: es el razonamiento denso, trillones de operaciones de coma flotante por segundo, resolviendo la física del pensamiento sintético."
+
+ZAFIR (BlueField-4 DPU):
+"Y mientras Rubí piensa, yo me aseguro de que jamás olvide ni tropiece. Soy Zafir, BlueField-4 DPU. Yo gestiono el KV Cache en tiempo real, transfiero tensores de memoria CMX directo a almacenamiento sin tocar la CPU. Grafito ya no se ahoga: yo descargo cada token en nanosegundos."
+
+CITRILO (Groq 3 LPU):
+"Pero pensar y recordar es inútil si la respuesta tarda dos segundos. ¡El agente moderno no tolera espera! Soy Citrilo, Groq 3 LPU. Cuando se requiere el primer token al instante, yo disparo a mil tokens por segundo. De throughput a latencia pura. ¡Cero espera!"
+
+OBSIDIANA (NVLink 6):
+"Y nada de esto funciona si estamos aislados. Soy Obsidiana, NVLink 6. Corro en las sombras del sustrato, entregando tres coma seis terabytes por segundo entre matrices. Dentro del rack, no hay distancia: todos somos el mismo átomo."
+
+CUARZO (Spectrum-6) & AMATISTA (ConnectX-9):
+CUARZO: "Y si el cluster necesita comunicarse con diez mil racks al otro lado del planeta, yo soy Cuarzo, Spectrum-6, canalizando fotónica de ochocientos gigabits sin pérdida de paquetes."
+AMATISTA: "Y yo soy Amatista, ConnectX-9, enlazando la telemetría del agente con la nube soberana. Siete piedras. Siete chips. Un solo organismo vivo."
+
+--------------------------------------------------------------------------------
+BLOQUE 3 (2:30 - 3:45) — INFRAESTRUCTURA: REFRIGERACIÓN LÍQUIDA + 800 VDC
+--------------------------------------------------------------------------------
+(Visual: Primer plano de tuberías de fluoropolímero brillante donde circula líquido refrigerante directo al chip. Transformadores masivos zumbando a 800 voltios directos sin pérdidas de conversión).
+
+DIAMANTINO:
+"Miren la física real de la que nadie habla en los titulares. No puedes alimentar una mente sintética con cablecitos de cobre de doce voltios. La densidad de Vera Rubin demanda un salto electromagnético: ochocientos voltios de corriente directa directamente en el bus."
+
+RUBÍ:
+"Mil seiscientos vatios por zócalo. El aire tradicional es un chiste: no puede enfriar este nivel de densidad de cálculo. Aquí el calor se domeña con refrigeración líquida directa sobre la matriz de cristal. El líquido pasa hirviendo sobre mi superficie y se lleva el calor a intercambiadores de circuito cerrado."
+
+ZAFIR:
+"Eficiencia termodinámica del noventa y nueve por ciento. Cero ruido de ventiladores estridentes. La factoría de IA de Huang no es un datacenter: es una planta eléctrica de cristal donde cada julio de energía se convierte en tokens de inteligencia estructurada."
+
+OBSIDIANA:
+"Sin cuello de botella de cobre. Cobre pasivo para distancias de centímetros, fotónica de silicio para el resto. La arquitectura física es tan elegante como la ecuación que la diseñó."
+
+--------------------------------------------------------------------------------
+BLOQUE 4 (3:45 - 5:00) — LA NUEVA PC: RTX SPARK, EL AGENTE LOCAL 24/7
+--------------------------------------------------------------------------------
+(Visual: Transición desde el macro datacenter a una estación de trabajo futurista y compacta sobre un escritorio de madera noble. Diamantino aparece en miniatura sobre la caja RTX Spark, proyectando un aura dorada).
+
+DIAMANTINO:
+"Pero la revelación más profunda de Jensen Huang no fue solo sobre los clusters titánicos. Fue sobre lo que tendrás frente a tus ojos. Dijo: 'La PC no ha muerto; la PC se reinventa por completo'.
+Nace la era de RTX Spark. El agente ya no es un chatbot que vive en un servidor ajeno cobrándote cada token y leyendo tus secretos."
+
+CITRILO:
+"El modelo pequeño de lenguaje, destilado y cuantizado en memoria unificada local, corre a cientos de palabras por segundo en tu propia máquina."
+
+ZAFIR:
+"Tu memoria vectorial, tu historia de vida, tus archivos de diseño, todo indexado localmente en tu propio almacén cuántico. Cero latencia, cien por ciento soberanía."
+
+DIAMANTINO:
+"El Silicio viejo se queda como cimiento noble de silicio y tierra. Pero el futuro corre sobre gemas, sobre cristales, sobre agentes autónomos que trabajan para ti mientras duermes, orquestando tus ideas en la nube y ejecutando tus decisiones en la Tierra.
+No estás usando una computadora. Estás comandando un ecosistema soberano.
+Yo soy Diamantino. Y esto no es el futuro: es el presente de HBOS. Bienvenidos a la era del agente."
+(Fade out con acorde triunfal de BGM orquestal y logotipo brillante de HBOS SOBERANO).

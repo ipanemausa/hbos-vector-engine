@@ -1,0 +1,20 @@
+MODELO MOTOR: Alibaba DashScope wan2.1-i2v-turbo (Internacional)
+RESOLUCIÓN NATIVA: 960x960 30fps -> Post-adaptación FFmpeg a 1920x1080 Full HD (boxblur)
+
+PLANO 01:
+"Diamantino diamante antropomorfico Pixar 3D de pie en laboratorio cuantico frente a tabla periodica holografica gigante de cristal, gesticulando hacia la camara, movimiento fluido de camara cinemática, destellos de luz refractada, 15s, 30fps"
+
+PLANO 02:
+"Diamantino diamante antropomórfico Pixar 3D, sosteniendo átomo cuántico con electrones gema orbitando, estelas lumínicas, movimiento orgánico, 15s, 720p, 30fps"
+
+PLANO 03:
+"Diamantino disolviéndose en ondas toroidales de luz cian violeta y dorada, energía pura, movimiento fluido, 15s, 720p, 30fps"
+
+PLANO 04:
+"Contraste grafito oscuro bajo presión vs diamante refractando espectro completo, transformación de carbon amorfo a prisma de cristal puro, 15s, 720p, 30fps"
+
+PLANO 05:
+"Microchip cuántico de diamante con compuertas doradas y circuitos neuronales iluminados, inmersión macro, pulsos de datos fotónicos, 15s, 720p, 30fps"
+
+PLANO 06:
+"Diamantino en cúspide cósmica con Tierra y Vía Láctea, aura completa, Jordan doradas, alejamiento revelador épico, 15s, 720p, 30fps"
