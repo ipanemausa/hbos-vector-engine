@@ -1,0 +1,30 @@
+[
+  {
+    "formato": "16:9 Landscape (YouTube, LinkedIn, Web)",
+    "archivo": "ep02_master_v3_16x9.mp4",
+    "ruta": "G:\\My Drive\\HBOS-Diamantino\\Ep02-Los7Chips\\06_Publicado\\formatos\\ep02_master_v3_16x9.mp4",
+    "bytes": 105237551,
+    "mb": 100.36
+  },
+  {
+    "formato": "9:16 Vertical (TikTok, Reels, Shorts)",
+    "archivo": "ep02_master_v3_9x16.mp4",
+    "ruta": "G:\\My Drive\\HBOS-Diamantino\\Ep02-Los7Chips\\06_Publicado\\formatos\\ep02_master_v3_9x16.mp4",
+    "bytes": 70025067,
+    "mb": 66.78
+  },
+  {
+    "formato": "1:1 Square (Instagram Feed)",
+    "archivo": "ep02_master_v3_1x1.mp4",
+    "ruta": "G:\\My Drive\\HBOS-Diamantino\\Ep02-Los7Chips\\06_Publicado\\formatos\\ep02_master_v3_1x1.mp4",
+    "bytes": 51716861,
+    "mb": 49.32
+  },
+  {
+    "formato": "4:5 Portrait (Instagram Portrait)",
+    "archivo": "ep02_master_v3_4x5.mp4",
+    "ruta": "G:\\My Drive\\HBOS-Diamantino\\Ep02-Los7Chips\\06_Publicado\\formatos\\ep02_master_v3_4x5.mp4",
+    "bytes": 56924043,
+    "mb": 54.29
+  }
+]

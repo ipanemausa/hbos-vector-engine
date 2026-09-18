@@ -9,6 +9,8 @@
 *.jpg
 *.jpeg
 *.webp
+*.gif
+ep02_preview.gif
 
 # Excepción: imágenes de documentación pequeñas
 !docs/**/*.png
