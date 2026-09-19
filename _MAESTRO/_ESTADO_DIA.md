@@ -1,7 +1,7 @@
 # REPORTE OFICIAL DE ESTADO DEL DÍA — HBOS-DIAMANTINO
 **Fecha:** 2026-09-19  
 **Estado General:** OPERATIVO  
-**Trazabilidad Canónica:** Operation IDs 45 a 189  
+**Trazabilidad Canónica:** Operation IDs 45 a 203  
 **Gobernanza:** P-01 a P-54 · L-01 a L-40  
 
 ---
@@ -9,13 +9,13 @@
 ## 1. ESTADO DE EPISODIOS
 - **EP02:** Masters v3/v4/v5 consolidados + 4 formatos responsive (16:9, 9:16, 1:1, 4:5) + GIFs preview + HTML5 embed
 - **EP03:** Masters v1/v2 consolidados + 4 formatos responsive (16:9, 9:16, 1:1, 4:5) + GIF preview + HTML5 embed
-- **EP04:** Preproducción 100% (guion v2 auditado P-15, storyboard v2 10 planos, composiciones Wan 2.1, BGM master 180s, thumbnails). Clips Wan 2.1 00 y 01 listos. Planos 02-09 pausados por cuota.
+- **EP04:** 10 voces masterizadas EBU R128 (-14 LUFS, 258.70s). Fondo biocuántico P-12 listo. Clips 00 y 01 listos. Planos 02-09 pausados por cuota DashScope. Cero humo.
 
 ## 2. SALUD DE CUOTAS Y SERVICIOS EN NUBE
 - **ELEVENLABS:** 9 créditos restantes (agotada ciclo mensual)
-- **DASHSCOPE:** HTTP 403 FreeTierOnly (agotada en Wan 2.1)
+- **DASHSCOPE:** HTTP 403 FreeTierOnly (agotada en Wan 2.1 para planos 02-09)
 - **GEMINI:** HTTP 200 OK (50 modelos activos)
-- **FREELLMAPI:** Instalado portable v0.11.0 en Sandbox (285 archivos)
+- **FREELLMAPI:** Activo daemon localhost:3001 (237 modelos LLM disponibles)
 
 ## 3. CATÁLOGO DE AGENTES ACTIVOS
 - ALEJAVI (ID=1, Orquestador Supremo)
@@ -42,29 +42,35 @@
 12. Estandarización de colección diamantino_agentes e indexación de agentes 1 al 6 (ops 147-148)
 13. Documentación e indexación de Manus AI y DeepSeek Harness (ops 155-158)
 14. Creación de P-53, P-54, L-39, L-40 (op 165)
-15. Verificación de requisitos FreeLLMAPI en Sandbox (op 166)
-16. Ejecución y validación FreeLLMAPI en Sandbox (op 167) - OK
-17. Creación de colección hbos_directorio con 7 componentes (op 172)
-18. Creación y verificación MCP hbos-freellmapi (op 173)
-19. Protocolo de búsqueda en cascada documentado y vectorizado (op 174)
-20. Prompt Paramount v6.0 consolidado y sincronizado (op 175)
-21. Reporte Final Integración Antigravity + FreeLLMAPI + MCP + Directorio (op 176)
-22. Matriz de casos de uso (7 tareas) indexada en Qdrant (op 177)
-23. Colección hbos_metricas creada con esquema de ahorro R768 (op 178)
-24. Orquestador de modelos creado y probado con tarea dummy (op 179)
-25. Cálculo de arbitraje de modelos y tokens consolidado (op 180)
-26. Orquestación técnica y arbitraje de Ep04 procesados (op 181)
-27. Cálculo de arbitraje de modelos y tokens consolidado (op 180)
-28. Cierre del DAG R768 Métricas, Orquestación y Arbitraje (op 182)
-29. Generación de 10 voces y voiceover master Ep04 (-14 LUFS) (ops 183-184)
-30. Concepto Anchor v2.0 documentado y sincronizado (op 185)
-31. Documento de mejora de voz y parámetros acústicos sincronizado (op 186)
-32. Documento de mejora de temas y estructura de guiones sincronizado (op 187)
-33. Documento de mejora de calidad broadcast y multiformato sincronizado (op 188)
-34. Consolidación de Ep04 (10 voces, master) y Documentación Anchor v2 (op 189)
+15. Verificación y ejecución FreeLLMAPI en Sandbox (ops 166-167)
+16. Creación de colección hbos_directorio con 7 componentes (op 172)
+17. Creación y verificación MCP hbos-freellmapi (op 173)
+18. Protocolo de búsqueda en cascada documentado y vectorizado (op 174)
+19. Prompt Paramount v6.0 consolidado y sincronizado (op 175)
+20. Matriz de casos de uso (7 tareas) indexada en Qdrant (op 177)
+21. Colección hbos_metricas creada con esquema de ahorro R768 (op 178)
+22. Orquestador de modelos creado y probado con tarea dummy (op 179)
+23. Cálculo de arbitraje de modelos y tokens consolidado (op 180)
+24. Orquestación técnica y arbitraje de Ep04 procesados (op 181)
+25. Generación de 10 voces y voiceover master Ep04 (-14 LUFS) (ops 183-184)
+26. Concepto Anchor v2.0 documentado y sincronizado (op 185)
+27. Documento de mejora de voz y parámetros acústicos sincronizado (op 186)
+28. Documento de mejora de temas y estructura de guiones sincronizado (op 187)
+29. Documento de mejora de calidad broadcast y multiformato sincronizado (op 188)
+30. Verificación P-14 (320 movimientos) y P-12 (Backgrounds temáticos) (op 193)
+31. Verificación en triple redundancia de documentos maestros (op 194)
+32. Pendientes de mañana con integración P-14 y P-12 sincronizados (op 195)
+33. Prompt Paramount v6 actualizado con P-14 y P-12 verificado en 3 destinos (op 196)
+34. Integración formal de P-14 y P-12 en Prompt Paramount v6 y memoria (op 197)
+35. Reporte de integración P-14 + P-12 (op 198)
+36. Orquestador recibe producir_video_ep04 y descompone en 4 subtareas (op 199)
+37. Orquestador decide modelos y audita cuotas en tiempo real (op 200)
+38. Orquestador ejecuta subtareas y reporta pausa de cuota en video (op 201)
+39. Registro de métricas en hbos_metricas y arbitraje consolidado (op 202)
+40. Cierre del DAG R768 y reporte consolidado de orquestación (op 203)
 
 ## 5. PENDIENTES PRIORITARIOS
-[1] Reanudar planos 02 al 09 de Ep04 tras renovación de cuota Wan 2.1
-[2] Sintetizar voces de Ep04 en ElevenLabs o CosyVoice2
-[3] Ensamblado final de Ep04 con ducking P-05 y master -14 LUFS P-04 v2
-[4] Generar formatos responsive y kit de thumbnails de Ep04
+[1] [1] Recargar o renovar cuota DashScope Wan 2.1 para renderizar planos 02 al 09 de Ep04
+[2] [2] Ensamblado final 10/10 planos con master de voz (-14 LUFS) y BGM al 30% con ducking P-05
+[3] [3] Exportación multiformato responsive (16:9, 9:16, 1:1, 4:5) y kit de thumbnails de Ep04
+[4] [4] Iniciar preproducción técnica de Ep05 con background temático metamateriales P-12
