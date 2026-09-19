@@ -1,0 +1,79 @@
+{
+  "episodio": "Ep04-MedicineAgentica",
+  "titulo": "La Era Agéntica en Medicina: Nobel de Química 2024",
+  "background_tematico": "bg_biocuantico_alphafold_gtc.png",
+  "planos": [
+    {
+      "plano": 0,
+      "personaje": "Diamantino (Editorial)",
+      "duracion_seg": 5.0,
+      "tipo": "Nota de Referencia P-17",
+      "movimiento_p14": "cabeza_asentir_arriba_30",
+      "desplazamiento_p16": "placa_editorial_sobria",
+      "prompt_wan21": "Clean scientific disclaimer title card with glowing crystalline frame, subtle blue quantum particles, acknowledging Google DeepMind and Nobel Prize authors with extreme prestige"
+    },
+    {
+      "plano": 1,
+      "personaje": "Diamantino",
+      "movimiento_p14": "cabeza_asentir_arriba_30",
+      "desplazamiento_p16": "caminar_frontal_keynote",
+      "prompt_wan21": "Diamantino host walks smoothly forward on high-tech keynote stage, displaying Nobel Chemistry 2024 molecular holographic projections, crystalline diamond facets reflecting deep blue stage lights, cinematic 8K 3D animation"
+    },
+    {
+      "plano": 2,
+      "personaje": "Rubín",
+      "movimiento_p14": "brazos_explicar_adelante",
+      "desplazamiento_p16": "traslacion_lateral_racks",
+      "prompt_wan21": "Rubin ruby humanoid moves towards large molecular protein structure hologram, gesturing emphatically at 3D folding bonds, pulsing crimson light across mechanical joints"
+    },
+    {
+      "plano": 3,
+      "personaje": "Zafir",
+      "movimiento_p14": "manos_senalar_pantalla",
+      "desplazamiento_p16": "avance_analitico_frontal",
+      "prompt_wan21": "Zafir sapphire host gestures towards AlphaMissense DNA helix and AlphaProteo synthetic binder models, authoritative and serene demeanor, gleaming blue mineral refractions"
+    },
+    {
+      "plano": 4,
+      "personaje": "Esmeralda",
+      "movimiento_p14": "manos_operar_consola",
+      "desplazamiento_p16": "paso_firme_consola",
+      "prompt_wan21": "Esmeralda operates floating emerald holograms showing Evoformer attention matrices and tensor representations, precise executive hand kinematics"
+    },
+    {
+      "plano": 5,
+      "personaje": "Citrilo",
+      "movimiento_p14": "cabeza_girar_izq_45",
+      "desplazamiento_p16": "marcha_dinamica_diagonal",
+      "prompt_wan21": "Citrilo host walks briskly with amber energy pulses, presenting Isomorphic Labs drug discovery acceleration timeline, dynamic keynote lighting"
+    },
+    {
+      "plano": 6,
+      "personaje": "Grafito",
+      "movimiento_p14": "cabeza_mirar_frente_firme",
+      "desplazamiento_p16": "desplazamiento_sobrio_racks",
+      "prompt_wan21": "Grafito steps forward from subtle shadows, pointing solemnly to open-access global map with 190 countries, platinum and graphite reflections"
+    },
+    {
+      "plano": 7,
+      "personaje": "Amatista",
+      "movimiento_p14": "brazos_abrir_zenit",
+      "desplazamiento_p16": "traslacion_serena_escenario",
+      "prompt_wan21": "Amatista extends hands gracefully as violet photonic waves visualize cures for malaria and tuberculosis, compassionate and sovereign posture"
+    },
+    {
+      "plano": 8,
+      "personaje": "Diamantino (Recap)",
+      "movimiento_p14": "manos_sostener_orbe",
+      "desplazamiento_p16": "avance_central_monumental",
+      "prompt_wan21": "Diamantino holding glowing golden molecular sphere in hand, speaking directly to camera with supreme authority, 200M proteins visualized in background"
+    },
+    {
+      "plano": 9,
+      "personaje": "Ensemble Cierre",
+      "movimiento_p14": "brazos_saludar_audiencia",
+      "desplazamiento_p16": "pose_ensemble_estatica_dinamica",
+      "prompt_wan21": "Monumental wide angle of Diamantino and the 7 mineral hosts bowing and saluting audience with gratitude, stage lights gently dimming to smooth fade out"
+    }
+  ]
+}

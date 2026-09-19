@@ -52,7 +52,8 @@ FLUJO DE EJECUCIÓN LINEAL (DENTRO DEL EPISODIO):
 [FASE B] Validar retratos de personajes y generar el background temático en 02_Storyboard/backgrounds/ (Patrón P-12).
 [FASE C] Sintetizar voces neuronales en ElevenLabs y generar clips de animación cinemática con Wan 2.1 I2V.
 [FASE D] Ensamblar Voiceover Master, concatenar clips de video, mezclar BGM (-18dB) a -14 LUFS, renderizar Master MP4 1080p 30fps +faststart, clonar en 3 destinos (P-03).
-[FASE E] Generar kit de thumbnails profesionales en 3 formatos (16:9, 9:16, 1:1) en 06_Publicado/thumbnails/ (Patrón P-11), vectorizar trazabilidad en Qdrant Cloud.
+[FASE E] Generar kit de thumbnails profesionales en 3 formatos (16:9, 9:16, 1:1) en 06_Publicado/thumbnails/ (Patrón P-11).
+[FASE F] Consulta y anclaje al Catálogo Cinemático P-14 (diamantino_movimientos) para animación de alta precisión de hosts, vectorizar trazabilidad en Qdrant Cloud.
 
 OUTPUT FINAL OBLIGATORIO:
 Reportar tabla resumen con:
