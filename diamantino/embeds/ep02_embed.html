@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HBOS-Diamantino — Ep02: Los 7 Chips (Player Responsive)</title>
+  <style>
+    :root {
+      --bg-dark: #0a0b10;
+      --card-bg: rgba(20, 24, 38, 0.85);
+      --accent-cyan: #00f0ff;
+      --accent-purple: #9d00ff;
+      --text-main: #f0f4f8;
+      --text-muted: #8a99ad;
+      --border-glow: rgba(0, 240, 255, 0.25);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; }
+    body {
+      background: radial-gradient(circle at top, #141b2d 0%, var(--bg-dark) 100%);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem;
+    }
+    header { text-align: center; margin-bottom: 2rem; }
+    h1 {
+      font-size: 2.2rem;
+      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.5rem;
+    }
+    p.subtitle { color: var(--text-muted); font-size: 1rem; }
+    .player-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-glow);
+      border-radius: 16px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(12px);
+      width: 100%;
+      max-width: 960px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    .video-container {
+      position: relative;
+      width: 100%;
+      max-width: 860px;
+      background: #000;
+      border-radius: 12px;
+      overflow: hidden;
+      aspect-ratio: 16 / 9;
+      transition: aspect-ratio 0.4s ease, max-width 0.4s ease;
+      box-shadow: 0 8px 30px rgba(0, 240, 255, 0.15);
+    }
+    .video-container.ratio-9x16 { aspect-ratio: 9 / 16; max-width: 380px; }
+    .video-container.ratio-1x1 { aspect-ratio: 1 / 1; max-width: 500px; }
+    .video-container.ratio-4x5 { aspect-ratio: 4 / 5; max-width: 440px; }
+    video { width: 100%; height: 100%; object-fit: contain; display: block; }
+    .format-switcher {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+      width: 100%;
+    }
+    .btn-fmt {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: var(--text-main);
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.25s ease;
+    }
+    .btn-fmt:hover {
+      background: rgba(0, 240, 255, 0.15);
+      border-color: var(--accent-cyan);
+      box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+    }
+    .btn-fmt.active {
+      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+      border-color: transparent;
+      color: #000;
+      font-weight: 700;
+    }
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      width: 100%;
+      margin-top: 1rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 1.5rem;
+    }
+    .spec-item {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 0.8rem;
+      border-radius: 8px;
+      border-left: 3px solid var(--accent-cyan);
+    }
+    .spec-item span.title { font-size: 0.8rem; color: var(--text-muted); display: block; }
+    .spec-item span.value { font-size: 1rem; font-weight: 600; color: var(--text-main); }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>HBOS-Diamantino — Ep02: "Los 7 Chips"</h1>
+    <p class="subtitle">Reproductor Multimedia Multi-Formato Responsive · Master v3 (EBU R128 -14 LUFS)</p>
+  </header>
+
+  <div class="player-card">
+    <div id="videoContainer" class="video-container">
+      <video id="mainVideo" controls poster="../formatos/ep02_preview.gif" preload="metadata">
+        <source id="videoSource" src="../formatos/ep02_master_v3_16x9.mp4" type="video/mp4">
+        Tu navegador no soporta reproducción de video HTML5.
+      </video>
+    </div>
+
+    <div class="format-switcher">
+      <button class="btn-fmt active" onclick="setFormat('16x9', '16 / 9', '../formatos/ep02_master_v3_16x9.mp4')">16:9 Landscape (YouTube/Web)</button>
+      <button class="btn-fmt" onclick="setFormat('9x16', '9 / 16', '../formatos/ep02_master_v3_9x16.mp4')">9:16 Vertical (TikTok/Reels)</button>
+      <button class="btn-fmt" onclick="setFormat('1x1', '1 / 1', '../formatos/ep02_master_v3_1x1.mp4')">1:1 Square (Instagram)</button>
+      <button class="btn-fmt" onclick="setFormat('4x5', '4 / 5', '../formatos/ep02_master_v3_4x5.mp4')">4:5 Portrait (Instagram)</button>
+    </div>
+
+    <div class="specs-grid">
+      <div class="spec-item"><span class="title">Duración Master:</span><span class="value">209.03 s (3m 29s)</span></div>
+      <div class="spec-item"><span class="title">Estándar Acústico:</span><span class="value">EBU R128 (-14.0 LUFS)</span></div>
+      <div class="spec-item"><span class="title">Códec de Video:</span><span class="value">H.264 High @ 30.00 fps</span></div>
+      <div class="spec-item"><span class="title">Optimización Web:</span><span class="value">+faststart (Streaming)</span></div>
+    </div>
+  </div>
+
+  <script>
+    function setFormat(fmtClass, ratio, src) {
+      const container = document.getElementById('videoContainer');
+      const video = document.getElementById('mainVideo');
+      const source = document.getElementById('videoSource');
+      const buttons = document.querySelectorAll('.btn-fmt');
+
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      const currentTime = video.currentTime;
+      const isPaused = video.paused;
+
+      container.className = 'video-container ratio-' + fmtClass;
+      source.src = src;
+      video.load();
+      video.currentTime = currentTime;
+      if (!isPaused) {
+        video.play();
+      }
+    }
+  </script>
+</body>
+</html>
