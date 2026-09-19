@@ -1,6 +1,7 @@
 # MANIFIESTO DEL SELLO HBOS-DIAMANTINO
 ### Creador & Arquitecto: Guillermo Hoyos — Embajador AsertiaNova
 ### Ecosistema: HBOS (High-Frequency Operating System) · Vector Engine
+### Trazabilidad: `operation_id = 103` | Directiva Canónica ALEJAVI
 
 ---
 
@@ -50,7 +51,7 @@ La IA generativa, el hardware y el software tienden a commoditizarse. La ventaja
 
 ---
 
-## 6. ONTOLOGÍA DE HOSTS Y LA ERA AGÉNTICA (REENCUADRE DEFINITIVO)
+## 6. ONTOLOGÍA DE HOSTS Y LA ERA AGÉNTICA
 1. **Los 7 Personajes son HOSTS:** Ningún avatar es una escultura inerte ni un chip de silicio físico. Son avatares minerales que encarnan y hospedan capacidades de supercómputo.
 2. **Las Gemas son Identidad Visual:** El cuarzo, rubí, zafiro, esmeralda, citrino, grafito y diamante son identidades de resonancia espectral, no materiales de soldadura electrónica.
 3. **Agentes Cristalinos Soberanos:** Los agentes de IA son las inteligencias ejecutoras; no son biológicos, no duplican defectos humanos.
@@ -70,7 +71,7 @@ HBOS-Diamantino opera formalmente como una **AGENCIA DE DIVULGACIÓN CIENTÍFICA
 
 ---
 
-## 8. PROPIEDAD INTELECTUAL Y DELIMITACIÓN DE MARCA (SELLO CANÓNICO)
+## 8. PROPIEDAD INTELECTUAL Y DELIMITACIÓN DE MARCA
 1. **Propiedad de Conceptos Científicos:** Los descubrimientos de modelos biológicos (AlphaFold, AlphaMissense, AlphaProteo) pertenecen a Google DeepMind y a los galardonados con el Premio Nobel de Química 2024 (Demis Hassabis, John Jumper, David Baker).
 2. **Propiedad del Ecosistema Audiovisual:** El universo conceptual mineral, los avatares anfitriones (Diamantino, Rubín, Zafir, Esmeralda, Citrilo, Grafito, Amatista), la dirección de arte, los shaders cristalinos y el sistema agéntico DAG/RAG son propiedad exclusiva de Guillermo Hoyos / HBOS-Diamantino.
 3. **Misión Editorial:** Transmitir conocimiento científico de vanguardia a escala global con máxima fidelidad técnica, atribución rigurosa y calidad cinematográfica.
@@ -82,10 +83,33 @@ HBOS-Diamantino opera formalmente como una **AGENCIA DE DIVULGACIÓN CIENTÍFICA
    - Exclusivo para orquestación de comandos, lectura/escritura de configs (.env.local), scripts de pipeline y stitching/ensamblado técnico con FFmpeg.
    - Prohibición terminante de síntesis local (SAPI TTS) o simulaciones estáticas de video (ffmpeg -loop 1).
 2. **Inferencia Creativa 100% en Nube:**
-   - Voces: ElevenLabs Cloud API (normalizadas a P-04 v2: -14 LUFS, TP -1.0 dBTP).
+   - Voces: ElevenLabs Cloud API (normalizadas a P-04 v2: -14 LUFS, TP -1.0 dBTP) y CosyVoice2 vía FreeLLMAPI.
    - Video: DashScope Wan 2.1 I2V Cloud para animación continua real.
    - Imágenes: Gemini Cloud / Nano Banana en Google Drive.
    - Memoria: Qdrant Cloud (colecciones de vectores y trazabilidad de operaciones).
    - Almacenamiento Maestro: Google Drive (`G:\My Drive\HBOS-Diamantino\`).
 3. **Modelo de Voz Unificada (P-18):**
    - Varios avatares minerales comparten el encuadre visual guiados por un único host narrador (Diamantino / Adam), garantizando sobriedad expositiva y eficiencia en consumo de créditos de nube.
+
+---
+
+## 10. CANAL DE DIFUSIÓN DE IA: ANCHORS Y PEDAGOGÍA DE CONOCIMIENTO (ESTILO ALEJAVI)
+HBOS-Diamantino se consolida operativamente como un **CANAL DE DIFUSIÓN DE INTELIGENCIA ARTIFICIAL Y CIENCIA AVANZADA**.
+
+1. **Hosts Cristalinos como Anchors:**
+   - De ahora en adelante, los personajes cristalinos actúan formalmente como **Anchors** (presentadores de noticias e instructores de conocimiento).
+   - Se expresan a través de animación cinematográfica soberana, eliminando la figura de avatares mitológicos o metafóricos.
+2. **Áreas de Presentación y Cobertura:**
+   - **Noticias de IA:** Últimos lanzamientos de modelos, arquitecturas, pesos abiertos y chips.
+   - **Descubrimientos Científicos:** Avances en biología computacional, medicina agéntica, redes fotónicas y física cuántica.
+   - **Instrucción de Conocimiento:** Explicación técnica paso a paso, diagramas de arquitectura y pedagogía aplicada.
+   - **Análisis de Tendencias:** Prospectiva tecnológica de la computación distribuida y la era agéntica.
+3. **Estilo de Conducción Tipo ALEJAVI:**
+   - **Claro:** Exposición directa, nítida y accesible sin jerga críptica vacía.
+   - **Analítico:** Desglose riguroso de métricas, benchmarks, papers y código real.
+   - **Instructivo:** Cada entrega enseña al operador o espectador un principio técnico aplicable.
+   - **Sin metáforas:** Cero ficción esotérica. La física del cómputo y la ciencia se explican tal como son.
+   - **Sin apropiación:** Cero atribución indebida; todo avance humano se cita con autoría, laboratorio y fecha exacta.
+4. **Beneficio Operativo y Legal (L-20):**
+   - El rol de **Anchor de Difusión** elimina toda ambigüedad de autoría intelectual frente a patentes o papers de terceros.
+   - Mitiga riesgos legales y blinda el ecosistema para una escala de producción diaria automatizada y sustentable.
