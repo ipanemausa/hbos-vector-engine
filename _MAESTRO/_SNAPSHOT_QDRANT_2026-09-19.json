@@ -1,0 +1,72 @@
+{
+  "timestamp": "2026-09-19T15:10:20.395995+00:00",
+  "operation_id": 115,
+  "total_colecciones": 13,
+  "colecciones": {
+    "boveda_secretos": {
+      "status": "green",
+      "points_count": 8,
+      "indexed_vectors_count": 0
+    },
+    "casos_uso_hbos": {
+      "status": "green",
+      "points_count": 50,
+      "indexed_vectors_count": 0
+    },
+    "conectores_indice": {
+      "status": "green",
+      "points_count": 15,
+      "indexed_vectors_count": 0
+    },
+    "diamantino_agentes": {
+      "status": "green",
+      "points_count": 1,
+      "indexed_vectors_count": 0
+    },
+    "diamantino_apps": {
+      "status": "green",
+      "points_count": 1,
+      "indexed_vectors_count": 0
+    },
+    "diamantino_assets": {
+      "status": "green",
+      "points_count": 70,
+      "indexed_vectors_count": 0
+    },
+    "diamantino_lecciones": {
+      "status": "green",
+      "points_count": 11,
+      "indexed_vectors_count": 0
+    },
+    "diamantino_movimientos": {
+      "status": "green",
+      "points_count": 320,
+      "indexed_vectors_count": 0
+    },
+    "diamantino_patrones": {
+      "status": "green",
+      "points_count": 20,
+      "indexed_vectors_count": 0
+    },
+    "diamantino_universo": {
+      "status": "green",
+      "points_count": 25,
+      "indexed_vectors_count": 0
+    },
+    "huella_hbos": {
+      "status": "green",
+      "points_count": 29,
+      "indexed_vectors_count": 0
+    },
+    "recursos_hbos": {
+      "status": "green",
+      "points_count": 95,
+      "indexed_vectors_count": 0
+    },
+    "registro_ecosistema": {
+      "status": "green",
+      "points_count": 159,
+      "indexed_vectors_count": 0
+    }
+  }
+}
