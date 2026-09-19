@@ -1,0 +1,51 @@
+{
+  "version": "1.0.0",
+  "ecosistema": "HBOS-Diamantino",
+  "modo": "ALEJAVI_SOBERANO",
+  "workspace_root": "C:\\Users\\ipane\\hbos-deploy\\hbos-vector-engine",
+  "sandbox_root": "G:\\My Drive\\HBOS-Diamantino\\_SANDBOX",
+  "umbrales": {
+    "latencia_qdrant_objetivo_seg": 1.0,
+    "latencia_qdrant_alerta_seg": 2.0,
+    "chequeo_salud_max_seg": 5.0,
+    "compresion_r768_min_ahorro_pct": 80.0
+  },
+  "triple_redundancia": {
+    "local_dir": "C:\\Users\\ipane\\hbos-deploy\\hbos-vector-engine\\_MAESTRO",
+    "drive_dir": "G:\\My Drive\\HBOS-Diamantino\\_MAESTRO",
+    "backup_dir": "C:\\Users\\ipane\\backup_hbos\\_MAESTRO",
+    "verificar_sha256": true
+  },
+  "servidores_mcp": {
+    "config_path": "C:\\Users\\ipane\\.gemini\\config\\mcp_config.json",
+    "servidores_requeridos": [
+      "gdrive",
+      "hbos-diamantino",
+      "diamantini-imagenes",
+      "hbos-freellmapi"
+    ]
+  },
+  "freellmapi": {
+    "base_url": "http://127.0.0.1:3001",
+    "port": 3001,
+    "expected_min_models": 200,
+    "api_key": "freellmapi-70a0cfeb7458ecb31077fe5f0b1646069da621ebb16ff037"
+  },
+  "fallbacks_canonicos": {
+    "generar_voces": ["cosyvoice2", "elevenlabs", "edge_tts_alvaro"],
+    "generar_video": ["dashscope_wan21", "fal_ai", "dashscope_wan21_queue"],
+    "generar_imagen": ["nano_banana", "huggingface_sdxl", "flux1_dev"],
+    "generar_texto": ["gemini_1_5_flash", "groq_llama_3_3_70b", "deepseek_v3"],
+    "verificar_datos": ["deepseek_r1", "gemini_1_5_pro", "qwen_2_5_coder"]
+  },
+  "schedule": {
+    "watchdog_interval_minutes": 30,
+    "autopilot_full_cron": "55 23 * * *",
+    "pre_commit_fast_check": true
+  },
+  "git": {
+    "branch": "main",
+    "remote": "origin",
+    "auto_push": true
+  }
+}

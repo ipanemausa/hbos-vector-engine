@@ -51,3 +51,5 @@
 - **[44]** Cálculo de arbitraje de modelos y tokens consolidado (op 180)
 - **[45]** Cálculo de arbitraje de modelos y tokens consolidado (op 180)
 - **[46]** Revisión Integral del Sistema HBOS-Diamantino completa (ops 206 a 214)
+- **[47]** Cálculo de arbitraje de modelos y tokens consolidado (op 180)
+- **[48]** Revisión Integral del Sistema HBOS-Diamantino completa (ops 206 a 214)

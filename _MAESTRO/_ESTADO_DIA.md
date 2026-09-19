@@ -74,6 +74,8 @@
 44. Cálculo de arbitraje de modelos y tokens consolidado (op 180)
 45. Cálculo de arbitraje de modelos y tokens consolidado (op 180)
 46. Revisión Integral del Sistema HBOS-Diamantino completa (ops 206 a 214)
+47. Cálculo de arbitraje de modelos y tokens consolidado (op 180)
+48. Revisión Integral del Sistema HBOS-Diamantino completa (ops 206 a 214)
 
 ## 5. PENDIENTES PRIORITARIOS
 [1] [1] Recargar o renovar cuota DashScope Wan 2.1 para renderizar planos 02 al 09 de Ep04

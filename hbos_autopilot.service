@@ -1,0 +1,86 @@
+# ==============================================================================
+# HBOS-DIAMANTINO AUTOPILOT SERVICE SPECIFICATION
+# Ecosistema: HBOS-Diamantino · Vector Engine
+# Modo: Experto ALEJAVI · DAG R768 Autopilot
+# ==============================================================================
+# Este archivo provee la especificación dual para entornos Windows Task Scheduler
+# y Linux/Systemd. En Windows ejecutar:
+#   powershell -ExecutionPolicy Bypass -File install_hbos_task.ps1
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. WINDOWS TASK SCHEDULER XML SPECIFICATION
+# ------------------------------------------------------------------------------
+<Task version="1.4" xmlns="http://schemas.microsoft.com/windows/2004/02/mit/task">
+  <RegistrationInfo>
+    <Date>2026-09-19T00:00:00</Date>
+    <Author>HBOS-ALEJAVI</Author>
+    <Description>Daemon y Watchdog Soberano HBOS-Diamantino R768 Autopilot Total</Description>
+    <URI>\HBOS\AutopilotWatchdog</URI>
+  </RegistrationInfo>
+  <Triggers>
+    <BootTrigger>
+      <Enabled>true</Enabled>
+    </BootTrigger>
+    <TimeTrigger>
+      <Repetition>
+        <Interval>PT30M</Interval>
+        <StopAtDurationEnd>false</StopAtDurationEnd>
+      </Repetition>
+      <StartBoundary>2026-09-19T00:00:00</StartBoundary>
+      <Enabled>true</Enabled>
+    </TimeTrigger>
+  </Triggers>
+  <Principals>
+    <Principal id="Author">
+      <LogonType>InteractiveToken</LogonType>
+      <RunLevel>HighestAvailable</RunLevel>
+    </Principal>
+  </Principals>
+  <Settings>
+    <MultipleInstancesPolicy>IgnoreNew</MultipleInstancesPolicy>
+    <DisallowStartIfOnBatteries>false</DisallowStartIfOnBatteries>
+    <StopIfGoingOnBatteries>false</StopIfGoingOnBatteries>
+    <AllowHardTerminate>true</AllowHardTerminate>
+    <StartWhenAvailable>true</StartWhenAvailable>
+    <RunOnlyIfNetworkAvailable>false</RunOnlyIfNetworkAvailable>
+    <IdleSettings>
+      <StopOnIdleEnd>false</StopOnIdleEnd>
+      <RestartOnIdle>false</RestartOnIdle>
+    </IdleSettings>
+    <AllowStartOnDemand>true</AllowStartOnDemand>
+    <Enabled>true</Enabled>
+    <Hidden>false</Hidden>
+    <RunOnlyIfIdle>false</RunOnlyIfIdle>
+    <WakeToRun>false</WakeToRun>
+    <ExecutionTimeLimit>PT2H</ExecutionTimeLimit>
+    <Priority>7</Priority>
+  </Settings>
+  <Actions Context="Author">
+    <Exec>
+      <Command>python.exe</Command>
+      <Arguments>c:\Users\ipane\hbos-deploy\hbos-vector-engine\hbos_autopilot.py --mode=full</Arguments>
+      <WorkingDirectory>c:\Users\ipane\hbos-deploy\hbos-vector-engine</WorkingDirectory>
+    </Exec>
+  </Actions>
+</Task>
+
+# ------------------------------------------------------------------------------
+# 2. SYSTEMD UNIT SPECIFICATION (Para nodos Linux / WSL / Containers)
+# ------------------------------------------------------------------------------
+# [Unit]
+# Description=HBOS Diamantino Autopilot Watchdog Service
+# After=network.target
+#
+# [Service]
+# Type=simple
+# User=ipane
+# WorkingDirectory=/home/ipane/hbos-vector-engine
+# ExecStart=/usr/bin/python3 hbos_watchdog.py
+# Restart=always
+# RestartSec=10
+# StandardOutput=append:/var/log/hbos_autopilot.log
+# StandardError=append:/var/log/hbos_autopilot_error.log
+#
+# [Install]
+# WantedBy=multi-user.target
