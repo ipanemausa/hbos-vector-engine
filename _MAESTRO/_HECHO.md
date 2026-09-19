@@ -1,5 +1,5 @@
 # REGISTRO DE HITOS COMPLETADOS HOY — HBOS-DIAMANTINO
-**Fecha:** 2026-09-19 | **Trazabilidad:** Operation IDs 45 a 208  
+**Fecha:** 2026-09-19 | **Trazabilidad:** Operation IDs 45 a 214  
 **Auditoría:** Triple Redundancia P-03 + Inmutabilidad Qdrant Cloud  
 
 ---
@@ -48,3 +48,6 @@
 - **[41]** Creación de _MAESTRO/_PROVEEDORES_VIDEO.md en triple redundancia (op 206)
 - **[42]** Creación y vectorización de P-55, P-56, L-41 y L-42 (op 207)
 - **[43]** Reporte y estrategia de desbloqueo de video DashScope + Fal.ai (op 208)
+- **[44]** Cálculo de arbitraje de modelos y tokens consolidado (op 180)
+- **[45]** Cálculo de arbitraje de modelos y tokens consolidado (op 180)
+- **[46]** Revisión Integral del Sistema HBOS-Diamantino completa (ops 206 a 214)
