@@ -1,0 +1,199 @@
+import os
+import sys
+import json
+import math
+import hashlib
+from dotenv import load_dotenv
+from qdrant_client import QdrantClient
+from qdrant_client.http import models
+
+sys.stdout.reconfigure(encoding='utf-8')
+load_dotenv('.env.local')
+
+def generate_embedding(text, dim=384):
+    vec = [0.0] * dim
+    for i, word in enumerate(text.split()):
+        h = int(hashlib.md5(f"{word}_{i}".encode('utf-8')).hexdigest(), 16)
+        idx = h % dim
+        vec[idx] += 1.0 / (1.0 + (h % 10))
+    norm = math.sqrt(sum(x * x for x in vec))
+    if norm > 0:
+        vec = [x / norm for x in vec]
+    else:
+        vec = [1.0 / math.sqrt(dim)] * dim
+    return vec
+
+storyboard_v2_data = {
+    "episodio": "Ep04-MedicineAgentica",
+    "titulo": "La Era Agéntica en Medicina: Nobel de Química 2024",
+    "version": "v2",
+    "modelo_narrativo": "Voz Narrativa Única (Diamantino / Adam) con Presencia Visual de los 7 Hosts Minerales (P-18)",
+    "background_tematico": "bg_ep04_biocuantico_1080p.png",
+    "duracion_total_seg": 180.0,
+    "planos": [
+        {
+            "plano": 0,
+            "bloque_guion": "Bloque 0",
+            "personaje_visual": "Diamantino (Editorial)",
+            "voz_locutor": "Diamantino (Narrador Único)",
+            "duracion_seg": 5.0,
+            "tipo": "Nota de Referencia P-17",
+            "movimiento_p14": "cabeza_asentir_arriba_30",
+            "desplazamiento_p16": "placa_editorial_sobria",
+            "descripcion_escena": "Placa editorial de alta gama en fondo bio-cuántico azul cobalto con badges oficiales de Google DeepMind y NobelPrize.org. Diamantino en recuadro lateral con sobriedad y máxima autoridad.",
+            "prompt_wan21": "Prestigious scientific editorial disclaimer card, deep blue quantum background, elegant crystal faceted frame, crisp white typography crediting Google DeepMind and 2024 Nobel Prize authors, subtle slow floating particles, cinematic 8K"
+        },
+        {
+            "plano": 1,
+            "bloque_guion": "Bloque 1",
+            "personaje_visual": "Diamantino",
+            "voz_locutor": "Diamantino (Narrador Único)",
+            "duracion_seg": 20.0,
+            "tipo": "Introducción Keynote",
+            "movimiento_p14": "cabeza_asentir_arriba_30",
+            "desplazamiento_p16": "caminar_frontal_keynote",
+            "descripcion_escena": "Diamantino camina con firmeza por el keynote stage frente a los racks de cómputo cuántico. Proyecciones holográficas de cadenas peptídicas y la medalla Nobel brillan con refracción diamantina.",
+            "prompt_wan21": "Diamantino faceted diamond crystal host walks smoothly forward on high-tech keynote stage, displaying Nobel Chemistry 2024 molecular holographic projections, crystalline diamond facets reflecting deep blue stage lights, cinematic 8K 3D animation"
+        },
+        {
+            "plano": 2,
+            "bloque_guion": "Bloque 2",
+            "personaje_visual": "Rubín",
+            "voz_locutor": "Diamantino (Narrador Único)",
+            "duracion_seg": 20.0,
+            "tipo": "Host Visual Acompañante",
+            "movimiento_p14": "brazos_explicar_adelante",
+            "desplazamiento_p16": "traslacion_lateral_racks",
+            "descripcion_escena": "Rubín avanza hacia un holograma colosal de una molécula de hemoglobina facetada en rubí carmesí, señalando los enlaces peptídicos con precisión tensorial mientras la voz de Diamantino explica la base de 200M de proteínas.",
+            "prompt_wan21": "Rubin ruby humanoid host moves towards large molecular protein structure hologram, gesturing emphatically at 3D folding bonds, pulsing crimson light across mechanical joints and servers, cinematic camera tracking"
+        },
+        {
+            "plano": 3,
+            "bloque_guion": "Bloque 3",
+            "personaje_visual": "Zafir",
+            "voz_locutor": "Diamantino (Narrador Único)",
+            "duracion_seg": 20.0,
+            "tipo": "Host Visual Acompañante",
+            "movimiento_p14": "manos_senalar_pantalla",
+            "desplazamiento_p16": "avance_analitico_frontal",
+            "descripcion_escena": "Zafir cruza el escenario con ademán analítico, señalando diagramas tridimensionales de la doble hélice de ADN donde 71M de mutaciones se categorizan con reflejos de zafiro azul eléctrico mientras Diamantino detalla AlphaMissense y AlphaProteo.",
+            "prompt_wan21": "Zafir sapphire host gestures towards AlphaMissense DNA helix and AlphaProteo synthetic binder models, authoritative and serene demeanor, gleaming blue mineral refractions, high-tech biomedical laboratory"
+        },
+        {
+            "plano": 4,
+            "bloque_guion": "Bloque 4",
+            "personaje_visual": "Esmeralda",
+            "voz_locutor": "Diamantino (Narrador Único)",
+            "duracion_seg": 20.0,
+            "tipo": "Host Visual Acompañante",
+            "movimiento_p14": "manos_operar_consola",
+            "desplazamiento_p16": "paso_firme_consola",
+            "descripcion_escena": "Esmeralda opera una consola holográfica flotante de luz verde esmeralda, visualizando la arquitectura Evoformer y los transformadores tensoriales mientras Diamantino narra la gramática universal de la biología.",
+            "prompt_wan21": "Esmeralda emerald host operates floating holograms showing Evoformer attention matrices and tensor representations, precise executive hand kinematics, luminous green refractions, enterprise supercomputer background"
+        },
+        {
+            "plano": 5,
+            "bloque_guion": "Bloque 5",
+            "personaje_visual": "Citrilo",
+            "voz_locutor": "Diamantino (Narrador Único)",
+            "duracion_seg": 20.0,
+            "tipo": "Host Visual Acompañante",
+            "movimiento_p14": "cabeza_girar_izq_45",
+            "desplazamiento_p16": "marcha_dinamica_diagonal",
+            "descripcion_escena": "Citrilo camina enérgicamente entre simulaciones dinámicas de ligandos moleculares acoplándose a receptores diana con pulsos dorados mientras Diamantino explica las alianzas multimillonarias de Isomorphic Labs.",
+            "prompt_wan21": "Citrilo amber host walks briskly with amber energy pulses, presenting Isomorphic Labs drug discovery acceleration timeline and molecular docking, dynamic keynote lighting, high energy kinematics"
+        },
+        {
+            "plano": 6,
+            "bloque_guion": "Bloque 6",
+            "personaje_visual": "Grafito",
+            "voz_locutor": "Diamantino (Narrador Único)",
+            "duracion_seg": 20.0,
+            "tipo": "Host Visual Acompañante",
+            "movimiento_p14": "cabeza_mirar_frente_firme",
+            "desplazamiento_p16": "desplazamiento_sobrio_racks",
+            "descripcion_escena": "Grafito avanza con sobriedad y porte solemne frente a una proyección esférica del planeta Tierra, donde centros de investigación de 190 países se conectan por líneas de platino mientras Diamantino relata el impacto en enfermedades huérfanas.",
+            "prompt_wan21": "Grafito steps forward from subtle shadows, pointing solemnly to open-access global map with 190 countries, platinum and graphite reflections, dignified and sober presentation"
+        },
+        {
+            "plano": 7,
+            "bloque_guion": "Bloque 7",
+            "personaje_visual": "Amatista",
+            "voz_locutor": "Diamantino (Narrador Único)",
+            "duracion_seg": 20.0,
+            "tipo": "Host Visual Acompañante",
+            "movimiento_p14": "brazos_abrir_zenit",
+            "desplazamiento_p16": "traslacion_serena_escenario",
+            "descripcion_escena": "Amatista extiende sus brazos con serenidad mística mientras una red fotónica violeta envuelve estructuras de patógenos de malaria y tuberculosis mientras Diamantino expone la ciencia asistida por IA para la salud global.",
+            "prompt_wan21": "Amatista extends hands gracefully as violet photonic waves visualize cures for malaria and tuberculosis, compassionate and sovereign posture, amethyst crystalline light rays illuminating biomedical stage"
+        },
+        {
+            "plano": 8,
+            "bloque_guion": "Bloque 8",
+            "personaje_visual": "Diamantino (Recap)",
+            "voz_locutor": "Diamantino (Narrador Único)",
+            "duracion_seg": 20.0,
+            "tipo": "Síntesis Agéntica Central",
+            "movimiento_p14": "manos_sostener_orbe",
+            "desplazamiento_p16": "avance_central_monumental",
+            "descripcion_escena": "Diamantino ocupa el centro del keynote con presencia imponente. Mira fijamente a la cámara mientras un orbe dorado que sintetiza las proteínas brilla en sus manos y Diamantino proclama la era de orquestación de agentes.",
+            "prompt_wan21": "Diamantino holding glowing golden molecular sphere in hand, speaking directly to camera with supreme authority, 200M proteins visualized in background, camera slowly pushing in"
+        },
+        {
+            "plano": 9,
+            "bloque_guion": "Bloque 9",
+            "personaje_visual": "Ensemble Cierre",
+            "voz_locutor": "Diamantino (Narrador Único)",
+            "duracion_seg": 15.0,
+            "tipo": "Cierre Monumental",
+            "movimiento_p14": "brazos_saludar_audiencia",
+            "desplazamiento_p16": "pose_ensemble_estatica_dinamica",
+            "descripcion_escena": "Gran angular monumental del keynote stage: Diamantino en el centro y los 7 personajes minerales a su lado extienden los brazos en gratitud hacia la comunidad científica internacional. Las pantallas del auditorio emiten luz dorada hacia el fundido suave a negro.",
+            "prompt_wan21": "Monumental wide angle of Diamantino and the 7 mineral hosts bowing and saluting audience with gratitude, bio-quantum stage lights gently dimming to smooth fade out, cinematic 8K master shot"
+        }
+    ]
+}
+
+dir_local = r"Ep04\02_Storyboard"
+dir_drive = r"G:\My Drive\HBOS-Diamantino\Ep04-MedicineAgentica\02_Storyboard"
+os.makedirs(dir_local, exist_ok=True)
+os.makedirs(dir_drive, exist_ok=True)
+
+file_local = os.path.join(dir_local, "storyboard_v2.json")
+file_drive = os.path.join(dir_drive, "storyboard_v2.json")
+
+with open(file_local, "w", encoding="utf-8") as f:
+    json.dump(storyboard_v2_data, f, indent=2, ensure_ascii=False)
+with open(file_drive, "w", encoding="utf-8") as f:
+    json.dump(storyboard_v2_data, f, indent=2, ensure_ascii=False)
+
+print(f"[OK] storyboard_v2.json guardado en local: {file_local}")
+print(f"[OK] storyboard_v2.json guardado en Drive: {file_drive}")
+
+# Registrar operation_id = 73 en registro_ecosistema
+vec_op73 = generate_embedding("Tarea 7 operacion 73 Storyboard Ep04 v2 10 Planos Una Sola Voz Narrativa Diamantino Adam P-18 P-14 P-16 P-17", dim=384)
+client = QdrantClient(url=os.getenv("QDRANT_URL"), api_key=os.getenv("QDRANT_API_KEY"), timeout=25)
+
+client.upsert(
+    collection_name="registro_ecosistema",
+    points=[
+        models.PointStruct(
+            id=73,
+            vector=vec_op73,
+            payload={
+                "operation_id": 73,
+                "tarea": "TAREA 7 — STORYBOARD EP04 ADAPTADO (v2 · P-18)",
+                "episodio": "Ep04-MedicineAgentica",
+                "version_storyboard": "v2",
+                "total_planos": 10,
+                "duracion_total_seg": 180.0,
+                "narrador_unico": "Diamantino / Adam",
+                "hosts_visuales": ["Diamantino", "Rubín", "Zafir", "Esmeralda", "Citrilo", "Grafito", "Amatista", "Ensemble"],
+                "ruta_local": file_local,
+                "ruta_drive": file_drive,
+                "estado": "COMPLETADO"
+            }
+        )
+    ]
+)
+print("[OK] operation_id = 73 registrado en registro_ecosistema.")

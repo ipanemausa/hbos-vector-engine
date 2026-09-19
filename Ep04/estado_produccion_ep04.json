@@ -1,0 +1,59 @@
+{
+  "episodio": "Ep04-MedicineAgentica",
+  "titulo": "La Era Agéntica en Medicina: Nobel de Química 2024",
+  "modelo_narrativo": "Voz Única Narrativa (Diamantino / Adam) con los 7 Hosts Visuales (P-18)",
+  "preproduccion_completada": {
+    "guion_v2": {
+      "local": true,
+      "drive": true
+    },
+    "storyboard_v2": {
+      "local": true,
+      "drive": true
+    },
+    "background_biocuantico": {
+      "local": true,
+      "drive": true
+    },
+    "storyboard_10_images_wan21": {
+      "local": true,
+      "drive": true
+    },
+    "thumbnails_p11": {
+      "local": true,
+      "drive": true
+    },
+    "nota_referencia_p17": true,
+    "bgm_master_180s": {
+      "local": true,
+      "drive": true
+    }
+  },
+  "clips_wan21_nube": {
+    "plano_00": {
+      "archivo": "ep04_plano_00_wan21.mp4",
+      "duracion": 5.0,
+      "estado": "GENERADO_EN_DASHSCOPE_CLOUD",
+      "local": true,
+      "drive": true
+    },
+    "plano_01": {
+      "archivo": "ep04_plano_01_wan21.mp4",
+      "duracion": 20.0,
+      "estado": "GENERADO_EN_DASHSCOPE_CLOUD",
+      "local": true,
+      "drive": true
+    },
+    "planos_02_a_09": {
+      "total_pendientes": 8,
+      "estado": "PENDIENTE_RECARGA_CUOTA_DASHSCOPE",
+      "error_cloud": "AllocationQuota.FreeTierOnly: The free quota has been exhausted."
+    }
+  },
+  "voces_elevenlabs_nube": {
+    "estado": "PENDIENTE_RECARGA_CUOTA_ELEVENLABS",
+    "error_cloud": "quota_exceeded: 25 credits remaining out of 10000",
+    "modelo_listo": "generate_ep04_voices.py listo con guion_v2 (Diamantino/Adam única voz) para síntesis inmediata al recargar"
+  },
+  "estado_general": "Listo para producir cuando se renueven créditos"
+}

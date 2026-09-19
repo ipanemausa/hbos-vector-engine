@@ -67,3 +67,25 @@ HBOS-Diamantino opera formalmente como una **AGENCIA DE DIVULGACIÓN CIENTÍFICA
    - **Crédito inequívoco:** Mención explícita a los autores originales (ej. Google DeepMind, Demis Hassabis, John Jumper, David Baker, NVIDIA).
    - **Fuentes en pantalla:** Inserción de chips de referencia (Nature, Science, NobelPrize.org).
    - **Delimitación de Propiedad:** El sistema audiovisual, los avatares minerales y el sello son autoría de Guillermo Hoyos / HBOS-Diamantino; el avance científico pertenece a sus investigadores.
+
+---
+
+## 8. PROPIEDAD INTELECTUAL Y DELIMITACIÓN DE MARCA (SELLO CANÓNICO)
+1. **Propiedad de Conceptos Científicos:** Los descubrimientos de modelos biológicos (AlphaFold, AlphaMissense, AlphaProteo) pertenecen a Google DeepMind y a los galardonados con el Premio Nobel de Química 2024 (Demis Hassabis, John Jumper, David Baker).
+2. **Propiedad del Ecosistema Audiovisual:** El universo conceptual mineral, los avatares anfitriones (Diamantino, Rubín, Zafir, Esmeralda, Citrilo, Grafito, Amatista), la dirección de arte, los shaders cristalinos y el sistema agéntico DAG/RAG son propiedad exclusiva de Guillermo Hoyos / HBOS-Diamantino.
+3. **Misión Editorial:** Transmitir conocimiento científico de vanguardia a escala global con máxima fidelidad técnica, atribución rigurosa y calidad cinematográfica.
+
+---
+
+## 9. GOBERNANZA ARQUITECTÓNICA: DIVISIÓN LOCAL VS NUBE (PATRONES P-19, P-20 / L-10, L-11)
+1. **Entorno Local Restringido:**
+   - Exclusivo para orquestación de comandos, lectura/escritura de configs (.env.local), scripts de pipeline y stitching/ensamblado técnico con FFmpeg.
+   - Prohibición terminante de síntesis local (SAPI TTS) o simulaciones estáticas de video (ffmpeg -loop 1).
+2. **Inferencia Creativa 100% en Nube:**
+   - Voces: ElevenLabs Cloud API (normalizadas a P-04 v2: -14 LUFS, TP -1.0 dBTP).
+   - Video: DashScope Wan 2.1 I2V Cloud para animación continua real.
+   - Imágenes: Gemini Cloud / Nano Banana en Google Drive.
+   - Memoria: Qdrant Cloud (colecciones de vectores y trazabilidad de operaciones).
+   - Almacenamiento Maestro: Google Drive (`G:\My Drive\HBOS-Diamantino\`).
+3. **Modelo de Voz Unificada (P-18):**
+   - Varios avatares minerales comparten el encuadre visual guiados por un único host narrador (Diamantino / Adam), garantizando sobriedad expositiva y eficiencia en consumo de créditos de nube.
