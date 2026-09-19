@@ -145,7 +145,8 @@ def evaluar_metricas_blind(texto_candidato, texto_r768, label="CANDIDATO"):
     # M1: Completitud (§0 a §10 sin huecos ni placeholders) (20%)
     secciones_requeridas = [f"§{i}" for i in range(11)]
     secciones_encontradas = sum(1 for s in secciones_requeridas if s in texto_candidato)
-    has_todos = any(bad in texto_candidato.lower() for bad in ["todo", "placeholder", "completar aquí", "..."])
+    bad_tokens = ["<placeholder>", "[placeholder]", "insertar aquí", "completar aquí", "<completar>", "tbd", "fixme", "todo:"]
+    has_todos = any(bad in texto_candidato.lower() for bad in bad_tokens)
     m1_raw = (secciones_encontradas / len(secciones_requeridas)) * 100.0
     if has_todos:
         m1_raw -= 25.0
@@ -342,8 +343,160 @@ def ejecutar_ab_test(path_rama_a, path_rama_b, path_r768, operation_id=216):
 
     return dict_arbitraje
 
+def ejecutar_factor_test(path_a, path_b, path_c=None, path_r768=None, operation_id=216):
+    print("==========================================================================")
+    print(f">>> [HBOS ARBITRAJE] TEST CIEGO DE FACTORIZACIONES MATEMÁTICAS (op {operation_id}) <<<")
+    print("==========================================================================")
+    
+    with open(path_a, "r", encoding="utf-8") as f:
+        texto_a = f.read()
+    with open(path_b, "r", encoding="utf-8") as f:
+        texto_b = f.read()
+    with open(path_r768, "r", encoding="utf-8") as f:
+        texto_r768 = f.read()
+
+    res_a = evaluar_metricas_blind(texto_a, texto_r768, label="FACTORIZACIÓN A (Consolidación Directa)")
+    res_b = evaluar_metricas_blind(texto_b, texto_r768, label="FACTORIZACIÓN B (Investigación Previa)")
+
+    print(f"\n--- EVALUACIÓN INICIAL: FACTORIZACIÓN A vs FACTORIZACIÓN B ---")
+    print(f"{'MÉTRICA':<25} | {'PESO':<6} | {'FACTOR A':<10} | {'FACTOR B':<10}")
+    print("-" * 60)
+    print(f"{'M1 · Completitud':<25} | {'20%':<6} | {res_a['m1_completitud']:<10.2f} | {res_b['m1_completitud']:<10.2f}")
+    print(f"{'M2 · Coherencia R768':<25} | {'20%':<6} | {res_a['m2_coherencia']:<10.2f} | {res_b['m2_coherencia']:<10.2f}")
+    print(f"{'M3 · Profundidad':<25} | {'15%':<6} | {res_a['m3_profundidad']:<10.2f} | {res_b['m3_profundidad']:<10.2f}")
+    print(f"{'M4 · Accionabilidad':<25} | {'15%':<6} | {res_a['m4_accionabilidad']:<10.2f} | {res_b['m4_accionabilidad']:<10.2f}")
+    print(f"{'M5 · Eficiencia tokens':<25} | {'10%':<6} | {res_a['m5_eficiencia_tokens']:<10.2f} | {res_b['m5_eficiencia_tokens']:<10.2f}")
+    print(f"{'M6 · Trazabilidad':<25} | {'10%':<6} | {res_a['m6_trazabilidad']:<10.2f} | {res_b['m6_trazabilidad']:<10.2f}")
+    print(f"{'M7 · Originalidad':<25} | {'10%':<6} | {res_a['m7_originalidad']:<10.2f} | {res_b['m7_originalidad']:<10.2f}")
+    print("-" * 60)
+    print(f"{'SCORE TOTAL':<25} | {'100%':<6} | {res_a['score_total']:<10.2f} | {res_b['score_total']:<10.2f}")
+
+    delta_ab = abs(res_a["score_total"] - res_b["score_total"])
+    print(f"\nDiferencia |Score_A - Score_B|: {delta_ab:.2f} puntos")
+
+    # Diagnóstico de complementariedad
+    complementariedad = False
+    if (res_a['m4_accionabilidad'] >= 90 and res_b['m3_profundidad'] > res_a['m3_profundidad']):
+        complementariedad = True
+        diagnostico = "COMPLEMENTARIEDAD DETECTADA: Factorización A aporta rigor de ejecución y evidencia op 215, mientras que Factorización B aporta fundamentación ontológica y profundidad de auto-evolución."
+    elif delta_ab < 5.0:
+        diagnostico = "EMPATE TÉCNICO (|Δ| < 5%): Ambas factorizaciones se ubican en paridad competitiva."
+    else:
+        diagnostico = f"DOMINANCIA DIRECTA: {'Factorización A' if res_a['score_total'] > res_b['score_total'] else 'Factorización B'} lidera el benchmark."
+
+    print(f"[DIAGNÓSTICO DEL JUEZ]: {diagnostico}")
+
+    res_c = None
+    if path_c and os.path.exists(path_c):
+        with open(path_c, "r", encoding="utf-8") as f:
+            texto_c = f.read()
+        res_c = evaluar_metricas_blind(texto_c, texto_r768, label="FACTORIZACIÓN C (Híbrida Sintetizada)")
+
+        print(f"\n--- EVALUACIÓN TRIPARTITA: A vs B vs C ---")
+        print(f"{'MÉTRICA':<25} | {'PESO':<6} | {'FACTOR A':<10} | {'FACTOR B':<10} | {'FACTOR C':<10}")
+        print("-" * 75)
+        print(f"{'M1 · Completitud':<25} | {'20%':<6} | {res_a['m1_completitud']:<10.2f} | {res_b['m1_completitud']:<10.2f} | {res_c['m1_completitud']:<10.2f}")
+        print(f"{'M2 · Coherencia R768':<25} | {'20%':<6} | {res_a['m2_coherencia']:<10.2f} | {res_b['m2_coherencia']:<10.2f} | {res_c['m2_coherencia']:<10.2f}")
+        print(f"{'M3 · Profundidad':<25} | {'15%':<6} | {res_a['m3_profundidad']:<10.2f} | {res_b['m3_profundidad']:<10.2f} | {res_c['m3_profundidad']:<10.2f}")
+        print(f"{'M4 · Accionabilidad':<25} | {'15%':<6} | {res_a['m4_accionabilidad']:<10.2f} | {res_b['m4_accionabilidad']:<10.2f} | {res_c['m4_accionabilidad']:<10.2f}")
+        print(f"{'M5 · Eficiencia tokens':<25} | {'10%':<6} | {res_a['m5_eficiencia_tokens']:<10.2f} | {res_b['m5_eficiencia_tokens']:<10.2f} | {res_c['m5_eficiencia_tokens']:<10.2f}")
+        print(f"{'M6 · Trazabilidad':<25} | {'10%':<6} | {res_a['m6_trazabilidad']:<10.2f} | {res_b['m6_trazabilidad']:<10.2f} | {res_c['m6_trazabilidad']:<10.2f}")
+        print(f"{'M7 · Originalidad':<25} | {'10%':<6} | {res_a['m7_originalidad']:<10.2f} | {res_b['m7_originalidad']:<10.2f} | {res_c['m7_originalidad']:<10.2f}")
+        print("-" * 75)
+        print(f"{'SCORE TOTAL':<25} | {'100%':<6} | {res_a['score_total']:<10.2f} | {res_b['score_total']:<10.2f} | {res_c['score_total']:<10.2f}")
+
+        max_ab = max(res_a['score_total'], res_b['score_total'])
+        if res_c['score_total'] > max_ab:
+            veredicto = "FACTORIZACIÓN C (Híbrida Emergente)"
+            justificacion = (
+                f"La Factorización Híbrida C supera a max(A,B) por {round(res_c['score_total'] - max_ab, 2)} puntos "
+                f"({res_c['score_total']} vs {max_ab}). C sintetiza la evidencia operativa de A con la ontología "
+                f"de auto-evolución y homeostasis de B, maximizando completitud (§0-§10) y coherencia sin residuos."
+            )
+        else:
+            ganador_ab = "FACTORIZACIÓN A" if res_a['score_total'] >= res_b['score_total'] else "FACTORIZACIÓN B"
+            veredicto = ganador_ab
+            justificacion = f"Factorización C no superó a max(A,B) ({res_c['score_total']} <= {max_ab}). Se descarta C y se adopta {ganador_ab}."
+    else:
+        if delta_ab < 5.0 or complementariedad:
+            veredicto = "SÍNTESIS REQUERIDA (C HÍBRIDA)"
+            justificacion = f"Se requiere sintetizar C debido a {diagnostico}"
+        elif res_a["score_total"] > res_b["score_total"]:
+            veredicto = "FACTORIZACIÓN A"
+            justificacion = "Factorización A domina el benchmark métrico."
+        else:
+            veredicto = "FACTORIZACIÓN B"
+            justificacion = "Factorización B domina el benchmark métrico."
+
+    print(f"\n==========================================================================")
+    print(f">>> VEREDICTO FINAL: {veredicto}")
+    print(f"Justificación: {justificacion}")
+    print(f"==========================================================================")
+
+    resumen = {
+        "operation_id": operation_id,
+        "timestamp": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+        "factor_a": res_a,
+        "factor_b": res_b,
+        "factor_c": res_c,
+        "diagnostico": diagnostico,
+        "veredicto": veredicto,
+        "justificacion": justificacion
+    }
+
+    # Guardar en hbos_metricas (ID=997)
+    vec = generate_embedding(f"Test factorizaciones veredicto {veredicto}")
+    qdrant_retry(
+        client.upsert,
+        collection_name="hbos_metricas",
+        points=[models.PointStruct(id=997, vector=vec, payload=resumen)]
+    )
+
+    # Registrar en registro_ecosistema
+    qdrant_retry(
+        client.upsert,
+        collection_name="registro_ecosistema",
+        points=[models.PointStruct(
+            id=operation_id,
+            vector=generate_embedding(f"Test Factorizaciones operacion {operation_id} veredicto {veredicto}"),
+            payload={
+                "operation_id": operation_id,
+                "fase": "TEST DE FACTORIZACIONES MATEMÁTICAS",
+                "timestamp": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+                "veredicto": veredicto,
+                "resumen_test": resumen,
+                "estado": "COMPLETADO"
+            }
+        )]
+    )
+
+    # Actualizar hbos_estado (ID=1)
+    pts = qdrant_retry(client.retrieve, "hbos_estado", ids=[1])
+    p = pts[0].payload
+    p["operation_ids"] = f"45 a {operation_id}"
+    p["hecho_hoy"].append(f"Test de Factorizaciones ejecutado con veredicto: {veredicto} (op {operation_id})")
+    qdrant_retry(
+        client.upsert,
+        collection_name="hbos_estado",
+        points=[models.PointStruct(id=1, vector=generate_embedding(f"hbos_estado op {operation_id}"), payload=p)]
+    )
+    print(f"[OK] Trazabilidad y estado actualizados a operation_id = {operation_id}.")
+
+    return resumen
+
 if __name__ == "__main__":
-    if "--ab-test" in sys.argv:
+    if "--factor-ab" in sys.argv:
+        p_a = "prompts/FACTOR_A.md"
+        p_b = "prompts/FACTOR_B.md"
+        p_c = "prompts/FACTOR_C.md" if os.path.exists("prompts/FACTOR_C.md") else None
+        p_r768 = "G:/My Drive/HBOS-Diamantino/_MAESTRO/_PROMPT_TOTAL_R768_v3.md"
+        ejecutar_factor_test(p_a, p_b, p_c, p_r768, operation_id=216)
+    elif "--prompt-ab" in sys.argv:
+        p_a = "prompts/RESULTADO_PROMPT_A.md"
+        p_b = "prompts/RESULTADO_PROMPT_B.md"
+        p_r768 = "G:/My Drive/HBOS-Diamantino/_MAESTRO/_PROMPT_TOTAL_R768_v3.md"
+        ejecutar_ab_test(p_a, p_b, p_r768, operation_id=216)
+    elif "--ab-test" in sys.argv:
         p_a = "prompts/PROMPT_R769_RAMA_A.md"
         p_b = "prompts/PROMPT_R769_RAMA_B.md"
         p_r768 = "G:/My Drive/HBOS-Diamantino/_MAESTRO/_PROMPT_TOTAL_R768_v3.md"
