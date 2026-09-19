@@ -1,0 +1,143 @@
+{
+  "operation_id": 82,
+  "evento": "FORMATOS_RESPONSIVE_EP02v4_EP02v5_EP03v2",
+  "total_formatos_video": 12,
+  "total_gifs": 3,
+  "formatos_generados": [
+    {
+      "target": "Ep02 v4",
+      "formato": "16x9",
+      "resolucion": "1920x1080",
+      "duracion_seg": 209.03,
+      "bytes": 155726466,
+      "ruta_drive": "G:\\My Drive\\HBOS-Diamantino\\Ep02-Los7Chips\\06_Publicado\\formatos\\ep02_master_v4_16x9.mp4",
+      "ruta_backup": "C:\\Users\\ipane\\backup_hbos\\_BACKUP_EPISODIOS\\Ep02_Formatos_v4\\ep02_master_v4_16x9.mp4"
+    },
+    {
+      "target": "Ep02 v4",
+      "formato": "9x16",
+      "resolucion": "1080x1920",
+      "duracion_seg": 209.03,
+      "bytes": 192057223,
+      "ruta_drive": "G:\\My Drive\\HBOS-Diamantino\\Ep02-Los7Chips\\06_Publicado\\formatos\\ep02_master_v4_9x16.mp4",
+      "ruta_backup": "C:\\Users\\ipane\\backup_hbos\\_BACKUP_EPISODIOS\\Ep02_Formatos_v4\\ep02_master_v4_9x16.mp4"
+    },
+    {
+      "target": "Ep02 v4",
+      "formato": "1x1",
+      "resolucion": "1080x1080",
+      "duracion_seg": 209.03,
+      "bytes": 150072142,
+      "ruta_drive": "G:\\My Drive\\HBOS-Diamantino\\Ep02-Los7Chips\\06_Publicado\\formatos\\ep02_master_v4_1x1.mp4",
+      "ruta_backup": "C:\\Users\\ipane\\backup_hbos\\_BACKUP_EPISODIOS\\Ep02_Formatos_v4\\ep02_master_v4_1x1.mp4"
+    },
+    {
+      "target": "Ep02 v4",
+      "formato": "4x5",
+      "resolucion": "1080x1350",
+      "duracion_seg": 209.03,
+      "bytes": 164306381,
+      "ruta_drive": "G:\\My Drive\\HBOS-Diamantino\\Ep02-Los7Chips\\06_Publicado\\formatos\\ep02_master_v4_4x5.mp4",
+      "ruta_backup": "C:\\Users\\ipane\\backup_hbos\\_BACKUP_EPISODIOS\\Ep02_Formatos_v4\\ep02_master_v4_4x5.mp4"
+    },
+    {
+      "target": "Ep02 v5",
+      "formato": "16x9",
+      "resolucion": "1920x1080",
+      "duracion_seg": 209.03,
+      "bytes": 153445860,
+      "ruta_drive": "G:\\My Drive\\HBOS-Diamantino\\Ep02-Los7Chips\\06_Publicado\\formatos\\ep02_master_v5_16x9.mp4",
+      "ruta_backup": "C:\\Users\\ipane\\backup_hbos\\_BACKUP_EPISODIOS\\Ep02_Formatos_v5\\ep02_master_v5_16x9.mp4"
+    },
+    {
+      "target": "Ep02 v5",
+      "formato": "9x16",
+      "resolucion": "1080x1920",
+      "duracion_seg": 209.03,
+      "bytes": 155621334,
+      "ruta_drive": "G:\\My Drive\\HBOS-Diamantino\\Ep02-Los7Chips\\06_Publicado\\formatos\\ep02_master_v5_9x16.mp4",
+      "ruta_backup": "C:\\Users\\ipane\\backup_hbos\\_BACKUP_EPISODIOS\\Ep02_Formatos_v5\\ep02_master_v5_9x16.mp4"
+    },
+    {
+      "target": "Ep02 v5",
+      "formato": "1x1",
+      "resolucion": "1080x1080",
+      "duracion_seg": 209.03,
+      "bytes": 103542045,
+      "ruta_drive": "G:\\My Drive\\HBOS-Diamantino\\Ep02-Los7Chips\\06_Publicado\\formatos\\ep02_master_v5_1x1.mp4",
+      "ruta_backup": "C:\\Users\\ipane\\backup_hbos\\_BACKUP_EPISODIOS\\Ep02_Formatos_v5\\ep02_master_v5_1x1.mp4"
+    },
+    {
+      "target": "Ep02 v5",
+      "formato": "4x5",
+      "resolucion": "1080x1350",
+      "duracion_seg": 209.03,
+      "bytes": 119330810,
+      "ruta_drive": "G:\\My Drive\\HBOS-Diamantino\\Ep02-Los7Chips\\06_Publicado\\formatos\\ep02_master_v5_4x5.mp4",
+      "ruta_backup": "C:\\Users\\ipane\\backup_hbos\\_BACKUP_EPISODIOS\\Ep02_Formatos_v5\\ep02_master_v5_4x5.mp4"
+    },
+    {
+      "target": "Ep03 v2",
+      "formato": "16x9",
+      "resolucion": "1920x1080",
+      "duracion_seg": 139.13,
+      "bytes": 184212197,
+      "ruta_drive": "G:\\My Drive\\HBOS-Diamantino\\Ep03-RedesFotonicasCuanticas\\06_Publicado\\formatos\\ep03_master_v2_16x9.mp4",
+      "ruta_backup": "C:\\Users\\ipane\\backup_hbos\\_BACKUP_EPISODIOS\\Ep03_Formatos_v2\\ep03_master_v2_16x9.mp4"
+    },
+    {
+      "target": "Ep03 v2",
+      "formato": "9x16",
+      "resolucion": "1080x1920",
+      "duracion_seg": 139.13,
+      "bytes": 136469747,
+      "ruta_drive": "G:\\My Drive\\HBOS-Diamantino\\Ep03-RedesFotonicasCuanticas\\06_Publicado\\formatos\\ep03_master_v2_9x16.mp4",
+      "ruta_backup": "C:\\Users\\ipane\\backup_hbos\\_BACKUP_EPISODIOS\\Ep03_Formatos_v2\\ep03_master_v2_9x16.mp4"
+    },
+    {
+      "target": "Ep03 v2",
+      "formato": "1x1",
+      "resolucion": "1080x1080",
+      "duracion_seg": 139.13,
+      "bytes": 106060597,
+      "ruta_drive": "G:\\My Drive\\HBOS-Diamantino\\Ep03-RedesFotonicasCuanticas\\06_Publicado\\formatos\\ep03_master_v2_1x1.mp4",
+      "ruta_backup": "C:\\Users\\ipane\\backup_hbos\\_BACKUP_EPISODIOS\\Ep03_Formatos_v2\\ep03_master_v2_1x1.mp4"
+    },
+    {
+      "target": "Ep03 v2",
+      "formato": "4x5",
+      "resolucion": "1080x1350",
+      "duracion_seg": 139.13,
+      "bytes": 116314182,
+      "ruta_drive": "G:\\My Drive\\HBOS-Diamantino\\Ep03-RedesFotonicasCuanticas\\06_Publicado\\formatos\\ep03_master_v2_4x5.mp4",
+      "ruta_backup": "C:\\Users\\ipane\\backup_hbos\\_BACKUP_EPISODIOS\\Ep03_Formatos_v2\\ep03_master_v2_4x5.mp4"
+    }
+  ],
+  "gifs_generados": [
+    {
+      "target": "Ep02 v4",
+      "archivo": "ep02_v4_preview.gif",
+      "bytes": 5607283,
+      "ruta_drive": "G:\\My Drive\\HBOS-Diamantino\\Ep02-Los7Chips\\06_Publicado\\formatos\\ep02_v4_preview.gif",
+      "ruta_backup": "C:\\Users\\ipane\\backup_hbos\\_BACKUP_EPISODIOS\\Ep02_Formatos_v4\\ep02_v4_preview.gif"
+    },
+    {
+      "target": "Ep02 v5",
+      "archivo": "ep02_v5_preview.gif",
+      "bytes": 5600432,
+      "ruta_drive": "G:\\My Drive\\HBOS-Diamantino\\Ep02-Los7Chips\\06_Publicado\\formatos\\ep02_v5_preview.gif",
+      "ruta_backup": "C:\\Users\\ipane\\backup_hbos\\_BACKUP_EPISODIOS\\Ep02_Formatos_v5\\ep02_v5_preview.gif"
+    },
+    {
+      "target": "Ep03 v2",
+      "archivo": "ep03_v2_preview.gif",
+      "bytes": 7359126,
+      "ruta_drive": "G:\\My Drive\\HBOS-Diamantino\\Ep03-RedesFotonicasCuanticas\\06_Publicado\\formatos\\ep03_v2_preview.gif",
+      "ruta_backup": "C:\\Users\\ipane\\backup_hbos\\_BACKUP_EPISODIOS\\Ep03_Formatos_v2\\ep03_v2_preview.gif"
+    }
+  ],
+  "redundancia_triple_verificada": true,
+  "codec_video": "H.264 libx264 crf 20 veryfast",
+  "codec_audio": "AAC 128 kbps + faststart",
+  "estado": "COMPLETADO"
+}
