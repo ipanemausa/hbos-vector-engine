@@ -1,0 +1,36 @@
+{
+  "gateway_name": "HBOS-Unified-Gateway",
+  "version": "1.0.0",
+  "port": 3002,
+  "host": "0.0.0.0",
+  "sovereign_tokens": [
+    "hbos-sec-0199f8a2c4e6b8d0",
+    "hbos-sec-master-sovereign-2026"
+  ],
+  "vault": {
+    "algorithm": "AES-256-GCM",
+    "key_derivation": "PBKDF2-HMAC-SHA256",
+    "iterations": 100000,
+    "ephemeral_ram_only": true
+  },
+  "upstreams": {
+    "freellmapi": {
+      "base_url": "http://127.0.0.1:3001/v1",
+      "api_key": "freellmapi-70a0cfeb7458ecb31077fe5f0b1646069da621ebb16ff037",
+      "enabled": true
+    },
+    "gemini_cloud_node": {
+      "model_primary": "gemma-4-26b-a4b-it",
+      "model_secondary": "gemini-flash-latest",
+      "enabled": true
+    },
+    "ollama_local": {
+      "base_url": "http://127.0.0.1:11434",
+      "enabled": true
+    }
+  },
+  "logging": {
+    "qdrant_collection": "hbos_metricas",
+    "log_level": "INFO"
+  }
+}
