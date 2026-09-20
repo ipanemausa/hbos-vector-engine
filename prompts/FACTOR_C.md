@@ -33,6 +33,19 @@ La Factorización C unifica la evidencia empírica de ejecución (Factorización
      * *Sin comprimir ➔ hay redundancia.*
      * *Sin hibridar ➔ no hay salto cualitativo.*
 
+5. **Híbrido Manus ⊕ Pipeline §1.5 (Workflow Adaptativo + Secuencia Determinista):**
+   - **Naturaleza del Operador $M \oplus P$:** Síntesis no lineal entre la toma de decisiones estocástica/adaptativa de Manus ($M$) y la secuencia determinista de alta reproducibilidad del Pipeline ($P$).
+   - **Arquitectura Operativa:** El Pipeline establece los nodos topológicos fijos del DAG canónico (fases 1 a 9), mientras que Manus ejecuta la heurística de bifurcación contingente interna dentro de cada nodo (selección de cuotas, fallbacks a FreeLLMAPI, arbitraje dinámico de modelos).
+   - **Regla de Emergencia:** $M \oplus P > \max(M, P)$. Se adopta formalmente con una puntuación global de 96.8/100, eliminando la rigidez del pipeline ciego y la dispersión del agente libre.
+
+6. **Blindaje Criptográfico Anti-Caché §1.6 (Regla Dura en Nube):**
+   - **Principio Inviolable:** Prohibición absoluta de reutilización de respuestas cacheadas en inferencia de nube. Toda llamada creativa en nube debe ser fresca, no determinista y verificada.
+   - **Protocolo de Blindaje Cuádruple:**
+     1. Inyección de *Nonce Criptográfico Canónico*: `nonce = f"{operation_id}-{variant}-{timestamp}-{random_hex}"` en el prompt y cabeceras HTTP.
+     2. Cabeceras HTTP forzadas: `Cache-Control: no-cache, no-store, must-revalidate`, `Pragma: no-cache`, `Expires: 0`.
+     3. Aislamiento de contexto: Nuevas sesiones estériles sin historial ni memoria previa compartida entre variantes.
+     4. Verificación de Divergencia de Hashes: Comparación sistemática de SHA256 entre variantes. Si dos respuestas colisionan en hash con nonces distintos, se emite ALERTA DE CACHÉ y la prueba se repite de inmediato.
+
 ══════════════════════════════════════════════════════════════════════════
 DIRECTIVA FACTORIZADA OUTPUT C (§0–§10)
 ══════════════════════════════════════════════════════════════════════════
