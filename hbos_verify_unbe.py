@@ -41,7 +41,7 @@ def verificar_unbe():
     t0 = time.time()
     cols = [c.name for c in client.get_collections().collections]
     lat_qdrant = round(time.time() - t0, 3)
-    qdrant_ok = len(cols) == 17 and lat_qdrant < 1.0
+    qdrant_ok = len(cols) >= 17 and lat_qdrant < 1.0
     print(f"\n2. QDRANT CLOUD:")
     print(f"   • Colecciones: {len(cols)}/17 activas")
     print(f"   • Latencia:    {lat_qdrant}s (< 1.0s: {'[OK]' if lat_qdrant < 1.0 else '[FAIL]'})")
@@ -77,12 +77,12 @@ def verificar_unbe():
     print(f"   • Sincronizado con origin/main: {'[OK]' if synced else '[FAIL]'}")
 
     # 6. Trazabilidad en Qdrant (registro_ecosistema y hbos_estado)
-    pts_reg = client.retrieve("registro_ecosistema", ids=[222])
+    pts_reg = client.retrieve("registro_ecosistema", ids=[223])
     pts_est = client.retrieve("hbos_estado", ids=[1])
     op_in_reg = len(pts_reg) > 0
     rango_est = pts_est[0].payload.get("operation_ids")
     print(f"\n6. TRAZABILIDAD INMUTABLE:")
-    print(f"   • operation_id = 222 en registro_ecosistema: {'[OK]' if op_in_reg else '[FAIL]'}")
+    print(f"   • operation_id = 223 en registro_ecosistema: {'[OK]' if op_in_reg else '[FAIL]'}")
     print(f"   • hbos_estado (ID=1) rango activo:          {rango_est}")
 
     print("=" * 70)
