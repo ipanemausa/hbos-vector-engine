@@ -1,0 +1,1772 @@
+[
+  {
+    "model_id": "gemini-2.5-flash",
+    "platform": "google",
+    "priority": 10,
+    "enabled": true
+  },
+  {
+    "model_id": "glm-4.5-flash",
+    "platform": "zhipu",
+    "priority": 14,
+    "enabled": true
+  },
+  {
+    "model_id": "codestral-latest",
+    "platform": "mistral",
+    "priority": 17,
+    "enabled": true
+  },
+  {
+    "model_id": "gemini-2.5-flash-lite",
+    "platform": "google",
+    "priority": 19,
+    "enabled": true
+  },
+  {
+    "model_id": "command-r-plus-08-2024",
+    "platform": "cohere",
+    "priority": 23,
+    "enabled": true
+  },
+  {
+    "model_id": "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+    "platform": "cloudflare",
+    "priority": 24,
+    "enabled": true
+  },
+  {
+    "model_id": "nvidia/nemotron-3-super-120b-a12b:free",
+    "platform": "openrouter",
+    "priority": 26,
+    "enabled": true
+  },
+  {
+    "model_id": "openai/gpt-oss-120b",
+    "platform": "groq",
+    "priority": 33,
+    "enabled": true
+  },
+  {
+    "model_id": "@cf/openai/gpt-oss-120b",
+    "platform": "cloudflare",
+    "priority": 34,
+    "enabled": true
+  },
+  {
+    "model_id": "@cf/zai-org/glm-4.7-flash",
+    "platform": "cloudflare",
+    "priority": 36,
+    "enabled": true
+  },
+  {
+    "model_id": "@cf/meta/llama-4-scout-17b-16e-instruct",
+    "platform": "cloudflare",
+    "priority": 38,
+    "enabled": true
+  },
+  {
+    "model_id": "openai/gpt-oss-20b",
+    "platform": "groq",
+    "priority": 44,
+    "enabled": true
+  },
+  {
+    "model_id": "command-a-03-2025",
+    "platform": "cohere",
+    "priority": 48,
+    "enabled": true
+  },
+  {
+    "model_id": "@cf/qwen/qwen3-30b-a3b-fp8",
+    "platform": "cloudflare",
+    "priority": 53,
+    "enabled": true
+  },
+  {
+    "model_id": "@cf/deepseek-ai/deepseek-r1-distill-qwen-32b",
+    "platform": "cloudflare",
+    "priority": 54,
+    "enabled": true
+  },
+  {
+    "model_id": "gemini-3-flash-preview",
+    "platform": "google",
+    "priority": 55,
+    "enabled": true
+  },
+  {
+    "model_id": "google/gemma-4-31b-it:free",
+    "platform": "openrouter",
+    "priority": 57,
+    "enabled": true
+  },
+  {
+    "model_id": "glm-4.7-flash",
+    "platform": "zhipu",
+    "priority": 62,
+    "enabled": true
+  },
+  {
+    "model_id": "google/gemma-4-26b-a4b-it:free",
+    "platform": "openrouter",
+    "priority": 63,
+    "enabled": true
+  },
+  {
+    "model_id": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+    "platform": "openrouter",
+    "priority": 64,
+    "enabled": true
+  },
+  {
+    "model_id": "@cf/ibm-granite/granite-4.0-h-micro",
+    "platform": "cloudflare",
+    "priority": 71,
+    "enabled": true
+  },
+  {
+    "model_id": "gpt-oss:120b",
+    "platform": "ollama",
+    "priority": 78,
+    "enabled": true
+  },
+  {
+    "model_id": "gpt-oss:20b",
+    "platform": "ollama",
+    "priority": 80,
+    "enabled": true
+  },
+  {
+    "model_id": "gemma4:31b",
+    "platform": "ollama",
+    "priority": 81,
+    "enabled": true
+  },
+  {
+    "model_id": "groq/compound",
+    "platform": "groq",
+    "priority": 87,
+    "enabled": true
+  },
+  {
+    "model_id": "codestral-latest",
+    "platform": "llm7",
+    "priority": 90,
+    "enabled": true
+  },
+  {
+    "model_id": "groq/compound-mini",
+    "platform": "groq",
+    "priority": 92,
+    "enabled": true
+  },
+  {
+    "model_id": "google/gemma-4-31b-it",
+    "platform": "nvidia",
+    "priority": 95,
+    "enabled": true
+  },
+  {
+    "model_id": "nvidia/nemotron-3-super-120b-a12b",
+    "platform": "nvidia",
+    "priority": 96,
+    "enabled": true
+  },
+  {
+    "model_id": "nvidia/nemotron-3-super-120b-a12b:free",
+    "platform": "kilo",
+    "priority": 98,
+    "enabled": true
+  },
+  {
+    "model_id": "gemini-3.5-flash",
+    "platform": "google",
+    "priority": 107,
+    "enabled": true
+  },
+  {
+    "model_id": "moonshotai/Kimi-K2.6",
+    "platform": "huggingface",
+    "priority": 109,
+    "enabled": true
+  },
+  {
+    "model_id": "Qwen/Qwen3-Coder-Next",
+    "platform": "huggingface",
+    "priority": 110,
+    "enabled": true
+  },
+  {
+    "model_id": "deepseek-ai/DeepSeek-V4-Flash",
+    "platform": "huggingface",
+    "priority": 112,
+    "enabled": true
+  },
+  {
+    "model_id": "@cf/nvidia/nemotron-3-120b-a12b",
+    "platform": "cloudflare",
+    "priority": 114,
+    "enabled": true
+  },
+  {
+    "model_id": "command-a-reasoning-08-2025",
+    "platform": "cohere",
+    "priority": 115,
+    "enabled": true
+  },
+  {
+    "model_id": "openai/gpt-oss-safeguard-20b",
+    "platform": "groq",
+    "priority": 117,
+    "enabled": true
+  },
+  {
+    "model_id": "@cf/google/gemma-4-26b-a4b-it",
+    "platform": "cloudflare",
+    "priority": 118,
+    "enabled": true
+  },
+  {
+    "model_id": "command-r-08-2024",
+    "platform": "cohere",
+    "priority": 119,
+    "enabled": true
+  },
+  {
+    "model_id": "ministral-8b-latest",
+    "platform": "mistral",
+    "priority": 120,
+    "enabled": true
+  },
+  {
+    "model_id": "gemma-4-31b-it",
+    "platform": "google",
+    "priority": 125,
+    "enabled": true
+  },
+  {
+    "model_id": "gemma-4-26b-a4b-it",
+    "platform": "google",
+    "priority": 126,
+    "enabled": true
+  },
+  {
+    "model_id": "nvidia/nemotron-3-ultra-550b-a55b:free",
+    "platform": "openrouter",
+    "priority": 131,
+    "enabled": true
+  },
+  {
+    "model_id": "glm-4.6v-flash",
+    "platform": "zhipu",
+    "priority": 132,
+    "enabled": true
+  },
+  {
+    "model_id": "agnes-2.0-flash",
+    "platform": "agnes",
+    "priority": 138,
+    "enabled": true
+  },
+  {
+    "model_id": "agnes-2.5-flash",
+    "platform": "agnes",
+    "priority": 139,
+    "enabled": true
+  },
+  {
+    "model_id": "aphrodite/TheDrummer/Cydonia-24B-v4.3",
+    "platform": "aihorde",
+    "priority": 140,
+    "enabled": true
+  },
+  {
+    "model_id": "aphrodite/TheDrummer/Skyfall-31B-v4.2",
+    "platform": "aihorde",
+    "priority": 141,
+    "enabled": true
+  },
+  {
+    "model_id": "koboldcpp/Angelic_Eclipse-12B",
+    "platform": "aihorde",
+    "priority": 142,
+    "enabled": true
+  },
+  {
+    "model_id": "koboldcpp/Cydonia-24B-v4.3",
+    "platform": "aihorde",
+    "priority": 143,
+    "enabled": true
+  },
+  {
+    "model_id": "koboldcpp/Gemma-4-E4B-Uncensored-HauhauCS-Aggressive",
+    "platform": "aihorde",
+    "priority": 144,
+    "enabled": true
+  },
+  {
+    "model_id": "koboldcpp/Gemma-4-E4B-it-Ultra-Uncensored-Heretic",
+    "platform": "aihorde",
+    "priority": 145,
+    "enabled": true
+  },
+  {
+    "model_id": "koboldcpp/L3-8B-Stheno-v3.2",
+    "platform": "aihorde",
+    "priority": 146,
+    "enabled": true
+  },
+  {
+    "model_id": "koboldcpp/L3-Super-Nova-RP-8B",
+    "platform": "aihorde",
+    "priority": 147,
+    "enabled": true
+  },
+  {
+    "model_id": "koboldcpp/Llama-3.2-3B",
+    "platform": "aihorde",
+    "priority": 148,
+    "enabled": true
+  },
+  {
+    "model_id": "koboldcpp/Qwen/Qwen3.5-0.8B",
+    "platform": "aihorde",
+    "priority": 149,
+    "enabled": true
+  },
+  {
+    "model_id": "koboldcpp/Qwen_Qwen3-0.6B-IQ4_XS",
+    "platform": "aihorde",
+    "priority": 150,
+    "enabled": true
+  },
+  {
+    "model_id": "koboldcpp/digo-prayudha/unsloth-llama-3.2-1b-gguf",
+    "platform": "aihorde",
+    "priority": 151,
+    "enabled": true
+  },
+  {
+    "model_id": "koboldcpp/gemma-4-31B-it-heretic",
+    "platform": "aihorde",
+    "priority": 152,
+    "enabled": true
+  },
+  {
+    "model_id": "koboldcpp/mini-magnum-12b-v1.1",
+    "platform": "aihorde",
+    "priority": 153,
+    "enabled": true
+  },
+  {
+    "model_id": "koboldcpp/mradermacher/Cerebras-GPT-111M-instruction-GGUF",
+    "platform": "aihorde",
+    "priority": 154,
+    "enabled": true
+  },
+  {
+    "model_id": "koboldcpp/mradermacher/pythia-70m-deduped.f16.gguf",
+    "platform": "aihorde",
+    "priority": 155,
+    "enabled": true
+  },
+  {
+    "model_id": "aion-labs/aion-2.0",
+    "platform": "aion",
+    "priority": 156,
+    "enabled": true
+  },
+  {
+    "model_id": "aion-labs/aion-3.0",
+    "platform": "aion",
+    "priority": 157,
+    "enabled": true
+  },
+  {
+    "model_id": "aion-labs/aion-3.0-mini",
+    "platform": "aion",
+    "priority": 158,
+    "enabled": true
+  },
+  {
+    "model_id": "aion-labs/aion-rp-llama-3.1-8b",
+    "platform": "aion",
+    "priority": 159,
+    "enabled": true
+  },
+  {
+    "model_id": "auto:free",
+    "platform": "bazaarlink",
+    "priority": 160,
+    "enabled": true
+  },
+  {
+    "model_id": "deepseek/deepseek-v4-flash-0731free:free",
+    "platform": "bazaarlink",
+    "priority": 161,
+    "enabled": true
+  },
+  {
+    "model_id": "qwen/qwen3.7-flash:free",
+    "platform": "bazaarlink",
+    "priority": 162,
+    "enabled": true
+  },
+  {
+    "model_id": "@cf/aisingapore/gemma-sea-lion-v4-27b-it",
+    "platform": "cloudflare",
+    "priority": 163,
+    "enabled": true
+  },
+  {
+    "model_id": "@cf/google/gemma-2b-it-lora",
+    "platform": "cloudflare",
+    "priority": 164,
+    "enabled": true
+  },
+  {
+    "model_id": "@cf/google/gemma-7b-it-lora",
+    "platform": "cloudflare",
+    "priority": 165,
+    "enabled": true
+  },
+  {
+    "model_id": "@cf/meta-llama/llama-2-7b-chat-hf-lora",
+    "platform": "cloudflare",
+    "priority": 166,
+    "enabled": true
+  },
+  {
+    "model_id": "@cf/meta/llama-3.1-8b-instruct-fp8",
+    "platform": "cloudflare",
+    "priority": 167,
+    "enabled": true
+  },
+  {
+    "model_id": "@cf/meta/llama-3.2-11b-vision-instruct",
+    "platform": "cloudflare",
+    "priority": 168,
+    "enabled": true
+  },
+  {
+    "model_id": "@cf/meta/llama-3.2-1b-instruct",
+    "platform": "cloudflare",
+    "priority": 169,
+    "enabled": true
+  },
+  {
+    "model_id": "@cf/meta/llama-3.2-3b-instruct",
+    "platform": "cloudflare",
+    "priority": 170,
+    "enabled": true
+  },
+  {
+    "model_id": "@cf/meta/llama-guard-3-8b",
+    "platform": "cloudflare",
+    "priority": 171,
+    "enabled": true
+  },
+  {
+    "model_id": "@cf/mistral/mistral-7b-instruct-v0.2-lora",
+    "platform": "cloudflare",
+    "priority": 172,
+    "enabled": true
+  },
+  {
+    "model_id": "@cf/mistralai/mistral-small-3.1-24b-instruct",
+    "platform": "cloudflare",
+    "priority": 173,
+    "enabled": true
+  },
+  {
+    "model_id": "@cf/moondream/moondream3.1-9B-A2B",
+    "platform": "cloudflare",
+    "priority": 174,
+    "enabled": true
+  },
+  {
+    "model_id": "@cf/openai/gpt-oss-20b",
+    "platform": "cloudflare",
+    "priority": 175,
+    "enabled": true
+  },
+  {
+    "model_id": "@cf/qwen/qwen2.5-coder-32b-instruct",
+    "platform": "cloudflare",
+    "priority": 176,
+    "enabled": true
+  },
+  {
+    "model_id": "@cf/qwen/qwq-32b",
+    "platform": "cloudflare",
+    "priority": 177,
+    "enabled": true
+  },
+  {
+    "model_id": "c4ai-aya-expanse-32b",
+    "platform": "cohere",
+    "priority": 178,
+    "enabled": true
+  },
+  {
+    "model_id": "c4ai-aya-vision-32b",
+    "platform": "cohere",
+    "priority": 179,
+    "enabled": true
+  },
+  {
+    "model_id": "command-a-plus-05-2026",
+    "platform": "cohere",
+    "priority": 180,
+    "enabled": true
+  },
+  {
+    "model_id": "command-a-translate-08-2025",
+    "platform": "cohere",
+    "priority": 181,
+    "enabled": true
+  },
+  {
+    "model_id": "command-a-vision-07-2025",
+    "platform": "cohere",
+    "priority": 182,
+    "enabled": true
+  },
+  {
+    "model_id": "command-r7b-12-2024",
+    "platform": "cohere",
+    "priority": 183,
+    "enabled": true
+  },
+  {
+    "model_id": "north-mini-code-1-0",
+    "platform": "cohere",
+    "priority": 184,
+    "enabled": true
+  },
+  {
+    "model_id": "tiny-aya-earth",
+    "platform": "cohere",
+    "priority": 185,
+    "enabled": true
+  },
+  {
+    "model_id": "tiny-aya-fire",
+    "platform": "cohere",
+    "priority": 186,
+    "enabled": true
+  },
+  {
+    "model_id": "tiny-aya-global",
+    "platform": "cohere",
+    "priority": 187,
+    "enabled": true
+  },
+  {
+    "model_id": "tiny-aya-water",
+    "platform": "cohere",
+    "priority": 188,
+    "enabled": true
+  },
+  {
+    "model_id": "gemini-3.1-flash-lite",
+    "platform": "google",
+    "priority": 189,
+    "enabled": true
+  },
+  {
+    "model_id": "gemini-3.5-flash-lite",
+    "platform": "google",
+    "priority": 190,
+    "enabled": true
+  },
+  {
+    "model_id": "gemini-3.6-flash",
+    "platform": "google",
+    "priority": 191,
+    "enabled": true
+  },
+  {
+    "model_id": "gemini-3.7-flash",
+    "platform": "google",
+    "priority": 192,
+    "enabled": true
+  },
+  {
+    "model_id": "gemini-robotics-er-2-preview",
+    "platform": "google",
+    "priority": 193,
+    "enabled": true
+  },
+  {
+    "model_id": "allam-2-7b",
+    "platform": "groq",
+    "priority": 194,
+    "enabled": true
+  },
+  {
+    "model_id": "meta-llama/llama-prompt-guard-2-22m",
+    "platform": "groq",
+    "priority": 195,
+    "enabled": true
+  },
+  {
+    "model_id": "meta-llama/llama-prompt-guard-2-86m",
+    "platform": "groq",
+    "priority": 196,
+    "enabled": true
+  },
+  {
+    "model_id": "CohereLabs/aya-expanse-32b",
+    "platform": "huggingface",
+    "priority": 197,
+    "enabled": true
+  },
+  {
+    "model_id": "CohereLabs/aya-vision-32b",
+    "platform": "huggingface",
+    "priority": 198,
+    "enabled": true
+  },
+  {
+    "model_id": "CohereLabs/c4ai-command-a-03-2025",
+    "platform": "huggingface",
+    "priority": 199,
+    "enabled": true
+  },
+  {
+    "model_id": "CohereLabs/c4ai-command-r-08-2024",
+    "platform": "huggingface",
+    "priority": 200,
+    "enabled": true
+  },
+  {
+    "model_id": "CohereLabs/c4ai-command-r7b-12-2024",
+    "platform": "huggingface",
+    "priority": 201,
+    "enabled": true
+  },
+  {
+    "model_id": "CohereLabs/command-a-reasoning-08-2025",
+    "platform": "huggingface",
+    "priority": 202,
+    "enabled": true
+  },
+  {
+    "model_id": "CohereLabs/command-a-translate-08-2025",
+    "platform": "huggingface",
+    "priority": 203,
+    "enabled": true
+  },
+  {
+    "model_id": "CohereLabs/tiny-aya-earth",
+    "platform": "huggingface",
+    "priority": 204,
+    "enabled": true
+  },
+  {
+    "model_id": "CohereLabs/tiny-aya-fire",
+    "platform": "huggingface",
+    "priority": 205,
+    "enabled": true
+  },
+  {
+    "model_id": "CohereLabs/tiny-aya-global",
+    "platform": "huggingface",
+    "priority": 206,
+    "enabled": true
+  },
+  {
+    "model_id": "CohereLabs/tiny-aya-water",
+    "platform": "huggingface",
+    "priority": 207,
+    "enabled": true
+  },
+  {
+    "model_id": "MiniMaxAI/MiniMax-M1-80k",
+    "platform": "huggingface",
+    "priority": 208,
+    "enabled": true
+  },
+  {
+    "model_id": "MiniMaxAI/MiniMax-M2",
+    "platform": "huggingface",
+    "priority": 209,
+    "enabled": true
+  },
+  {
+    "model_id": "MiniMaxAI/MiniMax-M2.1",
+    "platform": "huggingface",
+    "priority": 210,
+    "enabled": true
+  },
+  {
+    "model_id": "MiniMaxAI/MiniMax-M2.5",
+    "platform": "huggingface",
+    "priority": 211,
+    "enabled": true
+  },
+  {
+    "model_id": "MiniMaxAI/MiniMax-M2.7",
+    "platform": "huggingface",
+    "priority": 212,
+    "enabled": true
+  },
+  {
+    "model_id": "MiniMaxAI/MiniMax-M3",
+    "platform": "huggingface",
+    "priority": 213,
+    "enabled": true
+  },
+  {
+    "model_id": "NousResearch/Hermes-3-Llama-3.1-70B",
+    "platform": "huggingface",
+    "priority": 214,
+    "enabled": true
+  },
+  {
+    "model_id": "Qwen/Qwen2.5-72B-Instruct",
+    "platform": "huggingface",
+    "priority": 215,
+    "enabled": true
+  },
+  {
+    "model_id": "Qwen/Qwen2.5-Coder-32B-Instruct",
+    "platform": "huggingface",
+    "priority": 216,
+    "enabled": true
+  },
+  {
+    "model_id": "Qwen/Qwen2.5-Coder-3B-Instruct",
+    "platform": "huggingface",
+    "priority": 217,
+    "enabled": true
+  },
+  {
+    "model_id": "Qwen/Qwen2.5-Coder-7B-Instruct",
+    "platform": "huggingface",
+    "priority": 218,
+    "enabled": true
+  },
+  {
+    "model_id": "Qwen/Qwen2.5-VL-72B-Instruct",
+    "platform": "huggingface",
+    "priority": 219,
+    "enabled": true
+  },
+  {
+    "model_id": "Qwen/Qwen3-14B",
+    "platform": "huggingface",
+    "priority": 220,
+    "enabled": true
+  },
+  {
+    "model_id": "Qwen/Qwen3-235B-A22B",
+    "platform": "huggingface",
+    "priority": 221,
+    "enabled": true
+  },
+  {
+    "model_id": "Qwen/Qwen3-235B-A22B-Instruct-2507",
+    "platform": "huggingface",
+    "priority": 222,
+    "enabled": true
+  },
+  {
+    "model_id": "Qwen/Qwen3-235B-A22B-Thinking-2507",
+    "platform": "huggingface",
+    "priority": 223,
+    "enabled": true
+  },
+  {
+    "model_id": "Qwen/Qwen3-30B-A3B",
+    "platform": "huggingface",
+    "priority": 224,
+    "enabled": true
+  },
+  {
+    "model_id": "Qwen/Qwen3-32B",
+    "platform": "huggingface",
+    "priority": 225,
+    "enabled": true
+  },
+  {
+    "model_id": "Qwen/Qwen3-4B-Instruct-2507",
+    "platform": "huggingface",
+    "priority": 226,
+    "enabled": true
+  },
+  {
+    "model_id": "Qwen/Qwen3-4B-Thinking-2507",
+    "platform": "huggingface",
+    "priority": 227,
+    "enabled": true
+  },
+  {
+    "model_id": "Qwen/Qwen3-8B",
+    "platform": "huggingface",
+    "priority": 228,
+    "enabled": true
+  },
+  {
+    "model_id": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+    "platform": "huggingface",
+    "priority": 229,
+    "enabled": true
+  },
+  {
+    "model_id": "Qwen/Qwen3-Coder-480B-A35B-Instruct",
+    "platform": "huggingface",
+    "priority": 230,
+    "enabled": true
+  },
+  {
+    "model_id": "Qwen/Qwen3-Next-80B-A3B-Instruct",
+    "platform": "huggingface",
+    "priority": 231,
+    "enabled": true
+  },
+  {
+    "model_id": "Qwen/Qwen3-VL-235B-A22B-Instruct",
+    "platform": "huggingface",
+    "priority": 232,
+    "enabled": true
+  },
+  {
+    "model_id": "Qwen/Qwen3-VL-235B-A22B-Thinking",
+    "platform": "huggingface",
+    "priority": 233,
+    "enabled": true
+  },
+  {
+    "model_id": "Qwen/Qwen3-VL-30B-A3B-Instruct",
+    "platform": "huggingface",
+    "priority": 234,
+    "enabled": true
+  },
+  {
+    "model_id": "Qwen/Qwen3.5-122B-A10B",
+    "platform": "huggingface",
+    "priority": 235,
+    "enabled": true
+  },
+  {
+    "model_id": "Qwen/Qwen3.5-27B",
+    "platform": "huggingface",
+    "priority": 236,
+    "enabled": true
+  },
+  {
+    "model_id": "Qwen/Qwen3.5-35B-A3B",
+    "platform": "huggingface",
+    "priority": 237,
+    "enabled": true
+  },
+  {
+    "model_id": "Qwen/Qwen3.5-397B-A17B",
+    "platform": "huggingface",
+    "priority": 238,
+    "enabled": true
+  },
+  {
+    "model_id": "Qwen/Qwen3.5-9B",
+    "platform": "huggingface",
+    "priority": 239,
+    "enabled": true
+  },
+  {
+    "model_id": "Qwen/Qwen3.6-27B",
+    "platform": "huggingface",
+    "priority": 240,
+    "enabled": true
+  },
+  {
+    "model_id": "Qwen/Qwen3.6-35B-A3B",
+    "platform": "huggingface",
+    "priority": 241,
+    "enabled": true
+  },
+  {
+    "model_id": "Qwen/Qwen3.8-2.4T-A95B",
+    "platform": "huggingface",
+    "priority": 242,
+    "enabled": true
+  },
+  {
+    "model_id": "Sao10K/L3-8B-Lunaris-v1",
+    "platform": "huggingface",
+    "priority": 243,
+    "enabled": true
+  },
+  {
+    "model_id": "Sao10K/L3-8B-Stheno-v3.2",
+    "platform": "huggingface",
+    "priority": 244,
+    "enabled": true
+  },
+  {
+    "model_id": "XiaomiMiMo/MiMo-V2.5",
+    "platform": "huggingface",
+    "priority": 245,
+    "enabled": true
+  },
+  {
+    "model_id": "XiaomiMiMo/MiMo-V2.5-Pro",
+    "platform": "huggingface",
+    "priority": 246,
+    "enabled": true
+  },
+  {
+    "model_id": "aisingapore/Gemma-SEA-LION-v4-27B-IT",
+    "platform": "huggingface",
+    "priority": 247,
+    "enabled": true
+  },
+  {
+    "model_id": "aisingapore/Qwen-SEA-LION-v4-32B-IT",
+    "platform": "huggingface",
+    "priority": 248,
+    "enabled": true
+  },
+  {
+    "model_id": "alpindale/WizardLM-2-8x22B",
+    "platform": "huggingface",
+    "priority": 249,
+    "enabled": true
+  },
+  {
+    "model_id": "baidu/ERNIE-4.5-VL-424B-A47B-Base-PT",
+    "platform": "huggingface",
+    "priority": 250,
+    "enabled": true
+  },
+  {
+    "model_id": "deepseek-ai/DeepSeek-R1",
+    "platform": "huggingface",
+    "priority": 251,
+    "enabled": true
+  },
+  {
+    "model_id": "deepseek-ai/DeepSeek-R1-0528",
+    "platform": "huggingface",
+    "priority": 252,
+    "enabled": true
+  },
+  {
+    "model_id": "deepseek-ai/DeepSeek-R1-Distill-Llama-70B",
+    "platform": "huggingface",
+    "priority": 253,
+    "enabled": true
+  },
+  {
+    "model_id": "deepseek-ai/DeepSeek-R1-Distill-Llama-8B",
+    "platform": "huggingface",
+    "priority": 254,
+    "enabled": true
+  },
+  {
+    "model_id": "deepseek-ai/DeepSeek-R1-Distill-Qwen-14B",
+    "platform": "huggingface",
+    "priority": 255,
+    "enabled": true
+  },
+  {
+    "model_id": "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
+    "platform": "huggingface",
+    "priority": 256,
+    "enabled": true
+  },
+  {
+    "model_id": "deepseek-ai/DeepSeek-V3",
+    "platform": "huggingface",
+    "priority": 257,
+    "enabled": true
+  },
+  {
+    "model_id": "deepseek-ai/DeepSeek-V3-0324",
+    "platform": "huggingface",
+    "priority": 258,
+    "enabled": true
+  },
+  {
+    "model_id": "deepseek-ai/DeepSeek-V3.1",
+    "platform": "huggingface",
+    "priority": 259,
+    "enabled": true
+  },
+  {
+    "model_id": "deepseek-ai/DeepSeek-V3.1-Terminus",
+    "platform": "huggingface",
+    "priority": 260,
+    "enabled": true
+  },
+  {
+    "model_id": "deepseek-ai/DeepSeek-V3.2",
+    "platform": "huggingface",
+    "priority": 261,
+    "enabled": true
+  },
+  {
+    "model_id": "deepseek-ai/DeepSeek-V3.2-Exp",
+    "platform": "huggingface",
+    "priority": 262,
+    "enabled": true
+  },
+  {
+    "model_id": "deepseek-ai/DeepSeek-V4-Flash-0731",
+    "platform": "huggingface",
+    "priority": 263,
+    "enabled": true
+  },
+  {
+    "model_id": "deepseek-ai/DeepSeek-V4-Pro",
+    "platform": "huggingface",
+    "priority": 264,
+    "enabled": true
+  },
+  {
+    "model_id": "deepseek-ai/DeepSeek-V4-Pro-0813",
+    "platform": "huggingface",
+    "priority": 265,
+    "enabled": true
+  },
+  {
+    "model_id": "google/gemma-3-12b-it",
+    "platform": "huggingface",
+    "priority": 266,
+    "enabled": true
+  },
+  {
+    "model_id": "google/gemma-3-27b-it",
+    "platform": "huggingface",
+    "priority": 267,
+    "enabled": true
+  },
+  {
+    "model_id": "google/gemma-3-4b-it",
+    "platform": "huggingface",
+    "priority": 268,
+    "enabled": true
+  },
+  {
+    "model_id": "google/gemma-4-26B-A4B-it",
+    "platform": "huggingface",
+    "priority": 269,
+    "enabled": true
+  },
+  {
+    "model_id": "google/gemma-4-31B-it",
+    "platform": "huggingface",
+    "priority": 270,
+    "enabled": true
+  },
+  {
+    "model_id": "meta-llama/Llama-3.1-8B-Instruct",
+    "platform": "huggingface",
+    "priority": 271,
+    "enabled": true
+  },
+  {
+    "model_id": "meta-llama/Llama-3.3-70B-Instruct",
+    "platform": "huggingface",
+    "priority": 272,
+    "enabled": true
+  },
+  {
+    "model_id": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+    "platform": "huggingface",
+    "priority": 273,
+    "enabled": true
+  },
+  {
+    "model_id": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
+    "platform": "huggingface",
+    "priority": 274,
+    "enabled": true
+  },
+  {
+    "model_id": "meta-llama/Llama-Guard-4-12B",
+    "platform": "huggingface",
+    "priority": 275,
+    "enabled": true
+  },
+  {
+    "model_id": "meta-models/Muse-Glimmer-30B",
+    "platform": "huggingface",
+    "priority": 276,
+    "enabled": true
+  },
+  {
+    "model_id": "microsoft/phi-4",
+    "platform": "huggingface",
+    "priority": 277,
+    "enabled": true
+  },
+  {
+    "model_id": "moonshotai/Kimi-K2-Instruct",
+    "platform": "huggingface",
+    "priority": 278,
+    "enabled": true
+  },
+  {
+    "model_id": "moonshotai/Kimi-K2-Instruct-0905",
+    "platform": "huggingface",
+    "priority": 279,
+    "enabled": true
+  },
+  {
+    "model_id": "moonshotai/Kimi-K2.5",
+    "platform": "huggingface",
+    "priority": 280,
+    "enabled": true
+  },
+  {
+    "model_id": "moonshotai/Kimi-K2.7-Code",
+    "platform": "huggingface",
+    "priority": 281,
+    "enabled": true
+  },
+  {
+    "model_id": "moonshotai/Kimi-K3",
+    "platform": "huggingface",
+    "priority": 282,
+    "enabled": true
+  },
+  {
+    "model_id": "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16",
+    "platform": "huggingface",
+    "priority": 283,
+    "enabled": true
+  },
+  {
+    "model_id": "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-NVFP4",
+    "platform": "huggingface",
+    "priority": 284,
+    "enabled": true
+  },
+  {
+    "model_id": "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16",
+    "platform": "huggingface",
+    "priority": 285,
+    "enabled": true
+  },
+  {
+    "model_id": "openai/gpt-oss-120b",
+    "platform": "huggingface",
+    "priority": 286,
+    "enabled": true
+  },
+  {
+    "model_id": "openai/gpt-oss-20b",
+    "platform": "huggingface",
+    "priority": 287,
+    "enabled": true
+  },
+  {
+    "model_id": "openai/gpt-oss-safeguard-20b",
+    "platform": "huggingface",
+    "priority": 288,
+    "enabled": true
+  },
+  {
+    "model_id": "prism-ml/Ternary-Bonsai-27B-AWQ-4bit",
+    "platform": "huggingface",
+    "priority": 289,
+    "enabled": true
+  },
+  {
+    "model_id": "prism-ml/Ternary-Bonsai-27B-gguf",
+    "platform": "huggingface",
+    "priority": 290,
+    "enabled": true
+  },
+  {
+    "model_id": "speakleash/Bielik-11B-v3.0-Instruct",
+    "platform": "huggingface",
+    "priority": 291,
+    "enabled": true
+  },
+  {
+    "model_id": "stepfun-ai/Step-3.5-Flash",
+    "platform": "huggingface",
+    "priority": 292,
+    "enabled": true
+  },
+  {
+    "model_id": "stepfun-ai/Step-3.7-Flash",
+    "platform": "huggingface",
+    "priority": 293,
+    "enabled": true
+  },
+  {
+    "model_id": "swiss-ai/Apertus-8B-Instruct-2509",
+    "platform": "huggingface",
+    "priority": 294,
+    "enabled": true
+  },
+  {
+    "model_id": "swiss-ai/Apertus-v1.5-70B",
+    "platform": "huggingface",
+    "priority": 295,
+    "enabled": true
+  },
+  {
+    "model_id": "swiss-ai/Apertus-v1.5-8B",
+    "platform": "huggingface",
+    "priority": 296,
+    "enabled": true
+  },
+  {
+    "model_id": "tencent/Hy3",
+    "platform": "huggingface",
+    "priority": 297,
+    "enabled": true
+  },
+  {
+    "model_id": "thinkingmachines/Inkling",
+    "platform": "huggingface",
+    "priority": 298,
+    "enabled": true
+  },
+  {
+    "model_id": "thinkingmachines/Inkling-Small",
+    "platform": "huggingface",
+    "priority": 299,
+    "enabled": true
+  },
+  {
+    "model_id": "zai-org/AutoGLM-Phone-9B-Multilingual",
+    "platform": "huggingface",
+    "priority": 300,
+    "enabled": true
+  },
+  {
+    "model_id": "zai-org/GLM-4-32B-0414",
+    "platform": "huggingface",
+    "priority": 301,
+    "enabled": true
+  },
+  {
+    "model_id": "zai-org/GLM-4.5-Air",
+    "platform": "huggingface",
+    "priority": 302,
+    "enabled": true
+  },
+  {
+    "model_id": "zai-org/GLM-4.5V",
+    "platform": "huggingface",
+    "priority": 303,
+    "enabled": true
+  },
+  {
+    "model_id": "zai-org/GLM-4.5V-FP8",
+    "platform": "huggingface",
+    "priority": 304,
+    "enabled": true
+  },
+  {
+    "model_id": "zai-org/GLM-4.6",
+    "platform": "huggingface",
+    "priority": 305,
+    "enabled": true
+  },
+  {
+    "model_id": "zai-org/GLM-4.6V",
+    "platform": "huggingface",
+    "priority": 306,
+    "enabled": true
+  },
+  {
+    "model_id": "zai-org/GLM-4.6V-FP8",
+    "platform": "huggingface",
+    "priority": 307,
+    "enabled": true
+  },
+  {
+    "model_id": "zai-org/GLM-4.6V-Flash",
+    "platform": "huggingface",
+    "priority": 308,
+    "enabled": true
+  },
+  {
+    "model_id": "zai-org/GLM-4.7",
+    "platform": "huggingface",
+    "priority": 309,
+    "enabled": true
+  },
+  {
+    "model_id": "zai-org/GLM-4.7-FP8",
+    "platform": "huggingface",
+    "priority": 310,
+    "enabled": true
+  },
+  {
+    "model_id": "zai-org/GLM-4.7-Flash",
+    "platform": "huggingface",
+    "priority": 311,
+    "enabled": true
+  },
+  {
+    "model_id": "zai-org/GLM-5",
+    "platform": "huggingface",
+    "priority": 312,
+    "enabled": true
+  },
+  {
+    "model_id": "zai-org/GLM-5.2",
+    "platform": "huggingface",
+    "priority": 313,
+    "enabled": true
+  },
+  {
+    "model_id": "zai-org/GLM-5.2-FP8",
+    "platform": "huggingface",
+    "priority": 314,
+    "enabled": true
+  },
+  {
+    "model_id": "cohere/north-mini-code:free",
+    "platform": "kilo",
+    "priority": 315,
+    "enabled": true
+  },
+  {
+    "model_id": "dots-studio/dots-3-note-preview:free",
+    "platform": "kilo",
+    "priority": 316,
+    "enabled": true
+  },
+  {
+    "model_id": "kilo-auto/free",
+    "platform": "kilo",
+    "priority": 317,
+    "enabled": true
+  },
+  {
+    "model_id": "liquid/lfm-2.5-2.6b:free",
+    "platform": "kilo",
+    "priority": 318,
+    "enabled": true
+  },
+  {
+    "model_id": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+    "platform": "kilo",
+    "priority": 319,
+    "enabled": true
+  },
+  {
+    "model_id": "nvidia/nemotron-3-ultra-550b-a55b:free",
+    "platform": "kilo",
+    "priority": 320,
+    "enabled": true
+  },
+  {
+    "model_id": "nvidia/nemotron-3.5-content-safety:free",
+    "platform": "kilo",
+    "priority": 321,
+    "enabled": true
+  },
+  {
+    "model_id": "nvidia/nemotron-3.5-lightning:free",
+    "platform": "kilo",
+    "priority": 322,
+    "enabled": true
+  },
+  {
+    "model_id": "openrouter/free",
+    "platform": "kilo",
+    "priority": 323,
+    "enabled": true
+  },
+  {
+    "model_id": "poolside/laguna-s-2.1:free",
+    "platform": "kilo",
+    "priority": 324,
+    "enabled": true
+  },
+  {
+    "model_id": "poolside/laguna-xs-2.1:free",
+    "platform": "kilo",
+    "priority": 325,
+    "enabled": true
+  },
+  {
+    "model_id": "default",
+    "platform": "llm7",
+    "priority": 326,
+    "enabled": true
+  },
+  {
+    "model_id": "minimax-m2.7",
+    "platform": "llm7",
+    "priority": 327,
+    "enabled": true
+  },
+  {
+    "model_id": "mistral-Nemo-Instruct-2407",
+    "platform": "llm7",
+    "priority": 328,
+    "enabled": true
+  },
+  {
+    "model_id": "ministral-14b-latest",
+    "platform": "mistral",
+    "priority": 329,
+    "enabled": true
+  },
+  {
+    "model_id": "mistral-code-latest",
+    "platform": "mistral",
+    "priority": 330,
+    "enabled": true
+  },
+  {
+    "model_id": "MiniMax/MiniMax-M3",
+    "platform": "modelscope",
+    "priority": 331,
+    "enabled": true
+  },
+  {
+    "model_id": "Qwen/Qwen3-235B-A22B-Instruct-2507",
+    "platform": "modelscope",
+    "priority": 332,
+    "enabled": true
+  },
+  {
+    "model_id": "Qwen/Qwen3-235B-A22B-Thinking-2507",
+    "platform": "modelscope",
+    "priority": 333,
+    "enabled": true
+  },
+  {
+    "model_id": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+    "platform": "modelscope",
+    "priority": 334,
+    "enabled": true
+  },
+  {
+    "model_id": "Qwen/Qwen3-Next-80B-A3B-Instruct",
+    "platform": "modelscope",
+    "priority": 335,
+    "enabled": true
+  },
+  {
+    "model_id": "Qwen/Qwen3-Next-80B-A3B-Thinking",
+    "platform": "modelscope",
+    "priority": 336,
+    "enabled": true
+  },
+  {
+    "model_id": "Qwen/Qwen3-VL-235B-A22B-Instruct",
+    "platform": "modelscope",
+    "priority": 337,
+    "enabled": true
+  },
+  {
+    "model_id": "Qwen/Qwen3.5-397B-A17B",
+    "platform": "modelscope",
+    "priority": 338,
+    "enabled": true
+  },
+  {
+    "model_id": "ZhipuAI/GLM-4.7-Flash",
+    "platform": "modelscope",
+    "priority": 339,
+    "enabled": true
+  },
+  {
+    "model_id": "ZhipuAI/GLM-5.2",
+    "platform": "modelscope",
+    "priority": 340,
+    "enabled": true
+  },
+  {
+    "model_id": "deepseek-ai/DeepSeek-V4-Pro",
+    "platform": "modelscope",
+    "priority": 341,
+    "enabled": true
+  },
+  {
+    "model_id": "agnes-2.5-flash",
+    "platform": "nara",
+    "priority": 342,
+    "enabled": true
+  },
+  {
+    "model_id": "stepfun-3.7-flash",
+    "platform": "nara",
+    "priority": 343,
+    "enabled": true
+  },
+  {
+    "model_id": "google/diffusiongemma-26b-a4b-it",
+    "platform": "nvidia",
+    "priority": 344,
+    "enabled": true
+  },
+  {
+    "model_id": "meta/llama-3.2-90b-vision-instruct",
+    "platform": "nvidia",
+    "priority": 345,
+    "enabled": true
+  },
+  {
+    "model_id": "meta/muse-glimmer-30b",
+    "platform": "nvidia",
+    "priority": 346,
+    "enabled": true
+  },
+  {
+    "model_id": "nvidia/ising-calibration-1.5-31b",
+    "platform": "nvidia",
+    "priority": 347,
+    "enabled": true
+  },
+  {
+    "model_id": "nvidia/nemotron-3-ultra-550b-a55b",
+    "platform": "nvidia",
+    "priority": 348,
+    "enabled": true
+  },
+  {
+    "model_id": "nvidia/nemotron-3.5-content-safety",
+    "platform": "nvidia",
+    "priority": 349,
+    "enabled": true
+  },
+  {
+    "model_id": "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "platform": "nvidia",
+    "priority": 350,
+    "enabled": true
+  },
+  {
+    "model_id": "openai/gpt-oss-20b",
+    "platform": "nvidia",
+    "priority": 351,
+    "enabled": true
+  },
+  {
+    "model_id": "poolside/laguna-xs-2.1",
+    "platform": "nvidia",
+    "priority": 352,
+    "enabled": true
+  },
+  {
+    "model_id": "nemotron-3-nano:30b",
+    "platform": "ollama",
+    "priority": 353,
+    "enabled": true
+  },
+  {
+    "model_id": "nemotron-3-super",
+    "platform": "ollama",
+    "priority": 354,
+    "enabled": true
+  },
+  {
+    "model_id": "nemotron-3-ultra",
+    "platform": "ollama",
+    "priority": 355,
+    "enabled": true
+  },
+  {
+    "model_id": "cohere/north-mini-code:free",
+    "platform": "openrouter",
+    "priority": 356,
+    "enabled": true
+  },
+  {
+    "model_id": "dots-studio/dots-3-note-preview:free",
+    "platform": "openrouter",
+    "priority": 357,
+    "enabled": true
+  },
+  {
+    "model_id": "liquid/lfm-2.5-2.6b:free",
+    "platform": "openrouter",
+    "priority": 358,
+    "enabled": true
+  },
+  {
+    "model_id": "nvidia/nemotron-3.5-content-safety:free",
+    "platform": "openrouter",
+    "priority": 359,
+    "enabled": true
+  },
+  {
+    "model_id": "nvidia/nemotron-3.5-lightning:free",
+    "platform": "openrouter",
+    "priority": 360,
+    "enabled": true
+  },
+  {
+    "model_id": "poolside/laguna-s-2.1:free",
+    "platform": "openrouter",
+    "priority": 361,
+    "enabled": true
+  },
+  {
+    "model_id": "poolside/laguna-xs-2.1:free",
+    "platform": "openrouter",
+    "priority": 362,
+    "enabled": true
+  },
+  {
+    "model_id": "Meta-Llama-3_3-70B-Instruct",
+    "platform": "ovh",
+    "priority": 363,
+    "enabled": true
+  },
+  {
+    "model_id": "Mistral-7B-Instruct-v0.3",
+    "platform": "ovh",
+    "priority": 364,
+    "enabled": true
+  },
+  {
+    "model_id": "Mistral-Nemo-Instruct-2407",
+    "platform": "ovh",
+    "priority": 365,
+    "enabled": true
+  },
+  {
+    "model_id": "Mistral-Small-3.2-24B-Instruct-2506",
+    "platform": "ovh",
+    "priority": 366,
+    "enabled": true
+  },
+  {
+    "model_id": "Qwen2.5-VL-72B-Instruct",
+    "platform": "ovh",
+    "priority": 367,
+    "enabled": true
+  },
+  {
+    "model_id": "Qwen3-Coder-30B-A3B-Instruct",
+    "platform": "ovh",
+    "priority": 368,
+    "enabled": true
+  },
+  {
+    "model_id": "Qwen3.5-397B-A17B",
+    "platform": "ovh",
+    "priority": 369,
+    "enabled": true
+  },
+  {
+    "model_id": "Qwen3.5-9B",
+    "platform": "ovh",
+    "priority": 370,
+    "enabled": true
+  },
+  {
+    "model_id": "Qwen3.6-27B",
+    "platform": "ovh",
+    "priority": 371,
+    "enabled": true
+  },
+  {
+    "model_id": "Qwen3Guard-Gen-0.6B",
+    "platform": "ovh",
+    "priority": 372,
+    "enabled": true
+  },
+  {
+    "model_id": "Qwen3Guard-Gen-8B",
+    "platform": "ovh",
+    "priority": 373,
+    "enabled": true
+  },
+  {
+    "model_id": "gpt-oss-120b",
+    "platform": "ovh",
+    "priority": 374,
+    "enabled": true
+  },
+  {
+    "model_id": "gpt-oss-20b",
+    "platform": "ovh",
+    "priority": 375,
+    "enabled": true
+  },
+  {
+    "model_id": "google/gemma-4-31b-it",
+    "platform": "requesty",
+    "priority": 378,
+    "enabled": true
+  },
+  {
+    "model_id": "mistral/leanstral-1-5",
+    "platform": "requesty",
+    "priority": 379,
+    "enabled": true
+  },
+  {
+    "model_id": "nvidia/muse-glimmer-30b",
+    "platform": "requesty",
+    "priority": 380,
+    "enabled": true
+  },
+  {
+    "model_id": "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning",
+    "platform": "requesty",
+    "priority": 381,
+    "enabled": true
+  },
+  {
+    "model_id": "nvidia/nemotron-3-super-120b-a12b",
+    "platform": "requesty",
+    "priority": 382,
+    "enabled": true
+  },
+  {
+    "model_id": "nvidia/nemotron-3-ultra-550b-a55b",
+    "platform": "requesty",
+    "priority": 383,
+    "enabled": true
+  },
+  {
+    "model_id": "nvidia/nemotron-3.5-content-safety",
+    "platform": "requesty",
+    "priority": 384,
+    "enabled": true
+  },
+  {
+    "model_id": "nvidia/nemotron-3.5-lightning-30b-a3b",
+    "platform": "requesty",
+    "priority": 385,
+    "enabled": true
+  },
+  {
+    "model_id": "aisingapore/Gemma-SEA-LION-v4-27B-IT",
+    "platform": "sealion",
+    "priority": 386,
+    "enabled": true
+  },
+  {
+    "model_id": "aisingapore/Llama-SEA-LION-v3-70B-IT",
+    "platform": "sealion",
+    "priority": 387,
+    "enabled": true
+  },
+  {
+    "model_id": "aisingapore/Qwen-SEA-LION-v4-32B-IT",
+    "platform": "sealion",
+    "priority": 388,
+    "enabled": true
+  },
+  {
+    "model_id": "aisingapore/Qwen-SEA-LION-v4.5-27B-IT",
+    "platform": "sealion",
+    "priority": 389,
+    "enabled": true
+  },
+  {
+    "model_id": "aisingapore/SEA-Guard",
+    "platform": "sealion",
+    "priority": 390,
+    "enabled": true
+  }
+]
