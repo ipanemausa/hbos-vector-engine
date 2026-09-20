@@ -63,3 +63,18 @@
   * 220-FAM_H-1789913354-586433e8
   * 220-SINT_D-1789913375-9b49ac95
 - **Veredicto:** **SÍNTESIS D ADOPTADA · CRECIMIENTO SIN REGRESIÓN**.
+
+---
+
+### 6. SUBPROYECTO MUSE ➔ APP HBOS: SÍNTESIS D ADOPTADA (§16)
+- **Instancia de Ejecución:** operation_id = 221 (Vigente desde op=221).
+- **Alternativas Evaluadas:** ALT_A (88.15), ALT_B (93.35), ALT_C (91.05).
+- **Síntesis D Emergente:** **98.85 / 100** (Supera a $\max(\text{partes}) = 93.35$).
+- **Profundidad Semántica ALEJAVI (M3):** 99 / 100.
+- **Nonces Criptográficos op 221:**
+  * 221-ANALISIS_MUSE-1789914767-0ceadbe8
+  * 221-ALT_A-1789914812-5f549ad0
+  * 221-ALT_B-1789914846-90dce832
+  * 221-ALT_C-1789914890-e699b42c
+  * 221-SINT_D-1789914934-7ee2e38d
+- **Veredicto:** **SÍNTESIS D ADOPTADA COMO DISEÑO CANÓNICO DE LA APP HBOS**.
