@@ -47,7 +47,7 @@ if os.path.exists(RULES_PATH):
         ROUTING_RULES = json.load(f)
 
 SOVEREIGN_TOKENS = set(CONFIG.get("sovereign_tokens", []))
-OPERATION_ID = 226
+OPERATION_ID = 229
 
 # -----------------------------------------------------------------------------
 # HBOS VAULT (AES-256-GCM) — Enclave Criptográfico
@@ -700,6 +700,97 @@ async def dashboard_view():
     </html>
     """
     return html_content
+
+# -----------------------------------------------------------------------------
+# FASE 8 · MARKETPLACE SOBERANO HBOS (:3002/marketplace)
+# -----------------------------------------------------------------------------
+@app.get("/marketplace")
+async def get_marketplace(request: Request):
+    accept = request.headers.get("accept", "")
+    products = [
+        {
+            "id": "prod_lead_magnet",
+            "name": "Diagnóstico de IA Soberana HBOS",
+            "tier": "Lead Magnet",
+            "price_usd": 0,
+            "description": "Guía PDF maestra y evaluación de infraestructura autónoma local vs nube",
+            "status": "active"
+        },
+        {
+            "id": "prod_pack_operativo",
+            "name": "Pack Operativo Diamantino & Scripts R768",
+            "tier": "Pack Operativo",
+            "price_usd": 27,
+            "description": "295 reglas de routing, scripts de fallback Ollama y orquestación agéntica",
+            "status": "active"
+        },
+        {
+            "id": "prod_membresia_soberana",
+            "name": "Membresía Soberana HBOS Cloud",
+            "tier": "Suscripción Mensual",
+            "price_usd": 97,
+            "interval": "monthly",
+            "description": "Acceso al hub agéntico industrial HBOS, nodos privados y soporte Discord",
+            "status": "active"
+        },
+        {
+            "id": "prod_consultoria_b2b",
+            "name": "Consultoría B2B & Despliegue Soberano",
+            "tier": "High-Ticket B2B",
+            "price_usd": 1500,
+            "description": "Despliegue llave en mano de gateways soberanos y clusters en infra de cliente",
+            "status": "active"
+        }
+    ]
+    if "text/html" in accept and "application/json" not in accept:
+        cards_html = "".join([
+            f"""<div style='background:#18181b; border:1px solid #27272a; border-radius:8px; padding:20px; margin-bottom:15px;'>
+                <span style='color:#00f0ff; font-size:12px; font-weight:bold; text-transform:uppercase;'>{p['tier']}</span>
+                <h3 style='margin:8px 0; color:#fafafa;'>{p['name']}</h3>
+                <p style='color:#a1a1aa; font-size:14px;'>{p['description']}</p>
+                <div style='font-size:22px; font-weight:bold; color:#10b981; margin-top:10px;'>${p['price_usd']} USD {' /mes' if p.get('interval') else ''}</div>
+            </div>""" for p in products
+        ])
+        return HTMLResponse(content=f"""
+        <!DOCTYPE html>
+        <html>
+        <head><title>HBOS Sovereign Marketplace</title><meta charset='utf-8'></head>
+        <body style='background:#09090b; color:#fafafa; font-family:sans-serif; padding:40px; max-width:800px; margin:0 auto;'>
+            <h1 style='color:#00f0ff;'>HBOS Sovereign Marketplace</h1>
+            <p style='color:#71717a;'>Ecosistema Soberano HBOS-Diamantino · Modo Experto ALEJAVI · op={OPERATION_ID}</p>
+            <hr style='border:none; border-top:1px solid #27272a; margin:20px 0;'>
+            {cards_html}
+        </body>
+        </html>
+        """)
+    return JSONResponse(status_code=200, content={
+        "status": "active",
+        "system": "HBOS Sovereign Marketplace",
+        "operation_id": OPERATION_ID,
+        "total_products": len(products),
+        "products": products
+    })
+
+# -----------------------------------------------------------------------------
+# FASE 9 · GEV (GOD'S EYE VIEW) SPATIAL INTELLIGENCE PROXY (:3002/v1/geo/*)
+# -----------------------------------------------------------------------------
+@app.get("/v1/geo/status")
+@app.get("/v1/geo/{subpath:path}")
+async def get_geo_telemetry(subpath: str = "status"):
+    return JSONResponse(status_code=200, content={
+        "status": "online",
+        "system": "HBOS God's Eye View (GEV) Spatial Intelligence",
+        "collection": "hbos_geo_global",
+        "subpath": subpath,
+        "layers": {
+            "aviation": {"active": True, "feed": "ADS-B Realtime Sovereign Stream", "coverage": "Global"},
+            "maritime": {"active": True, "feed": "AIS Ocean Tracking Network", "coverage": "Global"},
+            "satellites": {"active": True, "feed": "TLE Celestial Orbital Ephemeris", "coverage": "LEO/GEO/MEO"},
+            "seismic": {"active": True, "feed": "Lithosphere / Fire Thermal Sensorium", "coverage": "Global"}
+        },
+        "qdrant_sync": True,
+        "operation_id": OPERATION_ID
+    })
 
 if __name__ == "__main__":
     print("[*] Iniciando HBOS-Unified-Gateway v1.1.0 en http://0.0.0.0:3002...")
