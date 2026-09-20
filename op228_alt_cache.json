@@ -1,0 +1,29 @@
+{
+  "ALT_A": {
+    "text": "### ESPECIFICACI\u00d3N T\u00c9CNICA DE ARQUITECTURA: ALTERNATIVA 'ALT_A'\n**Fase 1: Daemon Soberano FreeLLMAPI & M\u00f3dulo de Enrutamiento Universal**\n**Identificador de Traza:** `[NONCE:228-ALT_A-1789945611-6f7c42ee]` | `[VARIANTE:ALT_A]`\n\n---\n\n### 1. Arquitectura Desacoplada por Capas (\u00a7D)\n\nLa Fase 1 de la alternativa **ALT_A** implementa un patr\u00f3n de microservicios desacoplados donde el plano de control, la infraestructura de integraci\u00f3n de contexto y el motor de inferencia ejecutan ciclos de vida independientes. El n\u00facleo de esta arquitectura se centraliza en el daemon soberano que expone el servicio de orquestaci\u00f3n en el puerto TCP `:3001`.\n\n```\n                  +-------------------------------------------------------+\n                  |            PLANO DE APLICACI\u00d3N / CLIENTES             |\n                  +-------------------------------------------------------+\n                                              |\n                                              v (HTTP / gRPC)\n                  +-------------------------------------------------------+\n                  |  CAPA \u00a7D.1: ENRUTADOR UNIVERSAL (Daemon :: puerto :3001)|\n                  |  - Normalizaci\u00f3n de Payloads OpenAI/Anthropic         |\n                  |  - Invariante de Mapeo Vectorial R768                 |\n                  +-------------------------------------------------------+\n                                              |\n                                              v (Model Context Protocol)\n                  +-------------------------------------------------------+\n                  |  CAPA \u00a7D.2: INTEGRACI\u00d3N MCP (hbos-freellmapi)          |\n                  |  - Gesti\u00f3n de Estado y Contexto de Herramientas       |\n                  |  - Circuit Breakers y Shielding de Cuota              |\n                  +-------------------------------------------------------+\n                                              |\n                       +----------------------+----------------------+\n                       | (Primario)           | (Fallback L1)        | (Fallback L2)\n                       v                      v                      v\n            +--------------------+  +-------------------+  +--------------------+\n            + FreeLLMAPI Engine  +  +  Ollama Local     +  + Google Nube (GCP)  +\n            + (235 Modelos Free) +  +  (Modelos Edge)   +  + (Vertex/Gemini API)+\n            +--------------------+  +-------------------+  +",
+    "nonce": "228-ALT_A-1789945611-6f7c42ee",
+    "t_req": 1789945611.512842,
+    "t_resp": 1789945669.3402739,
+    "duration": 59.832175731658936,
+    "sha256": "76be5e49cf1ca6fde3e01460e6de43f29c028f559bbf1936e9ecdd5bbc87fdc8",
+    "model": "gemini-3.6-flash"
+  },
+  "ALT_B": {
+    "text": "================================================================================\nSISTEMA HBOS / FASE 2: GOD'S EYE VIEW (GEV) - INTEGRACI\u00d3N ESPACIAL GLOBAL\nID VARIANTE: ALT_B | NONCE: 228-ALT_B-1789945725-6555c0a9\n================================================",
+    "nonce": "228-ALT_B-1789945725-6555c0a9",
+    "t_req": 1789945725.696886,
+    "t_resp": 1789945766.5360873,
+    "duration": 42.324357986450195,
+    "sha256": "5f25c7c3fdf4a7135401bfc85c313ae1d463cfaad1ea00bba9f99ff225197692",
+    "model": "gemini-3.6-flash"
+  },
+  "ALT_C": {
+    "text": "# ESPECIFICACI\u00d3N T\u00c9CNICA: ALTERNATIVA 'ALT_C' (FASE 3)\n## M\u00f3dulo Soberano de Escucha, Transcripci\u00f3n y Compresi\u00f3n Vectorial en $\\mathbb{R}^{768}$\n\n---\n\n### 1. ARQUITECTURA DESACOPLADA POR CAPAS ($\\S D$)\n\nLa arquitectura **ALT_C** implementa un dise\u00f1o modular desacoplado en capas ($\\S D$), optim",
+    "nonce": "228-ALT_C-1789945768-f16458e9",
+    "t_req": 1789945768.538673,
+    "t_resp": 1789945814.7804272,
+    "duration": 48.242671728134155,
+    "sha256": "7daca4bfb46d046478a82e3e508eea731fcab308078814ead0ea59d51886ebec",
+    "model": "gemini-3.6-flash"
+  }
+}
