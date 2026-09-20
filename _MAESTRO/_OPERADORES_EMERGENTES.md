@@ -47,3 +47,19 @@
   * 219-M_P-1789911474-b00cbaad
   * 219-FAM_H-1789911475-a833e630
 - **Veredicto:** **ADOPTADO COMO OPERADOR SUPERIOR DEL ECOSISTEMA**.
+
+---
+
+### 5. MECÁNICA DE EMERGENCIA H_ALT Y REGLA DE NO-REGRESIÓN (§7.2, §7.3)
+- **Instancia de Emergencia:** operation_id = 220 (Vigente desde op=220).
+- **Base Operativa:** Híbrido $\text{LLMAPI} \oplus \mathcal{F}_{768}$ sobre Entorno Total FAM@-T.
+- **Alternativas Evaluadas:** ALT_A (88.9), ALT_B (90.0), ALT_C (96.55), FAM_H (97.95).
+- **Síntesis D Emergente:** **98.75 / 100** (Supera a $\max(\text{partes}) = 97.95$).
+- **No-Regresión:** Cumplida formalmente ($D > \max$).
+- **Nonces Criptográficos op 220:**
+  * 220-ALT_A-1789913253-4b8187a0
+  * 220-ALT_B-1789913291-5c4e44b9
+  * 220-ALT_C-1789913316-73c95672
+  * 220-FAM_H-1789913354-586433e8
+  * 220-SINT_D-1789913375-9b49ac95
+- **Veredicto:** **SÍNTESIS D ADOPTADA · CRECIMIENTO SIN REGRESIÓN**.
