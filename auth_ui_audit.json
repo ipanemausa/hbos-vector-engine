@@ -4,3 +4,4 @@
 {"timestamp": "Mon Sep 21 06:55:20 2026", "scope": "op244_preview", "message": "HBOS: Autorizar preview YouTube op=244", "result": "VERIFIED", "expires_at": 1789991720.8430712}
 {"timestamp": "Mon Sep 21 06:57:04 2026", "scope": "op244_preview", "message": "HBOS R51: Aprobar preview y publicacion en YouTube Studio", "result": "VERIFIED", "expires_at": 1789991824.958164}
 {"timestamp": "Mon Sep 21 07:09:03 2026", "scope": "op244_video", "message": "HBOS: Autorizar apertura de video op=244", "result": "VERIFIED", "expires_at": 1789992543.348486}
+{"timestamp": "Mon Sep 21 12:47:37 2026", "scope": "op247_preview", "message": "HBOS R51: Aprobar preview y publicacion en YouTube Studio op=247", "result": "VERIFIED", "expires_at": 1790012857.9780288}

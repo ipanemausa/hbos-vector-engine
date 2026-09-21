@@ -1,12 +1,12 @@
 {
-  "operation_id": 244,
-  "timestamp": "Mon Sep 21 06:57:04 2026",
+  "operation_id": 247,
+  "timestamp": "Mon Sep 21 12:47:37 2026",
   "rule": "R51",
   "status": "PREVIEW_APPROVED",
-  "player_pid": 31716,
+  "player_pid": 29260,
   "metadata": {
     "title": "Demis Hassabis: El Arquitecto de DeepMind y AlphaFold | HBOS Ep04",
-    "description": "Episodio 04 de HBOS-Diamantino.\nLa revolucion de AlphaFold y la creacion de la AGI soberana explicada por Demis Hassabis.\n\nCanal Soberano: @ipanemamarketingusa\nHash Criptografico SHA-256: 2291e97ab6a1949eea0ea4d5729f2729c2864ae258fa8779810cd93fea5dd505",
+    "description": "Episodio 04 de HBOS-Diamantino.\nLa revolucion de AlphaFold y la creacion de la AGI soberana explicada por Demis Hassabis.\n\nCanal Soberano: @ipanemamarketingusa\nHash Criptografico SHA-256: 5a698e9eebe6899fb21b1943a741a56cd02e67ab59f1a8206b57ea5e383af918",
     "tags": [
       "DemisHassabis",
       "DeepMind",
@@ -18,10 +18,10 @@
     ],
     "privacy": "private",
     "category_id": "28",
-    "video_file": "C:\\Users\\ipane\\hbos-deploy\\hbos-vector-engine\\assets\\videos\\demis_hassabis_final.mp4",
-    "thumbnail_file": "C:\\Users\\ipane\\hbos-deploy\\hbos-vector-engine\\assets\\videos\\demis_hassabis_youtube_thumb.jpg",
-    "size_mb": 69.42,
-    "sha256": "2291e97ab6a1949eea0ea4d5729f2729c2864ae258fa8779810cd93fea5dd505",
+    "video_file": "C:\\Users\\ipane\\hbos-deploy\\hbos-vector-engine\\assets\\videos\\demis_hassabis_v2\\video_final_v2.mp4",
+    "thumbnail_file": "C:\\Users\\ipane\\hbos-deploy\\hbos-vector-engine\\assets\\videos\\demis_hassabis_v2\\thumbnail_master.jpg",
+    "size_mb": 80.29,
+    "sha256": "5a698e9eebe6899fb21b1943a741a56cd02e67ab59f1a8206b57ea5e383af918",
     "oauth_status": "OAUTH_PENDING",
     "studio_preview_url": "https://studio.youtube.com"
   },

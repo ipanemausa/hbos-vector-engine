@@ -14,8 +14,10 @@ from hbos_auth_ui import HBOSAuthUI
 
 class HBOSYouTubeStudioPreview:
     def __init__(self):
-        self.video_path = os.path.abspath('assets/videos/demis_hassabis_final.mp4')
-        self.thumb_path = os.path.abspath('assets/videos/demis_hassabis_youtube_thumb.jpg')
+        v2_path = os.path.abspath('assets/videos/demis_hassabis_v2/video_final_v2.mp4')
+        self.video_path = v2_path if os.path.exists(v2_path) else os.path.abspath('assets/videos/demis_hassabis_final.mp4')
+        v2_thumb = os.path.abspath('assets/videos/demis_hassabis_v2/thumbnail_master.jpg')
+        self.thumb_path = v2_thumb if os.path.exists(v2_thumb) else os.path.abspath('assets/videos/demis_hassabis_youtube_thumb.jpg')
         self.log_file = 'youtube_studio_preview_log.json'
         self.auth = HBOSAuthUI(timeout_minutes=60)
 
@@ -80,14 +82,14 @@ class HBOSYouTubeStudioPreview:
         # 2. Abrir reproductor en Pantalla 3
         player_pid = self.launch_screen3_preview()
         
-        # 3. Validacion Biometrica con Windows Hello (scope op244_preview)
+        # 3. Validacion Biometrica con Windows Hello (scope op247_preview)
         approved = self.auth.authorize(
-            scope='op244_preview',
-            message='HBOS R51: Aprobar preview y publicacion en YouTube Studio'
+            scope='op247_preview',
+            message='HBOS R51: Aprobar preview y publicacion en YouTube Studio op=247'
         )
         
         audit_entry = {
-            'operation_id': 244,
+            'operation_id': 247,
             'timestamp': time.asctime(),
             'rule': 'R51',
             'status': 'PREVIEW_APPROVED' if approved else 'PREVIEW_REJECTED',
