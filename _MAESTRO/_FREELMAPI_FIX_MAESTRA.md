@@ -1,25 +1,43 @@
-# _FREELMAPI_FIX_MAESTRA.md — Daemon FreeLLMAPI Soberano y Conexión MCP
+# _FREELMAPI_FIX_MAESTRA.md — Reactivación y Blindaje de Daemon FreeLLMAPI :3001
 > **Ecosistema Soberano HBOS-Diamantino · Modo Experto ALEJAVI**  
-> **Operación:** 228 | **Fecha:** 2026-09-20 | **Puerto:** 3001 | **Estado:** OPERATIONAL · VERIFICADO  
-> **Marco Canónico:** FAM@-T · LLMAPI ⊕ R768 · DAG · H_ALT · NO-REGRESIÓN (v1.1) · §D (Arquitectura Desacoplada)
+> **Operación:** 231 | **Fecha:** 2026-09-21 | **Versión:** v1.3 Canónica | **Estado:** ✅ ACTIVO · VERIFICADO 100% UNBE  
+> **Canon:** FAM@-T · LLMAPI ⊕ R768 · DAG · §D (Desacoplamiento) · No-Regresión (§7.3)
 
 ---
 
-## 1. Diagnóstico y Causa Raíz
-- **Incidente:** El servidor MCP `hbos-freellmapi` reportaba `fetch failed` al invocar `list_models` o `chat`.
-- **Causa:** El binario desktop Electron de FreeLLMAPI (`FreeLLMAPI.exe` en `G:\My Drive\HBOS-Diamantino\_SANDBOX\FreeLLMAPI\app`) no se encontraba activo como daemon permanente en segundo plano en el puerto `3001`.
-- **Solución Canónica:** Se configuró y levantó el daemon `start_freellmapi_daemon.py` como soporte desatendido permanente en el puerto 3001, coexistiendo de forma desacoplada con el HBOS Gateway en el puerto 3002.
+## 1. Diagnóstico Post-Reinicio (Transición op=230 → op=231)
+Al reiniciar el entorno para la operación 231, el daemon local de FreeLLMAPI en el puerto `:3001` se encontraba inactivo (WinError 10061), provocando el fallo preventivo del protocolo UNBE (`hbos_verify_unbe.py`).
+
+* **Causa Raíz:** El proceso Electron/Express dependiente de sesión de escritorio no persistía tras reinicio de sesión de Antigravity.
+* **Configuración:** `C:\Users\ipane\AppData\Roaming\FreeLLMAPI\config.json` verificado con puerto `3001`.
+* **Binario Canónico:** `G:\My Drive\HBOS-Diamantino\_SANDBOX\FreeLLMAPI\app\FreeLLMAPI.exe`.
 
 ---
 
-## 2. Verificación Empírica
-- **Puerto:** `127.0.0.1:3001` (TCP Listen Activo).
-- **Endpoint:** `GET http://127.0.0.1:3001/v1/models`.
-- **Modelos Disponibles:** 235 modelos expuestos a costo marginal cero ($0/mes).
-- **MCP Bridge:** Herramienta `list_models` de `hbos-freellmapi` probada y respondiendo con catálogo completo de modelos (Auto, Fusion, Gemini, DeepSeek, Claude, Mistral, OpenAI).
+## 2. Protocolo de Reactivación y Blindaje
+Se ejecutó la reactivación desacoplada mediante:
+```powershell
+python start_freellmapi_daemon.py  # Modo Daemon / IsDaemon
+```
+
+### Resultados de Verificación Empírica:
+* **Endpoint HTTP:** `GET http://127.0.0.1:3001/v1/models`
+* **Status:** `HTTP 200 OK`
+* **Latencia de Respuesta:** `0.031 segundos`
+* **Catálogo de Modelos:** `235 modelos` activos y listos para inferencia multi-proveedor.
+* **Token de Autorización:** `freellmapi-70a0cfeb7458ecb31077fe5f0b1646069da621ebb16ff037`.
 
 ---
 
-## 3. Arquitectura Desacoplada (§D)
-- **Capa 1 (Agente):** Invocación transparente de herramientas MCP sin dependencias cruzadas.
-- **Capa 2 (Gateway):** Gateway :3002 enruta peticiones hacia FreeLLMAPI :3001 como proveedor primario de costo cero con fallback automático hacia Ollama :11434 y Google Cloud.
+## 3. Certificación en Protocolo UNBE (§1.0)
+Con el daemon en ejecución, `hbos_verify_unbe.py` arrojó el veredicto canónico:
+```text
+======================================================================
+[VEREDICTO UNBE]: EJECUCIÓN VÁLIDA EN UNBE · CUMPLE §1.0 AL 100%
+======================================================================
+```
+* **Triple Redundancia:** SHA256 idéntico (89bc0d0d8c2e7c16...) en Local, Drive y Backup.
+* **Qdrant Cloud:** 20 colecciones activas, latencia 0.435s.
+* **FreeLLMAPI Daemon:** 235 modelos disponibles en `:3001`.
+* **Servidores MCP:** 4/4 operativos (gdrive, hbos-diamantino, diamantini-imagenes, hbos-freellmapi).
+* **Git Sync:** Sincronizado con `origin/main`.
