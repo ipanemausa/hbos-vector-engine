@@ -1,0 +1,27 @@
+{
+  "fase_id": 1,
+  "nombre": "Intro: El Arquitecto de DeepMind",
+  "anchor_principal": "Diamantino",
+  "anchor_secundario": null,
+  "presentador_humano": "Alex (Supervisión)",
+  "background_tema": "Redes Neuronales y Cómputo Cuántico",
+  "fuente_r58": "Google DeepMind About (deepmind.google/about) · Nobel Chemistry 2024",
+  "dialogo": "Saludos, arquitectos del futuro. Hoy desentrañamos el hito que redefinió la frontera entre computación y biología molecular: la trayectoria de Sir Demis Hassabis y Google DeepMind.",
+  "duracion_segundos": 45.0,
+  "movimientos_humanizados": {
+    "respiracion_frecuencia_hz": 0.25,
+    "micro_inclinacion_cabeza": "dinamica_suave_3_grados",
+    "parpadeo_intervalo_s": [
+      2.8,
+      4.2
+    ],
+    "gestos_manos": "apertura_bienvenida_y_enfasis_frontal",
+    "vector_mirada": "directo_a_camara_con_foco_activo",
+    "pasos_interpolacion": 420
+  },
+  "interaccion_background": {
+    "evento_inicio": "pulso_sinaptico_central",
+    "evento_destacado": "aparicion_holograma_demis_deepmind",
+    "zoom_canvas": 1.05
+  }
+}

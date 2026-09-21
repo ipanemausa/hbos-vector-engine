@@ -1,0 +1,27 @@
+{
+  "fase_id": 3,
+  "nombre": "AlphaFold: Precisión Atómica y Open Science",
+  "anchor_principal": "Diamantino",
+  "anchor_secundario": "Anchor_Salud",
+  "presentador_humano": null,
+  "background_tema": "Red de Atención Espacial AlphaFold 2 y 3",
+  "fuente_r58": "EMBL-EBI AlphaFold Database (alphafold.ebi.ac.uk) & Nature 630, 493–500 (2024)",
+  "dialogo": "Con AlphaFold, DeepMind no solo resolvió el reto con precisión atómica, sino que liberó más de doscientos millones de estructuras tridimensionales para toda la humanidad.",
+  "duracion_segundos": 50.0,
+  "movimientos_humanizados": {
+    "respiracion_frecuencia_hz": 0.26,
+    "micro_inclinacion_cabeza": "asentimiento_rotundo_de_veracidad",
+    "parpadeo_intervalo_s": [
+      2.5,
+      3.8
+    ],
+    "gestos_manos": "sintesis_palmar_expandida",
+    "vector_mirada": "foco_en_metadatos_200m_estructuras",
+    "pasos_interpolacion": 420
+  },
+  "interaccion_background": {
+    "evento_inicio": "convergencia_de_gradientes_3d",
+    "evento_destacado": "proyeccion_globo_terrestre_con_200M_proteinas",
+    "zoom_canvas": 1.2
+  }
+}

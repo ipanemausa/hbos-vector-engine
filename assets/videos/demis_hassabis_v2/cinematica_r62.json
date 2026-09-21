@@ -1,0 +1,50 @@
+{
+  "engine": "HBOS-Anchor-Vivo-R62",
+  "version": "1.0",
+  "video_target": "demis_hassabis_v2",
+  "reglas_activas": [
+    "R58",
+    "R61",
+    "R62"
+  ],
+  "total_fases": 5,
+  "duracion_total_segundos": 251.0,
+  "total_movimientos_interpolados": 2100,
+  "fases": [
+    {
+      "fase_id": 1,
+      "nombre": "Intro: El Arquitecto de DeepMind",
+      "duracion_segundos": 45.0,
+      "pasos_humanizados": 420,
+      "fuente_r58": "Google DeepMind About (deepmind.google/about) · Nobel Chemistry 2024"
+    },
+    {
+      "fase_id": 2,
+      "nombre": "Genomas: El Enigma del Plegamiento",
+      "duracion_segundos": 55.0,
+      "pasos_humanizados": 420,
+      "fuente_r58": "Nature 596, 583–589 (2021) · CASP14 Structural Biology Milestone"
+    },
+    {
+      "fase_id": 3,
+      "nombre": "AlphaFold: Precisión Atómica y Open Science",
+      "duracion_segundos": 50.0,
+      "pasos_humanizados": 420,
+      "fuente_r58": "EMBL-EBI AlphaFold Database (alphafold.ebi.ac.uk) & Nature 630, 493–500 (2024)"
+    },
+    {
+      "fase_id": 4,
+      "nombre": "Aplicaciones: Farma, Hospitales y Sostenibilidad",
+      "duracion_segundos": 52.0,
+      "pasos_humanizados": 420,
+      "fuente_r58": "Isomorphic Labs Collaborations (Eli Lilly, Novartis) & Portsmouth University PETase"
+    },
+    {
+      "fase_id": 5,
+      "nombre": "Cierre y Soberanía HBOS",
+      "duracion_segundos": 49.0,
+      "pasos_humanizados": 420,
+      "fuente_r58": "Royal Swedish Academy Nobel 2024 & Arquitectura HBOS FAM@-T"
+    }
+  ]
+}

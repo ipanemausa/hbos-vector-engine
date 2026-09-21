@@ -3,7 +3,7 @@
   "episode": "ep04",
   "name": "demis_hassabis_v2",
   "title": "Demis Hassabis: El Arquitecto de DeepMind y AlphaFold | HBOS Ep04",
-  "description": "Edici\u00f3n aislada con estructura can\u00f3nica R59: audio, backgrounds, escenas, frames y metadata auditada.",
+  "description": "Edición aislada con estructura canónica R59: audio, backgrounds, escenas, frames y metadata auditada.",
   "duration_seconds": 251.49,
   "resolution": "1920x1080",
   "aspect_ratio": "16:9",
@@ -15,6 +15,27 @@
   "size_mb": 69.42,
   "structure_verified": true,
   "rule": "R59",
-  "operation_id": 244,
-  "timestamp": "Mon Sep 21 07:38:46 2026"
+  "operation_id": 245,
+  "timestamp": "Mon Sep 21 07:38:46 2026",
+  "video_final_v2": {
+    "filename": "video_final_v2.mp4",
+    "size_bytes": 84190461,
+    "size_mb": 80.29,
+    "sha256": "5a698e9eebe6899fb21b1943a741a56cd02e67ab59f1a8206b57ea5e383af918",
+    "rules_applied": [
+      "R58",
+      "R59",
+      "R61",
+      "R62"
+    ],
+    "duration_seconds": 251.49,
+    "resolution": "1920x1080",
+    "codec_video": "h264",
+    "codec_audio": "aac",
+    "audio_lufs": -14.0,
+    "cinematics_steps": 2100,
+    "phases_count": 5,
+    "operation_id": 245,
+    "updated_at": "Mon Sep 21 07:56:00 2026"
+  }
 }

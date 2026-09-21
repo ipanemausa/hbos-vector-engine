@@ -1,0 +1,27 @@
+{
+  "fase_id": 2,
+  "nombre": "Genomas: El Enigma del Plegamiento",
+  "anchor_principal": "Diamantino",
+  "anchor_secundario": "Anchor_Salud",
+  "presentador_humano": null,
+  "background_tema": "Doble Hélice de ADN y Cadenas Polipeptídicas",
+  "fuente_r58": "Nature 596, 583–589 (2021) · CASP14 Structural Biology Milestone",
+  "dialogo": "Durante cincuenta años, el enigma del plegamiento de proteínas desafió a los mayores centros del planeta. El código genético dictaba la secuencia, pero inferir la estructura 3D requería décadas.",
+  "duracion_segundos": 55.0,
+  "movimientos_humanizados": {
+    "respiracion_frecuencia_hz": 0.28,
+    "micro_inclinacion_cabeza": "giro_atento_hacia_anchor_salud_15_grados",
+    "parpadeo_intervalo_s": [
+      3.0,
+      4.5
+    ],
+    "gestos_manos": "senalizacion_lateral_al_canvas_genomico",
+    "vector_mirada": "alternada_camara_y_pantalla_adn",
+    "pasos_interpolacion": 420
+  },
+  "interaccion_background": {
+    "evento_inicio": "despliegue_helice_adn_3d",
+    "evento_destacado": "simulacion_plegamiento_aminoacidos",
+    "zoom_canvas": 1.15
+  }
+}

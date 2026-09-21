@@ -1,0 +1,27 @@
+{
+  "fase_id": 4,
+  "nombre": "Aplicaciones: Farma, Hospitales y Sostenibilidad",
+  "anchor_principal": "Diamantino",
+  "anchor_secundario": "Anchor_Farma",
+  "presentador_humano": null,
+  "background_tema": "Acoplamiento Molecular Ligando-Receptor y PETasa",
+  "fuente_r58": "Isomorphic Labs Collaborations (Eli Lilly, Novartis) & Portsmouth University PETase",
+  "dialogo": "A través de Isomorphic Labs y alianzas multimillonarias con Novartis y Eli Lilly, la predicción acelera fármacos y bio-enzimas para degradar plásticos en horas.",
+  "duracion_segundos": 52.0,
+  "movimientos_humanizados": {
+    "respiracion_frecuencia_hz": 0.27,
+    "micro_inclinacion_cabeza": "escucha_activa_y_ceder_turno_a_farma",
+    "parpadeo_intervalo_s": [
+      2.9,
+      4.1
+    ],
+    "gestos_manos": "apuntamiento_precision_a_sitio_activo_enzima",
+    "vector_mirada": "camara_con_microdesplazamientos_humanos",
+    "pasos_interpolacion": 420
+  },
+  "interaccion_background": {
+    "evento_inicio": "docking_molecular_en_tiempo_real",
+    "evento_destacado": "descomposicion_molecular_polimero_pet",
+    "zoom_canvas": 1.1
+  }
+}

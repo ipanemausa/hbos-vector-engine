@@ -1,0 +1,27 @@
+{
+  "fase_id": 5,
+  "nombre": "Cierre y Soberanía HBOS",
+  "anchor_principal": "Diamantino",
+  "anchor_secundario": null,
+  "presentador_humano": "Alex (Director Soberano)",
+  "background_tema": "Grafo de Inferencia DAG HBOS-Diamantino",
+  "fuente_r58": "Royal Swedish Academy Nobel 2024 & Arquitectura HBOS FAM@-T",
+  "dialogo": "Demis Hassabis demostró que la inteligencia artificial es un telescopio para la ciencia fundamental. En HBOS-Diamantino, adoptamos este rigor para coordinar la nueva era cognitiva.",
+  "duracion_segundos": 49.0,
+  "movimientos_humanizados": {
+    "respiracion_frecuencia_hz": 0.24,
+    "micro_inclinacion_cabeza": "elevacion_inspiracional_frontal",
+    "parpadeo_intervalo_s": [
+      3.1,
+      4.4
+    ],
+    "gestos_manos": "cierre_manos_juntas_agradecimiento_respetuoso",
+    "vector_mirada": "directo_a_comunidad_y_camara",
+    "pasos_interpolacion": 420
+  },
+  "interaccion_background": {
+    "evento_inicio": "despliegue_constelacion_hbos_diamantino",
+    "evento_destacado": "sello_inmutable_unbe_100_ok",
+    "zoom_canvas": 1.0
+  }
+}
