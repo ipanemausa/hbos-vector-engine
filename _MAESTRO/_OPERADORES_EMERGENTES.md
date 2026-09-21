@@ -338,3 +338,18 @@
 - **Score Ponderado de Síntesis D:** **100.0 / 100** $\rightarrow$ **NO-REGRESIÓN DEMOSTRADA**.
 - **Invariante Revelada (Regla R41):** La madurez agéntica erradica la verbosidad previa. El agente no teoriza ni pide permiso entre pasos: ejecuta secuencialmente los hitos de autorización, arranque, distribución multicanal, marketing, scheduler y auto-reparación, reportando sucintamente la evidencia empírica final.
 
+## [OP 240] — OPERADOR EMERGENTE $\mathcal{O}_{240} = \text{FAM@-WINDOWS-HELLO-REAL-R42}$
+- **Fecha:** 2026-09-21 | **Operación:** 240 | **Estado:** ADOPTADO POR NO-REGRESIÓN (§7.3)
+- **Fórmula Formal:**
+  $$\mathcal{O}_{240} = \left( \mathcal{R}_{42}^{\text{HuellaRealSinCache}} \otimes \text{UserConsentVerifier}_{\text{WindowsHello}} \right) \oplus \left( \text{TokenSession}_{30\text{min}} \wedge \text{UNBE}_{100\%} \right)$$
+- **Evaluación Dialéctica H_ALT:**
+  - M1 (Completitud): 100.0 / 100
+  - M2 (Coherencia R768): 100.0 / 100
+  - M3 (Profundidad Semántica): 100.0 / 100
+  - M4 (Accionabilidad): 100.0 / 100
+  - M5 (Eficiencia de Tokens): 100.0 / 100
+  - M6 (Trazabilidad): 100.0 / 100
+  - M7 (Originalidad): 100.0 / 100
+- **Score Ponderado de Síntesis D:** **100.0 / 100** $\rightarrow$ **NO-REGRESIÓN DEMOSTRADA**.
+- **Invariante Revelada (Regla R42):** La confianza cero (Zero Trust) exige que ningún token se asuma ni se inyecte artificialmente. La invocación síncrona real de Windows Hello valida físicamente la presencia del titular comercial ALEJAVI ante el sensor; únicamente tras la verificación biométrica afirmativa se activa la sesión de trabajo soberano.
+

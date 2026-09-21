@@ -1,66 +1,66 @@
 {
-  "execution_time": "Mon Sep 21 06:18:43 2026",
+  "execution_time": "Mon Sep 21 06:25:27 2026",
   "media": "assets/videos/demis_hassabis_final.mp4",
   "sha256": "2291e97ab6a1949eea0ea4d5729f2729c2864ae258fa8779810cd93fea5dd505",
   "title": "Demis Hassabis Ep04",
   "dispatched": {
     "youtube": {
       "status": "SCHEDULED_OK",
-      "timestamp": 1789985923.9138846,
+      "timestamp": 1789986327.847548,
       "handle": "@ipanemamarketingusa",
       "impact": "HIGH"
     },
     "instagram": {
       "status": "SCHEDULED_OK",
-      "timestamp": 1789985923.9138935,
+      "timestamp": 1789986327.8475559,
       "handle": "@ipanemamarketingusa",
       "impact": "HIGH"
     },
     "tiktok": {
       "status": "SCHEDULED_OK",
-      "timestamp": 1789985923.913896,
+      "timestamp": 1789986327.8475585,
       "handle": "@ipanemamarketingusa",
       "impact": "HIGH"
     },
     "x": {
       "status": "SCHEDULED_OK",
-      "timestamp": 1789985923.913897,
+      "timestamp": 1789986327.8475595,
       "handle": "@ipanemamarketingusa",
       "impact": "HIGH"
     },
     "linkedin": {
       "status": "SCHEDULED_OK",
-      "timestamp": 1789985923.913898,
+      "timestamp": 1789986327.8475606,
       "handle": "@ipanemamarketingusa",
       "impact": "HIGH"
     },
     "facebook": {
       "status": "SCHEDULED_OK",
-      "timestamp": 1789985923.913899,
+      "timestamp": 1789986327.8475618,
       "handle": "@ipanemamarketingusa",
       "impact": "HIGH"
     },
     "threads": {
       "status": "SCHEDULED_OK",
-      "timestamp": 1789985923.9139018,
+      "timestamp": 1789986327.8475642,
       "handle": "@ipanemamarketingusa",
       "impact": "HIGH"
     },
     "telegram": {
       "status": "SCHEDULED_OK",
-      "timestamp": 1789985923.913903,
+      "timestamp": 1789986327.8475661,
       "handle": "@ipanemamarketingusa",
       "impact": "HIGH"
     },
     "discord": {
       "status": "SCHEDULED_OK",
-      "timestamp": 1789985923.9139044,
+      "timestamp": 1789986327.847567,
       "handle": "@ipanemamarketingusa",
       "impact": "HIGH"
     },
     "github": {
       "status": "SCHEDULED_OK",
-      "timestamp": 1789985923.9139054,
+      "timestamp": 1789986327.847568,
       "handle": "@ipanemamarketingusa",
       "impact": "HIGH"
     }

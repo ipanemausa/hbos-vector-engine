@@ -11,7 +11,7 @@
         "x"
       ],
       "funnel_stage": "TOFU-MOFU",
-      "timestamp": "Mon Sep 21 06:18:44 2026",
+      "timestamp": "Mon Sep 21 06:25:28 2026",
       "status": "ACTIVE_STRATEGY"
     },
     {
@@ -25,9 +25,9 @@
         "tiktok"
       ],
       "funnel_stage": "COMMUNITY_GROWTH",
-      "timestamp": "Mon Sep 21 06:18:44 2026",
+      "timestamp": "Mon Sep 21 06:25:28 2026",
       "status": "ACTIVE_STRATEGY"
     }
   ],
-  "sync_time": "Mon Sep 21 06:18:44 2026"
+  "sync_time": "Mon Sep 21 06:25:28 2026"
 }
