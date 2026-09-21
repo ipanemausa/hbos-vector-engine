@@ -14,5 +14,14 @@ Se erradica la dependencia de pestanas emergentes en el navegador externo:
 
 ## 2. Verificacion de Disponibilidad de Windows Hello
 - **UserConsentVerifierAvailability:** AVAILABLE (0) comprobado empiricamente en runtime de Python.
-- **Trazabilidad:** Cada intento y resultado de verificacion se registra de forma inmutable en uth_ui_audit.json.
-- **Integracion con el DAG:** Cualquier accion que requiera confirmacion de soberania (credenciales, metodos de pago, publicaciones sensibles) es delegada a HBOSAuthUI.authorize(mensaje).
+- **Trazabilidad:** Cada intento y resultado de verificacion se registra de forma inmutable en auth_ui_audit.json.
+- **Integracion con el DAG:** Cualquier accion que requiera confirmacion de soberania (credenciales, metodos de pago, publicaciones sensibles) es delegada a HBOSAuthUI.authorize(scope, mensaje).
+
+---
+
+## 3. Regla R37 · Windows Hello Una Sola Vez por Proceso
+Para evitar interrupciones redundantes al operador:
+1. **Token Cache con TTL:** La primera autorización exitosa para un `scope` determinado emite un token criptográfico UUID v4 con validez de **30 minutos** (`timeout_minutes=30`).
+2. **Hit de Caché Transparente (`[CACHE_HIT]`):** Mientras el token esté vigente dentro del scope, Antigravity ejecuta todas las acciones subsecuentes de manera continua sin volver a desplegar el diálogo de Windows Hello.
+3. **Re-autenticación Condicional:** Solo si el token expira o si se cambia a un scope diferente de alta seguridad se solicita nuevamente la huella dactilar.
+4. **Invalidación Segura:** Capacidad de invalidar scopes puntuales o purgar la caché completa al finalizar el proceso (`auth.invalidate()`).
