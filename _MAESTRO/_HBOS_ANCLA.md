@@ -142,7 +142,7 @@ Si eres un asistente recién iniciado o la sesión se ha reiniciado, sigue este 
 2. **Paso 2:** Inspecciona el directorio [`_MAESTRO/`](file:///c:/Users/ipane/hbos-deploy/hbos-vector-engine/_MAESTRO) y verifica el último commit de Git (`git log -n 1 --oneline`) para confirmar paridad.
 3. **Paso 3:** Ejecuta la Tarea Cero (`python hbos_verify_unbe.py`) para comprobar el estado de réplicas físicas y Qdrant Cloud.
 4. **Paso 4:** Pregunta al Operador (Guillermo Hoyos):  
-   > *"Sistema HBOS alineado al 100% en op=249. Director de Video Agéntico y 10 Fases Canónicas operativas. ¿Avanzamos con la producción o distribución?"*
+   > *"Sistema HBOS alineado al 100% en op=250. Continuidad agéntica, MCP hbos-chat-context y entorno DeepSeek verificados. ¿Avanzamos con la siguiente fase operativa?"*
 5. **Paso 5:** Ejecuta con rigor, siempre coordinando en UNBE y creando en Nube.
 
 ---
@@ -155,13 +155,16 @@ Si eres un asistente recién iniciado o la sesión se ha reiniciado, sigue este 
    * Aprobación biométrica Windows Hello y anclaje inicial.
 2. **`op=248` (Completada):**
    * Auditoría total de orquestación agéntica de video Demis v2 (solo lectura).
-   * Detección precisa de fallas en `zoompan` al centro, ausencia de conexión de Anchor Vivo a FFmpeg, texto sin fade, y stubs de marketing/redes.
+   * Detección de fallas en `zoompan` al centro, texto sin fade, y stubs de marketing/redes.
 3. **`op=249` (Completada):**
-   * Creación del Agente Rector de Video: `hbos_film_director_agent.py` gobernando las 10 fases canónicas.
+   * Creación del Agente Rector de Video: `hbos_film_director_agent.py` (10 fases).
    * Promulgación de la Regla R73 (`_MAESTRO/_ATRIBUCION_PROPIEDAD_INTELECTUAL_MAESTRA.md`).
-   * Creación de `_MAESTRO/_WORKFLOW_DEFINITIVO_VIDEO_MAESTRA.md` con el Prompt Canónico Rector.
-   * Implementación de `hbos_community_manager.py` (Hashtags, referencias ALEJAVI, sentimiento) y actualización de `hbos_social_manager.py`.
+   * Creación de `_MAESTRO/_WORKFLOW_DEFINITIVO_VIDEO_MAESTRA.md`.
    * Registro monotónico en Qdrant (`registro_ecosistema` op=249, `hbos_estado` rango 45 a 249).
+4. **`op=250` (Completada):**
+   * FASE 1 (Continuidad): `_HBOS_PROMPT_CONTINUIDAD.md`, MCP Server `hbos-chat-context`, Canon Completo `_HBOS_CANON_COMPLETO.md` (R1-R73), Repositorio Maestro `_HBOS_CODIGO_FUENTE/`.
+   * FASE 2 (DeepSeek): Motor de arbitraje `hbos_deepseek_arbitrage.py` (costo $0.00), llamadas empíricas reales a DeepSeek-R1 y DeepSeek-V3 via MCP, y `_DEEPSEEK_INTEGRACION_MAESTRA.md`.
+   * Integración: Registro en Qdrant `registro_ecosistema` (op=250), `hbos_estado` rango 45 a 250, sincronización UNBE 100%.
 
 ---
 *Documento sellado y anclado bajo el Canon R768 · Ecosistema Soberano HBOS.*
