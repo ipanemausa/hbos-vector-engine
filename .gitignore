@@ -23,6 +23,7 @@ ep02_preview.gif
 scratch/
 temp/
 tmp/
+gev-app/
 
 # Entornos y secretos
 .env

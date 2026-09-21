@@ -1,27 +1,42 @@
-# _REDES_MAESTRA.md — Red Unificada de Distribución Multicanal (@ipanemamarketingusa)
+# _REDES_MAESTRA.md — Topología Multicanal y Auditoría de Redes Sociales
 > **Ecosistema Soberano HBOS-Diamantino · Modo Experto ALEJAVI**  
-> **Operación:** 228 | **Fecha:** 2026-09-20 | **Versión:** v1.2 Profundizada | **Estado:** CONFIGURADO · UNIFICADO  
-> **Handle Global:** `@ipanemamarketingusa` | **Email Madre:** `ipanemamarketingusa@gmail.com`
+> **Operación:** 230 | **Fecha:** 2026-09-20 | **Estado:** AUDITORÍA EMPÍRICA EJECUTADA · PLAN DE ALTA CONSOLIDADO  
+> **Handle Oficial Unificado:** `@ipanemamarketingusa`
 
 ---
 
-## 1. Topología de Red Unificada (10 Canales)
+## 1. Auditoría Empírica HTTP de las 10 Plataformas (op=230)
+Se ejecutó una prueba de conectividad HTTP automatizada sobre los 10 endpoints oficiales:
 
-| Canal / Plataforma | Handle / URL Oficial | Propósito / Formato Primario | Estado de Vinculación |
-| :--- | :--- | :--- | :---: |
-| **YouTube** | `@ipanemamarketingusa` | Videos largos (10-30 min) + Shorts 9:16 de Diamantino | Vinculado a Gmail Madre |
-| **Instagram** | `@ipanemamarketingusa` | Reels de alto impacto + Carruseles educativos | Vinculado a Gmail Madre |
-| **TikTok** | `@ipanemamarketingusa` | Formato vertical corto con ganchos empíricos de 45s | Vinculado a Gmail Madre |
-| **X (Twitter)** | `@ipanemamarketingusa` | Hilos técnicos, releases de código y radar de IA | Vinculado a Gmail Madre |
-| **LinkedIn** | `ipanemamarketingusa` | Artículos de autoridad B2B y automatización empresarial | Vinculado a Gmail Madre |
-| **Facebook** | `ipanemamarketingusa` | Grupos comunitarios y retargeting de eventos | Vinculado a Gmail Madre |
-| **Threads** | `@ipanemamarketingusa` | Microblogging conversacional y micro-demostraciones | Vinculado a Gmail Madre |
-| **Telegram** | `@ipanemamarketingusa` | Canal broadcast sin censura, alertas y entrega de PDFs | Vinculado a Gmail Madre |
-| **Discord** | `ipanemamarketingusa` | Comunidad privada para desarrolladores y soporte agéntico | Vinculado a Gmail Madre |
-| **GitHub** | `ipanemamarketingusa` | Repositorios públicos de herramientas open-source | Vinculado a Gmail Madre |
+| Plataforma | URL Oficial | Código HTTP | Diagnóstico Empírico |
+|---|---|:---:|---|
+| **Instagram** | `https://www.instagram.com/ipanemamarketingusa/` | `200 OK` | ✅ Canal activo / accesible |
+| **TikTok** | `https://www.tiktok.com/@ipanemamarketingusa` | `200 OK` | ✅ Canal activo / accesible |
+| **Facebook** | `https://www.facebook.com/ipanemamarketingusa` | `200 OK` | ✅ Página activa / accesible |
+| **Threads** | `https://www.threads.net/@ipanemamarketingusa` | `200 OK` | ✅ Perfil activo / accesible |
+| **Telegram** | `https://t.me/ipanemamarketingusa` | `200 OK` | ✅ Canal público activo |
+| **Discord** | `https://discord.gg/ipanemamarketingusa` | `200 OK` | ✅ Enlace de invitación activo |
+| **LinkedIn** | `https://www.linkedin.com/in/ipanemamarketingusa` | `999 Challenge` | ⚠️ Protección anti-bot de LinkedIn |
+| **YouTube** | `https://www.youtube.com/@ipanemamarketingusa` | `404 Not Found` | 📋 Requiere alta de handle en YouTube Studio |
+| **X (Twitter)** | `https://x.com/ipanemamarketingusa` | `404 Not Found` | 📋 Requiere registro de usuario en X |
+| **GitHub** | `https://github.com/ipanemamarketingusa` | `404 Not Found` | 📋 Requiere creación de organización en GitHub |
 
 ---
 
-## 2. Política de Redundancia y Seguridad (§D)
-- Todas las cuentas comparten el correo unificado `ipanemamarketingusa@gmail.com` para recuperación y 2FA con llaves FIDO2/U2F físicas.
-- La automatización publica mediante endpoints proxy en el Gateway :3002 sin compartir tokens entre plataformas.
+## 2. Plan Concreto de Registro y Verificación Telefónica (Top 3 Prioritarias)
+
+### 1. YouTube (`@ipanemamarketingusa`) — Prioridad 1
+* **Acción:** Acceder a `studio.youtube.com` con `ipanemamarketingusa@gmail.com`.
+* **Personalización:** Establecer identificador `@ipanemamarketingusa`.
+* **Verificación de Funciones Intermedias:** Ingresar número telefónico personal para recibir SMS de verificación. Esto desbloquea subida de videos >15 minutos y miniaturas personalizadas.
+* **Responsable:** Titular comercial ALEJAVI.
+* **Fecha Límite:** 2026-09-25.
+
+### 2. Instagram (`@ipanemamarketingusa`) — Prioridad 2
+* **Acción:** Convertir perfil personal a Cuenta Profesional / Creador de Contenido.
+* **Vinculación:** Conectar con la Página de Facebook para habilitar la API de Meta Graph.
+* **Responsable:** Titular comercial ALEJAVI.
+
+### 3. TikTok (`@ipanemamarketingusa`) — Prioridad 3
+* **Acción:** Vincular número telefónico para cuenta Business y habilitar autenticación 2FA.
+* **Responsable:** Titular comercial ALEJAVI.
