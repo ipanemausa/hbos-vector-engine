@@ -1,45 +1,21 @@
-# _AUTOMATIZACION_MAESTRA.md — Integración OAuth y Publicación Multicanal
-> **Ecosistema Soberano HBOS-Diamantino · Modo Experto ALEJAVI**  
-> **Operación:** 230 | **Fecha:** 2026-09-20 | **Estado:** 📋 ROADMAP OAUTH PASO A PASO CONSOLIDADO  
-> **Google Drive OAuth:** ✅ ACTIVO (Protocolo MCP gdrive) | **Redes Sociales:** Registro de Developer Apps
+# _AUTOMATIZACION_MAESTRA.md - Arquitectura de Integracion OAuth y Dev Apps
+> **Ecosistema Soberano HBOS-Diamantino . Modo Experto ALEJAVI**
+> **Operacion:** 235 | **Canon:** FAM@-T v1.3 | **Capa:** D (§16.4)
 
 ---
 
-## 1. Estado Actual de Conectores OAuth
-* **Google Drive OAuth:** ✅ Completamente operativo y verificado en la Capa 5 de persistencia mediante MCP `gdrive`.
-* **APIs de Redes Sociales:** Mapeadas con permisos mínimos necesarios (Least Privilege) para evitar sobre-exposición de credenciales.
+## 1. Topologia de APIs Oficiales y Registro de Aplicaciones
+
+| API / Consola | Scopes Requeridos | Destino de Credenciales |
+|---|---|---|
+| **Google Cloud (YouTube Data v3)** | youtube.upload, youtube.readonly | Vault HBOS (AES-256-GCM) |
+| **Meta Developers (Instagram Graph)** | instagram_content_publish, pages_manage_posts | Vault HBOS (AES-256-GCM) |
+| **TikTok for Developers** | video.upload, video.publish | Vault HBOS (AES-256-GCM) |
+| **LinkedIn Developer Portal** | w_member_social, r_liteprofile | Vault HBOS (AES-256-GCM) |
+| **X Developer Portal** | tweet.read, tweet.write | Vault HBOS (AES-256-GCM) |
 
 ---
 
-## 2. Guía de Creación de Aplicaciones de Desarrollador
-
-### 1. YouTube Data API v3 (Google Cloud Console)
-* **Portal:** `console.cloud.google.com`.
-* **Proyecto:** `HBOS-Sovereign-Marketing`.
-* **Habilitar API:** Buscar y habilitar *YouTube Data API v3*.
-* **Credenciales:** Crear credencial tipo *OAuth 2.0 Client ID* (Aplicación web).
-* **Scopes Requeridos:** `https://www.googleapis.com/auth/youtube.upload`, `https://www.googleapis.com/auth/youtube.readonly`.
-* **Almacenamiento:** Client ID y Client Secret cifrados en HBOS Vault (`AES-256-GCM`).
-
-### 2. Meta for Developers (Instagram Graph API & Facebook Pages)
-* **Portal:** `developers.facebook.com`.
-* **Tipo de App:** Negocios (Business).
-* **Productos:** Agregar *Instagram Graph API* y *Webhooks*.
-* **Permisos Requeridos:** `instagram_basic`, `instagram_content_publish`, `pages_show_list`, `pages_read_engagement`.
-* **Generación de Token:** Generar Token de Acceso de Usuario del Sistema (Larga duración / Never Expire).
-
-### 3. TikTok for Developers
-* **Portal:** `developers.tiktok.com`.
-* **App:** Crear App bajo categoría *Content Posting API*.
-* **Permisos:** `video.upload`, `video.publish`.
-
-### 4. LinkedIn Developer Portal
-* **Portal:** `linkedin.com/developers`.
-* **Productos Asociados:** *Share on LinkedIn* y *Sign In with LinkedIn using OpenID Connect*.
-* **Permisos:** `w_member_social`, `r_liteprofile`.
-
-### 5. X Developer Portal (Twitter API v2)
-* **Portal:** `developer.x.com`.
-* **Tier:** Free Tier (Suficiente para publicación de tweets automatizados mediante endpoint `POST /2/tweets`).
-* **Permisos de la App:** Read and Write.
-* **Tokens:** API Key, API Key Secret, OAuth 2.0 Client ID y Secret.
+## 2. Protocolo de Aislamiento de Secretos
+- Las credenciales nunca se exponen en repositorios publicos ni variables sin cifrar.
+- hbos_social_manager.py consume los tokens directamente del almacenamiento seguro cifrado.
