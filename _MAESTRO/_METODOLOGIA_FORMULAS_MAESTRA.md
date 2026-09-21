@@ -32,6 +32,9 @@ Y cada fuerza **aprende, se autocalibra y se expande** con cada operación ejecu
 | **R67** | Estructura universal de video agnóstica de tema (5 fases obligatorias) | **Generalización:** Cualquier dominio humano abordado con rigor |
 | **R68** | Filosofía de virtualidad y ajuste granular (Espejo humano amplificado) | **Claridad:** Elegancia ontológica y cero ambigüedad |
 | **R69** | Cadena génica Observar $\rightarrow$ Estructurar $\rightarrow$ Formular $\rightarrow$ Potenciar $\rightarrow$ Aprender | **Evolución Perpetua:** Aprendizaje acumulativo por operación |
+| **R70** | Operadores emergentes = Agentes resultantes (Teoría $\rightarrow$ Código vivo) | **Materialización:** Todo operador es un agente autónomo |
+| **R71** | Prohibición absoluta de reusar números de operación | **Monotonía Temporal:** Cero reciclado de IDs en el DAG |
+| **R72** | Numeración única y correlativa de operaciones en todo el ecosistema | **Trazabilidad Unívoca:** Identidad estricta en Git y Qdrant |
 
 ---
 

@@ -59,8 +59,10 @@
   - Identificación y estandarización de `.env.local` para clientes de base de datos vectorial Qdrant Cloud.
 - **Saneamiento de procesos multimedia en background:**
   - Terminación limpia de reproductores obsoletos e inicio de stream looping optimizado.
-- **Formalización de los Roles Canónicos:**
-  - Redacción y adopción de `_ROLES_PERSONAJES_MAESTRA.md`, `_ESTRUCTURA_UNIVERSAL_VIDEO_MAESTRA.md`, `_FILOSOFIA_VIRTUALIDAD_MAESTRA.md` y `_METODOLOGIA_FORMULAS_MAESTRA.md`.
+- **Formalización de los Roles Canónicos y Reglas R70, R71, R72:**
+  - Redacción y adopción de `_ROLES_PERSONAJES_MAESTRA.md`, `_ESTRUCTURA_UNIVERSAL_VIDEO_MAESTRA.md`, `_FILOSOFIA_VIRTUALIDAD_MAESTRA.md`, `_METODOLOGIA_FORMULAS_MAESTRA.md` y `_NUMERACION_OPERACIONES_AGENTES_R70_R71_R72_MAESTRA.md`.
+  - Consolidación del principio R70: cada operador emergente $\mathcal{O}$ es un agente resultante activo.
+  - Consolidación de R71 y R72: numeración única e incremental inmutable de operaciones (op=246).
 - **Producción del Video Master v2:**
   - `video_final_v2.mp4` (84.19 MB, 251.49s, 1080p, SHA-256 verificado) generado y archivado de acuerdo a la estricta Regla R59.
 - **Consistencia UNBE al 100%:**
