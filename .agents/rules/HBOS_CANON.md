@@ -1,4 +1,4 @@
-# HBOS CANON & DIRECTIVA OPERATIVA ALEJAVI (CANON R1–R74)
+# HBOS CANON & DIRECTIVA OPERATIVA ALEJAVI (CANON R1–R76)
 > **Ecosistema Soberano HBOS-Diamantino · Modo Experto ALEJAVI**
 > **Operador Humano:** Guillermo Hoyos · Embajador AsertiaNova
 > **Agente Orquestador:** ALEJAVI
@@ -110,7 +110,7 @@ Estructura unificada para directivas operativas enviadas por el Operador Humano 
 ║  Workspace: C:\Users\ipane\hbos-deploy\hbos-vector-engine                ║
 ║  Rama: main · Fecha: 2026-09-21                                          ║
 ║                                                                          ║
-║  CANON: R768 · FAM@-T · DAG · H_ALT · R1–R74 · §0–§17 + §D               ║
+║  CANON: R768 · FAM@-T · DAG · H_ALT · R1–R76 · §0–§17 + §D               ║
 ║                                                                          ║
 ║  WORKFLOW: <Nombre o código del workflow específico>                     ║
 ║  AGENTE PRINCIPAL: ALEJAVI                                                ║
@@ -121,7 +121,7 @@ Estructura unificada para directivas operativas enviadas por el Operador Humano 
 ║  VERIFICACIÓN: SHA-256 · render · OpenCV · ffprobe · HTTP 200 · UNBE §1.0 ║
 ║  PROMPT RECTOR: FAM@-T · LLMAPI ⊕ R768 · DAG · H_ALT · NO-REGRESIÓN      ║
 ║  REEMPLAZA: <Scripts, artefactos o estados obsoletos a sustituir>         ║
-║  REGLAS CLAVE: <Subconjunto específico de R1–R74 focalizado para la op>   ║
+║  REGLAS CLAVE: <Subconjunto específico de R1–R76 focalizado para la op>   ║
 ║                                                                          ║
 ║  §0–§15 (canon completo)                                                 ║
 ║  §16 · CONTINUIDAD TOTAL (herencia de 3 capas: Canon + Código + MCP)     ║
@@ -135,19 +135,19 @@ Estructura unificada para directivas operativas enviadas por el Operador Humano 
 1. **Campos Heredados Automáticamente (Invariantes de la Custom Rule):**
    - **Ecosistema & Agente:** Ecosistema Soberano HBOS · Modo Experto ALEJAVI.
    - **Operador & Consola:** Guillermo Hoyos · Antigravity en Nube / Coordinación UNBE.
-   - **Canon Base:** R768 · FAM@-T · DAG · H_ALT · R1–R74 · §0–§17 + §D (Capas 0–13).
+   - **Canon Base:** R768 · FAM@-T · DAG · H_ALT · R1–R76 · §0–§17 + §D (Capas 0–13).
    - **Verificación Estándar:** SHA-256, OpenCV, ffprobe, HTTP 200, Protocolo §1.0 UNBE.
    - *El operador humano NO necesita transcribir estos campos en cada mensaje.*
 2. **Campos Dinámicos Recibidos del Operador Humano (Variables por Tarea):**
    - `WORKFLOW`: Misión u objetivo de la operación en curso.
    - `PLANOS PARALELOS`: Desglose modular de ejecución (Plano A, Plano B, etc.).
-   - `REGLAS CLAVE`: Selección focalizada de reglas (ej. `R4 · R6 · R74`) para el hito.
+   - `REGLAS CLAVE`: Selección focalizada de reglas (ej. `R4 · R6 · R75 · R76`) para el hito.
    - `REEMPLAZA`: Archivos o métodos previos declarados obsoletos por la nueva operación.
    - `INTEGRACIÓN`: Criterio específico de síntesis en el nodo de cierre.
 
 ---
 
-## REGLAS DURAS R1 A R74 (COMPLETAS)
+## REGLAS DURAS R1 A R76 (COMPLETAS)
 * **R1 · Idempotencia:** Toda operación puede re-ejecutarse sin efectos secundarios destructivos ni duplicación.
 * **R2 · Trazabilidad:** Todo cambio se asocia a un operation_id unívoco y commit de Git semántico.
 * **R3 · Atomicidad:** Si un nodo del DAG falla, la transición se aborta protegiendo el estado anterior.
@@ -222,3 +222,5 @@ Estructura unificada para directivas operativas enviadas por el Operador Humano 
 * **R72 · Numeración Única:** Cada ciclo de integración recibe un número unívoco registrado en Qdrant.
 * **R73 · Atribución de Propiedad Intelectual:** Créditos explícitos y permanentes a autores, instituciones y premios.
 * **R74 · Probar MCP Nuevos en Aislamiento:** Todo MCP nuevo o modificado debe verificarse en aislamiento antes de añadirlo a mcp_config.json.
+* **R75 · Conversión Automática a DAG:** Todo input, directiva o tarea recibida en formato procedural, secuencial o monofásico debe ser interceptada y refactorizada obligatoriamente por el orquestador en un Grafo Acíclico Dirigido (DAG) de planos concurrentes independientes y un nodo de integración formal previo a cualquier ejecución, declarando explícitamente la estructura del grafo resultante en el encabezamiento canónico.
+* **R76 · Evidencia Obligatoria por Campo:** Todo campo declarado en el encabezamiento canónico debe respaldarse obligatoriamente con evidencia empírica verificable (hash SHA-256, status HTTP, timestamp o ID vectorial). Todo campo que carezca de evidencia verificable o que presente inconsistencia entre lo declarado y lo ejecutado será registrado de forma automática como `INCUMPLIDO` en la colección `hbos_auditoria`, invalidando el veredicto de cierre UNBE.
