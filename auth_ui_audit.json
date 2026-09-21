@@ -1,3 +1,5 @@
 {"timestamp": "Mon Sep 21 06:25:13 2026", "scope": "op240_full", "message": "HBOS: Autorizar ejecucion completa op=240", "result": "VERIFIED", "expires_at": 1789988113.0344691}
 {"timestamp": "Mon Sep 21 06:29:38 2026", "scope": "op241_full", "message": "HBOS: Autorizar ejecucion completa op=241", "result": "VERIFIED", "expires_at": 1789988378.974132}
 {"timestamp": "Mon Sep 21 06:50:10 2026", "scope": "publish_session_master", "message": "HBOS R50: Aprobar publicacion en youtube", "result": "VERIFIED", "expires_at": 1789989610.7464583}
+{"timestamp": "Mon Sep 21 06:55:20 2026", "scope": "op244_preview", "message": "HBOS: Autorizar preview YouTube op=244", "result": "VERIFIED", "expires_at": 1789991720.8430712}
+{"timestamp": "Mon Sep 21 06:57:04 2026", "scope": "op244_preview", "message": "HBOS R51: Aprobar preview y publicacion en YouTube Studio", "result": "VERIFIED", "expires_at": 1789991824.958164}
