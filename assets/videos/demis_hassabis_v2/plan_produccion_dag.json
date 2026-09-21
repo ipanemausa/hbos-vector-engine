@@ -1,0 +1,31 @@
+{
+  "operation_id": 249,
+  "video_id": "demis_hassabis_v2",
+  "tema": "Demis Hassabis y DeepMind · Nobel Química 2024",
+  "duracion": 45.0,
+  "atribucion_r73": {
+    "autor": "Sir Demis Hassabis & John Jumper",
+    "institucion": "Google DeepMind / Isomorphic Labs",
+    "premio": "Premio Nobel de Química 2024",
+    "paper_r58": "Nature 2024 · Highly accurate protein structure prediction with AlphaFold 3"
+  },
+  "vector_resumen": [
+    0.0,
+    0.0998,
+    0.1987,
+    0.2955,
+    0.3894
+  ],
+  "agentes_invocados": [
+    "asset_generator_agent",
+    "motion_engine_agent",
+    "graphics_engine_agent",
+    "compositor_agent",
+    "qc_agent",
+    "social_manager_agent",
+    "community_manager_agent"
+  ],
+  "fases_paralelas_fase1_2_3": true,
+  "fases_paralelas_fase7_8_9": true,
+  "status": "PLAN_APROBADO_DAG"
+}

@@ -1,0 +1,51 @@
+{
+  "timestamp": 1790012685.9092007,
+  "date": "2026-09-21 13:44:45",
+  "tema": "Demis Hassabis y DeepMind · Nobel Química 2024",
+  "hashtags_count": 15,
+  "hashtags": [
+    "#AlphaFold",
+    "#AlphaFold3",
+    "#BioInformatica",
+    "#DeepMind",
+    "#DemisHassabis",
+    "#Diamantino",
+    "#HBOS",
+    "#HeavyTech",
+    "#InteligenciaArtificial",
+    "#NobelChemistry",
+    "#NobelPrize2024",
+    "#ProteinFolding",
+    "#ScientificAI",
+    "#SoberaniaDigital",
+    "#TechSovereignty"
+  ],
+  "reference_links_count": 3,
+  "reference_links": [
+    {
+      "fuente": "Google DeepMind AlphaFold",
+      "tipo": "Laboratorio Oficial",
+      "url": "https://deepmind.google/technologies/alphafold/",
+      "descripcion": "Portal de investigación biomolecular de DeepMind."
+    },
+    {
+      "fuente": "Nature Research (AlphaFold 3)",
+      "tipo": "Paper Científico Primario",
+      "url": "https://www.nature.com/articles/s41586-024-07487-w",
+      "descripcion": "Estructura y predicción biomolecular integral."
+    },
+    {
+      "fuente": "Nobel Prize in Chemistry 2024",
+      "tipo": "Atribución Oficial",
+      "url": "https://www.nobelprize.org/prizes/chemistry/2024/summary/",
+      "descripcion": "Mención del comité Nobel a Demis Hassabis y John Jumper."
+    }
+  ],
+  "sentiment_summary": {
+    "total_comments_sampled": 2,
+    "sentiment_score": 1.0,
+    "dominant_emotion": "ADMIRATION_AND_ENGAGEMENT",
+    "recommended_action": "RESPOND_WITH_ALEX_TONE_AND_DOC_LINK"
+  },
+  "status": "COMMUNITY_MANAGER_OPERATIONAL"
+}

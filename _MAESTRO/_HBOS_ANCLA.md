@@ -121,7 +121,7 @@ HBOS opera bajo un principio estricto de **Alta Cohesión y Bajo Acoplamiento**:
 * **FAM@-T:** Navegación en el Entorno Total (desacoplamiento de Infraestructura, Lógica Agéntica, Producción y Distribución).
 * **Grafo DAG (9 Fases Topológicas):** MCP $\rightarrow$ Qdrant $\rightarrow$ FreeLLMAPI $\rightarrow$ Modelos $\rightarrow$ Redundancia $\rightarrow$ Scripts $\rightarrow$ Docs $\rightarrow$ Git $\rightarrow$ Reporte.
 * **Mecánica H_ALT:** Conmutación determinista ante caídas de proveedores sin degradar el canon.
-* **Reglas R1 a R72 (Vigentes):**
+* **Reglas R1 a R73 (Vigentes):**
   * **R6:** Triple redundancia física obligatoria (Local + Drive + Backup con SHA-256 idéntico).
   * **R52:** Todo prompt debe incluir encabezamiento canónico idéntico no negociable.
   * **R58:** Veracidad científica total (citas de Nature, Nobel Prize, AlphaFold 3 en lower thirds).
@@ -130,6 +130,7 @@ HBOS opera bajo un principio estricto de **Alta Cohesión y Bajo Acoplamiento**:
   * **R67:** Estructura universal agnóstica de 5 fases de video.
   * **R70:** Cada operador emergente $\mathcal{O}_N$ es un Agente Resultante funcional.
   * **R71 / R72:** Los números de operación son estrictamente unívocos, crecientes y no reciclables.
+  * **R73:** Atribución obligatoria y permanente de Propiedad Intelectual, autores e instituciones de investigación.
 
 ---
 
@@ -141,23 +142,26 @@ Si eres un asistente recién iniciado o la sesión se ha reiniciado, sigue este 
 2. **Paso 2:** Inspecciona el directorio [`_MAESTRO/`](file:///c:/Users/ipane/hbos-deploy/hbos-vector-engine/_MAESTRO) y verifica el último commit de Git (`git log -n 1 --oneline`) para confirmar paridad.
 3. **Paso 3:** Ejecuta la Tarea Cero (`python hbos_verify_unbe.py`) para comprobar el estado de réplicas físicas y Qdrant Cloud.
 4. **Paso 4:** Pregunta al Operador (Guillermo Hoyos):  
-   > *"Sistema HBOS alineado al 100% en op=247. ¿Avanzamos con la auditoría visual de Demis v2 en Pantalla 3 o procedemos con la op=248?"*
+   > *"Sistema HBOS alineado al 100% en op=249. Director de Video Agéntico y 10 Fases Canónicas operativas. ¿Avanzamos con la producción o distribución?"*
 5. **Paso 5:** Ejecuta con rigor, siempre coordinando en UNBE y creando en Nube.
 
 ---
 
-## 8. PRÓXIMOS PASOS DE EJECUCIÓN
+## 8. HISTORIAL RECIENTE Y PRÓXIMOS PASOS DE EJECUCIÓN
 
-1. **`op=247` (Inmediato):**
-   * Lanzar proyección del video en Pantalla 3 física:
-     `ffplay -left -1920 -top 0 -x 1280 -y 720 -loop 0 assets/videos/demis_hassabis_v2/video_final_v2.mp4`
-   * Recibir visto bueno humano de Guillermo Hoyos.
-   * Abrir YouTube Studio Preview en borrador (`python hbos_youtube_studio_preview.py`).
-   * Solicitar aprobación biométrica nativa de Windows Hello (R42).
-2. **`op=248`:**
-   * Unificar el Master 420 movimientos en `assets/schemas/master_movimientos_420.json` e indexarlo en Qdrant `diamantino_movimientos`.
-3. **`op=249`:**
-   * Consolidar la Semilla VAS para formalización institucional y empaquetado de productos agénticos.
+1. **`op=247` (Completada):**
+   * Lanzamiento y previsualización en Pantalla 3 física (`-1920, 0`).
+   * Activación de FreeLLMAPI en `:3001` (235 modelos).
+   * Aprobación biométrica Windows Hello y anclaje inicial.
+2. **`op=248` (Completada):**
+   * Auditoría total de orquestación agéntica de video Demis v2 (solo lectura).
+   * Detección precisa de fallas en `zoompan` al centro, ausencia de conexión de Anchor Vivo a FFmpeg, texto sin fade, y stubs de marketing/redes.
+3. **`op=249` (Completada):**
+   * Creación del Agente Rector de Video: `hbos_film_director_agent.py` gobernando las 10 fases canónicas.
+   * Promulgación de la Regla R73 (`_MAESTRO/_ATRIBUCION_PROPIEDAD_INTELECTUAL_MAESTRA.md`).
+   * Creación de `_MAESTRO/_WORKFLOW_DEFINITIVO_VIDEO_MAESTRA.md` con el Prompt Canónico Rector.
+   * Implementación de `hbos_community_manager.py` (Hashtags, referencias ALEJAVI, sentimiento) y actualización de `hbos_social_manager.py`.
+   * Registro monotónico en Qdrant (`registro_ecosistema` op=249, `hbos_estado` rango 45 a 249).
 
 ---
 *Documento sellado y anclado bajo el Canon R768 · Ecosistema Soberano HBOS.*

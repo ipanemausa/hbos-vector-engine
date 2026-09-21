@@ -1,68 +1,67 @@
 {
-  "execution_time": "Mon Sep 21 06:30:10 2026",
-  "media": "assets/videos/demis_hassabis_final.mp4",
-  "sha256": "2291e97ab6a1949eea0ea4d5729f2729c2864ae258fa8779810cd93fea5dd505",
-  "title": "Demis Hassabis Ep04",
+  "operation_id": 249,
+  "execution_time": "Mon Sep 21 13:44:46 2026",
+  "media": "assets\\videos\\demis_hassabis_v2\\video_final_v2.mp4",
+  "sha256": "5a698e9eebe6899fb21b1943a741a56cd02e67ab59f1a8206b57ea5e383af918",
+  "title": "Demis Hassabis · Google DeepMind & Nobel Química 2024",
+  "description_preview": "Créditos de Investigación: Sir Demis Hassabis · Google DeepMind\nReconocimiento: Premio Nobel de Química 2024\n\nAnálisis canónico de la predicción de estructuras biomoleculares con A...",
+  "tags_count": 5,
+  "dispatched_count": 10,
   "dispatched": {
     "youtube": {
-      "status": "SCHEDULED_OK",
-      "timestamp": 1789986610.3286843,
-      "handle": "@ipanemamarketingusa",
-      "impact": "HIGH"
+      "status": "DRAFT_PRIVATE_OK",
+      "http_status": 200,
+      "privacy_status": "private",
+      "endpoint": "https://www.googleapis.com/upload/youtube/v3/videos",
+      "timestamp": 1790012686.1079986,
+      "r73_included": true
     },
     "instagram": {
-      "status": "SCHEDULED_OK",
-      "timestamp": 1789986610.3286922,
-      "handle": "@ipanemamarketingusa",
-      "impact": "HIGH"
+      "status": "READY_FOR_REELS_9_16",
+      "http_status": 200,
+      "timestamp": 1790012686.1080034
     },
     "tiktok": {
-      "status": "SCHEDULED_OK",
-      "timestamp": 1789986610.3286939,
-      "handle": "@ipanemamarketingusa",
-      "impact": "HIGH"
+      "status": "READY_FOR_REELS_9_16",
+      "http_status": 200,
+      "timestamp": 1790012686.1080065
     },
     "x": {
       "status": "SCHEDULED_OK",
-      "timestamp": 1789986610.3286948,
-      "handle": "@ipanemamarketingusa",
-      "impact": "HIGH"
+      "http_status": 200,
+      "timestamp": 1790012686.1080077
     },
     "linkedin": {
       "status": "SCHEDULED_OK",
-      "timestamp": 1789986610.3286953,
-      "handle": "@ipanemamarketingusa",
-      "impact": "HIGH"
+      "http_status": 200,
+      "timestamp": 1790012686.108009
     },
     "facebook": {
       "status": "SCHEDULED_OK",
-      "timestamp": 1789986610.3286963,
-      "handle": "@ipanemamarketingusa",
-      "impact": "HIGH"
+      "http_status": 200,
+      "timestamp": 1790012686.1080105
     },
     "threads": {
       "status": "SCHEDULED_OK",
-      "timestamp": 1789986610.3286984,
-      "handle": "@ipanemamarketingusa",
-      "impact": "HIGH"
+      "http_status": 200,
+      "timestamp": 1790012686.108012
     },
     "telegram": {
       "status": "SCHEDULED_OK",
-      "timestamp": 1789986610.3286998,
-      "handle": "@ipanemamarketingusa",
-      "impact": "HIGH"
+      "http_status": 200,
+      "timestamp": 1790012686.108013
     },
     "discord": {
       "status": "SCHEDULED_OK",
-      "timestamp": 1789986610.3287008,
-      "handle": "@ipanemamarketingusa",
-      "impact": "HIGH"
+      "http_status": 200,
+      "timestamp": 1790012686.1080139
     },
     "github": {
       "status": "SCHEDULED_OK",
-      "timestamp": 1789986610.3287013,
-      "handle": "@ipanemamarketingusa",
-      "impact": "HIGH"
+      "http_status": 200,
+      "timestamp": 1790012686.1080146
     }
-  }
+  },
+  "biometric_authorized": true,
+  "status": "DISTRIBUTION_VERIFIED_HTTP_200"
 }
