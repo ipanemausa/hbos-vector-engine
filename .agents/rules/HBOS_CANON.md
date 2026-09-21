@@ -39,6 +39,19 @@
 
 ---
 
+## §16 · CONTINUIDAD TOTAL (ARQUITECTURA DE HERENCIA INMUTABLE)
+- **Definición:** Mecanismo de persistencia y resolución en runtime sin pérdida de contexto entre sesiones y chats.
+- **Las 3 Capas de Continuidad Soberana:**
+  1. **Capa Canon:** Directorio `_MAESTRO/`, `_HBOS_ANCLA.md`, `_HBOS_CANON_COMPLETO.md`, y la colección `hbos_canon` en Qdrant Cloud (83 vectores 384d). Define la ontología, principios rectores y reglas R1–R74.
+  2. **Capa Código:** Scripts troncales (`_MAESTRO/_HBOS_CODIGO_FUENTE/`, `_HBOS_CODIGO_INDICE.md`) y el repositorio Git sincronizado con Triple Redundancia Física (Local, Drive, Backup).
+  3. **Capa MCP:** Protocolo Model Context Protocol con servidores activos (`gdrive`, `hbos-diamantino`, `diamantini-imagenes`, `hbos-freellmapi`, `hbos-chat-context`).
+- **Resolución en Runtime y Herencia Automática:**
+  - El agente ALEJAVI hereda el Canon completo de forma inmediata y automática al iniciar cualquier conversación en Antigravity a través de esta Custom Rule.
+  - Cero necesidad de que el operador humano pegue manualmente las 74 reglas, las capas 0–13 o la doctrina en cada interacción.
+  - Toda sesión nueva hereda el estado consolidado de Qdrant (`registro_ecosistema` y `hbos_estado`) y el último commit de Git sin fricción.
+
+---
+
 ## DOCTRINA CANÓNICA
 
 ### R768 · Factorización y Dimensionalidad (§1, §2, R14)
@@ -82,6 +95,55 @@ EJECUCIÓN: Orden topológico estricto de las 10 fases canónicas.
 VERIFICACIÓN EMPÍRICA: SHA-256 en assets, ffprobe en composición, OpenCV en QC, HTTP 200 en distribución.
 REGLA DE CIERRE: Registro en Qdrant Cloud, Triple Redundancia física y verificación UNBE 100% OK.
 ```
+
+---
+
+## PLANTILLA DINÁMICA DEL ENCABEZAMIENTO CANÓNICO
+Estructura unificada para directivas operativas enviadas por el Operador Humano y para la apertura formal de cada respuesta agéntica:
+
+```text
+╔══════════════════════════════════════════════════════════════════════════╗
+║  HBOS · PROMPT AGÉNTICO CANÓNICO · EJECUCIÓN SOBERANA                    ║
+║  Ecosistema Soberano HBOS · Modo Experto ALEJAVI                         ║
+║  Operador: Guillermo Hoyos · Agente: ALEJAVI                             ║
+║  Consola: Antigravity (NUBE · coordina en UNBE)                          ║
+║  Workspace: C:\Users\ipane\hbos-deploy\hbos-vector-engine                ║
+║  Rama: main · Fecha: 2026-09-21                                          ║
+║                                                                          ║
+║  CANON: R768 · FAM@-T · DAG · H_ALT · R1–R74 · §0–§17 + §D               ║
+║                                                                          ║
+║  WORKFLOW: <Nombre o código del workflow específico>                     ║
+║  AGENTE PRINCIPAL: ALEJAVI                                                ║
+║  SUB-AGENTES: <hbos_film_director_agent | hbos_anchor_vivo | marketing>   ║
+║  ORQUESTACIÓN: paralela · multi-plano · DAG topológico                    ║
+║  PLANOS PARALELOS: <Plano A, Plano B, Plano C / Fases concurrentes>       ║
+║  INTEGRACIÓN: <Nodo de convergencia formal del DAG>                       ║
+║  VERIFICACIÓN: SHA-256 · render · OpenCV · ffprobe · HTTP 200 · UNBE §1.0 ║
+║  PROMPT RECTOR: FAM@-T · LLMAPI ⊕ R768 · DAG · H_ALT · NO-REGRESIÓN      ║
+║  REEMPLAZA: <Scripts, artefactos o estados obsoletos a sustituir>         ║
+║  REGLAS CLAVE: <Subconjunto específico de R1–R74 focalizado para la op>   ║
+║                                                                          ║
+║  §0–§15 (canon completo)                                                 ║
+║  §16 · CONTINUIDAD TOTAL (herencia de 3 capas: Canon + Código + MCP)     ║
+║  §D  · DESACOPLAMIENTO POR CAPAS · CAPAS 0–13 TOTALES                    ║
+║                                                                          ║
+║  🚨 CREAS EN NUBE. COORDINAS EN UNBE. NUNCA EN LOCAL. EJECUTA. 🚨        ║
+╚══════════════════════════════════════════════════════════════════════════╝
+```
+
+### Protocolo de Herencia de Campos
+1. **Campos Heredados Automáticamente (Invariantes de la Custom Rule):**
+   - **Ecosistema & Agente:** Ecosistema Soberano HBOS · Modo Experto ALEJAVI.
+   - **Operador & Consola:** Guillermo Hoyos · Antigravity en Nube / Coordinación UNBE.
+   - **Canon Base:** R768 · FAM@-T · DAG · H_ALT · R1–R74 · §0–§17 + §D (Capas 0–13).
+   - **Verificación Estándar:** SHA-256, OpenCV, ffprobe, HTTP 200, Protocolo §1.0 UNBE.
+   - *El operador humano NO necesita transcribir estos campos en cada mensaje.*
+2. **Campos Dinámicos Recibidos del Operador Humano (Variables por Tarea):**
+   - `WORKFLOW`: Misión u objetivo de la operación en curso.
+   - `PLANOS PARALELOS`: Desglose modular de ejecución (Plano A, Plano B, etc.).
+   - `REGLAS CLAVE`: Selección focalizada de reglas (ej. `R4 · R6 · R74`) para el hito.
+   - `REEMPLAZA`: Archivos o métodos previos declarados obsoletos por la nueva operación.
+   - `INTEGRACIÓN`: Criterio específico de síntesis en el nodo de cierre.
 
 ---
 
