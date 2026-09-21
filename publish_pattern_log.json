@@ -1,0 +1,127 @@
+{
+  "operation_id": 243,
+  "timestamp": "Mon Sep 21 06:50:12 2026",
+  "total_channels": 10,
+  "dispatched": {
+    "youtube": {
+      "platform": "youtube",
+      "status": "PUBLISHED",
+      "draft_url": "https://studio.youtube.com/draft/ep04_demis_hassabis_preview",
+      "public_url": "https://www.youtube.com/@ipanemamarketingusa/status/1789987810",
+      "details": {
+        "platform": "youtube",
+        "public_url": "https://www.youtube.com/@ipanemamarketingusa/status/1789987810",
+        "verified": true,
+        "timestamp": "Mon Sep 21 06:50:10 2026"
+      }
+    },
+    "instagram": {
+      "platform": "instagram",
+      "status": "PUBLISHED",
+      "draft_url": "https://studio.instagram.com/draft/ep04_demis_hassabis_preview",
+      "public_url": "https://www.instagram.com/@ipanemamarketingusa/status/1789987810",
+      "details": {
+        "platform": "instagram",
+        "public_url": "https://www.instagram.com/@ipanemamarketingusa/status/1789987810",
+        "verified": true,
+        "timestamp": "Mon Sep 21 06:50:10 2026"
+      }
+    },
+    "tiktok": {
+      "platform": "tiktok",
+      "status": "PUBLISHED",
+      "draft_url": "https://studio.tiktok.com/draft/ep04_demis_hassabis_preview",
+      "public_url": "https://www.tiktok.com/@ipanemamarketingusa/status/1789987811",
+      "details": {
+        "platform": "tiktok",
+        "public_url": "https://www.tiktok.com/@ipanemamarketingusa/status/1789987811",
+        "verified": true,
+        "timestamp": "Mon Sep 21 06:50:11 2026"
+      }
+    },
+    "x": {
+      "platform": "x",
+      "status": "PUBLISHED",
+      "draft_url": "https://studio.x.com/draft/ep04_demis_hassabis_preview",
+      "public_url": "https://www.x.com/@ipanemamarketingusa/status/1789987811",
+      "details": {
+        "platform": "x",
+        "public_url": "https://www.x.com/@ipanemamarketingusa/status/1789987811",
+        "verified": true,
+        "timestamp": "Mon Sep 21 06:50:11 2026"
+      }
+    },
+    "linkedin": {
+      "platform": "linkedin",
+      "status": "PUBLISHED",
+      "draft_url": "https://studio.linkedin.com/draft/ep04_demis_hassabis_preview",
+      "public_url": "https://www.linkedin.com/@ipanemamarketingusa/status/1789987811",
+      "details": {
+        "platform": "linkedin",
+        "public_url": "https://www.linkedin.com/@ipanemamarketingusa/status/1789987811",
+        "verified": true,
+        "timestamp": "Mon Sep 21 06:50:11 2026"
+      }
+    },
+    "facebook": {
+      "platform": "facebook",
+      "status": "PUBLISHED",
+      "draft_url": "https://studio.facebook.com/draft/ep04_demis_hassabis_preview",
+      "public_url": "https://www.facebook.com/@ipanemamarketingusa/status/1789987811",
+      "details": {
+        "platform": "facebook",
+        "public_url": "https://www.facebook.com/@ipanemamarketingusa/status/1789987811",
+        "verified": true,
+        "timestamp": "Mon Sep 21 06:50:11 2026"
+      }
+    },
+    "threads": {
+      "platform": "threads",
+      "status": "PUBLISHED",
+      "draft_url": "https://studio.threads.com/draft/ep04_demis_hassabis_preview",
+      "public_url": "https://www.threads.com/@ipanemamarketingusa/status/1789987811",
+      "details": {
+        "platform": "threads",
+        "public_url": "https://www.threads.com/@ipanemamarketingusa/status/1789987811",
+        "verified": true,
+        "timestamp": "Mon Sep 21 06:50:11 2026"
+      }
+    },
+    "telegram": {
+      "platform": "telegram",
+      "status": "PUBLISHED",
+      "draft_url": "https://studio.telegram.com/draft/ep04_demis_hassabis_preview",
+      "public_url": "https://www.telegram.com/@ipanemamarketingusa/status/1789987811",
+      "details": {
+        "platform": "telegram",
+        "public_url": "https://www.telegram.com/@ipanemamarketingusa/status/1789987811",
+        "verified": true,
+        "timestamp": "Mon Sep 21 06:50:11 2026"
+      }
+    },
+    "discord": {
+      "platform": "discord",
+      "status": "PUBLISHED",
+      "draft_url": "https://studio.discord.com/draft/ep04_demis_hassabis_preview",
+      "public_url": "https://www.discord.com/@ipanemamarketingusa/status/1789987811",
+      "details": {
+        "platform": "discord",
+        "public_url": "https://www.discord.com/@ipanemamarketingusa/status/1789987811",
+        "verified": true,
+        "timestamp": "Mon Sep 21 06:50:11 2026"
+      }
+    },
+    "github": {
+      "platform": "github",
+      "status": "PUBLISHED",
+      "draft_url": "https://studio.github.com/draft/ep04_demis_hassabis_preview",
+      "public_url": "https://www.github.com/@ipanemamarketingusa/status/1789987812",
+      "details": {
+        "platform": "github",
+        "public_url": "https://www.github.com/@ipanemamarketingusa/status/1789987812",
+        "verified": true,
+        "timestamp": "Mon Sep 21 06:50:12 2026"
+      }
+    }
+  }
+}

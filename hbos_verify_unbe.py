@@ -77,12 +77,12 @@ def verificar_unbe():
     print(f"   • Sincronizado con origin/main: {'[OK]' if synced else '[FAIL]'}")
 
     # 6. Trazabilidad en Qdrant (registro_ecosistema y hbos_estado)
-    pts_reg = client.retrieve("registro_ecosistema", ids=[242])
+    pts_reg = client.retrieve("registro_ecosistema", ids=[243])
     pts_est = client.retrieve("hbos_estado", ids=[1])
     op_in_reg = len(pts_reg) > 0
-    rango_est = pts_est[0].payload.get("operation_ids") or pts_est[0].payload.get("operaciones_completadas")
+    rango_est = pts_est[0].payload.get("range") or pts_est[0].payload.get("operation_ids") or pts_est[0].payload.get("operaciones_completadas")
     print(f"\n6. TRAZABILIDAD INMUTABLE:")
-    print(f"   • operation_id = 242 en registro_ecosistema: {'[OK]' if op_in_reg else '[FAIL]'}")
+    print(f"   • operation_id = 243 en registro_ecosistema: {'[OK]' if op_in_reg else '[FAIL]'}")
     print(f"   • hbos_estado (ID=1) rango activo:          {rango_est}")
 
     print("=" * 70)
