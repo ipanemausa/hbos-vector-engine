@@ -130,11 +130,13 @@ TOOLS_MAP = {
 }
 
 def send_response(msg_id, result):
-    sys.stdout.write(json.dumps({"jsonrpc": "2.0", "id": msg_id, "result": result}) + "\n")
+    if msg_id is None: return
+    sys.stdout.write(json.dumps({"jsonrpc": "2.0", "id": msg_id, "result": result}, ensure_ascii=False) + "\n")
     sys.stdout.flush()
 
 def send_error(msg_id, code, message):
-    sys.stdout.write(json.dumps({"jsonrpc": "2.0", "id": msg_id, "error": {"code": code, "message": message}}) + "\n")
+    if msg_id is None: return
+    sys.stdout.write(json.dumps({"jsonrpc": "2.0", "id": msg_id, "error": {"code": code, "message": message}}, ensure_ascii=False) + "\n")
     sys.stdout.flush()
 
 def handle_json_rpc():
@@ -153,7 +155,7 @@ def handle_json_rpc():
                     "capabilities": {"tools": {}},
                     "serverInfo": {"name": "hbos-chat-context", "version": "3.0.0"}
                 })
-            elif method == "initialized":
+            elif method in ("notifications/initialized", "initialized") or (method and method.startswith("notifications/")):
                 continue
             elif method == "shutdown":
                 send_response(msg_id, None)
@@ -171,7 +173,8 @@ def handle_json_rpc():
             elif method == "ping":
                 send_response(msg_id, {})
             else:
-                send_error(msg_id, -32601, f"Unknown method: {method}")
+                if msg_id is not None:
+                    send_error(msg_id, -32601, f"Unknown method: {method}")
         except json.JSONDecodeError as e:
             send_error(None, -32700, f"Parse error: {str(e)}")
         except Exception as e:
