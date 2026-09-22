@@ -1,0 +1,37 @@
+[
+  {
+    "archivo": "_HBOS_REFERENCIAS.md",
+    "hash_local": "83745150198BD5AE...",
+    "hash_drive": "83745150198BD5AE...",
+    "hash_backup": "83745150198BD5AE...",
+    "coincide": "SI [OK]"
+  },
+  {
+    "archivo": "_INYECCION_FALTANTES_op271.md",
+    "hash_local": "D132C80D04B71028...",
+    "hash_drive": "D132C80D04B71028...",
+    "hash_backup": "D132C80D04B71028...",
+    "coincide": "SI [OK]"
+  },
+  {
+    "archivo": "_INYECCION_KEYS_op266.md",
+    "hash_local": "D8C2AE0A64A01703...",
+    "hash_drive": "D8C2AE0A64A01703...",
+    "hash_backup": "D8C2AE0A64A01703...",
+    "coincide": "SI [OK]"
+  },
+  {
+    "archivo": "_COMPLETAR_APIS_op267.md",
+    "hash_local": "6C84BB8DBDB95E36...",
+    "hash_drive": "6C84BB8DBDB95E36...",
+    "hash_backup": "6C84BB8DBDB95E36...",
+    "coincide": "SI [OK]"
+  },
+  {
+    "archivo": "_AUDITORIA_RRSS_op268.md",
+    "hash_local": "884F37A4C7E70B07...",
+    "hash_drive": "884F37A4C7E70B07...",
+    "hash_backup": "884F37A4C7E70B07...",
+    "coincide": "SI [OK]"
+  }
+]

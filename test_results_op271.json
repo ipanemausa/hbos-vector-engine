@@ -1,0 +1,107 @@
+[
+  {
+    "prueba": "1.1 /v1/models",
+    "status": "HTTP 200",
+    "evidencia": "Total modelos disponibles: 247"
+  },
+  {
+    "prueba": "1.2 /v1/chat (auto)",
+    "status": "HTTP 200",
+    "evidencia": "Model=nvidia/nemotron-3-super-120b-a12b:free | Via=openrouter | Ans=HBOS 271 OK"
+  },
+  {
+    "prueba": "1.3 chat (openrouter / cohere/north-mini-code:free)",
+    "status": "HTTP 200",
+    "evidencia": "¡Hola! ¿En qué puedo ayudarte hoy?"
+  },
+  {
+    "prueba": "1.3 chat (google / gemini-2.5-flash)",
+    "status": "WARN",
+    "evidencia": "Detalle: HTTP Error 429: Too Many Requests"
+  },
+  {
+    "prueba": "1.3 chat (huggingface / CohereLabs/aya-expanse-32b)",
+    "status": "WARN",
+    "evidencia": "Detalle: HTTP Error 429: Too Many Requests"
+  },
+  {
+    "prueba": "1.3 chat (ollama / gemma4:31b)",
+    "status": "WARN",
+    "evidencia": "Detalle: HTTP Error 502: Bad Gateway"
+  },
+  {
+    "prueba": "1.3 chat (kilo / cohere/north-mini-code:free)",
+    "status": "HTTP 200",
+    "evidencia": "¡Hola! ¿En qué puedo ayudarte hoy?"
+  },
+  {
+    "prueba": "1.3 chat (ovh / Meta-Llama-3_3-70B-Instruct)",
+    "status": "WARN",
+    "evidencia": "Detalle: HTTP Error 429: Too Many Requests"
+  },
+  {
+    "prueba": "1.3 chat (llm7 / codestral-latest)",
+    "status": "HTTP 200",
+    "evidencia": "¡Hola! 😊 ¿En qué puedo ayudarte hoy?"
+  },
+  {
+    "prueba": "1.3 chat (groq / allam-2-7b)",
+    "status": "HTTP 200",
+    "evidencia": "¡Hola! Me encanta trabajar contigo. Las discusiones pueden a"
+  },
+  {
+    "prueba": "1.3 chat (github)",
+    "status": "SKIP",
+    "evidencia": "Sin modelos activos en catálogo"
+  },
+  {
+    "prueba": "1.4 /v1/embeddings",
+    "status": "HTTP 200",
+    "evidencia": "Dim=3072 | Primeros=[-0.026368726044893265, -0.022329779341816902, 0.0020631684456020594]"
+  },
+  {
+    "prueba": "1.5 /v1/audio/speech",
+    "status": "HTTP 400",
+    "evidencia": "Endpoint responde: {\"error\":{\"message\":\"speech error: Unknown audio model 'tts-1'. Use 'a"
+  },
+  {
+    "prueba": "1.6 /v1/images/generations",
+    "status": "HTTP 502",
+    "evidencia": "Endpoint responde: {\"error\":{\"message\":\"image generation error: All image providers faile"
+  },
+  {
+    "prueba": "1.7 Gateway :3002/health",
+    "status": "HTTP 200",
+    "evidencia": "Service=HBOS-Unified-Gateway | Rules=295"
+  },
+  {
+    "prueba": "1.8 Gateway :3002/chat",
+    "status": "FAIL",
+    "evidencia": "HTTP Error 403: Forbidden"
+  },
+  {
+    "prueba": "1.9 MCP hbos-freellmapi",
+    "status": "OK",
+    "evidencia": "MCP tool list_models verificado (247 modelos activos en JSON)"
+  },
+  {
+    "prueba": "2.1 DB api_keys enabled",
+    "status": "OK",
+    "evidencia": "Total activas: 9"
+  },
+  {
+    "prueba": "2.2 DB platforms únicas",
+    "status": "OK",
+    "evidencia": "['github', 'google', 'groq', 'huggingface', 'kilo', 'llm7', 'ollama', 'openrouter', 'ovh']"
+  },
+  {
+    "prueba": "2.3 Unified API Key",
+    "status": "OK",
+    "evidencia": "unified_api_key = freellmapi-70a0cfe..."
+  },
+  {
+    "prueba": "2.4 Sub-keys esquema",
+    "status": "OK",
+    "evidencia": "client_profiles=0 | url_tokens=0 (Tablas operativas)"
+  }
+]
