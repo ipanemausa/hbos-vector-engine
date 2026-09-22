@@ -13,11 +13,11 @@ if os.path.exists(appdata_cfg):
     except:
         pass
 
-LOCAL_EXE = r"C:\Users\ipane\AppData\Local\Programs\FreeLLMAPI\FreeLLMAPI.exe"
-GDRIVE_EXE = r"G:\My Drive\HBOS-Diamantino\_SANDBOX\FreeLLMAPI\app\FreeLLMAPI.exe"
-
-exe_path = LOCAL_EXE if os.path.exists(LOCAL_EXE) else GDRIVE_EXE
+exe_path = r"C:\Users\ipane\AppData\Local\Programs\FreeLLMAPI\FreeLLMAPI.exe"
 work_dir = os.path.dirname(exe_path)
 
-print(f"[*] Iniciando FreeLLMAPI en modo daemon desde {exe_path}...")
+if not os.path.exists(exe_path):
+    raise FileNotFoundError(f"FreeLLMAPI no encontrado en instalacion local: {exe_path}")
+
+print(f"[*] Iniciando FreeLLMAPI en modo daemon desde instalacion local: {exe_path}...")
 subprocess.run([exe_path], cwd=work_dir)
