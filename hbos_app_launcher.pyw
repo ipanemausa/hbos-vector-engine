@@ -63,35 +63,20 @@ async def verify_windows_hello():
         return True
 
 def launch_native_window():
-    PROFILE_DIR.mkdir(parents=True, exist_ok=True)
-    
-    # Usar Edge o Chrome en modo --app pura para ventana nativa independiente
-    browser_exe = EDGE_EXE if EDGE_EXE.exists() else CHROME_EXE
-    
-    cmd = [
-        str(browser_exe),
-        f"--app={APP_URL}",
-        f"--user-data-dir={PROFILE_DIR}",
-        "--window-size=1280,850",
-        "--window-position=120,80",
-        "--no-first-run",
-        "--no-default-browser-check",
-        "--disable-extensions",
-        f"--app-id=HBOS_FreeLLMAPI"
-    ]
-    subprocess.Popen(cmd)
+    # Lanzar directamente el ejecutable nativo Electron FreeLLMAPI.exe
+    if LOCAL_EXE.exists():
+        subprocess.Popen([str(LOCAL_EXE)], cwd=str(LOCAL_EXE.parent))
+    else:
+        raise FileNotFoundError(f"No se encontro el ejecutable en: {LOCAL_EXE}")
 
 def main():
-    # 1. Asegurar backend levantado
-    ensure_backend_running()
-    
-    # 2. Verificación biométrica con huella Synaptics
+    # 1. Verificación biométrica con huella Synaptics (Windows Hello)
     verified = asyncio.run(verify_windows_hello())
     if not verified:
-        # Denegado
+        # Autorización biométrica denegada o cancelada por el usuario
         sys.exit(1)
         
-    # 3. Lanzar ventana nativa
+    # 2. Abrir la aplicación nativa FreeLLMAPI directamente
     launch_native_window()
 
 if __name__ == "__main__":
