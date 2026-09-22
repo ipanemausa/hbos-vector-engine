@@ -81,7 +81,8 @@ def verificar_unbe():
     pts_est = client.retrieve("hbos_estado", ids=[1])
     op_in_reg = len(pts_reg) > 0
     rango_est = (
-        pts_est[0].payload.get("rango_operaciones")
+        pts_est[0].payload.get("rango_activo")
+        or pts_est[0].payload.get("rango_operaciones")
         or pts_est[0].payload.get("range")
         or pts_est[0].payload.get("operation_ids")
         or pts_est[0].payload.get("operaciones_completadas")

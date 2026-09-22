@@ -87,4 +87,26 @@ Total de movimientos catalogados en memoria vectorial: **320**
 | 59 | `cabeza_negar_derecha_45_grados` | cabeza | negar | derecha | 45_grados |
 | 60 | `cabeza_negar_arriba_15_grados` | cabeza | negar | arriba | 15_grados |
 
-*(Catálogo completo de 320 movimientos indexado con embeddings 384-dim en Qdrant `diamantino_movimientos`)*
+*(Catálogo completo de 320 movimientos base indexado con embeddings 384-dim en Qdrant `diamantino_movimientos`)*
+
+---
+
+## 4. PATRÓN CANÓNICO INTEGRAL P-14-07b (KEYNOTE CENTER STAGE DUAL GESTURE WALK)
+> **Trazabilidad:** `operation_id = 259` | **ID Qdrant:** `321` | **Estado:** ✅ CANÓNICO DEFINITIVO  
+> **Clip Master:** `ep02_plano_07b_wan21.mp4` (59,438,936 bytes, 52.63s)  
+> **Hash SHA-256:** `2b57e7765b2a33bd27d5bf89dc4dff0df09933355beb3568388a040754b249b9`
+
+### Ficha Técnica del Patrón P-14-07b:
+* **Prompt Exacto Wan 2.1 I2V:**
+  > `"Diamantino walks center stage, gestures at all 7 racks with both hands, then turns to camera with authoritative keynote host pose. Professional presenter movement. 8K cinematic. Non-repetitive motion."`
+* **Parámetros Cinemáticos Corporales (Regla R62):**
+  * **Desplazamiento Escénico (Trayectoria X):** $x: 1420 \longrightarrow 960$ (caminata fluida de 52.63 segundos).
+  * **Gesticulación Manual Dual:** Extensión sincronizada de ambos brazos hacia los racks de cómputo y la audiencia.
+  * **Rotación Craneal Tridimensional:** Giro de $45^\circ$ hacia los racks y rotación de retorno frontal a cámara con seguimiento ocular.
+  * **Respiración Sinusoidal y Hombros:** Frecuencia armónica $f = 3.0$, amplitud $\Delta x = 4.0\text{px}$, micro-inclinación craneal $\pm 2.5^\circ$.
+* **Parámetros Acústicos de Mezcla:**
+  * Ganancia de voz protagonista: `volume=1.4`.
+  * Atenuación de música de fondo (ducking BGM): `volume=0.18`.
+  * Normalización sonora: `loudnorm=I=-14.0:TP=-1.5:LRA=11`.
+* **Colección Vectorial:** `diamantino_movimientos` (total 321 puntos tras op=259).
+
