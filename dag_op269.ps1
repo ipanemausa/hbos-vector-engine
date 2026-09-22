@@ -1,5 +1,5 @@
 # ============================================================
-# HBOS · DAG op=269 · INYECCIÓN TOTAL + CIERRE REDUNDANTE
+# HBOS - DAG op=269 - INYECCION TOTAL + CIERRE REDUNDANTE
 # TUNING FINO ABSOLUTO
 # ============================================================
 
@@ -17,7 +17,7 @@ Set-Location $base
 function L {
     param([string]$msg, [string]$color = "Gray")
     Write-Host $msg -ForegroundColor $color
-    Add-Content -Path $reporte -Value $msg
+    Add-Content -Path $reporte -Value $msg -Encoding utf8
 }
 
 function Section {
@@ -28,26 +28,26 @@ function Section {
     L $sep "Cyan"
 }
 
-L "# HBOS · DAG op=269 · INYECCIÓN TOTAL + CIERRE REDUNDANTE (TUNING FINO)"
+L "# HBOS - DAG op=269 - INYECCION TOTAL + CIERRE REDUNDANTE [TUNING FINO]"
 L ""
 L "**Fecha:** $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
 L "**Reporte:** ``$reporte``"
 L ""
 
 # ============================================================
-# FASE 1 · AUDITORÍA DE LO QUE FALTA
+# FASE 1 - AUDITORIA DE LO QUE FALTA
 # ============================================================
-Section "FASE 1 · AUDITORÍA DE LO QUE FALTA"
+Section "FASE 1 - AUDITORIA DE LO QUE FALTA"
 
-L "## FASE 1 · AUDITORÍA"
+L "## FASE 1 - AUDITORIA"
 L ""
 
-# 1.1 · Leer .env.local
-L "### 1.1 · Keys en .env.local"
+# 1.1 - Leer .env.local
+L "### 1.1 - Keys en .env.local"
 $envFile = Join-Path $base ".env.local"
 $envKeys = @{}
 if (Test-Path $envFile) {
-    $lines = Get-Content $envFile
+    $lines = Get-Content $envFile -Encoding utf8
     foreach ($line in $lines) {
         $trimmed = $line.Trim()
         if ($trimmed.Length -gt 0 -and -not $trimmed.StartsWith("#") -and $trimmed.Contains("=")) {
@@ -67,15 +67,15 @@ if (Test-Path $envFile) {
     L "  [!] No existe .env.local"
 }
 
-# 1.2 · Leer api_keys en DB
+# 1.2 - Leer api_keys en DB
 L ""
-L "### 1.2 · Providers ya inyectados en FreeLLMAPI"
+L "### 1.2 - Providers ya inyectados en FreeLLMAPI"
 $out12 = & $py (Join-Path $base "dag_step1_inspect.py") 2>&1
 $out12 | ForEach-Object { L "  $_" }
 
-# 1.3 · Mapeo de keys y plataformas
+# 1.3 - Mapeo de keys y plataformas
 L ""
-L "### 1.3 · Evaluación de Plataformas"
+L "### 1.3 - Evaluacion de Plataformas"
 $platformMap = [ordered]@{
     "OPENROUTER_API_KEY" = "openrouter"
     "DASHSCOPE_API_KEY"  = "modelscope"
@@ -90,61 +90,61 @@ $platformMap = [ordered]@{
 }
 foreach ($k in $platformMap.Keys) {
     if ($envKeys.ContainsKey($k) -and $envKeys[$k].Length -gt 10) {
-        L "  $k → platform: $($platformMap[$k])"
+        L "  $k -> platform: $($platformMap[$k])"
     }
 }
 
 # ============================================================
-# FASE 2 · INYECCIÓN DE KEYS (TUNING FINO)
+# FASE 2 - INYECCION DE KEYS [TUNING FINO]
 # ============================================================
-Section "FASE 2 · INYECCIÓN DE KEYS"
+Section "FASE 2 - INYECCION DE KEYS"
 
-L "## FASE 2 · INYECCIÓN"
+L "## FASE 2 - INYECCION"
 L ""
 
 $scriptInyeccion = Join-Path $base "execute_op267_injection.py"
 if (Test-Path $scriptInyeccion) {
-    L "  Script de inyección seleccionado: execute_op267_injection.py"
-    L "  Ejecutando inyección con AES-256-GCM y tuning fino..."
+    L "  Script de inyeccion seleccionado: execute_op267_injection.py"
+    L "  Ejecutando inyeccion con AES-256-GCM y tuning fino..."
     $outInj = & $py $scriptInyeccion 2>&1
     $outInj | ForEach-Object { L "    $_" }
 } else {
-    L "  [!] Script de inyección no encontrado."
+    L "  [!] Script de inyeccion no encontrado."
 }
 
 # ============================================================
-# FASE 3 · VERIFICACIÓN END-TO-END
+# FASE 3 - VERIFICACION END-TO-END
 # ============================================================
-Section "FASE 3 · VERIFICACIÓN END-TO-END"
+Section "FASE 3 - VERIFICACION END-TO-END"
 
-L "## FASE 3 · VERIFICACIÓN"
+L "## FASE 3 - VERIFICACION"
 L ""
 
-# 3.1 · Conteo en DB
-L "### 3.1 · Conteo en DB"
+# 3.1 - Conteo en DB
+L "### 3.1 - Conteo en DB"
 $out31 = & $py (Join-Path $base "dag_step3_count.py") 2>&1
 $out31 | ForEach-Object { L "  $_" }
 
-# 3.2 - 3.4 · Inferencia, Modelos y Gateway
+# 3.2 - 3.4 - Inferencia, Modelos y Gateway
 $outChat = & $py (Join-Path $base "dag_step3_chat.py") 2>&1
 $outChat | ForEach-Object { L "  $_" }
 
 # ============================================================
-# FASE 4 · CIERRE REDUNDANTE
+# FASE 4 - CIERRE REDUNDANTE
 # ============================================================
-Section "FASE 4 · CIERRE REDUNDANTE"
+Section "FASE 4 - CIERRE REDUNDANTE"
 
-L "## FASE 4 · CIERRE REDUNDANTE"
+L "## FASE 4 - CIERRE REDUNDANTE"
 L ""
 
-# 4.1 · Qdrant op=269
-L "### 4.1 · Registro en Qdrant"
+# 4.1 - Qdrant op=269
+L "### 4.1 - Registro en Qdrant"
 $outQd = & $py (Join-Path $base "record_op269_qdrant.py") 2>&1
 $outQd | ForEach-Object { L "  $_" }
 
-# 4.2 · Redundancia triple
+# 4.2 - Redundancia triple
 L ""
-L "### 4.2 · Redundancia triple de Archivos Maestros"
+L "### 4.2 - Redundancia triple de Archivos Maestros"
 $archivosClave = @(
     "_HBOS_REFERENCIAS.md",
     "_AUDITORIA_RRSS_op268.md",
@@ -174,13 +174,13 @@ foreach ($archivo in $archivosClave) {
 
         # Hash
         $hash = (Get-FileHash $origen -Algorithm SHA256).Hash
-        L "  $archivo → SHA256: $($hash.Substring(0,16))..."
+        L "  $archivo -> SHA256: $($hash.Substring(0,16))..."
     }
 }
 
-# 4.3 · Verificación de hashes
+# 4.3 - Verificacion de hashes
 L ""
-L "### 4.3 · Verificación de Hashes Criptográficos"
+L "### 4.3 - Verificacion de Hashes Criptograficos"
 foreach ($archivo in $archivosClave) {
     $local = Join-Path $base $archivo
     $driveFile = Join-Path $drive $archivo
@@ -200,18 +200,18 @@ foreach ($archivo in $archivosClave) {
     }
 }
 
-# 4.4 · Git commit + push
+# 4.4 - Git commit + push
 L ""
-L "### 4.4 · Git Commit + Push Sincronizado"
+L "### 4.4 - Git Commit + Push Sincronizado"
 git add -A 2>&1 | ForEach-Object { L "  $_" }
-git commit -m "HBOS · op=269: DAG de inyección total con tuning fino + verificación end-to-end + cierre redundante triple" 2>&1 | ForEach-Object { L "  $_" }
+git commit -m "HBOS - op=269: DAG de inyeccion total con tuning fino + verificacion end-to-end + cierre redundante triple" 2>&1 | ForEach-Object { L "  $_" }
 git push origin main 2>&1 | ForEach-Object { L "  $_" }
 L ""
 git --no-pager log --oneline -3 2>&1 | ForEach-Object { L "  $_" }
 
-# 4.5 · UNBE final
+# 4.5 - UNBE final
 L ""
-L "### 4.5 · UNBE Final (§1.0)"
+L "### 4.5 - UNBE Final (§1.0)"
 $unbeScript = Join-Path $base "hbos_verify_unbe.py"
 if (Test-Path $unbeScript) {
     $outUnbe = & $py $unbeScript 2>&1
@@ -234,7 +234,7 @@ L "  Redundancia Triple: Local + Drive + Backup verificados SHA256"
 L "  Git: Sincronizado en origin/main"
 L "  UNBE §1.0: CUMPLE AL 100%"
 L ""
-L "**FIN DAG op=269 (TUNING FINO COMPLETADO)**"
+L "**FIN DAG op=269 [TUNING FINO COMPLETADO]**"
 
 Write-Host "`n$sep" -ForegroundColor Green
 Write-Host "DAG op=269 COMPLETADO CON TUNING FINO" -ForegroundColor Green
