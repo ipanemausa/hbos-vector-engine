@@ -1,0 +1,482 @@
+[
+  {
+    "path": "c:\\Users\\ipane\\hbos-deploy\\hbos-vector-engine\\assets\\videos\\demis_hassabis_final.mp4",
+    "exists": true,
+    "size_bytes": 72787044,
+    "size_mb": 69.42,
+    "mtime": "2026-09-21T05:22:35.227962",
+    "sha256": "2291e97ab6a1949eea0ea4d5729f2729c2864ae258fa8779810cd93fea5dd505",
+    "ffprobe": {
+      "duration_s": 251.494,
+      "width": 1920,
+      "height": 1080,
+      "fps": "30/1",
+      "vcodec": "h264"
+    }
+  },
+  {
+    "path": "c:\\Users\\ipane\\hbos-deploy\\hbos-vector-engine\\assets\\videos\\demis_hassabis_v2\\video_final.mp4",
+    "exists": true,
+    "size_bytes": 72787044,
+    "size_mb": 69.42,
+    "mtime": "2026-09-21T05:22:35.227962",
+    "sha256": "2291e97ab6a1949eea0ea4d5729f2729c2864ae258fa8779810cd93fea5dd505",
+    "ffprobe": {
+      "duration_s": 251.494,
+      "width": 1920,
+      "height": 1080,
+      "fps": "30/1",
+      "vcodec": "h264"
+    }
+  },
+  {
+    "path": "c:\\Users\\ipane\\hbos-deploy\\hbos-vector-engine\\assets\\videos\\demis_hassabis_v2\\video_final_v2.mp4",
+    "exists": true,
+    "size_bytes": 84190461,
+    "size_mb": 80.29,
+    "mtime": "2026-09-21T07:55:59.750252",
+    "sha256": "5a698e9eebe6899fb21b1943a741a56cd02e67ab59f1a8206b57ea5e383af918",
+    "ffprobe": {
+      "duration_s": 251.494,
+      "width": 1920,
+      "height": 1080,
+      "fps": "30/1",
+      "vcodec": "h264"
+    }
+  },
+  {
+    "path": "c:\\Users\\ipane\\hbos-deploy\\hbos-vector-engine\\assets\\videos\\demis_hassabis_v2\\escenas\\ep04_plano_00_wan21.mp4",
+    "exists": true,
+    "size_bytes": 2699594,
+    "size_mb": 2.57,
+    "mtime": "2026-09-19T02:38:27.747346",
+    "sha256": "cbfa03dbea3496d09b7850b6bc76550ff72b1d969c0d4461beb6589af47c29bf",
+    "ffprobe": {
+      "duration_s": 5.0,
+      "width": 1920,
+      "height": 1080,
+      "fps": "30/1",
+      "vcodec": "h264"
+    }
+  },
+  {
+    "path": "c:\\Users\\ipane\\hbos-deploy\\hbos-vector-engine\\assets\\videos\\demis_hassabis_v2\\escenas\\ep04_plano_01_wan21.mp4",
+    "exists": true,
+    "size_bytes": 20215724,
+    "size_mb": 19.28,
+    "mtime": "2026-09-19T02:41:50.902696",
+    "sha256": "75ef83ba153c9bf08944303ca39d39e52f07031dba68407e0ad422aff206894c",
+    "ffprobe": {
+      "duration_s": 20.0,
+      "width": 1920,
+      "height": 1080,
+      "fps": "30/1",
+      "vcodec": "h264"
+    }
+  },
+  {
+    "path": "c:\\Users\\ipane\\hbos-deploy\\hbos-vector-engine\\assets\\avatar\\alex_avatar_presentation.mp4",
+    "exists": true,
+    "size_bytes": 3387399,
+    "size_mb": 3.23,
+    "mtime": "2026-09-20T20:07:04.567933",
+    "sha256": "750ade58ee8fc7bb8ec7c4edcccebaea926c3f64009479dc41f3ff3e4ab4a5f8",
+    "ffprobe": {
+      "duration_s": 54.8,
+      "width": 1024,
+      "height": 1024,
+      "fps": "25/1",
+      "vcodec": "h264"
+    }
+  },
+  {
+    "path": "c:\\Users\\ipane\\hbos-deploy\\hbos-vector-engine\\assets\\avatar\\diamantino_avatar_presentation.mp4",
+    "exists": true,
+    "size_bytes": 3387399,
+    "size_mb": 3.23,
+    "mtime": "2026-09-20T20:07:04.567933",
+    "sha256": "750ade58ee8fc7bb8ec7c4edcccebaea926c3f64009479dc41f3ff3e4ab4a5f8",
+    "ffprobe": {
+      "duration_s": 54.8,
+      "width": 1024,
+      "height": 1024,
+      "fps": "25/1",
+      "vcodec": "h264"
+    }
+  },
+  {
+    "path": "c:\\Users\\ipane\\backup_hbos\\assets\\avatar\\alex_avatar_presentation.mp4",
+    "exists": true,
+    "size_bytes": 3387399,
+    "size_mb": 3.23,
+    "mtime": "2026-09-20T20:07:04.567933",
+    "sha256": "750ade58ee8fc7bb8ec7c4edcccebaea926c3f64009479dc41f3ff3e4ab4a5f8",
+    "ffprobe": {
+      "duration_s": 54.8,
+      "width": 1024,
+      "height": 1024,
+      "fps": "25/1",
+      "vcodec": "h264"
+    }
+  },
+  {
+    "path": "G:\\My Drive\\HBOS-Diamantino\\assets\\avatar\\alex_avatar_presentation.mp4",
+    "exists": true,
+    "size_bytes": 3387399,
+    "size_mb": 3.23,
+    "mtime": "2026-09-20T20:07:04.567000",
+    "sha256": "750ade58ee8fc7bb8ec7c4edcccebaea926c3f64009479dc41f3ff3e4ab4a5f8",
+    "ffprobe": {
+      "duration_s": 54.8,
+      "width": 1024,
+      "height": 1024,
+      "fps": "25/1",
+      "vcodec": "h264"
+    }
+  },
+  {
+    "path": "c:\\Users\\ipane\\hbos-deploy\\hbos-vector-engine\\_backup_ep02_master_v3.mp4",
+    "exists": true,
+    "size_bytes": 231056413,
+    "size_mb": 220.35,
+    "mtime": "2026-09-19T01:27:00.263131",
+    "sha256": "1975afe59d4d874748b8c270b1ecbdb56e50c22cffd3847f35dea9d8357ef151",
+    "ffprobe": {
+      "duration_s": 209.033,
+      "width": 1920,
+      "height": 1080,
+      "fps": "30/1",
+      "vcodec": "h264"
+    }
+  },
+  {
+    "path": "c:\\Users\\ipane\\hbos-deploy\\hbos-vector-engine\\ep02_master_v3.mp4",
+    "exists": true,
+    "size_bytes": 231056413,
+    "size_mb": 220.35,
+    "mtime": "2026-09-18T14:17:50.615358",
+    "sha256": "1975afe59d4d874748b8c270b1ecbdb56e50c22cffd3847f35dea9d8357ef151",
+    "ffprobe": {
+      "duration_s": 209.033,
+      "width": 1920,
+      "height": 1080,
+      "fps": "30/1",
+      "vcodec": "h264"
+    }
+  },
+  {
+    "path": "c:\\Users\\ipane\\hbos-deploy\\hbos-vector-engine\\ep02_master_v4.mp4",
+    "exists": true,
+    "size_bytes": 229127659,
+    "size_mb": 218.51,
+    "mtime": "2026-09-19T01:27:59.082010",
+    "sha256": "110d89d8162644331287e0bf7a25b617482c193a2af6d600fd2dc1e301ea8978",
+    "ffprobe": {
+      "duration_s": 209.1,
+      "width": 1920,
+      "height": 1080,
+      "fps": "30/1",
+      "vcodec": "h264"
+    }
+  },
+  {
+    "path": "c:\\Users\\ipane\\hbos-deploy\\hbos-vector-engine\\ep02_master_v5.mp4",
+    "exists": true,
+    "size_bytes": 205572307,
+    "size_mb": 196.05,
+    "mtime": "2026-09-19T01:41:35.562441",
+    "sha256": "7787be13474f592a85d34e0c475b9c44e178ed4b8c8414a97fb6257332c3b9a1",
+    "ffprobe": {
+      "duration_s": 209.033,
+      "width": 1920,
+      "height": 1080,
+      "fps": "30/1",
+      "vcodec": "h264"
+    }
+  },
+  {
+    "path": "c:\\Users\\ipane\\hbos-deploy\\hbos-vector-engine\\ep02_plano_07b_wan21.mp4",
+    "exists": true,
+    "size_bytes": 59438936,
+    "size_mb": 56.69,
+    "mtime": "2026-09-18T14:12:03.609980",
+    "sha256": "2b57e7765b2a33bd27d5bf89dc4dff0df09933355beb3568388a040754b249b9",
+    "ffprobe": {
+      "duration_s": 52.633,
+      "width": 1920,
+      "height": 1080,
+      "fps": "30/1",
+      "vcodec": "h264"
+    }
+  },
+  {
+    "path": "c:\\Users\\ipane\\backup_hbos\\Ep02\\ep02_master_v4.mp4",
+    "exists": true,
+    "size_bytes": 229127659,
+    "size_mb": 218.51,
+    "mtime": "2026-09-19T01:28:22.594956",
+    "sha256": "110d89d8162644331287e0bf7a25b617482c193a2af6d600fd2dc1e301ea8978",
+    "ffprobe": {
+      "duration_s": 209.1,
+      "width": 1920,
+      "height": 1080,
+      "fps": "30/1",
+      "vcodec": "h264"
+    }
+  },
+  {
+    "path": "c:\\Users\\ipane\\backup_hbos\\Ep02\\ep02_master_v5.mp4",
+    "exists": true,
+    "size_bytes": 205572307,
+    "size_mb": 196.05,
+    "mtime": "2026-09-19T01:41:45.083571",
+    "sha256": "7787be13474f592a85d34e0c475b9c44e178ed4b8c8414a97fb6257332c3b9a1",
+    "ffprobe": {
+      "duration_s": 209.033,
+      "width": 1920,
+      "height": 1080,
+      "fps": "30/1",
+      "vcodec": "h264"
+    }
+  },
+  {
+    "path": "c:\\Users\\ipane\\backup_hbos\\_BACKUP_EPISODIOS\\Ep02_2026-09-18\\ep02_master_v3.mp4",
+    "exists": true,
+    "size_bytes": 231056413,
+    "size_mb": 220.35,
+    "mtime": "2026-09-18T14:17:46.850000",
+    "sha256": "1975afe59d4d874748b8c270b1ecbdb56e50c22cffd3847f35dea9d8357ef151",
+    "ffprobe": {
+      "duration_s": 209.033,
+      "width": 1920,
+      "height": 1080,
+      "fps": "30/1",
+      "vcodec": "h264"
+    }
+  },
+  {
+    "path": "c:\\Users\\ipane\\backup_hbos\\_BACKUP_EPISODIOS\\Ep02_2026-09-18\\ep02_master_v4.mp4",
+    "exists": true,
+    "size_bytes": 229127659,
+    "size_mb": 218.51,
+    "mtime": "2026-09-19T01:28:14.839000",
+    "sha256": "110d89d8162644331287e0bf7a25b617482c193a2af6d600fd2dc1e301ea8978",
+    "ffprobe": {
+      "duration_s": 209.1,
+      "width": 1920,
+      "height": 1080,
+      "fps": "30/1",
+      "vcodec": "h264"
+    }
+  },
+  {
+    "path": "G:\\My Drive\\HBOS-Diamantino\\Ep02-Los7Chips\\05_Master\\ep02_master_v5.mp4",
+    "exists": true,
+    "size_bytes": 205572307,
+    "size_mb": 196.05,
+    "mtime": "2026-09-19T01:41:37.356000",
+    "sha256": "DRIVE_STREAM_SKIPPED_FOR_SPEED",
+    "ffprobe": {
+      "duration_s": 209.033,
+      "width": 1920,
+      "height": 1080,
+      "fps": "30/1",
+      "vcodec": "h264"
+    }
+  },
+  {
+    "path": "G:\\My Drive\\HBOS-Diamantino\\_BACKUP_EPISODIOS\\Ep02_2026-09-18\\ep02_master_v1.mp4",
+    "exists": true,
+    "size_bytes": 129160382,
+    "size_mb": 123.18,
+    "mtime": "2026-09-18T13:04:25.452000",
+    "sha256": "DRIVE_STREAM_SKIPPED_FOR_SPEED",
+    "ffprobe": {
+      "duration_s": 156.3,
+      "width": 1920,
+      "height": 1080,
+      "fps": "30/1",
+      "vcodec": "h264"
+    }
+  },
+  {
+    "path": "G:\\My Drive\\HBOS-Diamantino\\_BACKUP_EPISODIOS\\Ep02_2026-09-18\\ep02_master_v1_backup.mp4",
+    "exists": true,
+    "size_bytes": 15204400,
+    "size_mb": 14.5,
+    "mtime": "2026-09-18T11:56:11.263000",
+    "sha256": "db50072ee1ecb071c6855b17391ef1eac0950e30bc093227aa1d4935a9c3ee12",
+    "ffprobe": {
+      "duration_s": 0.0,
+      "width": null,
+      "height": null,
+      "fps": null,
+      "vcodec": null
+    }
+  },
+  {
+    "path": "G:\\My Drive\\HBOS-Diamantino\\_BACKUP_EPISODIOS\\Ep02_2026-09-18\\ep02_master_v2.mp4",
+    "exists": true,
+    "size_bytes": 163242634,
+    "size_mb": 155.68,
+    "mtime": "2026-09-18T14:00:47.867000",
+    "sha256": "DRIVE_STREAM_SKIPPED_FOR_SPEED",
+    "ffprobe": {
+      "duration_s": 156.3,
+      "width": 1920,
+      "height": 1080,
+      "fps": "30/1",
+      "vcodec": "h264"
+    }
+  },
+  {
+    "path": "G:\\My Drive\\HBOS-Diamantino\\_BACKUP_EPISODIOS\\Ep02_2026-09-18\\ep02_master_v3.mp4",
+    "exists": true,
+    "size_bytes": 231056413,
+    "size_mb": 220.35,
+    "mtime": "2026-09-18T14:17:59.864000",
+    "sha256": "DRIVE_STREAM_SKIPPED_FOR_SPEED",
+    "ffprobe": {
+      "duration_s": 209.033,
+      "width": 1920,
+      "height": 1080,
+      "fps": "30/1",
+      "vcodec": "h264"
+    }
+  },
+  {
+    "path": "c:\\Users\\ipane\\hbos-deploy\\hbos-vector-engine\\Ep03\\ep03_master_v1.mp4",
+    "exists": true,
+    "size_bytes": 165219092,
+    "size_mb": 157.57,
+    "mtime": "2026-09-18T14:47:55.636984",
+    "sha256": "8d6540f145e1bff95699469af978050f036de2bd12dfd82ba89cd720a252de79",
+    "ffprobe": {
+      "duration_s": 139.133,
+      "width": 1920,
+      "height": 1080,
+      "fps": "30/1",
+      "vcodec": "h264"
+    }
+  },
+  {
+    "path": "c:\\Users\\ipane\\hbos-deploy\\hbos-vector-engine\\Ep03\\ep03_master_v2.mp4",
+    "exists": true,
+    "size_bytes": 164081498,
+    "size_mb": 156.48,
+    "mtime": "2026-09-19T01:28:10.906992",
+    "sha256": "d684be22de26ecdc1b18147f8508ad8522221c0e00f303c98503f84ecc65947a",
+    "ffprobe": {
+      "duration_s": 139.174,
+      "width": 1920,
+      "height": 1080,
+      "fps": "30/1",
+      "vcodec": "h264"
+    }
+  },
+  {
+    "path": "c:\\Users\\ipane\\backup_hbos\\Ep03\\ep03_master_v2.mp4",
+    "exists": true,
+    "size_bytes": 164081498,
+    "size_mb": 156.48,
+    "mtime": "2026-09-19T01:28:34.308278",
+    "sha256": "d684be22de26ecdc1b18147f8508ad8522221c0e00f303c98503f84ecc65947a",
+    "ffprobe": {
+      "duration_s": 139.174,
+      "width": 1920,
+      "height": 1080,
+      "fps": "30/1",
+      "vcodec": "h264"
+    }
+  },
+  {
+    "path": "c:\\Users\\ipane\\backup_hbos\\_BACKUP_EPISODIOS\\Ep03_2026-09-18\\ep03_master_v1.mp4",
+    "exists": true,
+    "size_bytes": 165219092,
+    "size_mb": 157.57,
+    "mtime": "2026-09-18T14:47:53.354000",
+    "sha256": "8d6540f145e1bff95699469af978050f036de2bd12dfd82ba89cd720a252de79",
+    "ffprobe": {
+      "duration_s": 139.133,
+      "width": 1920,
+      "height": 1080,
+      "fps": "30/1",
+      "vcodec": "h264"
+    }
+  },
+  {
+    "path": "c:\\Users\\ipane\\backup_hbos\\_BACKUP_EPISODIOS\\Ep03_2026-09-18\\ep03_master_v2.mp4",
+    "exists": true,
+    "size_bytes": 164081498,
+    "size_mb": 156.48,
+    "mtime": "2026-09-19T01:28:27.403000",
+    "sha256": "d684be22de26ecdc1b18147f8508ad8522221c0e00f303c98503f84ecc65947a",
+    "ffprobe": {
+      "duration_s": 139.174,
+      "width": 1920,
+      "height": 1080,
+      "fps": "30/1",
+      "vcodec": "h264"
+    }
+  },
+  {
+    "path": "G:\\My Drive\\HBOS-Diamantino\\Ep03-RedesFotonicasCuanticas\\05_Master\\ep03_master_v1.mp4",
+    "exists": true,
+    "size_bytes": 165219092,
+    "size_mb": 157.57,
+    "mtime": "2026-09-18T14:47:53.354000",
+    "sha256": "DRIVE_STREAM_SKIPPED_FOR_SPEED",
+    "ffprobe": {
+      "duration_s": 139.133,
+      "width": 1920,
+      "height": 1080,
+      "fps": "30/1",
+      "vcodec": "h264"
+    }
+  },
+  {
+    "path": "G:\\My Drive\\HBOS-Diamantino\\Ep03-RedesFotonicasCuanticas\\05_Master\\ep03_master_v2.mp4",
+    "exists": true,
+    "size_bytes": 164081498,
+    "size_mb": 156.48,
+    "mtime": "2026-09-19T01:28:27.403000",
+    "sha256": "DRIVE_STREAM_SKIPPED_FOR_SPEED",
+    "ffprobe": {
+      "duration_s": 139.174,
+      "width": 1920,
+      "height": 1080,
+      "fps": "30/1",
+      "vcodec": "h264"
+    }
+  },
+  {
+    "path": "c:\\Users\\ipane\\hbos-deploy\\hbos-vector-engine\\media\\diamantino\\ep01.mp4",
+    "exists": true,
+    "size_bytes": 47197836,
+    "size_mb": 45.01,
+    "mtime": "2026-09-17T17:01:05.519301",
+    "sha256": "dec760cb6d46c5f4fb251b82e7c62bec6b57f347f58a793290f8ff6ddeec44fd",
+    "ffprobe": {
+      "duration_s": 90.0,
+      "width": 1920,
+      "height": 1080,
+      "fps": "30/1",
+      "vcodec": "h264"
+    }
+  },
+  {
+    "path": "c:\\Users\\ipane\\hbos-deploy\\hbos-vector-engine\\public\\media\\diamantino\\ep01.mp4",
+    "exists": true,
+    "size_bytes": 47197836,
+    "size_mb": 45.01,
+    "mtime": "2026-09-17T17:01:05.519301",
+    "sha256": "dec760cb6d46c5f4fb251b82e7c62bec6b57f347f58a793290f8ff6ddeec44fd",
+    "ffprobe": {
+      "duration_s": 90.0,
+      "width": 1920,
+      "height": 1080,
+      "fps": "30/1",
+      "vcodec": "h264"
+    }
+  }
+]

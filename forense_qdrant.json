@@ -1,0 +1,2315 @@
+{
+  "registro_ecosistema_error": "[Errno 11001] getaddrinfo failed",
+  "diamantino_assets": [
+    {
+      "id": 1,
+      "payload": {
+        "personaje": "Diamantino",
+        "componente": "Vera CPU / Orquestador Maestro",
+        "gema": "Diamante",
+        "pose": "frontal",
+        "emocion": "neutro",
+        "angulo": "0\u00b0",
+        "cuerpo_completo": true,
+        "articulaciones_visibles": true,
+        "estilo": "cinematografico 8K GTC keynote",
+        "episodio_origen": "Ep02 - Los 7 Chips",
+        "fecha": "2026-09-18T13:12:53.639Z",
+        "ruta_drive": "G:\\\\My Drive\\\\Diamantini\\\\Diamantino\\\\diamantino_frontal_neutro_v1.png",
+        "operation_id": 45
+      }
+    },
+    {
+      "id": 2,
+      "payload": {
+        "personaje": "Diamantino",
+        "componente": "Vera CPU / Orquestador Maestro",
+        "gema": "Diamante",
+        "pose": "frontal",
+        "emocion": "sonriente",
+        "angulo": "0\u00b0",
+        "cuerpo_completo": true,
+        "articulaciones_visibles": true,
+        "estilo": "cinematografico 8K GTC keynote",
+        "episodio_origen": "Ep02 - Los 7 Chips",
+        "fecha": "2026-09-18T13:12:53.639Z",
+        "ruta_drive": "G:\\\\My Drive\\\\Diamantini\\\\Diamantino\\\\diamantino_frontal_sonriente_v1.png",
+        "operation_id": 45
+      }
+    },
+    {
+      "id": 3,
+      "payload": {
+        "personaje": "Diamantino",
+        "componente": "Vera CPU / Orquestador Maestro",
+        "gema": "Diamante",
+        "pose": "frontal",
+        "emocion": "serio",
+        "angulo": "0\u00b0",
+        "cuerpo_completo": true,
+        "articulaciones_visibles": true,
+        "estilo": "cinematografico 8K GTC keynote",
+        "episodio_origen": "Ep02 - Los 7 Chips",
+        "fecha": "2026-09-18T13:12:53.639Z",
+        "ruta_drive": "G:\\\\My Drive\\\\Diamantini\\\\Diamantino\\\\diamantino_frontal_serio_v1.png",
+        "operation_id": 45
+      }
+    },
+    {
+      "id": 4,
+      "payload": {
+        "personaje": "Diamantino",
+        "componente": "Vera CPU / Orquestador Maestro",
+        "gema": "Diamante",
+        "pose": "perfil_izq",
+        "emocion": "analitico",
+        "angulo": "90\u00b0 izq",
+        "cuerpo_completo": true,
+        "articulaciones_visibles": true,
+        "estilo": "cinematografico 8K GTC keynote",
+        "episodio_origen": "Ep02 - Los 7 Chips",
+        "fecha": "2026-09-18T13:12:53.639Z",
+        "ruta_drive": "G:\\\\My Drive\\\\Diamantini\\\\Diamantino\\\\diamantino_perfil_izq_analitico_v1.png",
+        "operation_id": 45
+      }
+    },
+    {
+      "id": 5,
+      "payload": {
+        "personaje": "Diamantino",
+        "componente": "Vera CPU / Orquestador Maestro",
+        "gema": "Diamante",
+        "pose": "perfil_der",
+        "emocion": "analitico",
+        "angulo": "90\u00b0 der",
+        "cuerpo_completo": true,
+        "articulaciones_visibles": true,
+        "estilo": "cinematografico 8K GTC keynote",
+        "episodio_origen": "Ep02 - Los 7 Chips",
+        "fecha": "2026-09-18T13:12:53.639Z",
+        "ruta_drive": "G:\\\\My Drive\\\\Diamantini\\\\Diamantino\\\\diamantino_perfil_der_analitico_v1.png",
+        "operation_id": 45
+      }
+    },
+    {
+      "id": 6,
+      "payload": {
+        "personaje": "Diamantino",
+        "componente": "Vera CPU / Orquestador Maestro",
+        "gema": "Diamante",
+        "pose": "trescuartos_izq",
+        "emocion": "enfocado",
+        "angulo": "45\u00b0 izq",
+        "cuerpo_completo": true,
+        "articulaciones_visibles": true,
+        "estilo": "cinematografico 8K GTC keynote",
+        "episodio_origen": "Ep02 - Los 7 Chips",
+        "fecha": "2026-09-18T13:12:53.639Z",
+        "ruta_drive": "G:\\\\My Drive\\\\Diamantini\\\\Diamantino\\\\diamantino_trescuartos_izq_enfocado_v1.png",
+        "operation_id": 45
+      }
+    },
+    {
+      "id": 7,
+      "payload": {
+        "personaje": "Diamantino",
+        "componente": "Vera CPU / Orquestador Maestro",
+        "gema": "Diamante",
+        "pose": "trescuartos_der",
+        "emocion": "seguro",
+        "angulo": "45\u00b0 der",
+        "cuerpo_completo": true,
+        "articulaciones_visibles": true,
+        "estilo": "cinematografico 8K GTC keynote",
+        "episodio_origen": "Ep02 - Los 7 Chips",
+        "fecha": "2026-09-18T13:12:53.639Z",
+        "ruta_drive": "G:\\\\My Drive\\\\Diamantini\\\\Diamantino\\\\diamantino_trescuartos_der_seguro_v1.png",
+        "operation_id": 45
+      }
+    },
+    {
+      "id": 8,
+      "payload": {
+        "personaje": "Diamantino",
+        "componente": "Vera CPU / Orquestador Maestro",
+        "gema": "Diamante",
+        "pose": "espalda",
+        "emocion": "neutro",
+        "angulo": "180\u00b0",
+        "cuerpo_completo": true,
+        "articulaciones_visibles": true,
+        "estilo": "cinematografico 8K GTC keynote",
+        "episodio_origen": "Ep02 - Los 7 Chips",
+        "fecha": "2026-09-18T13:12:53.639Z",
+        "ruta_drive": "G:\\\\My Drive\\\\Diamantini\\\\Diamantino\\\\diamantino_espalda_neutro_v1.png",
+        "operation_id": 45
+      }
+    },
+    {
+      "id": 9,
+      "payload": {
+        "personaje": "Diamantino",
+        "componente": "Vera CPU / Orquestador Maestro",
+        "gema": "Diamante",
+        "pose": "accion_dinamica1",
+        "emocion": "energico",
+        "angulo": "dinamico",
+        "cuerpo_completo": true,
+        "articulaciones_visibles": true,
+        "estilo": "cinematografico 8K GTC keynote",
+        "episodio_origen": "Ep02 - Los 7 Chips",
+        "fecha": "2026-09-18T13:12:53.639Z",
+        "ruta_drive": "G:\\\\My Drive\\\\Diamantini\\\\Diamantino\\\\diamantino_accion_dinamica1_energico_v1.png",
+        "operation_id": 45
+      }
+    },
+    {
+      "id": 10,
+      "payload": {
+        "personaje": "Diamantino",
+        "componente": "Vera CPU / Orquestador Maestro",
+        "gema": "Diamante",
+        "pose": "accion_dinamica2",
+        "emocion": "visionario",
+        "angulo": "dinamico",
+        "cuerpo_completo": true,
+        "articulaciones_visibles": true,
+        "estilo": "cinematografico 8K GTC keynote",
+        "episodio_origen": "Ep02 - Los 7 Chips",
+        "fecha": "2026-09-18T13:12:53.639Z",
+        "ruta_drive": "G:\\\\My Drive\\\\Diamantini\\\\Diamantino\\\\diamantino_accion_dinamica2_visionario_v1.png",
+        "operation_id": 45
+      }
+    },
+    {
+      "id": 11,
+      "payload": {
+        "personaje": "Rubin",
+        "componente": "Vera Rubin GPU / Razonamiento Masivo",
+        "gema": "Rub\u00ed",
+        "pose": "frontal",
+        "emocion": "neutro",
+        "angulo": "0\u00b0",
+        "cuerpo_completo": true,
+        "articulaciones_visibles": true,
+        "estilo": "cinematografico 8K GTC keynote",
+        "episodio_origen": "Ep02 - Los 7 Chips",
+        "fecha": "2026-09-18T13:12:53.639Z",
+        "ruta_drive": "G:\\\\My Drive\\\\Diamantini\\\\Rubin\\\\rubin_frontal_neutro_v1.png",
+        "operation_id": 45
+      }
+    },
+    {
+      "id": 12,
+      "payload": {
+        "personaje": "Rubin",
+        "componente": "Vera Rubin GPU / Razonamiento Masivo",
+        "gema": "Rub\u00ed",
+        "pose": "frontal",
+        "emocion": "sonriente",
+        "angulo": "0\u00b0",
+        "cuerpo_completo": true,
+        "articulaciones_visibles": true,
+        "estilo": "cinematografico 8K GTC keynote",
+        "episodio_origen": "Ep02 - Los 7 Chips",
+        "fecha": "2026-09-18T13:12:53.639Z",
+        "ruta_drive": "G:\\\\My Drive\\\\Diamantini\\\\Rubin\\\\rubin_frontal_sonriente_v1.png",
+        "operation_id": 45
+      }
+    },
+    {
+      "id": 13,
+      "payload": {
+        "personaje": "Rubin",
+        "componente": "Vera Rubin GPU / Razonamiento Masivo",
+        "gema": "Rub\u00ed",
+        "pose": "frontal",
+        "emocion": "serio",
+        "angulo": "0\u00b0",
+        "cuerpo_completo": true,
+        "articulaciones_visibles": true,
+        "estilo": "cinematografico 8K GTC keynote",
+        "episodio_origen": "Ep02 - Los 7 Chips",
+        "fecha": "2026-09-18T13:12:53.639Z",
+        "ruta_drive": "G:\\\\My Drive\\\\Diamantini\\\\Rubin\\\\rubin_frontal_serio_v1.png",
+        "operation_id": 45
+      }
+    },
+    {
+      "id": 14,
+      "payload": {
+        "personaje": "Rubin",
+        "componente": "Vera Rubin GPU / Razonamiento Masivo",
+        "gema": "Rub\u00ed",
+        "pose": "perfil_izq",
+        "emocion": "analitico",
+        "angulo": "90\u00b0 izq",
+        "cuerpo_completo": true,
+        "articulaciones_visibles": true,
+        "estilo": "cinematografico 8K GTC keynote",
+        "episodio_origen": "Ep02 - Los 7 Chips",
+        "fecha": "2026-09-18T13:12:53.639Z",
+        "ruta_drive": "G:\\\\My Drive\\\\Diamantini\\\\Rubin\\\\rubin_perfil_izq_analitico_v1.png",
+        "operation_id": 45
+      }
+    },
+    {
+      "id": 15,
+      "payload": {
+        "personaje": "Rubin",
+        "componente": "Vera Rubin GPU / Razonamiento Masivo",
+        "gema": "Rub\u00ed",
+        "pose": "perfil_der",
+        "emocion": "analitico",
+        "angulo": "90\u00b0 der",
+        "cuerpo_completo": true,
+        "articulaciones_visibles": true,
+        "estilo": "cinematografico 8K GTC keynote",
+        "episodio_origen": "Ep02 - Los 7 Chips",
+        "fecha": "2026-09-18T13:12:53.639Z",
+        "ruta_drive": "G:\\\\My Drive\\\\Diamantini\\\\Rubin\\\\rubin_perfil_der_analitico_v1.png",
+        "operation_id": 45
+      }
+    },
+    {
+      "id": 16,
+      "payload": {
+        "personaje": "Rubin",
+        "componente": "Vera Rubin GPU / Razonamiento Masivo",
+        "gema": "Rub\u00ed",
+        "pose": "trescuartos_izq",
+        "emocion": "enfocado",
+        "angulo": "45\u00b0 izq",
+        "cuerpo_completo": true,
+        "articulaciones_visibles": true,
+        "estilo": "cinematografico 8K GTC keynote",
+        "episodio_origen": "Ep02 - Los 7 Chips",
+        "fecha": "2026-09-18T13:12:53.639Z",
+        "ruta_drive": "G:\\\\My Drive\\\\Diamantini\\\\Rubin\\\\rubin_trescuartos_izq_enfocado_v1.png",
+        "operation_id": 45
+      }
+    },
+    {
+      "id": 17,
+      "payload": {
+        "personaje": "Rubin",
+        "componente": "Vera Rubin GPU / Razonamiento Masivo",
+        "gema": "Rub\u00ed",
+        "pose": "trescuartos_der",
+        "emocion": "seguro",
+        "angulo": "45\u00b0 der",
+        "cuerpo_completo": true,
+        "articulaciones_visibles": true,
+        "estilo": "cinematografico 8K GTC keynote",
+        "episodio_origen": "Ep02 - Los 7 Chips",
+        "fecha": "2026-09-18T13:12:53.639Z",
+        "ruta_drive": "G:\\\\My Drive\\\\Diamantini\\\\Rubin\\\\rubin_trescuartos_der_seguro_v1.png",
+        "operation_id": 45
+      }
+    },
+    {
+      "id": 18,
+      "payload": {
+        "personaje": "Rubin",
+        "componente": "Vera Rubin GPU / Razonamiento Masivo",
+        "gema": "Rub\u00ed",
+        "pose": "espalda",
+        "emocion": "neutro",
+        "angulo": "180\u00b0",
+        "cuerpo_completo": true,
+        "articulaciones_visibles": true,
+        "estilo": "cinematografico 8K GTC keynote",
+        "episodio_origen": "Ep02 - Los 7 Chips",
+        "fecha": "2026-09-18T13:12:53.639Z",
+        "ruta_drive": "G:\\\\My Drive\\\\Diamantini\\\\Rubin\\\\rubin_espalda_neutro_v1.png",
+        "operation_id": 45
+      }
+    },
+    {
+      "id": 19,
+      "payload": {
+        "personaje": "Rubin",
+        "componente": "Vera Rubin GPU / Razonamiento Masivo",
+        "gema": "Rub\u00ed",
+        "pose": "accion_dinamica1",
+        "emocion": "energico",
+        "angulo": "dinamico",
+        "cuerpo_completo": true,
+        "articulaciones_visibles": true,
+        "estilo": "cinematografico 8K GTC keynote",
+        "episodio_origen": "Ep02 - Los 7 Chips",
+        "fecha": "2026-09-18T13:12:53.639Z",
+        "ruta_drive": "G:\\\\My Drive\\\\Diamantini\\\\Rubin\\\\rubin_accion_dinamica1_energico_v1.png",
+        "operation_id": 45
+      }
+    },
+    {
+      "id": 20,
+      "payload": {
+        "personaje": "Rubin",
+        "componente": "Vera Rubin GPU / Razonamiento Masivo",
+        "gema": "Rub\u00ed",
+        "pose": "accion_dinamica2",
+        "emocion": "visionario",
+        "angulo": "dinamico",
+        "cuerpo_completo": true,
+        "articulaciones_visibles": true,
+        "estilo": "cinematografico 8K GTC keynote",
+        "episodio_origen": "Ep02 - Los 7 Chips",
+        "fecha": "2026-09-18T13:12:53.639Z",
+        "ruta_drive": "G:\\\\My Drive\\\\Diamantini\\\\Rubin\\\\rubin_accion_dinamica2_visionario_v1.png",
+        "operation_id": 45
+      }
+    },
+    {
+      "id": 21,
+      "payload": {
+        "personaje": "Zafir",
+        "componente": "BlueField-4 DPU / Guardi\u00e1n de Memoria",
+        "gema": "Zafiro",
+        "pose": "frontal",
+        "emocion": "neutro",
+        "angulo": "0\u00b0",
+        "cuerpo_completo": true,
+        "articulaciones_visibles": true,
+        "estilo": "cinematografico 8K GTC keynote",
+        "episodio_origen": "Ep02 - Los 7 Chips",
+        "fecha": "2026-09-18T13:12:53.639Z",
+        "ruta_drive": "G:\\\\My Drive\\\\Diamantini\\\\Zafir\\\\zafir_frontal_neutro_v1.png",
+        "operation_id": 45
+      }
+    },
+    {
+      "id": 22,
+      "payload": {
+        "personaje": "Zafir",
+        "componente": "BlueField-4 DPU / Guardi\u00e1n de Memoria",
+        "gema": "Zafiro",
+        "pose": "frontal",
+        "emocion": "sonriente",
+        "angulo": "0\u00b0",
+        "cuerpo_completo": true,
+        "articulaciones_visibles": true,
+        "estilo": "cinematografico 8K GTC keynote",
+        "episodio_origen": "Ep02 - Los 7 Chips",
+        "fecha": "2026-09-18T13:12:53.639Z",
+        "ruta_drive": "G:\\\\My Drive\\\\Diamantini\\\\Zafir\\\\zafir_frontal_sonriente_v1.png",
+        "operation_id": 45
+      }
+    },
+    {
+      "id": 23,
+      "payload": {
+        "personaje": "Zafir",
+        "componente": "BlueField-4 DPU / Guardi\u00e1n de Memoria",
+        "gema": "Zafiro",
+        "pose": "frontal",
+        "emocion": "serio",
+        "angulo": "0\u00b0",
+        "cuerpo_completo": true,
+        "articulaciones_visibles": true,
+        "estilo": "cinematografico 8K GTC keynote",
+        "episodio_origen": "Ep02 - Los 7 Chips",
+        "fecha": "2026-09-18T13:12:53.639Z",
+        "ruta_drive": "G:\\\\My Drive\\\\Diamantini\\\\Zafir\\\\zafir_frontal_serio_v1.png",
+        "operation_id": 45
+      }
+    },
+    {
+      "id": 24,
+      "payload": {
+        "personaje": "Zafir",
+        "componente": "BlueField-4 DPU / Guardi\u00e1n de Memoria",
+        "gema": "Zafiro",
+        "pose": "perfil_izq",
+        "emocion": "analitico",
+        "angulo": "90\u00b0 izq",
+        "cuerpo_completo": true,
+        "articulaciones_visibles": true,
+        "estilo": "cinematografico 8K GTC keynote",
+        "episodio_origen": "Ep02 - Los 7 Chips",
+        "fecha": "2026-09-18T13:12:53.639Z",
+        "ruta_drive": "G:\\\\My Drive\\\\Diamantini\\\\Zafir\\\\zafir_perfil_izq_analitico_v1.png",
+        "operation_id": 45
+      }
+    },
+    {
+      "id": 25,
+      "payload": {
+        "personaje": "Zafir",
+        "componente": "BlueField-4 DPU / Guardi\u00e1n de Memoria",
+        "gema": "Zafiro",
+        "pose": "perfil_der",
+        "emocion": "analitico",
+        "angulo": "90\u00b0 der",
+        "cuerpo_completo": true,
+        "articulaciones_visibles": true,
+        "estilo": "cinematografico 8K GTC keynote",
+        "episodio_origen": "Ep02 - Los 7 Chips",
+        "fecha": "2026-09-18T13:12:53.639Z",
+        "ruta_drive": "G:\\\\My Drive\\\\Diamantini\\\\Zafir\\\\zafir_perfil_der_analitico_v1.png",
+        "operation_id": 45
+      }
+    },
+    {
+      "id": 26,
+      "payload": {
+        "personaje": "Zafir",
+        "componente": "BlueField-4 DPU / Guardi\u00e1n de Memoria",
+        "gema": "Zafiro",
+        "pose": "trescuartos_izq",
+        "emocion": "enfocado",
+        "angulo": "45\u00b0 izq",
+        "cuerpo_completo": true,
+        "articulaciones_visibles": true,
+        "estilo": "cinematografico 8K GTC keynote",
+        "episodio_origen": "Ep02 - Los 7 Chips",
+        "fecha": "2026-09-18T13:12:53.639Z",
+        "ruta_drive": "G:\\\\My Drive\\\\Diamantini\\\\Zafir\\\\zafir_trescuartos_izq_enfocado_v1.png",
+        "operation_id": 45
+      }
+    },
+    {
+      "id": 27,
+      "payload": {
+        "personaje": "Zafir",
+        "componente": "BlueField-4 DPU / Guardi\u00e1n de Memoria",
+        "gema": "Zafiro",
+        "pose": "trescuartos_der",
+        "emocion": "seguro",
+        "angulo": "45\u00b0 der",
+        "cuerpo_completo": true,
+        "articulaciones_visibles": true,
+        "estilo": "cinematografico 8K GTC keynote",
+        "episodio_origen": "Ep02 - Los 7 Chips",
+        "fecha": "2026-09-18T13:12:53.639Z",
+        "ruta_drive": "G:\\\\My Drive\\\\Diamantini\\\\Zafir\\\\zafir_trescuartos_der_seguro_v1.png",
+        "operation_id": 45
+      }
+    },
+    {
+      "id": 28,
+      "payload": {
+        "personaje": "Zafir",
+        "componente": "BlueField-4 DPU / Guardi\u00e1n de Memoria",
+        "gema": "Zafiro",
+        "pose": "espalda",
+        "emocion": "neutro",
+        "angulo": "180\u00b0",
+        "cuerpo_completo": true,
+        "articulaciones_visibles": true,
+        "estilo": "cinematografico 8K GTC keynote",
+        "episodio_origen": "Ep02 - Los 7 Chips",
+        "fecha": "2026-09-18T13:12:53.639Z",
+        "ruta_drive": "G:\\\\My Drive\\\\Diamantini\\\\Zafir\\\\zafir_espalda_neutro_v1.png",
+        "operation_id": 45
+      }
+    },
+    {
+      "id": 29,
+      "payload": {
+        "personaje": "Zafir",
+        "componente": "BlueField-4 DPU / Guardi\u00e1n de Memoria",
+        "gema": "Zafiro",
+        "pose": "accion_dinamica1",
+        "emocion": "energico",
+        "angulo": "dinamico",
+        "cuerpo_completo": true,
+        "articulaciones_visibles": true,
+        "estilo": "cinematografico 8K GTC keynote",
+        "episodio_origen": "Ep02 - Los 7 Chips",
+        "fecha": "2026-09-18T13:12:53.639Z",
+        "ruta_drive": "G:\\\\My Drive\\\\Diamantini\\\\Zafir\\\\zafir_accion_dinamica1_energico_v1.png",
+        "operation_id": 45
+      }
+    },
+    {
+      "id": 30,
+      "payload": {
+        "personaje": "Zafir",
+        "componente": "BlueField-4 DPU / Guardi\u00e1n de Memoria",
+        "gema": "Zafiro",
+        "pose": "accion_dinamica2",
+        "emocion": "visionario",
+        "angulo": "dinamico",
+        "cuerpo_completo": true,
+        "articulaciones_visibles": true,
+        "estilo": "cinematografico 8K GTC keynote",
+        "episodio_origen": "Ep02 - Los 7 Chips",
+        "fecha": "2026-09-18T13:12:53.639Z",
+        "ruta_drive": "G:\\\\My Drive\\\\Diamantini\\\\Zafir\\\\zafir_accion_dinamica2_visionario_v1.png",
+        "operation_id": 45
+      }
+    },
+    {
+      "id": 31,
+      "payload": {
+        "personaje": "Esmeralda",
+        "componente": "CUDA Cores / Matrices de Tensores",
+        "gema": "Esmeralda",
+        "pose": "frontal",
+        "emocion": "neutro",
+        "angulo": "0\u00b0",
+        "cuerpo_completo": true,
+        "articulaciones_visibles": true,
+        "estilo": "cinematografico 8K GTC keynote",
+        "episodio_origen": "Ep02 - Los 7 Chips",
+        "fecha": "2026-09-18T13:12:53.639Z",
+        "ruta_drive": "G:\\\\My Drive\\\\Diamantini\\\\Esmeralda\\\\esmeralda_frontal_neutro_v1.png",
+        "operation_id": 45
+      }
+    },
+    {
+      "id": 32,
+      "payload": {
+        "personaje": "Esmeralda",
+        "componente": "CUDA Cores / Matrices de Tensores",
+        "gema": "Esmeralda",
+        "pose": "frontal",
+        "emocion": "sonriente",
+        "angulo": "0\u00b0",
+        "cuerpo_completo": true,
+        "articulaciones_visibles": true,
+        "estilo": "cinematografico 8K GTC keynote",
+        "episodio_origen": "Ep02 - Los 7 Chips",
+        "fecha": "2026-09-18T13:12:53.639Z",
+        "ruta_drive": "G:\\\\My Drive\\\\Diamantini\\\\Esmeralda\\\\esmeralda_frontal_sonriente_v1.png",
+        "operation_id": 45
+      }
+    },
+    {
+      "id": 33,
+      "payload": {
+        "personaje": "Esmeralda",
+        "componente": "CUDA Cores / Matrices de Tensores",
+        "gema": "Esmeralda",
+        "pose": "frontal",
+        "emocion": "serio",
+        "angulo": "0\u00b0",
+        "cuerpo_completo": true,
+        "articulaciones_visibles": true,
+        "estilo": "cinematografico 8K GTC keynote",
+        "episodio_origen": "Ep02 - Los 7 Chips",
+        "fecha": "2026-09-18T13:12:53.639Z",
+        "ruta_drive": "G:\\\\My Drive\\\\Diamantini\\\\Esmeralda\\\\esmeralda_frontal_serio_v1.png",
+        "operation_id": 45
+      }
+    },
+    {
+      "id": 34,
+      "payload": {
+        "personaje": "Esmeralda",
+        "componente": "CUDA Cores / Matrices de Tensores",
+        "gema": "Esmeralda",
+        "pose": "perfil_izq",
+        "emocion": "analitico",
+        "angulo": "90\u00b0 izq",
+        "cuerpo_completo": true,
+        "articulaciones_visibles": true,
+        "estilo": "cinematografico 8K GTC keynote",
+        "episodio_origen": "Ep02 - Los 7 Chips",
+        "fecha": "2026-09-18T13:12:53.639Z",
+        "ruta_drive": "G:\\\\My Drive\\\\Diamantini\\\\Esmeralda\\\\esmeralda_perfil_izq_analitico_v1.png",
+        "operation_id": 45
+      }
+    },
+    {
+      "id": 35,
+      "payload": {
+        "personaje": "Esmeralda",
+        "componente": "CUDA Cores / Matrices de Tensores",
+        "gema": "Esmeralda",
+        "pose": "perfil_der",
+        "emocion": "analitico",
+        "angulo": "90\u00b0 der",
+        "cuerpo_completo": true,
+        "articulaciones_visibles": true,
+        "estilo": "cinematografico 8K GTC keynote",
+        "episodio_origen": "Ep02 - Los 7 Chips",
+        "fecha": "2026-09-18T13:12:53.639Z",
+        "ruta_drive": "G:\\\\My Drive\\\\Diamantini\\\\Esmeralda\\\\esmeralda_perfil_der_analitico_v1.png",
+        "operation_id": 45
+      }
+    },
+    {
+      "id": 36,
+      "payload": {
+        "personaje": "Esmeralda",
+        "componente": "CUDA Cores / Matrices de Tensores",
+        "gema": "Esmeralda",
+        "pose": "trescuartos_izq",
+        "emocion": "enfocado",
+        "angulo": "45\u00b0 izq",
+        "cuerpo_completo": true,
+        "articulaciones_visibles": true,
+        "estilo": "cinematografico 8K GTC keynote",
+        "episodio_origen": "Ep02 - Los 7 Chips",
+        "fecha": "2026-09-18T13:12:53.639Z",
+        "ruta_drive": "G:\\\\My Drive\\\\Diamantini\\\\Esmeralda\\\\esmeralda_trescuartos_izq_enfocado_v1.png",
+        "operation_id": 45
+      }
+    },
+    {
+      "id": 37,
+      "payload": {
+        "personaje": "Esmeralda",
+        "componente": "CUDA Cores / Matrices de Tensores",
+        "gema": "Esmeralda",
+        "pose": "trescuartos_der",
+        "emocion": "seguro",
+        "angulo": "45\u00b0 der",
+        "cuerpo_completo": true,
+        "articulaciones_visibles": true,
+        "estilo": "cinematografico 8K GTC keynote",
+        "episodio_origen": "Ep02 - Los 7 Chips",
+        "fecha": "2026-09-18T13:12:53.639Z",
+        "ruta_drive": "G:\\\\My Drive\\\\Diamantini\\\\Esmeralda\\\\esmeralda_trescuartos_der_seguro_v1.png",
+        "operation_id": 45
+      }
+    },
+    {
+      "id": 38,
+      "payload": {
+        "personaje": "Esmeralda",
+        "componente": "CUDA Cores / Matrices de Tensores",
+        "gema": "Esmeralda",
+        "pose": "espalda",
+        "emocion": "neutro",
+        "angulo": "180\u00b0",
+        "cuerpo_completo": true,
+        "articulaciones_visibles": true,
+        "estilo": "cinematografico 8K GTC keynote",
+        "episodio_origen": "Ep02 - Los 7 Chips",
+        "fecha": "2026-09-18T13:12:53.639Z",
+        "ruta_drive": "G:\\\\My Drive\\\\Diamantini\\\\Esmeralda\\\\esmeralda_espalda_neutro_v1.png",
+        "operation_id": 45
+      }
+    },
+    {
+      "id": 39,
+      "payload": {
+        "personaje": "Esmeralda",
+        "componente": "CUDA Cores / Matrices de Tensores",
+        "gema": "Esmeralda",
+        "pose": "accion_dinamica1",
+        "emocion": "energico",
+        "angulo": "dinamico",
+        "cuerpo_completo": true,
+        "articulaciones_visibles": true,
+        "estilo": "cinematografico 8K GTC keynote",
+        "episodio_origen": "Ep02 - Los 7 Chips",
+        "fecha": "2026-09-18T13:12:53.639Z",
+        "ruta_drive": "G:\\\\My Drive\\\\Diamantini\\\\Esmeralda\\\\esmeralda_accion_dinamica1_energico_v1.png",
+        "operation_id": 45
+      }
+    },
+    {
+      "id": 40,
+      "payload": {
+        "personaje": "Esmeralda",
+        "componente": "CUDA Cores / Matrices de Tensores",
+        "gema": "Esmeralda",
+        "pose": "accion_dinamica2",
+        "emocion": "visionario",
+        "angulo": "dinamico",
+        "cuerpo_completo": true,
+        "articulaciones_visibles": true,
+        "estilo": "cinematografico 8K GTC keynote",
+        "episodio_origen": "Ep02 - Los 7 Chips",
+        "fecha": "2026-09-18T13:12:53.639Z",
+        "ruta_drive": "G:\\\\My Drive\\\\Diamantini\\\\Esmeralda\\\\esmeralda_accion_dinamica2_visionario_v1.png",
+        "operation_id": 45
+      }
+    },
+    {
+      "id": 41,
+      "payload": {
+        "personaje": "Citrilo",
+        "componente": "RTX Spark / LPU Baja Latencia",
+        "gema": "Citrino",
+        "pose": "frontal",
+        "emocion": "neutro",
+        "angulo": "0\u00b0",
+        "cuerpo_completo": true,
+        "articulaciones_visibles": true,
+        "estilo": "cinematografico 8K GTC keynote",
+        "episodio_origen": "Ep02 - Los 7 Chips",
+        "fecha": "2026-09-18T13:12:53.639Z",
+        "ruta_drive": "G:\\\\My Drive\\\\Diamantini\\\\Citrilo\\\\citrilo_frontal_neutro_v1.png",
+        "operation_id": 45
+      }
+    },
+    {
+      "id": 42,
+      "payload": {
+        "personaje": "Citrilo",
+        "componente": "RTX Spark / LPU Baja Latencia",
+        "gema": "Citrino",
+        "pose": "frontal",
+        "emocion": "sonriente",
+        "angulo": "0\u00b0",
+        "cuerpo_completo": true,
+        "articulaciones_visibles": true,
+        "estilo": "cinematografico 8K GTC keynote",
+        "episodio_origen": "Ep02 - Los 7 Chips",
+        "fecha": "2026-09-18T13:12:53.639Z",
+        "ruta_drive": "G:\\\\My Drive\\\\Diamantini\\\\Citrilo\\\\citrilo_frontal_sonriente_v1.png",
+        "operation_id": 45
+      }
+    },
+    {
+      "id": 43,
+      "payload": {
+        "personaje": "Citrilo",
+        "componente": "RTX Spark / LPU Baja Latencia",
+        "gema": "Citrino",
+        "pose": "frontal",
+        "emocion": "serio",
+        "angulo": "0\u00b0",
+        "cuerpo_completo": true,
+        "articulaciones_visibles": true,
+        "estilo": "cinematografico 8K GTC keynote",
+        "episodio_origen": "Ep02 - Los 7 Chips",
+        "fecha": "2026-09-18T13:12:53.639Z",
+        "ruta_drive": "G:\\\\My Drive\\\\Diamantini\\\\Citrilo\\\\citrilo_frontal_serio_v1.png",
+        "operation_id": 45
+      }
+    },
+    {
+      "id": 44,
+      "payload": {
+        "personaje": "Citrilo",
+        "componente": "RTX Spark / LPU Baja Latencia",
+        "gema": "Citrino",
+        "pose": "perfil_izq",
+        "emocion": "analitico",
+        "angulo": "90\u00b0 izq",
+        "cuerpo_completo": true,
+        "articulaciones_visibles": true,
+        "estilo": "cinematografico 8K GTC keynote",
+        "episodio_origen": "Ep02 - Los 7 Chips",
+        "fecha": "2026-09-18T13:12:53.639Z",
+        "ruta_drive": "G:\\\\My Drive\\\\Diamantini\\\\Citrilo\\\\citrilo_perfil_izq_analitico_v1.png",
+        "operation_id": 45
+      }
+    },
+    {
+      "id": 45,
+      "payload": {
+        "personaje": "Citrilo",
+        "componente": "RTX Spark / LPU Baja Latencia",
+        "gema": "Citrino",
+        "pose": "perfil_der",
+        "emocion": "analitico",
+        "angulo": "90\u00b0 der",
+        "cuerpo_completo": true,
+        "articulaciones_visibles": true,
+        "estilo": "cinematografico 8K GTC keynote",
+        "episodio_origen": "Ep02 - Los 7 Chips",
+        "fecha": "2026-09-18T13:12:53.639Z",
+        "ruta_drive": "G:\\\\My Drive\\\\Diamantini\\\\Citrilo\\\\citrilo_perfil_der_analitico_v1.png",
+        "operation_id": 45
+      }
+    },
+    {
+      "id": 46,
+      "payload": {
+        "personaje": "Citrilo",
+        "componente": "RTX Spark / LPU Baja Latencia",
+        "gema": "Citrino",
+        "pose": "trescuartos_izq",
+        "emocion": "enfocado",
+        "angulo": "45\u00b0 izq",
+        "cuerpo_completo": true,
+        "articulaciones_visibles": true,
+        "estilo": "cinematografico 8K GTC keynote",
+        "episodio_origen": "Ep02 - Los 7 Chips",
+        "fecha": "2026-09-18T13:12:53.639Z",
+        "ruta_drive": "G:\\\\My Drive\\\\Diamantini\\\\Citrilo\\\\citrilo_trescuartos_izq_enfocado_v1.png",
+        "operation_id": 45
+      }
+    },
+    {
+      "id": 47,
+      "payload": {
+        "personaje": "Citrilo",
+        "componente": "RTX Spark / LPU Baja Latencia",
+        "gema": "Citrino",
+        "pose": "trescuartos_der",
+        "emocion": "seguro",
+        "angulo": "45\u00b0 der",
+        "cuerpo_completo": true,
+        "articulaciones_visibles": true,
+        "estilo": "cinematografico 8K GTC keynote",
+        "episodio_origen": "Ep02 - Los 7 Chips",
+        "fecha": "2026-09-18T13:12:53.639Z",
+        "ruta_drive": "G:\\\\My Drive\\\\Diamantini\\\\Citrilo\\\\citrilo_trescuartos_der_seguro_v1.png",
+        "operation_id": 45
+      }
+    },
+    {
+      "id": 48,
+      "payload": {
+        "personaje": "Citrilo",
+        "componente": "RTX Spark / LPU Baja Latencia",
+        "gema": "Citrino",
+        "pose": "espalda",
+        "emocion": "neutro",
+        "angulo": "180\u00b0",
+        "cuerpo_completo": true,
+        "articulaciones_visibles": true,
+        "estilo": "cinematografico 8K GTC keynote",
+        "episodio_origen": "Ep02 - Los 7 Chips",
+        "fecha": "2026-09-18T13:12:53.639Z",
+        "ruta_drive": "G:\\\\My Drive\\\\Diamantini\\\\Citrilo\\\\citrilo_espalda_neutro_v1.png",
+        "operation_id": 45
+      }
+    },
+    {
+      "id": 49,
+      "payload": {
+        "personaje": "Citrilo",
+        "componente": "RTX Spark / LPU Baja Latencia",
+        "gema": "Citrino",
+        "pose": "accion_dinamica1",
+        "emocion": "energico",
+        "angulo": "dinamico",
+        "cuerpo_completo": true,
+        "articulaciones_visibles": true,
+        "estilo": "cinematografico 8K GTC keynote",
+        "episodio_origen": "Ep02 - Los 7 Chips",
+        "fecha": "2026-09-18T13:12:53.639Z",
+        "ruta_drive": "G:\\\\My Drive\\\\Diamantini\\\\Citrilo\\\\citrilo_accion_dinamica1_energico_v1.png",
+        "operation_id": 45
+      }
+    },
+    {
+      "id": 50,
+      "payload": {
+        "personaje": "Citrilo",
+        "componente": "RTX Spark / LPU Baja Latencia",
+        "gema": "Citrino",
+        "pose": "accion_dinamica2",
+        "emocion": "visionario",
+        "angulo": "dinamico",
+        "cuerpo_completo": true,
+        "articulaciones_visibles": true,
+        "estilo": "cinematografico 8K GTC keynote",
+        "episodio_origen": "Ep02 - Los 7 Chips",
+        "fecha": "2026-09-18T13:12:53.639Z",
+        "ruta_drive": "G:\\\\My Drive\\\\Diamantini\\\\Citrilo\\\\citrilo_accion_dinamica2_visionario_v1.png",
+        "operation_id": 45
+      }
+    },
+    {
+      "id": 51,
+      "payload": {
+        "personaje": "Grafito",
+        "componente": "NVLink 6 / Interconexi\u00f3n KV Cache",
+        "gema": "Grafito",
+        "pose": "frontal",
+        "emocion": "neutro",
+        "angulo": "0\u00b0",
+        "cuerpo_completo": true,
+        "articulaciones_visibles": true,
+        "estilo": "cinematografico 8K GTC keynote",
+        "episodio_origen": "Ep02 - Los 7 Chips",
+        "fecha": "2026-09-18T13:12:53.639Z",
+        "ruta_drive": "G:\\\\My Drive\\\\Diamantini\\\\Grafito\\\\grafito_frontal_neutro_v1.png",
+        "operation_id": 45
+      }
+    },
+    {
+      "id": 52,
+      "payload": {
+        "personaje": "Grafito",
+        "componente": "NVLink 6 / Interconexi\u00f3n KV Cache",
+        "gema": "Grafito",
+        "pose": "frontal",
+        "emocion": "sonriente",
+        "angulo": "0\u00b0",
+        "cuerpo_completo": true,
+        "articulaciones_visibles": true,
+        "estilo": "cinematografico 8K GTC keynote",
+        "episodio_origen": "Ep02 - Los 7 Chips",
+        "fecha": "2026-09-18T13:12:53.639Z",
+        "ruta_drive": "G:\\\\My Drive\\\\Diamantini\\\\Grafito\\\\grafito_frontal_sonriente_v1.png",
+        "operation_id": 45
+      }
+    },
+    {
+      "id": 53,
+      "payload": {
+        "personaje": "Grafito",
+        "componente": "NVLink 6 / Interconexi\u00f3n KV Cache",
+        "gema": "Grafito",
+        "pose": "frontal",
+        "emocion": "serio",
+        "angulo": "0\u00b0",
+        "cuerpo_completo": true,
+        "articulaciones_visibles": true,
+        "estilo": "cinematografico 8K GTC keynote",
+        "episodio_origen": "Ep02 - Los 7 Chips",
+        "fecha": "2026-09-18T13:12:53.639Z",
+        "ruta_drive": "G:\\\\My Drive\\\\Diamantini\\\\Grafito\\\\grafito_frontal_serio_v1.png",
+        "operation_id": 45
+      }
+    },
+    {
+      "id": 54,
+      "payload": {
+        "personaje": "Grafito",
+        "componente": "NVLink 6 / Interconexi\u00f3n KV Cache",
+        "gema": "Grafito",
+        "pose": "perfil_izq",
+        "emocion": "analitico",
+        "angulo": "90\u00b0 izq",
+        "cuerpo_completo": true,
+        "articulaciones_visibles": true,
+        "estilo": "cinematografico 8K GTC keynote",
+        "episodio_origen": "Ep02 - Los 7 Chips",
+        "fecha": "2026-09-18T13:12:53.639Z",
+        "ruta_drive": "G:\\\\My Drive\\\\Diamantini\\\\Grafito\\\\grafito_perfil_izq_analitico_v1.png",
+        "operation_id": 45
+      }
+    },
+    {
+      "id": 55,
+      "payload": {
+        "personaje": "Grafito",
+        "componente": "NVLink 6 / Interconexi\u00f3n KV Cache",
+        "gema": "Grafito",
+        "pose": "perfil_der",
+        "emocion": "analitico",
+        "angulo": "90\u00b0 der",
+        "cuerpo_completo": true,
+        "articulaciones_visibles": true,
+        "estilo": "cinematografico 8K GTC keynote",
+        "episodio_origen": "Ep02 - Los 7 Chips",
+        "fecha": "2026-09-18T13:12:53.639Z",
+        "ruta_drive": "G:\\\\My Drive\\\\Diamantini\\\\Grafito\\\\grafito_perfil_der_analitico_v1.png",
+        "operation_id": 45
+      }
+    },
+    {
+      "id": 56,
+      "payload": {
+        "personaje": "Grafito",
+        "componente": "NVLink 6 / Interconexi\u00f3n KV Cache",
+        "gema": "Grafito",
+        "pose": "trescuartos_izq",
+        "emocion": "enfocado",
+        "angulo": "45\u00b0 izq",
+        "cuerpo_completo": true,
+        "articulaciones_visibles": true,
+        "estilo": "cinematografico 8K GTC keynote",
+        "episodio_origen": "Ep02 - Los 7 Chips",
+        "fecha": "2026-09-18T13:12:53.639Z",
+        "ruta_drive": "G:\\\\My Drive\\\\Diamantini\\\\Grafito\\\\grafito_trescuartos_izq_enfocado_v1.png",
+        "operation_id": 45
+      }
+    },
+    {
+      "id": 57,
+      "payload": {
+        "personaje": "Grafito",
+        "componente": "NVLink 6 / Interconexi\u00f3n KV Cache",
+        "gema": "Grafito",
+        "pose": "trescuartos_der",
+        "emocion": "seguro",
+        "angulo": "45\u00b0 der",
+        "cuerpo_completo": true,
+        "articulaciones_visibles": true,
+        "estilo": "cinematografico 8K GTC keynote",
+        "episodio_origen": "Ep02 - Los 7 Chips",
+        "fecha": "2026-09-18T13:12:53.639Z",
+        "ruta_drive": "G:\\\\My Drive\\\\Diamantini\\\\Grafito\\\\grafito_trescuartos_der_seguro_v1.png",
+        "operation_id": 45
+      }
+    },
+    {
+      "id": 58,
+      "payload": {
+        "personaje": "Grafito",
+        "componente": "NVLink 6 / Interconexi\u00f3n KV Cache",
+        "gema": "Grafito",
+        "pose": "espalda",
+        "emocion": "neutro",
+        "angulo": "180\u00b0",
+        "cuerpo_completo": true,
+        "articulaciones_visibles": true,
+        "estilo": "cinematografico 8K GTC keynote",
+        "episodio_origen": "Ep02 - Los 7 Chips",
+        "fecha": "2026-09-18T13:12:53.639Z",
+        "ruta_drive": "G:\\\\My Drive\\\\Diamantini\\\\Grafito\\\\grafito_espalda_neutro_v1.png",
+        "operation_id": 45
+      }
+    },
+    {
+      "id": 59,
+      "payload": {
+        "personaje": "Grafito",
+        "componente": "NVLink 6 / Interconexi\u00f3n KV Cache",
+        "gema": "Grafito",
+        "pose": "accion_dinamica1",
+        "emocion": "energico",
+        "angulo": "dinamico",
+        "cuerpo_completo": true,
+        "articulaciones_visibles": true,
+        "estilo": "cinematografico 8K GTC keynote",
+        "episodio_origen": "Ep02 - Los 7 Chips",
+        "fecha": "2026-09-18T13:12:53.639Z",
+        "ruta_drive": "G:\\\\My Drive\\\\Diamantini\\\\Grafito\\\\grafito_accion_dinamica1_energico_v1.png",
+        "operation_id": 45
+      }
+    },
+    {
+      "id": 60,
+      "payload": {
+        "personaje": "Grafito",
+        "componente": "NVLink 6 / Interconexi\u00f3n KV Cache",
+        "gema": "Grafito",
+        "pose": "accion_dinamica2",
+        "emocion": "visionario",
+        "angulo": "dinamico",
+        "cuerpo_completo": true,
+        "articulaciones_visibles": true,
+        "estilo": "cinematografico 8K GTC keynote",
+        "episodio_origen": "Ep02 - Los 7 Chips",
+        "fecha": "2026-09-18T13:12:53.639Z",
+        "ruta_drive": "G:\\\\My Drive\\\\Diamantini\\\\Grafito\\\\grafito_accion_dinamica2_visionario_v1.png",
+        "operation_id": 45
+      }
+    },
+    {
+      "id": 61,
+      "payload": {
+        "personaje": "Amatista",
+        "componente": "ConnectX-9 / Redes Neuronales",
+        "gema": "Amatista",
+        "pose": "frontal",
+        "emocion": "neutro",
+        "angulo": "0\u00b0",
+        "cuerpo_completo": true,
+        "articulaciones_visibles": true,
+        "estilo": "cinematografico 8K GTC keynote",
+        "episodio_origen": "Ep02 - Los 7 Chips",
+        "fecha": "2026-09-18T13:12:53.639Z",
+        "ruta_drive": "G:\\\\My Drive\\\\Diamantini\\\\Amatista\\\\amatista_frontal_neutro_v1.png",
+        "operation_id": 45
+      }
+    },
+    {
+      "id": 62,
+      "payload": {
+        "personaje": "Amatista",
+        "componente": "ConnectX-9 / Redes Neuronales",
+        "gema": "Amatista",
+        "pose": "frontal",
+        "emocion": "sonriente",
+        "angulo": "0\u00b0",
+        "cuerpo_completo": true,
+        "articulaciones_visibles": true,
+        "estilo": "cinematografico 8K GTC keynote",
+        "episodio_origen": "Ep02 - Los 7 Chips",
+        "fecha": "2026-09-18T13:12:53.639Z",
+        "ruta_drive": "G:\\\\My Drive\\\\Diamantini\\\\Amatista\\\\amatista_frontal_sonriente_v1.png",
+        "operation_id": 45
+      }
+    },
+    {
+      "id": 63,
+      "payload": {
+        "personaje": "Amatista",
+        "componente": "ConnectX-9 / Redes Neuronales",
+        "gema": "Amatista",
+        "pose": "frontal",
+        "emocion": "serio",
+        "angulo": "0\u00b0",
+        "cuerpo_completo": true,
+        "articulaciones_visibles": true,
+        "estilo": "cinematografico 8K GTC keynote",
+        "episodio_origen": "Ep02 - Los 7 Chips",
+        "fecha": "2026-09-18T13:12:53.639Z",
+        "ruta_drive": "G:\\\\My Drive\\\\Diamantini\\\\Amatista\\\\amatista_frontal_serio_v1.png",
+        "operation_id": 45
+      }
+    },
+    {
+      "id": 64,
+      "payload": {
+        "personaje": "Amatista",
+        "componente": "ConnectX-9 / Redes Neuronales",
+        "gema": "Amatista",
+        "pose": "perfil_izq",
+        "emocion": "analitico",
+        "angulo": "90\u00b0 izq",
+        "cuerpo_completo": true,
+        "articulaciones_visibles": true,
+        "estilo": "cinematografico 8K GTC keynote",
+        "episodio_origen": "Ep02 - Los 7 Chips",
+        "fecha": "2026-09-18T13:12:53.639Z",
+        "ruta_drive": "G:\\\\My Drive\\\\Diamantini\\\\Amatista\\\\amatista_perfil_izq_analitico_v1.png",
+        "operation_id": 45
+      }
+    },
+    {
+      "id": 65,
+      "payload": {
+        "personaje": "Amatista",
+        "componente": "ConnectX-9 / Redes Neuronales",
+        "gema": "Amatista",
+        "pose": "perfil_der",
+        "emocion": "analitico",
+        "angulo": "90\u00b0 der",
+        "cuerpo_completo": true,
+        "articulaciones_visibles": true,
+        "estilo": "cinematografico 8K GTC keynote",
+        "episodio_origen": "Ep02 - Los 7 Chips",
+        "fecha": "2026-09-18T13:12:53.639Z",
+        "ruta_drive": "G:\\\\My Drive\\\\Diamantini\\\\Amatista\\\\amatista_perfil_der_analitico_v1.png",
+        "operation_id": 45
+      }
+    },
+    {
+      "id": 66,
+      "payload": {
+        "personaje": "Amatista",
+        "componente": "ConnectX-9 / Redes Neuronales",
+        "gema": "Amatista",
+        "pose": "trescuartos_izq",
+        "emocion": "enfocado",
+        "angulo": "45\u00b0 izq",
+        "cuerpo_completo": true,
+        "articulaciones_visibles": true,
+        "estilo": "cinematografico 8K GTC keynote",
+        "episodio_origen": "Ep02 - Los 7 Chips",
+        "fecha": "2026-09-18T13:12:53.639Z",
+        "ruta_drive": "G:\\\\My Drive\\\\Diamantini\\\\Amatista\\\\amatista_trescuartos_izq_enfocado_v1.png",
+        "operation_id": 45
+      }
+    },
+    {
+      "id": 67,
+      "payload": {
+        "personaje": "Amatista",
+        "componente": "ConnectX-9 / Redes Neuronales",
+        "gema": "Amatista",
+        "pose": "trescuartos_der",
+        "emocion": "seguro",
+        "angulo": "45\u00b0 der",
+        "cuerpo_completo": true,
+        "articulaciones_visibles": true,
+        "estilo": "cinematografico 8K GTC keynote",
+        "episodio_origen": "Ep02 - Los 7 Chips",
+        "fecha": "2026-09-18T13:12:53.639Z",
+        "ruta_drive": "G:\\\\My Drive\\\\Diamantini\\\\Amatista\\\\amatista_trescuartos_der_seguro_v1.png",
+        "operation_id": 45
+      }
+    },
+    {
+      "id": 68,
+      "payload": {
+        "personaje": "Amatista",
+        "componente": "ConnectX-9 / Redes Neuronales",
+        "gema": "Amatista",
+        "pose": "espalda",
+        "emocion": "neutro",
+        "angulo": "180\u00b0",
+        "cuerpo_completo": true,
+        "articulaciones_visibles": true,
+        "estilo": "cinematografico 8K GTC keynote",
+        "episodio_origen": "Ep02 - Los 7 Chips",
+        "fecha": "2026-09-18T13:12:53.639Z",
+        "ruta_drive": "G:\\\\My Drive\\\\Diamantini\\\\Amatista\\\\amatista_espalda_neutro_v1.png",
+        "operation_id": 45
+      }
+    },
+    {
+      "id": 69,
+      "payload": {
+        "personaje": "Amatista",
+        "componente": "ConnectX-9 / Redes Neuronales",
+        "gema": "Amatista",
+        "pose": "accion_dinamica1",
+        "emocion": "energico",
+        "angulo": "dinamico",
+        "cuerpo_completo": true,
+        "articulaciones_visibles": true,
+        "estilo": "cinematografico 8K GTC keynote",
+        "episodio_origen": "Ep02 - Los 7 Chips",
+        "fecha": "2026-09-18T13:12:53.639Z",
+        "ruta_drive": "G:\\\\My Drive\\\\Diamantini\\\\Amatista\\\\amatista_accion_dinamica1_energico_v1.png",
+        "operation_id": 45
+      }
+    },
+    {
+      "id": 70,
+      "payload": {
+        "personaje": "Amatista",
+        "componente": "ConnectX-9 / Redes Neuronales",
+        "gema": "Amatista",
+        "pose": "accion_dinamica2",
+        "emocion": "visionario",
+        "angulo": "dinamico",
+        "cuerpo_completo": true,
+        "articulaciones_visibles": true,
+        "estilo": "cinematografico 8K GTC keynote",
+        "episodio_origen": "Ep02 - Los 7 Chips",
+        "fecha": "2026-09-18T13:12:53.639Z",
+        "ruta_drive": "G:\\\\My Drive\\\\Diamantini\\\\Amatista\\\\amatista_accion_dinamica2_visionario_v1.png",
+        "operation_id": 45
+      }
+    }
+  ],
+  "diamantino_movimientos_sample": [
+    {
+      "id": 1,
+      "payload": {
+        "id": "cabeza_girar_izq_45",
+        "parte": "cabeza",
+        "verbo": "girar",
+        "direccion": "izquierda",
+        "intensidad": "45_grados",
+        "prompt_wan21": "head turns smoothly 45 degrees to the left, crystalline facets reflecting keynote studio lighting, realistic mechanical neck articulation",
+        "duracion_optima_seg": 2.5,
+        "numeric_id": 1
+      }
+    },
+    {
+      "id": 2,
+      "payload": {
+        "id": "cabeza_asentir_arriba_30",
+        "parte": "cabeza",
+        "verbo": "asentir",
+        "direccion": "arriba",
+        "intensidad": "30_grados",
+        "prompt_wan21": "head nods upward 30 degrees with authoritative precision, gleaming mineral refraccion, subtle LED pulse at neck node",
+        "duracion_optima_seg": 2.0,
+        "numeric_id": 2
+      }
+    },
+    {
+      "id": 3,
+      "payload": {
+        "id": "ojos_parpadear_normal",
+        "parte": "ojos",
+        "verbo": "parpadear",
+        "direccion": "frente",
+        "intensidad": "normal",
+        "prompt_wan21": "eyes blink naturally and calmly, subtle photonic energy glow in irises, maintaining firm gaze forward",
+        "duracion_optima_seg": 1.5,
+        "numeric_id": 3
+      }
+    },
+    {
+      "id": 4,
+      "payload": {
+        "id": "brazos_saludar_der",
+        "parte": "brazos",
+        "verbo": "saludar",
+        "direccion": "lateral_der",
+        "intensidad": "45_grados",
+        "prompt_wan21": "right arm raises smoothly at 45 degrees in welcoming keynote gesture towards audience, mechanical joints gleaming with subtle platinum highlights",
+        "duracion_optima_seg": 3.0,
+        "numeric_id": 4
+      }
+    },
+    {
+      "id": 5,
+      "payload": {
+        "id": "piernas_caminar_adelante",
+        "parte": "piernas",
+        "verbo": "caminar",
+        "direccion": "adelante",
+        "intensidad": "paso_firme",
+        "prompt_wan21": "crystalline host walks forward across the high-tech keynote stage with steady pacing, fluid robotic displacement, volumetric floor shadows",
+        "duracion_optima_seg": 4.5,
+        "numeric_id": 5
+      }
+    },
+    {
+      "id": 6,
+      "payload": {
+        "numeric_id": 6,
+        "id": "cabeza_girar_izquierda_15_grados",
+        "parte": "cabeza",
+        "verbo": "girar",
+        "direccion": "izquierda",
+        "intensidad": "15_grados",
+        "prompt_wan21": "cabeza performs girar towards izquierda with 15_grados dynamic, pure mineral crystal anatomy, clean robotic articulation, high-end cinematic keynote lighting",
+        "duracion_optima_seg": 2.5
+      }
+    },
+    {
+      "id": 7,
+      "payload": {
+        "numeric_id": 7,
+        "id": "cabeza_girar_izquierda_30_grados",
+        "parte": "cabeza",
+        "verbo": "girar",
+        "direccion": "izquierda",
+        "intensidad": "30_grados",
+        "prompt_wan21": "cabeza performs girar towards izquierda with 30_grados dynamic, pure mineral crystal anatomy, clean robotic articulation, high-end cinematic keynote lighting",
+        "duracion_optima_seg": 2.5
+      }
+    },
+    {
+      "id": 8,
+      "payload": {
+        "numeric_id": 8,
+        "id": "cabeza_girar_izquierda_45_grados",
+        "parte": "cabeza",
+        "verbo": "girar",
+        "direccion": "izquierda",
+        "intensidad": "45_grados",
+        "prompt_wan21": "cabeza performs girar towards izquierda with 45_grados dynamic, pure mineral crystal anatomy, clean robotic articulation, high-end cinematic keynote lighting",
+        "duracion_optima_seg": 2.5
+      }
+    },
+    {
+      "id": 9,
+      "payload": {
+        "numeric_id": 9,
+        "id": "cabeza_girar_derecha_15_grados",
+        "parte": "cabeza",
+        "verbo": "girar",
+        "direccion": "derecha",
+        "intensidad": "15_grados",
+        "prompt_wan21": "cabeza performs girar towards derecha with 15_grados dynamic, pure mineral crystal anatomy, clean robotic articulation, high-end cinematic keynote lighting",
+        "duracion_optima_seg": 2.5
+      }
+    },
+    {
+      "id": 10,
+      "payload": {
+        "numeric_id": 10,
+        "id": "cabeza_girar_derecha_30_grados",
+        "parte": "cabeza",
+        "verbo": "girar",
+        "direccion": "derecha",
+        "intensidad": "30_grados",
+        "prompt_wan21": "cabeza performs girar towards derecha with 30_grados dynamic, pure mineral crystal anatomy, clean robotic articulation, high-end cinematic keynote lighting",
+        "duracion_optima_seg": 2.5
+      }
+    },
+    {
+      "id": 11,
+      "payload": {
+        "numeric_id": 11,
+        "id": "cabeza_girar_derecha_45_grados",
+        "parte": "cabeza",
+        "verbo": "girar",
+        "direccion": "derecha",
+        "intensidad": "45_grados",
+        "prompt_wan21": "cabeza performs girar towards derecha with 45_grados dynamic, pure mineral crystal anatomy, clean robotic articulation, high-end cinematic keynote lighting",
+        "duracion_optima_seg": 2.5
+      }
+    },
+    {
+      "id": 12,
+      "payload": {
+        "numeric_id": 12,
+        "id": "cabeza_girar_arriba_15_grados",
+        "parte": "cabeza",
+        "verbo": "girar",
+        "direccion": "arriba",
+        "intensidad": "15_grados",
+        "prompt_wan21": "cabeza performs girar towards arriba with 15_grados dynamic, pure mineral crystal anatomy, clean robotic articulation, high-end cinematic keynote lighting",
+        "duracion_optima_seg": 2.5
+      }
+    },
+    {
+      "id": 13,
+      "payload": {
+        "numeric_id": 13,
+        "id": "cabeza_girar_arriba_30_grados",
+        "parte": "cabeza",
+        "verbo": "girar",
+        "direccion": "arriba",
+        "intensidad": "30_grados",
+        "prompt_wan21": "cabeza performs girar towards arriba with 30_grados dynamic, pure mineral crystal anatomy, clean robotic articulation, high-end cinematic keynote lighting",
+        "duracion_optima_seg": 2.5
+      }
+    },
+    {
+      "id": 14,
+      "payload": {
+        "numeric_id": 14,
+        "id": "cabeza_girar_arriba_45_grados",
+        "parte": "cabeza",
+        "verbo": "girar",
+        "direccion": "arriba",
+        "intensidad": "45_grados",
+        "prompt_wan21": "cabeza performs girar towards arriba with 45_grados dynamic, pure mineral crystal anatomy, clean robotic articulation, high-end cinematic keynote lighting",
+        "duracion_optima_seg": 2.5
+      }
+    },
+    {
+      "id": 15,
+      "payload": {
+        "numeric_id": 15,
+        "id": "cabeza_girar_abajo_15_grados",
+        "parte": "cabeza",
+        "verbo": "girar",
+        "direccion": "abajo",
+        "intensidad": "15_grados",
+        "prompt_wan21": "cabeza performs girar towards abajo with 15_grados dynamic, pure mineral crystal anatomy, clean robotic articulation, high-end cinematic keynote lighting",
+        "duracion_optima_seg": 2.5
+      }
+    },
+    {
+      "id": 16,
+      "payload": {
+        "numeric_id": 16,
+        "id": "cabeza_girar_abajo_30_grados",
+        "parte": "cabeza",
+        "verbo": "girar",
+        "direccion": "abajo",
+        "intensidad": "30_grados",
+        "prompt_wan21": "cabeza performs girar towards abajo with 30_grados dynamic, pure mineral crystal anatomy, clean robotic articulation, high-end cinematic keynote lighting",
+        "duracion_optima_seg": 2.5
+      }
+    },
+    {
+      "id": 17,
+      "payload": {
+        "numeric_id": 17,
+        "id": "cabeza_girar_abajo_45_grados",
+        "parte": "cabeza",
+        "verbo": "girar",
+        "direccion": "abajo",
+        "intensidad": "45_grados",
+        "prompt_wan21": "cabeza performs girar towards abajo with 45_grados dynamic, pure mineral crystal anatomy, clean robotic articulation, high-end cinematic keynote lighting",
+        "duracion_optima_seg": 2.5
+      }
+    },
+    {
+      "id": 18,
+      "payload": {
+        "numeric_id": 18,
+        "id": "cabeza_inclinar_izquierda_15_grados",
+        "parte": "cabeza",
+        "verbo": "inclinar",
+        "direccion": "izquierda",
+        "intensidad": "15_grados",
+        "prompt_wan21": "cabeza performs inclinar towards izquierda with 15_grados dynamic, pure mineral crystal anatomy, clean robotic articulation, high-end cinematic keynote lighting",
+        "duracion_optima_seg": 2.5
+      }
+    },
+    {
+      "id": 19,
+      "payload": {
+        "numeric_id": 19,
+        "id": "cabeza_inclinar_izquierda_30_grados",
+        "parte": "cabeza",
+        "verbo": "inclinar",
+        "direccion": "izquierda",
+        "intensidad": "30_grados",
+        "prompt_wan21": "cabeza performs inclinar towards izquierda with 30_grados dynamic, pure mineral crystal anatomy, clean robotic articulation, high-end cinematic keynote lighting",
+        "duracion_optima_seg": 2.5
+      }
+    },
+    {
+      "id": 20,
+      "payload": {
+        "numeric_id": 20,
+        "id": "cabeza_inclinar_izquierda_45_grados",
+        "parte": "cabeza",
+        "verbo": "inclinar",
+        "direccion": "izquierda",
+        "intensidad": "45_grados",
+        "prompt_wan21": "cabeza performs inclinar towards izquierda with 45_grados dynamic, pure mineral crystal anatomy, clean robotic articulation, high-end cinematic keynote lighting",
+        "duracion_optima_seg": 2.5
+      }
+    },
+    {
+      "id": 21,
+      "payload": {
+        "numeric_id": 21,
+        "id": "cabeza_inclinar_derecha_15_grados",
+        "parte": "cabeza",
+        "verbo": "inclinar",
+        "direccion": "derecha",
+        "intensidad": "15_grados",
+        "prompt_wan21": "cabeza performs inclinar towards derecha with 15_grados dynamic, pure mineral crystal anatomy, clean robotic articulation, high-end cinematic keynote lighting",
+        "duracion_optima_seg": 2.5
+      }
+    },
+    {
+      "id": 22,
+      "payload": {
+        "numeric_id": 22,
+        "id": "cabeza_inclinar_derecha_30_grados",
+        "parte": "cabeza",
+        "verbo": "inclinar",
+        "direccion": "derecha",
+        "intensidad": "30_grados",
+        "prompt_wan21": "cabeza performs inclinar towards derecha with 30_grados dynamic, pure mineral crystal anatomy, clean robotic articulation, high-end cinematic keynote lighting",
+        "duracion_optima_seg": 2.5
+      }
+    },
+    {
+      "id": 23,
+      "payload": {
+        "numeric_id": 23,
+        "id": "cabeza_inclinar_derecha_45_grados",
+        "parte": "cabeza",
+        "verbo": "inclinar",
+        "direccion": "derecha",
+        "intensidad": "45_grados",
+        "prompt_wan21": "cabeza performs inclinar towards derecha with 45_grados dynamic, pure mineral crystal anatomy, clean robotic articulation, high-end cinematic keynote lighting",
+        "duracion_optima_seg": 2.5
+      }
+    },
+    {
+      "id": 24,
+      "payload": {
+        "numeric_id": 24,
+        "id": "cabeza_inclinar_arriba_15_grados",
+        "parte": "cabeza",
+        "verbo": "inclinar",
+        "direccion": "arriba",
+        "intensidad": "15_grados",
+        "prompt_wan21": "cabeza performs inclinar towards arriba with 15_grados dynamic, pure mineral crystal anatomy, clean robotic articulation, high-end cinematic keynote lighting",
+        "duracion_optima_seg": 2.5
+      }
+    },
+    {
+      "id": 25,
+      "payload": {
+        "numeric_id": 25,
+        "id": "cabeza_inclinar_arriba_30_grados",
+        "parte": "cabeza",
+        "verbo": "inclinar",
+        "direccion": "arriba",
+        "intensidad": "30_grados",
+        "prompt_wan21": "cabeza performs inclinar towards arriba with 30_grados dynamic, pure mineral crystal anatomy, clean robotic articulation, high-end cinematic keynote lighting",
+        "duracion_optima_seg": 2.5
+      }
+    },
+    {
+      "id": 26,
+      "payload": {
+        "numeric_id": 26,
+        "id": "cabeza_inclinar_arriba_45_grados",
+        "parte": "cabeza",
+        "verbo": "inclinar",
+        "direccion": "arriba",
+        "intensidad": "45_grados",
+        "prompt_wan21": "cabeza performs inclinar towards arriba with 45_grados dynamic, pure mineral crystal anatomy, clean robotic articulation, high-end cinematic keynote lighting",
+        "duracion_optima_seg": 2.5
+      }
+    },
+    {
+      "id": 27,
+      "payload": {
+        "numeric_id": 27,
+        "id": "cabeza_inclinar_abajo_15_grados",
+        "parte": "cabeza",
+        "verbo": "inclinar",
+        "direccion": "abajo",
+        "intensidad": "15_grados",
+        "prompt_wan21": "cabeza performs inclinar towards abajo with 15_grados dynamic, pure mineral crystal anatomy, clean robotic articulation, high-end cinematic keynote lighting",
+        "duracion_optima_seg": 2.5
+      }
+    },
+    {
+      "id": 28,
+      "payload": {
+        "numeric_id": 28,
+        "id": "cabeza_inclinar_abajo_30_grados",
+        "parte": "cabeza",
+        "verbo": "inclinar",
+        "direccion": "abajo",
+        "intensidad": "30_grados",
+        "prompt_wan21": "cabeza performs inclinar towards abajo with 30_grados dynamic, pure mineral crystal anatomy, clean robotic articulation, high-end cinematic keynote lighting",
+        "duracion_optima_seg": 2.5
+      }
+    },
+    {
+      "id": 29,
+      "payload": {
+        "numeric_id": 29,
+        "id": "cabeza_inclinar_abajo_45_grados",
+        "parte": "cabeza",
+        "verbo": "inclinar",
+        "direccion": "abajo",
+        "intensidad": "45_grados",
+        "prompt_wan21": "cabeza performs inclinar towards abajo with 45_grados dynamic, pure mineral crystal anatomy, clean robotic articulation, high-end cinematic keynote lighting",
+        "duracion_optima_seg": 2.5
+      }
+    },
+    {
+      "id": 30,
+      "payload": {
+        "numeric_id": 30,
+        "id": "cabeza_ladear_izquierda_15_grados",
+        "parte": "cabeza",
+        "verbo": "ladear",
+        "direccion": "izquierda",
+        "intensidad": "15_grados",
+        "prompt_wan21": "cabeza performs ladear towards izquierda with 15_grados dynamic, pure mineral crystal anatomy, clean robotic articulation, high-end cinematic keynote lighting",
+        "duracion_optima_seg": 2.5
+      }
+    }
+  ],
+  "diamantino_movimientos_count": 320,
+  "hbos_metricas": [
+    {
+      "id": 1,
+      "payload": {
+        "operation_id": 178,
+        "tarea": "generar_voces_ep04",
+        "modelo_usado": "cosyvoice2",
+        "tokens_input": 800,
+        "tokens_output": 700,
+        "tokens_sin_compresion": 12000,
+        "tokens_ahorrados": 10500,
+        "porcentaje_ahorro": 87.5,
+        "costo_efectivo": "$0.00",
+        "latencia_seg": 28,
+        "arbitraje": "free",
+        "timestamp": "2026-09-19T16:14:41.822839+00:00"
+      }
+    },
+    {
+      "id": 181,
+      "payload": {
+        "operation_id": 181,
+        "tarea": "orquestacion_terminar_ep04",
+        "modelo_usado": "cosyvoice2_y_ffmpeg_local",
+        "compresion_activa": "output_compression_on_y_r768",
+        "tokens_input": 1200,
+        "tokens_output": 1200,
+        "tokens_sin_compresion": 19200,
+        "tokens_ahorrados": 16800,
+        "porcentaje_ahorro": 87.5,
+        "costo_efectivo": "$0.00",
+        "latencia_seg": 12.4,
+        "arbitraje": "free",
+        "timestamp": "2026-09-19T16:16:38.629515+00:00"
+      }
+    },
+    {
+      "id": 183,
+      "payload": {
+        "operation_id": 183,
+        "tarea": "generar_voces_ep04_10_bloques",
+        "modelo_usado": "es-ES-AlvaroNeural (CosyVoice2/Edge Neural Fallback)",
+        "compresion_activa": "output_compression_on_y_r768",
+        "tokens_input": 813,
+        "tokens_output": 813,
+        "tokens_sin_compresion": 13008,
+        "tokens_ahorrados": 11382,
+        "porcentaje_ahorro": 87.5,
+        "costo_efectivo": "$0.00",
+        "latencia_seg": 49.96,
+        "arbitraje": "free",
+        "timestamp": "2026-09-19T16:24:15.272893+00:00"
+      }
+    },
+    {
+      "id": 219,
+      "payload": {
+        "operation_id": 219,
+        "fase": "FAM@-T \u00b7 NAVEGACI\u00d3N DEL ENTORNO TOTAL \u00b7 ADOPCI\u00d3N OPERADOR EMERGENTE FAM@-H",
+        "timestamp": "2026-09-20T13:38:04Z",
+        "computo_enrutamiento": {
+          "creacion": "NUBE (Nodo Creativo HBOS - Gemini Cloud)",
+          "coordinacion": "UNBE"
+        },
+        "anti_cache": {
+          "regla": "\u00a76 Blindaje Anti-Cach\u00e9",
+          "nonces": [
+            "219-F-1789911422-62dbc2f6",
+            "219-C-1789911432-32781591",
+            "219-H-1789911452-dbbdb260",
+            "219-M-1789911454-4e37e279",
+            "219-P-1789911455-28774491",
+            "219-M_P-1789911474-b00cbaad",
+            "219-FAM_H-1789911475-a833e630"
+          ],
+          "verificado": true
+        },
+        "operador_emergente": "FAM@-H",
+        "puntuacion_adoptada": 97.95,
+        "referencia_previa_m_p": 96.55,
+        "metricas_m1_m7": {
+          "F": 88.7,
+          "C": 89.05,
+          "H": 93.95,
+          "M": 90.65,
+          "P": 90.4,
+          "M_P": 96.55,
+          "FAM_H": 97.95
+        },
+        "metrologia_tokens": {
+          "F": {
+            "tokens_input": 57,
+            "tokens_output": 2048,
+            "tokens_total": 2105,
+            "ahorro_pct": 82.46,
+            "costo_usd": 0.0
+          },
+          "C": {
+            "tokens_input": 61,
+            "tokens_output": 1443,
+            "tokens_total": 1504,
+            "ahorro_pct": 87.47,
+            "costo_usd": 0.0
+          },
+          "H": {
+            "tokens_input": 60,
+            "tokens_output": 101,
+            "tokens_total": 161,
+            "ahorro_pct": 98.66,
+            "costo_usd": 0.0
+          },
+          "M": {
+            "tokens_input": 57,
+            "tokens_output": 55,
+            "tokens_total": 112,
+            "ahorro_pct": 99.07,
+            "costo_usd": 0.0
+          },
+          "P": {
+            "tokens_input": 57,
+            "tokens_output": 57,
+            "tokens_total": 114,
+            "ahorro_pct": 99.05,
+            "costo_usd": 0.0
+          },
+          "M_P": {
+            "tokens_input": 66,
+            "tokens_output": 70,
+            "tokens_total": 136,
+            "ahorro_pct": 98.87,
+            "costo_usd": 0.0
+          },
+          "FAM_H": {
+            "tokens_input": 87,
+            "tokens_output": 38,
+            "tokens_total": 125,
+            "ahorro_pct": 98.96,
+            "costo_usd": 0.0
+          }
+        },
+        "estado": "COMPLETADO"
+      }
+    },
+    {
+      "id": 220,
+      "payload": {
+        "operation_id": 220,
+        "fase": "FAM@-T \u00b7 LLMAPI \u2295 R768 \u00b7 H_ALT \u00b7 REGLA DE NO-REGRESI\u00d3N \u00a77.3",
+        "timestamp": "2026-09-20T14:10:08Z",
+        "computo_enrutamiento": {
+          "creacion": "NUBE (Nodo Creativo HBOS - Gemini Cloud)",
+          "coordinacion": "UNBE"
+        },
+        "anti_cache": {
+          "regla": "\u00a76 Blindaje Anti-Cach\u00e9",
+          "nonces": [
+            "220-ALT_A-1789913253-4b8187a0",
+            "220-ALT_B-1789913291-5c4e44b9",
+            "220-ALT_C-1789913316-73c95672",
+            "220-FAM_H-1789913354-586433e8",
+            "220-SINT_D-1789913375-9b49ac95"
+          ],
+          "verificado": true
+        },
+        "mecanica_h_alt": {
+          "max_partes": 97.95,
+          "score_sintesis_d": 98.75,
+          "no_regresion_cumplida": true,
+          "adoptado": "SINTESIS_D_H_ALT"
+        },
+        "metricas_m1_m7": {
+          "ALT_A": 88.9,
+          "ALT_B": 90.0,
+          "ALT_C": 96.55,
+          "FAM_H": 97.95,
+          "SINT_D": 98.75
+        },
+        "metrologia_tokens": {
+          "ALT_A": {
+            "tokens_input": 71,
+            "tokens_output": 1009,
+            "tokens_total": 1080,
+            "ahorro_pct": 91.0,
+            "costo_usd": 0.0
+          },
+          "ALT_B": {
+            "tokens_input": 69,
+            "tokens_output": 228,
+            "tokens_total": 297,
+            "ahorro_pct": 97.52,
+            "costo_usd": 0.0
+          },
+          "ALT_C": {
+            "tokens_input": 72,
+            "tokens_output": 976,
+            "tokens_total": 1048,
+            "ahorro_pct": 91.27,
+            "costo_usd": 0.0
+          },
+          "FAM_H": {
+            "tokens_input": 75,
+            "tokens_output": 164,
+            "tokens_total": 239,
+            "ahorro_pct": 98.01,
+            "costo_usd": 0.0
+          },
+          "SINT_D": {
+            "tokens_input": 93,
+            "tokens_output": 527,
+            "tokens_total": 620,
+            "ahorro_pct": 94.83,
+            "costo_usd": 0.0
+          }
+        },
+        "estado": "COMPLETADO"
+      }
+    },
+    {
+      "id": 221,
+      "payload": {
+        "operation_id": 221,
+        "fase": "FAM@-T \u00b7 SUBPROYECTO MUSE \u2794 APP HBOS \u00b7 S\u00cdNTESIS D ADOPTADA",
+        "timestamp": "2026-09-20T14:36:22Z",
+        "computo_enrutamiento": {
+          "creacion": "NUBE (Nodo Creativo HBOS - Gemma 4 / Google Cloud)",
+          "coordinacion": "UNBE"
+        },
+        "anti_cache": {
+          "regla": "\u00a76 Blindaje Anti-Cach\u00e9",
+          "nonces": [
+            "221-ANALISIS_MUSE-1789914767-0ceadbe8",
+            "221-ALT_A-1789914812-5f549ad0",
+            "221-ALT_B-1789914846-90dce832",
+            "221-ALT_C-1789914890-e699b42c",
+            "221-SINT_D-1789914934-7ee2e38d"
+          ],
+          "verificado": true
+        },
+        "subproyecto_muse": {
+          "max_partes": 93.35,
+          "score_sintesis_d": 98.85,
+          "no_regresion_cumplida": true,
+          "adoptado": "SINTESIS_D_CANONICA_APP_HBOS"
+        },
+        "metricas_m1_m7": {
+          "ALT_A": 88.15,
+          "ALT_B": 93.35,
+          "ALT_C": 91.05,
+          "SINT_D": 98.85
+        },
+        "metrologia_tokens": {
+          "ANALISIS_MUSE": {
+            "tokens_input": 105,
+            "tokens_output": 827,
+            "tokens_total": 932,
+            "ahorro_pct": 92.23,
+            "costo_usd": 0.0
+          },
+          "ALT_A": {
+            "tokens_input": 81,
+            "tokens_output": 615,
+            "tokens_total": 696,
+            "ahorro_pct": 94.2,
+            "costo_usd": 0.0
+          },
+          "ALT_B": {
+            "tokens_input": 84,
+            "tokens_output": 1144,
+            "tokens_total": 1228,
+            "ahorro_pct": 89.77,
+            "costo_usd": 0.0
+          },
+          "ALT_C": {
+            "tokens_input": 75,
+            "tokens_output": 1162,
+            "tokens_total": 1237,
+            "ahorro_pct": 89.69,
+            "costo_usd": 0.0
+          },
+          "SINT_D": {
+            "tokens_input": 112,
+            "tokens_output": 952,
+            "tokens_total": 1064,
+            "ahorro_pct": 91.13,
+            "costo_usd": 0.0
+          }
+        },
+        "estado": "COMPLETADO"
+      }
+    },
+    {
+      "id": 222,
+      "payload": {
+        "operation_id": 222,
+        "timestamp": 1789926146.8569193,
+        "m1_coherencia_r768": 99.0,
+        "m2_coherencia_famat": 99.2,
+        "m3_profundidad": 99.5,
+        "m4_idempotencia": 99.0,
+        "m5_soberania": 99.0,
+        "m6_tokens_eficiencia": 98.5,
+        "m7_fidelidad_alejav": 99.5,
+        "score_final": 99.16,
+        "tokens_consumidos": 4850,
+        "tokens_baseline": 14000
+      }
+    },
+    {
+      "id": 223,
+      "payload": {
+        "operation_id": 223,
+        "timestamp": 1789926470.6097257,
+        "m1_coherencia_r768": 99.2,
+        "m2_coherencia_famat": 99.5,
+        "m3_profundidad": 99.6,
+        "m4_idempotencia": 99.2,
+        "m5_soberania": 99.5,
+        "m6_tokens_eficiencia": 98.8,
+        "m7_fidelidad_alejav": 99.8,
+        "score_final": 99.39,
+        "tokens_consumidos": 5120,
+        "tokens_baseline": 15000
+      }
+    },
+    {
+      "id": 224,
+      "payload": {
+        "operation_id": 224,
+        "timestamp": 1789927884.1439133,
+        "m1_completitud": 99.4,
+        "m2_coherencia_r768": 99.5,
+        "m3_profundidad": 99.8,
+        "m4_accionabilidad": 99.4,
+        "m5_eficiencia_tokens": 99.6,
+        "m6_trazabilidad": 99.0,
+        "m7_originalidad": 99.8,
+        "score_final": 99.53,
+        "tokens_consumidos": 5340,
+        "tokens_baseline": 16000
+      }
+    },
+    {
+      "id": 225,
+      "payload": {
+        "operation_id": 225,
+        "timestamp": 1789928408.333033,
+        "m1_completitud": 99.5,
+        "m2_coherencia_r768": 99.6,
+        "m3_profundidad": 99.8,
+        "m4_accionabilidad": 99.6,
+        "m5_eficiencia_tokens": 99.8,
+        "m6_trazabilidad": 99.2,
+        "m7_originalidad": 99.8,
+        "score_final": 99.63,
+        "tokens_consumidos": 4980,
+        "tokens_baseline": 15000
+      }
+    },
+    {
+      "id": 226,
+      "payload": {
+        "operation_id": 226,
+        "timestamp": 1789929694.0815885,
+        "m1_completitud": 99.6,
+        "m2_coherencia_r768": 99.7,
+        "m3_profundidad": 99.8,
+        "m4_accionabilidad": 99.6,
+        "m5_eficiencia_tokens": 99.8,
+        "m6_trazabilidad": 99.4,
+        "m7_originalidad": 99.8,
+        "score_final": 99.69,
+        "tokens_consumidos": 5480,
+        "tokens_baseline": 17000
+      }
+    },
+    {
+      "id": 227,
+      "payload": {
+        "operation_id": 227,
+        "timestamp": 1789931017.1363094,
+        "m1_completitud": 99.7,
+        "m2_coherencia_r768": 99.8,
+        "m3_profundidad": 99.9,
+        "m4_accionabilidad": 99.7,
+        "m5_eficiencia_tokens": 99.8,
+        "m6_trazabilidad": 99.5,
+        "m7_originalidad": 99.9,
+        "score_final": 99.78,
+        "tokens_consumidos": 4920,
+        "tokens_baseline": 18500
+      }
+    },
+    {
+      "id": 228,
+      "payload": {
+        "operation_id": 228,
+        "timestamp": 1789945900.594162,
+        "m1_completitud": 99.8,
+        "m2_coherencia_r768": 99.7,
+        "m3_profundidad": 99.9,
+        "m4_accionabilidad": 99.8,
+        "m5_eficiencia_tokens": 99.7,
+        "m6_trazabilidad": 99.6,
+        "m7_originalidad": 99.9,
+        "score_final": 99.79,
+        "tokens_consumidos": 4850,
+        "tokens_baseline": 19800
+      }
+    },
+    {
+      "id": 997,
+      "payload": {
+        "operation_id": 216,
+        "timestamp": "2026-09-19T17:24:10.994449+00:00",
+        "factor_a": {
+          "label": "FACTORIZACI\u00d3N A (Consolidaci\u00f3n Directa)",
+          "m1_completitud": 100.0,
+          "m2_coherencia": 90.0,
+          "m3_profundidad": 0.0,
+          "m4_accionabilidad": 100.0,
+          "m5_eficiencia_tokens": 96.0,
+          "m6_trazabilidad": 100.0,
+          "m7_originalidad": 100.0,
+          "score_total": 82.6,
+          "palabras": 712
+        },
+        "factor_b": {
+          "label": "FACTORIZACI\u00d3N B (Investigaci\u00f3n Previa)",
+          "m1_completitud": 100.0,
+          "m2_coherencia": 90.0,
+          "m3_profundidad": 100.0,
+          "m4_accionabilidad": 100.0,
+          "m5_eficiencia_tokens": 96.0,
+          "m6_trazabilidad": 100.0,
+          "m7_originalidad": 100.0,
+          "score_total": 97.6,
+          "palabras": 915
+        },
+        "factor_c": {
+          "label": "FACTORIZACI\u00d3N C (H\u00edbrida Sintetizada)",
+          "m1_completitud": 100.0,
+          "m2_coherencia": 100.0,
+          "m3_profundidad": 100.0,
+          "m4_accionabilidad": 100.0,
+          "m5_eficiencia_tokens": 96.0,
+          "m6_trazabilidad": 100.0,
+          "m7_originalidad": 100.0,
+          "score_total": 99.6,
+          "palabras": 1497
+        },
+        "diagnostico": "COMPLEMENTARIEDAD DETECTADA: Factorizaci\u00f3n A aporta rigor de ejecuci\u00f3n y evidencia op 215, mientras que Factorizaci\u00f3n B aporta fundamentaci\u00f3n ontol\u00f3gica y profundidad de auto-evoluci\u00f3n.",
+        "veredicto": "FACTORIZACI\u00d3N C (H\u00edbrida Emergente)",
+        "justificacion": "La Factorizaci\u00f3n H\u00edbrida C supera a max(A,B) por 2.0 puntos (99.6 vs 97.6). C sintetiza la evidencia operativa de A con la ontolog\u00eda de auto-evoluci\u00f3n y homeostasis de B, maximizando completitud (\u00a70-\u00a710) y coherencia sin residuos."
+      }
+    },
+    {
+      "id": 998,
+      "payload": {
+        "operation_id": 216,
+        "timestamp": "2026-09-19T17:10:15.286245+00:00",
+        "evaluacion_rama_a": {
+          "label": "RAMA A (Consolidaci\u00f3n Directa)",
+          "m1_completitud": 75.0,
+          "m2_coherencia": 90.0,
+          "m3_profundidad": 0.0,
+          "m4_accionabilidad": 100.0,
+          "m5_eficiencia_tokens": 96.0,
+          "m6_trazabilidad": 100.0,
+          "m7_originalidad": 100.0,
+          "score_total": 77.6,
+          "palabras": 1204
+        },
+        "evaluacion_rama_b": {
+          "label": "RAMA B (Investigaci\u00f3n Conceptual Previa)",
+          "m1_completitud": 75.0,
+          "m2_coherencia": 90.0,
+          "m3_profundidad": 100.0,
+          "m4_accionabilidad": 100.0,
+          "m5_eficiencia_tokens": 96.0,
+          "m6_trazabilidad": 100.0,
+          "m7_originalidad": 100.0,
+          "score_total": 92.6,
+          "palabras": 1345
+        },
+        "delta": 15.0,
+        "veredicto": "RAMA B (Investigaci\u00f3n Conceptual Previa)",
+        "justificacion": "Rama B supera a Rama A por 15.00% (>= 5.0% umbral). La definici\u00f3n formal de auto-evoluci\u00f3n previa aporta una densidad de valor conceptual y originalidad que eleva la arquitectura m\u00e1s all\u00e1 de la mera consolidaci\u00f3n."
+      }
+    },
+    {
+      "id": 999,
+      "payload": {
+        "operation_id": 180,
+        "registros_analizados": 10,
+        "total_tokens_input": 8363,
+        "total_tokens_output": 7209,
+        "total_tokens_consumidos": 15572,
+        "total_tokens_sin_compresion": 124576,
+        "total_tokens_ahorrados": 109004,
+        "porcentaje_ahorro_tokens": "87.5%",
+        "costo_real_efectivo": "$0.00",
+        "costo_comercial_sin_arbitraje": "$0.62 USD",
+        "ahorro_economico_neto": "$0.62 USD (100% ahorro monetario)",
+        "estado_arbitraje": "OPTIMIZACI\u00d3N COMPLETA R768",
+        "timestamp": "2026-09-19T17:04:09.429567+00:00"
+      }
+    },
+    {
+      "id": 4523045,
+      "payload": {
+        "operation_id": 179,
+        "tarea": "generar 1 p\u00e1rrafo de texto",
+        "modelo_usado": "ffmpeg_pipeline_local",
+        "compresion_activa": "h264_aac_master_p04",
+        "tokens_input": 25,
+        "tokens_output": 48,
+        "tokens_sin_compresion": 584,
+        "tokens_ahorrados": 511,
+        "porcentaje_ahorro": 87.5,
+        "costo_efectivo": "$0.00",
+        "latencia_seg": 0.65,
+        "arbitraje": "free",
+        "timestamp": "2026-09-19T16:15:23.045776+00:00"
+      }
+    },
+    {
+      "id": 4535725,
+      "payload": {
+        "operation_id": 179,
+        "tarea": "generar 1 p\u00e1rrafo de texto",
+        "modelo_usado": "gemini_1_5_flash",
+        "compresion_activa": "input_output_compression_r768",
+        "tokens_input": 25,
+        "tokens_output": 48,
+        "tokens_sin_compresion": 584,
+        "tokens_ahorrados": 511,
+        "porcentaje_ahorro": 87.5,
+        "costo_efectivo": "$0.00",
+        "latencia_seg": 0.303,
+        "arbitraje": "free",
+        "timestamp": "2026-09-19T16:15:35.725632+00:00"
+      }
+    },
+    {
+      "id": 6182140,
+      "payload": {
+        "operation_id": 202,
+        "tarea": "ep04_generar_voces",
+        "modelo_usado": "es-ES-AlvaroNeural (Edge-TTS) / EBU R128 Master",
+        "tokens_input": 3200,
+        "tokens_output": 2800,
+        "tokens_sin_compresion": 48000,
+        "tokens_ahorrados": 42000,
+        "porcentaje_ahorro": 87.5,
+        "costo_efectivo": "$0.00",
+        "latencia_seg": 4.12,
+        "arbitraje": "soberano_free",
+        "timestamp": "2026-09-19T16:43:02.139820+00:00"
+      }
+    },
+    {
+      "id": 6182256,
+      "payload": {
+        "operation_id": 202,
+        "tarea": "ep04_generar_imagen",
+        "modelo_usado": "nano_banana / pillow_generator",
+        "tokens_input": 650,
+        "tokens_output": 450,
+        "tokens_sin_compresion": 8800,
+        "tokens_ahorrados": 7700,
+        "porcentaje_ahorro": 87.5,
+        "costo_efectivo": "$0.00",
+        "latencia_seg": 1.25,
+        "arbitraje": "soberano_free",
+        "timestamp": "2026-09-19T16:43:02.139820+00:00"
+      }
+    },
+    {
+      "id": 6182390,
+      "payload": {
+        "operation_id": 202,
+        "tarea": "ep04_generar_video",
+        "modelo_usado": "dashscope_wan21 (arbitraje fallback)",
+        "tokens_input": 1200,
+        "tokens_output": 800,
+        "tokens_sin_compresion": 16000,
+        "tokens_ahorrados": 14000,
+        "porcentaje_ahorro": 87.5,
+        "costo_efectivo": "$0.00",
+        "latencia_seg": 0.45,
+        "arbitraje": "soberano_free",
+        "timestamp": "2026-09-19T16:43:02.139820+00:00"
+      }
+    },
+    {
+      "id": 6182532,
+      "payload": {
+        "operation_id": 202,
+        "tarea": "ep04_ensamblar",
+        "modelo_usado": "ffmpeg_pipeline_local (auditor\u00eda pipeline)",
+        "tokens_input": 450,
+        "tokens_output": 350,
+        "tokens_sin_compresion": 6400,
+        "tokens_ahorrados": 5600,
+        "porcentaje_ahorro": 87.5,
+        "costo_efectivo": "$0.00",
+        "latencia_seg": 0.38,
+        "arbitraje": "soberano_free",
+        "timestamp": "2026-09-19T16:43:02.139820+00:00"
+      }
+    },
+    {
+      "id": 1074236847,
+      "payload": {
+        "operation_id": 225,
+        "timestamp": 1789928114.798576,
+        "model": "gemma-4-26b-a4b-it",
+        "provider": "google_cloud_node",
+        "latency_ms": 1519.35,
+        "input_tokens": 9,
+        "output_tokens": 8,
+        "request_sha256": "a3584d0c9e2fffaadc2b73070e3dbfdfe8f823e31ab763a0fbcfbbba002d811c",
+        "response_sha256": "486ada706af118291a6e464c66d3e3257866d55485c0371880fe86320ebde3be",
+        "gateway": "HBOS-Unified-Gateway:3002"
+      }
+    },
+    {
+      "id": 1074245483,
+      "payload": {
+        "operation_id": 225,
+        "timestamp": 1789928123.4341302,
+        "model": "gemma-4-26b-a4b-it",
+        "provider": "gemini_cloud_fallback",
+        "latency_ms": 1361.31,
+        "input_tokens": 4,
+        "output_tokens": 4,
+        "request_sha256": "ec957513328e01dc781715838efaed8216020c6848070464ce94bdaa9c495c0b",
+        "response_sha256": "99f73f6c7c94cee2eedfad5210300c793405319f05da3169212ab74be47b8540",
+        "gateway": "HBOS-Unified-Gateway:3002"
+      }
+    },
+    {
+      "id": 1075310627,
+      "payload": {
+        "operation_id": 226,
+        "timestamp": 1789929188.578255,
+        "model": "gemma-4-26b-a4b-it",
+        "provider": "gemini_cloud_fallback",
+        "latency_ms": 1371.47,
+        "input_tokens": 6,
+        "output_tokens": 7,
+        "request_sha256": "1ca7721df072699049e1ce60097f8ac0eb40da6ae7ab2d18c541b15c149fe268",
+        "response_sha256": "2aa4287d64498b3ae08a536924c3405a070f953af75f1877d367ec309b0a3402",
+        "gateway": "HBOS-Unified-Gateway:3002"
+      }
+    }
+  ]
+}

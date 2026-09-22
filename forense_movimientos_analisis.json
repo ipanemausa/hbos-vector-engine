@@ -1,0 +1,209 @@
+{
+  "total": 320,
+  "tipos": {
+    "null": 320
+  },
+  "personajes": {
+    "null": 320
+  },
+  "versiones": {
+    "null": 320
+  },
+  "sample": [
+    {
+      "id": 1,
+      "payload": {
+        "id": "cabeza_girar_izq_45",
+        "parte": "cabeza",
+        "verbo": "girar",
+        "direccion": "izquierda",
+        "intensidad": "45_grados",
+        "prompt_wan21": "head turns smoothly 45 degrees to the left, crystalline facets reflecting keynote studio lighting, realistic mechanical neck articulation",
+        "duracion_optima_seg": 2.5,
+        "numeric_id": 1
+      }
+    },
+    {
+      "id": 2,
+      "payload": {
+        "id": "cabeza_asentir_arriba_30",
+        "parte": "cabeza",
+        "verbo": "asentir",
+        "direccion": "arriba",
+        "intensidad": "30_grados",
+        "prompt_wan21": "head nods upward 30 degrees with authoritative precision, gleaming mineral refraccion, subtle LED pulse at neck node",
+        "duracion_optima_seg": 2.0,
+        "numeric_id": 2
+      }
+    },
+    {
+      "id": 3,
+      "payload": {
+        "id": "ojos_parpadear_normal",
+        "parte": "ojos",
+        "verbo": "parpadear",
+        "direccion": "frente",
+        "intensidad": "normal",
+        "prompt_wan21": "eyes blink naturally and calmly, subtle photonic energy glow in irises, maintaining firm gaze forward",
+        "duracion_optima_seg": 1.5,
+        "numeric_id": 3
+      }
+    },
+    {
+      "id": 4,
+      "payload": {
+        "id": "brazos_saludar_der",
+        "parte": "brazos",
+        "verbo": "saludar",
+        "direccion": "lateral_der",
+        "intensidad": "45_grados",
+        "prompt_wan21": "right arm raises smoothly at 45 degrees in welcoming keynote gesture towards audience, mechanical joints gleaming with subtle platinum highlights",
+        "duracion_optima_seg": 3.0,
+        "numeric_id": 4
+      }
+    },
+    {
+      "id": 5,
+      "payload": {
+        "id": "piernas_caminar_adelante",
+        "parte": "piernas",
+        "verbo": "caminar",
+        "direccion": "adelante",
+        "intensidad": "paso_firme",
+        "prompt_wan21": "crystalline host walks forward across the high-tech keynote stage with steady pacing, fluid robotic displacement, volumetric floor shadows",
+        "duracion_optima_seg": 4.5,
+        "numeric_id": 5
+      }
+    },
+    {
+      "id": 6,
+      "payload": {
+        "numeric_id": 6,
+        "id": "cabeza_girar_izquierda_15_grados",
+        "parte": "cabeza",
+        "verbo": "girar",
+        "direccion": "izquierda",
+        "intensidad": "15_grados",
+        "prompt_wan21": "cabeza performs girar towards izquierda with 15_grados dynamic, pure mineral crystal anatomy, clean robotic articulation, high-end cinematic keynote lighting",
+        "duracion_optima_seg": 2.5
+      }
+    },
+    {
+      "id": 7,
+      "payload": {
+        "numeric_id": 7,
+        "id": "cabeza_girar_izquierda_30_grados",
+        "parte": "cabeza",
+        "verbo": "girar",
+        "direccion": "izquierda",
+        "intensidad": "30_grados",
+        "prompt_wan21": "cabeza performs girar towards izquierda with 30_grados dynamic, pure mineral crystal anatomy, clean robotic articulation, high-end cinematic keynote lighting",
+        "duracion_optima_seg": 2.5
+      }
+    },
+    {
+      "id": 8,
+      "payload": {
+        "numeric_id": 8,
+        "id": "cabeza_girar_izquierda_45_grados",
+        "parte": "cabeza",
+        "verbo": "girar",
+        "direccion": "izquierda",
+        "intensidad": "45_grados",
+        "prompt_wan21": "cabeza performs girar towards izquierda with 45_grados dynamic, pure mineral crystal anatomy, clean robotic articulation, high-end cinematic keynote lighting",
+        "duracion_optima_seg": 2.5
+      }
+    },
+    {
+      "id": 9,
+      "payload": {
+        "numeric_id": 9,
+        "id": "cabeza_girar_derecha_15_grados",
+        "parte": "cabeza",
+        "verbo": "girar",
+        "direccion": "derecha",
+        "intensidad": "15_grados",
+        "prompt_wan21": "cabeza performs girar towards derecha with 15_grados dynamic, pure mineral crystal anatomy, clean robotic articulation, high-end cinematic keynote lighting",
+        "duracion_optima_seg": 2.5
+      }
+    },
+    {
+      "id": 10,
+      "payload": {
+        "numeric_id": 10,
+        "id": "cabeza_girar_derecha_30_grados",
+        "parte": "cabeza",
+        "verbo": "girar",
+        "direccion": "derecha",
+        "intensidad": "30_grados",
+        "prompt_wan21": "cabeza performs girar towards derecha with 30_grados dynamic, pure mineral crystal anatomy, clean robotic articulation, high-end cinematic keynote lighting",
+        "duracion_optima_seg": 2.5
+      }
+    },
+    {
+      "id": 11,
+      "payload": {
+        "numeric_id": 11,
+        "id": "cabeza_girar_derecha_45_grados",
+        "parte": "cabeza",
+        "verbo": "girar",
+        "direccion": "derecha",
+        "intensidad": "45_grados",
+        "prompt_wan21": "cabeza performs girar towards derecha with 45_grados dynamic, pure mineral crystal anatomy, clean robotic articulation, high-end cinematic keynote lighting",
+        "duracion_optima_seg": 2.5
+      }
+    },
+    {
+      "id": 12,
+      "payload": {
+        "numeric_id": 12,
+        "id": "cabeza_girar_arriba_15_grados",
+        "parte": "cabeza",
+        "verbo": "girar",
+        "direccion": "arriba",
+        "intensidad": "15_grados",
+        "prompt_wan21": "cabeza performs girar towards arriba with 15_grados dynamic, pure mineral crystal anatomy, clean robotic articulation, high-end cinematic keynote lighting",
+        "duracion_optima_seg": 2.5
+      }
+    },
+    {
+      "id": 13,
+      "payload": {
+        "numeric_id": 13,
+        "id": "cabeza_girar_arriba_30_grados",
+        "parte": "cabeza",
+        "verbo": "girar",
+        "direccion": "arriba",
+        "intensidad": "30_grados",
+        "prompt_wan21": "cabeza performs girar towards arriba with 30_grados dynamic, pure mineral crystal anatomy, clean robotic articulation, high-end cinematic keynote lighting",
+        "duracion_optima_seg": 2.5
+      }
+    },
+    {
+      "id": 14,
+      "payload": {
+        "numeric_id": 14,
+        "id": "cabeza_girar_arriba_45_grados",
+        "parte": "cabeza",
+        "verbo": "girar",
+        "direccion": "arriba",
+        "intensidad": "45_grados",
+        "prompt_wan21": "cabeza performs girar towards arriba with 45_grados dynamic, pure mineral crystal anatomy, clean robotic articulation, high-end cinematic keynote lighting",
+        "duracion_optima_seg": 2.5
+      }
+    },
+    {
+      "id": 15,
+      "payload": {
+        "numeric_id": 15,
+        "id": "cabeza_girar_abajo_15_grados",
+        "parte": "cabeza",
+        "verbo": "girar",
+        "direccion": "abajo",
+        "intensidad": "15_grados",
+        "prompt_wan21": "cabeza performs girar towards abajo with 15_grados dynamic, pure mineral crystal anatomy, clean robotic articulation, high-end cinematic keynote lighting",
+        "duracion_optima_seg": 2.5
+      }
+    }
+  ]
+}
