@@ -42,3 +42,7 @@ venv/
 # Sistema
 .DS_Store
 Thumbs.db
+
+*.bak_*
+
+*.bak
