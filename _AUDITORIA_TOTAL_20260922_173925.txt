@@ -1,0 +1,702 @@
+
+HBOS · AUDITORIA TOTAL · 20260922_173925
+Reporte: C:\Users\ipane\hbos-deploy\hbos-vector-engine\_AUDITORIA_TOTAL_20260922_173925.txt
+Usuario: ipane
+Hostname: DESKTOP-BUSONST
+
+==============================================================================
+1. VARIABLES DE ENTORNO (todas las que parecen keys)
+==============================================================================
+  Encontradas: 7
+    ANTHROPIC_API_KEY [14]: sk-ant-XXXXXXX [PLACEHOLDER?]
+    COMPOSIO_API_KEY [65]: $cfg = Join-Path $en...
+    COMPOSIO_ORG_ACCESS_TOKEN [115]: $appid = (Get-StartA...
+    GITHUB_TOKEN [40]: gho_qdCeaCtHO45GJkrE...
+    GOOGLE_API_KEY [23]: AIza...TU_CLAVE_REAL...
+    OPENAI_API_KEY [15]: tu_api_key_real [PLACEHOLDER?]
+    RELEVANCE_API_KEY [51]: sk-NmNjMzJkNGYNTU1Ni...
+
+==============================================================================
+2. ARCHIVOS DE CONFIGURACION
+==============================================================================
+  Total archivos config: 145
+
+  [Lista]
+    C:\Users\ipane\.copilot\config.json · 131 bytes · 08/07/2026 14:10:13
+    C:\Users\ipane\.docker\config.json · 403 bytes · 09/22/2026 16:12:19
+    C:\Users\ipane\.docker\mcp\config.yaml · 0 bytes · 08/06/2026 02:50:54
+    C:\Users\ipane\.env · 94 bytes · 08/12/2026 09:48:24
+    C:\Users\ipane\.gdrive-server-credentials.json · 536 bytes · 09/20/2026 19:52:20
+    C:\Users\ipane\.gemini\config\config.json · 361 bytes · 07/23/2026 05:46:28
+    C:\Users\ipane\.gemini\config\gdrive-credentials.json · 412 bytes · 09/18/2026 06:13:45
+    C:\Users\ipane\.gemini\teso_mirror\node_modules\eslint-visitor-keys · 1 bytes · 07/12/2026 13:18:51
+    C:\Users\ipane\.railway\config.json · 413 bytes · 08/29/2026 08:30:31
+    C:\Users\ipane\AppData\Local\google-cloud-sdk\platform\bq\wrapped_credentials.py · 7552 bytes · 01/01/1980 03:00:00
+    C:\Users\ipane\AppData\Local\Microsoft\Credentials · 1 bytes · 08/26/2026 18:31:41
+    C:\Users\ipane\AppData\Local\Packages\E046963F.LenovoCompanion_k1h2ywk1493x8\LocalState\config.json · 743 bytes · 06/09/2026 17:01:39
+    C:\Users\ipane\AppData\Local\Packages\Microsoft.YourPhone_8wekyb3d8bbwe\LocalCache\PlatformEncryptedKeyStorage.json · 5556 bytes · 09/18/2026 05:34:03
+    C:\Users\ipane\AppData\Local\Temp\pyrefly_bundled_third_party_1ffd9d07fb77\botocore-stubs\credentials.pyi · 13758 bytes · 01/08/2026 10:22:05
+    C:\Users\ipane\AppData\Local\Temp\pyrefly_bundled_typeshed_third_party_1c8b1c2fcf53\braintree\credentials_parser.pyi · 607 bytes · 02/21/2026 09:25:16
+    C:\Users\ipane\AppData\Local\Temp\pyrefly_bundled_typeshed_third_party_1c8b1c2fcf53\braintree\oauth_credentials.pyi · 82 bytes · 02/21/2026 09:25:16
+    C:\Users\ipane\AppData\Local\Temp\pyrefly_bundled_typeshed_third_party_1c8b1c2fcf53\cachetools\keys.pyi · 498 bytes · 02/21/2026 09:25:15
+    C:\Users\ipane\AppData\Local\Temp\pyrefly_bundled_typeshed_third_party_1c8b1c2fcf53\docker\credentials · 1 bytes · 02/21/2026 09:25:14
+    C:\Users\ipane\AppData\Local\Temp\pyrefly_bundled_typeshed_third_party_1c8b1c2fcf53\paramiko\hostkeys.pyi · 2180 bytes · 02/21/2026 09:25:08
+    C:\Users\ipane\AppData\Local\Temp\pyrefly_bundled_typeshed_third_party_1c8b1c2fcf53\pika\credentials.pyi · 1327 bytes · 02/21/2026 09:25:08
+    C:\Users\ipane\AppData\Local\Temp\pyrefly_bundled_typeshed_third_party_1c8b1c2fcf53\Xlib\keysymdef · 1 bytes · 02/21/2026 09:25:06
+    C:\Users\ipane\AppData\Local\Temp\pyrefly_bundled_typeshed_third_party_e89e176f99b9\braintree\credentials_parser.pyi · 607 bytes · 04/07/2026 10:24:43
+    C:\Users\ipane\AppData\Local\Temp\pyrefly_bundled_typeshed_third_party_e89e176f99b9\braintree\oauth_credentials.pyi · 82 bytes · 04/07/2026 10:24:42
+    C:\Users\ipane\AppData\Local\Temp\pyrefly_bundled_typeshed_third_party_e89e176f99b9\cachetools\keys.pyi · 498 bytes · 04/07/2026 10:24:42
+    C:\Users\ipane\AppData\Local\Temp\pyrefly_bundled_typeshed_third_party_e89e176f99b9\docker\credentials · 1 bytes · 04/07/2026 10:24:41
+    C:\Users\ipane\AppData\Local\Temp\pyrefly_bundled_typeshed_third_party_e89e176f99b9\paramiko\hostkeys.pyi · 2180 bytes · 04/07/2026 10:24:38
+    C:\Users\ipane\AppData\Local\Temp\pyrefly_bundled_typeshed_third_party_e89e176f99b9\pika\credentials.pyi · 1327 bytes · 04/07/2026 10:24:38
+    C:\Users\ipane\AppData\Local\Temp\pyrefly_bundled_typeshed_third_party_e89e176f99b9\Xlib\keysymdef · 1 bytes · 04/07/2026 10:24:37
+    C:\Users\ipane\AppData\Local\thinkorswim\vlc\plugins\keystore · 1 bytes · 10/16/2023 08:02:49
+    C:\Users\ipane\AppData\Roaming\Claude\config.json · 1314 bytes · 02/25/2026 20:25:22
+    C:\Users\ipane\AppData\Roaming\FreeLLMAPI\config.json · 18 bytes · 09/22/2026 17:24:01
+    C:\Users\ipane\AppData\Roaming\gcloud\credentials.db · 12288 bytes · 07/19/2026 03:33:02
+    C:\Users\ipane\AppData\Roaming\gcloud\legacy_credentials · 1 bytes · 07/19/2026 03:33:02
+    C:\Users\ipane\AppData\Roaming\Microsoft\Credentials · 1 bytes · 09/22/2026 16:58:33
+    C:\Users\ipane\AppData\Roaming\Microsoft\Crypto\Keys · 1 bytes · 07/19/2026 03:28:42
+    C:\Users\ipane\AppData\Roaming\Microsoft\SystemCertificates\My\Keys · 1 bytes · 05/25/2026 13:20:00
+    C:\Users\ipane\AppData\Roaming\Microsoft\Windows\Recent\.env.lnk · 622 bytes · 08/18/2026 10:14:33
+    C:\Users\ipane\AppData\Roaming\Microsoft\Windows\Recent\gdrive-credentials.lnk · 538 bytes · 09/18/2026 06:00:04
+    C:\Users\ipane\AppData\Roaming\Microsoft\Windows\Recent\microsoft-edgehttps--www.bing.com-searchq=japanese+macaque&filters=IsConversation%22True%22+BTWLKey%22SnowMonkeysJapan%22+BTWLType%22Trivia%22&FORM=EMSDS0.lnk · 436 bytes · 12/02/2021 10:25:28
+    C:\Users\ipane\AppData\Roaming\obs-studio\plugin_config\obs-websocket\config.json · 175 bytes · 01/08/2026 13:51:53
+    C:\Users\ipane\AppData\Roaming\Tencent\WeChat\1\psk.key · 228 bytes · 08/15/2024 13:11:12
+    C:\Users\ipane\AppData\Roaming\Wispr Flow\config.json · 40509 bytes · 09/22/2026 17:33:45
+    C:\Users\ipane\AppData\Roaming\xdg.data\com.vercel.cli\config.json · 313 bytes · 09/19/2026 02:05:32
+    C:\Users\ipane\backup_hbos_snapshots\snapshot_2026-09-19_pre_navigator\credenciales\.env.local.backup · 2369 bytes · 09/19/2026 02:19:14
+    C:\Users\ipane\backup_hbos_snapshots\snapshot_2026-09-19_pre_navigator\credenciales\.env.vercel.backup · 2367 bytes · 09/19/2026 02:19:14
+    C:\Users\ipane\backup_hbos\credenciales\.env.local.backup · 2369 bytes · 09/19/2026 02:19:14
+    C:\Users\ipane\backup_hbos\credenciales\.env.vercel.backup · 2367 bytes · 09/19/2026 02:19:14
+    C:\Users\ipane\Downloads\gdrive-credentials.json · 412 bytes · 09/18/2026 06:00:04
+    C:\Users\ipane\hbos-deploy\hbos-backend\.env · 34 bytes · 08/29/2026 09:21:55
+    C:\Users\ipane\hbos-deploy\hbos-vector-engine\.env.example · 235 bytes · 09/09/2026 08:00:56
+    C:\Users\ipane\hbos-deploy\hbos-vector-engine\.env.local · 2369 bytes · 09/19/2026 02:19:14
+    C:\Users\ipane\hbos-deploy\hbos-vector-engine\.env.vercel · 2367 bytes · 09/19/2026 02:19:14
+    C:\Users\ipane\hbos-deploy\hbos-vector-engine\check_keys.py · 479 bytes · 09/19/2026 01:44:37
+    C:\Users\ipane\hbos-deploy\hbos-vector-engine\gev-app\.env.example · 11262 bytes · 09/20/2026 20:05:21
+    C:\Users\ipane\hbos-deploy\hbos-vector-engine\gev-app\.github\ISSUE_TEMPLATE\config.yml · 619 bytes · 09/20/2026 20:05:21
+    C:\Users\ipane\hbos-deploy\hbos-vector-engine\gev-app\src\keySetup.js · 13531 bytes · 09/20/2026 20:05:22
+    C:\Users\ipane\hbos-deploy\hbos-vector-engine\gev-app\src\keySetup.test.mjs · 2799 bytes · 09/20/2026 20:05:22
+    C:\Users\ipane\hbos-deploy\hbos-vector-engine\gev-app\src\keySetupCore.mjs · 17885 bytes · 09/20/2026 20:05:22
+    C:\Users\ipane\hbos-deploy\hbos-vector-engine\gev-app\src\keySetupCore.test.mjs · 18275 bytes · 09/20/2026 20:05:22
+    C:\Users\ipane\hbos-deploy\hbos-vector-engine\gev-app\src\keySetupHardening.test.mjs · 15741 bytes · 09/20/2026 20:05:22
+    C:\Users\ipane\hbos-deploy\hbos-vector-engine\node_modules\object-keys · 1 bytes · 09/11/2026 12:31:23
+    C:\Users\ipane\hbos-deploy\hbos-vector-engine\node_modules\qs\test\empty-keys-cases.js · 7698 bytes · 09/11/2026 12:31:21
+    C:\Users\ipane\hbos-deploy\hbos-vector-engine\node_modules\type-fest\source\conditional-keys.d.ts · 1199 bytes · 09/11/2026 12:31:21
+    C:\Users\ipane\node_modules\@babel\plugin-transform-duplicate-keys · 1 bytes · 08/29/2026 10:03:26
+    C:\Users\ipane\node_modules\@typescript-eslint\visitor-keys · 1 bytes · 08/29/2026 10:03:27
+    C:\Users\ipane\node_modules\core-js-pure\internals\enum-bug-keys.js · 192 bytes · 08/29/2026 10:03:43
+    C:\Users\ipane\node_modules\core-js-pure\internals\hidden-keys.js · 35 bytes · 08/29/2026 10:03:46
+    C:\Users\ipane\node_modules\core-js-pure\internals\object-keys-internal.js · 722 bytes · 08/29/2026 10:03:48
+    C:\Users\ipane\node_modules\core-js-pure\internals\object-keys.js · 364 bytes · 08/29/2026 10:03:48
+    C:\Users\ipane\node_modules\core-js-pure\internals\own-keys.js · 734 bytes · 08/29/2026 10:03:48
+    C:\Users\ipane\node_modules\core-js-pure\internals\set-method-get-keys-before-cloning-detection.js · 883 bytes · 08/29/2026 10:03:48
+    C:\Users\ipane\node_modules\core-js-pure\modules\es.object.keys.js · 476 bytes · 08/29/2026 10:03:44
+    C:\Users\ipane\node_modules\core-js-pure\modules\es.reflect.own-keys.js · 241 bytes · 08/29/2026 10:03:44
+    C:\Users\ipane\node_modules\core-js-pure\modules\esnext.map.map-keys.js · 801 bytes · 08/29/2026 10:03:45
+    C:\Users\ipane\node_modules\core-js-pure\modules\esnext.object.iterate-keys.js · 387 bytes · 08/29/2026 10:03:45
+    C:\Users\ipane\node_modules\core-js-pure\modules\esnext.reflect.get-metadata-keys.js · 1252 bytes · 08/29/2026 10:03:45
+    C:\Users\ipane\node_modules\core-js-pure\modules\esnext.reflect.get-own-metadata-keys.js · 677 bytes · 08/29/2026 10:03:45
+    C:\Users\ipane\node_modules\core-js-pure\proposals\keys-composition.js · 178 bytes · 08/29/2026 10:03:47
+    C:\Users\ipane\node_modules\core-js\internals\enum-bug-keys.js · 192 bytes · 08/29/2026 10:03:43
+    C:\Users\ipane\node_modules\core-js\internals\hidden-keys.js · 35 bytes · 08/29/2026 10:03:46
+    C:\Users\ipane\node_modules\core-js\internals\object-keys-internal.js · 722 bytes · 08/29/2026 10:03:48
+    C:\Users\ipane\node_modules\core-js\internals\object-keys.js · 364 bytes · 08/29/2026 10:03:48
+    C:\Users\ipane\node_modules\core-js\internals\own-keys.js · 734 bytes · 08/29/2026 10:03:48
+    C:\Users\ipane\node_modules\core-js\internals\set-method-get-keys-before-cloning-detection.js · 883 bytes · 08/29/2026 10:03:48
+    C:\Users\ipane\node_modules\core-js\modules\es.object.keys.js · 476 bytes · 08/29/2026 10:03:44
+    C:\Users\ipane\node_modules\core-js\modules\es.reflect.own-keys.js · 241 bytes · 08/29/2026 10:03:44
+    C:\Users\ipane\node_modules\core-js\modules\esnext.map.map-keys.js · 801 bytes · 08/29/2026 10:03:45
+    C:\Users\ipane\node_modules\core-js\modules\esnext.object.iterate-keys.js · 387 bytes · 08/29/2026 10:03:45
+    C:\Users\ipane\node_modules\core-js\modules\esnext.reflect.get-metadata-keys.js · 1252 bytes · 08/29/2026 10:03:45
+    C:\Users\ipane\node_modules\core-js\modules\esnext.reflect.get-own-metadata-keys.js · 677 bytes · 08/29/2026 10:03:45
+    C:\Users\ipane\node_modules\core-js\proposals\keys-composition.js · 178 bytes · 08/29/2026 10:03:47
+    C:\Users\ipane\node_modules\es-abstract\2015\GetOwnPropertyKeys.js · 831 bytes · 08/29/2026 10:03:43
+    C:\Users\ipane\node_modules\es-abstract\2016\GetOwnPropertyKeys.js · 831 bytes · 08/29/2026 10:03:43
+    C:\Users\ipane\node_modules\es-abstract\2017\GetOwnPropertyKeys.js · 831 bytes · 08/29/2026 10:03:43
+    C:\Users\ipane\node_modules\es-abstract\2018\GetOwnPropertyKeys.js · 831 bytes · 08/29/2026 10:03:44
+    C:\Users\ipane\node_modules\es-abstract\2019\GetOwnPropertyKeys.js · 831 bytes · 08/29/2026 10:03:44
+    C:\Users\ipane\node_modules\es-abstract\2020\GetOwnPropertyKeys.js · 831 bytes · 08/29/2026 10:03:44
+    C:\Users\ipane\node_modules\es-abstract\2021\GetOwnPropertyKeys.js · 831 bytes · 08/29/2026 10:03:44
+    C:\Users\ipane\node_modules\es-abstract\2022\GetOwnPropertyKeys.js · 831 bytes · 08/29/2026 10:03:44
+    C:\Users\ipane\node_modules\es-abstract\2023\GetOwnPropertyKeys.js · 831 bytes · 08/29/2026 10:03:44
+    C:\Users\ipane\node_modules\es-abstract\2024\GetOwnPropertyKeys.js · 831 bytes · 08/29/2026 10:03:44
+    C:\Users\ipane\node_modules\es-abstract\2025\GetOwnPropertyKeys.js · 831 bytes · 08/29/2026 10:03:44
+    C:\Users\ipane\node_modules\es-abstract\helpers\OwnPropertyKeys.js · 83 bytes · 08/29/2026 10:03:46
+    C:\Users\ipane\node_modules\eslint-visitor-keys · 1 bytes · 08/29/2026 10:03:23
+    C:\Users\ipane\node_modules\eslint-visitor-keys\dist\eslint-visitor-keys.cjs · 7115 bytes · 08/29/2026 10:03:20
+    C:\Users\ipane\node_modules\eslint-visitor-keys\dist\eslint-visitor-keys.d.cts · 753 bytes · 08/29/2026 10:03:20
+    C:\Users\ipane\node_modules\eslint-visitor-keys\dist\visitor-keys.d.ts · 291 bytes · 08/29/2026 10:03:25
+    C:\Users\ipane\node_modules\eslint-visitor-keys\lib\visitor-keys.js · 5289 bytes · 08/29/2026 10:03:23
+    C:\Users\ipane\node_modules\lodash\_arrayLikeKeys.js · 1778 bytes · 08/29/2026 10:03:24
+    C:\Users\ipane\node_modules\lodash\_baseGetAllKeys.js · 739 bytes · 08/29/2026 10:03:32
+    C:\Users\ipane\node_modules\lodash\_baseKeys.js · 776 bytes · 08/29/2026 10:03:33
+    C:\Users\ipane\node_modules\lodash\_baseKeysIn.js · 870 bytes · 08/29/2026 10:03:33
+    C:\Users\ipane\node_modules\lodash\_getAllKeys.js · 455 bytes · 08/29/2026 10:03:36
+    C:\Users\ipane\node_modules\lodash\_getAllKeysIn.js · 488 bytes · 08/29/2026 10:03:36
+    C:\Users\ipane\node_modules\lodash\_nativeKeys.js · 204 bytes · 08/29/2026 10:03:37
+    C:\Users\ipane\node_modules\lodash\_nativeKeysIn.js · 490 bytes · 08/29/2026 10:03:37
+    C:\Users\ipane\node_modules\lodash\fp\keys.js · 181 bytes · 08/29/2026 10:03:42
+    C:\Users\ipane\node_modules\lodash\fp\keysIn.js · 185 bytes · 08/29/2026 10:03:42
+    C:\Users\ipane\node_modules\lodash\fp\mapKeys.js · 159 bytes · 08/29/2026 10:03:42
+    C:\Users\ipane\node_modules\lodash\keys.js · 884 bytes · 08/29/2026 10:03:42
+    C:\Users\ipane\node_modules\lodash\keysIn.js · 778 bytes · 08/29/2026 10:03:42
+    C:\Users\ipane\node_modules\lodash\mapKeys.js · 1097 bytes · 08/29/2026 10:03:42
+    C:\Users\ipane\node_modules\object-keys · 1 bytes · 08/29/2026 10:03:24
+    C:\Users\ipane\node_modules\own-keys · 1 bytes · 08/29/2026 10:03:27
+    C:\Users\ipane\node_modules\qs\test\empty-keys-cases.js · 7698 bytes · 08/29/2026 10:03:20
+    C:\Users\ipane\node_modules\type-fest\source\conditional-keys.d.ts · 1199 bytes · 08/29/2026 10:03:25
+    C:\Users\ipane\node_modules\underscore\amd\allKeys.js · 423 bytes · 08/29/2026 10:03:36
+    C:\Users\ipane\node_modules\underscore\amd\keys.js · 563 bytes · 08/29/2026 10:03:40
+    C:\Users\ipane\node_modules\underscore\cjs\allKeys.js · 438 bytes · 08/29/2026 10:03:36
+    C:\Users\ipane\node_modules\underscore\cjs\keys.js · 591 bytes · 08/29/2026 10:03:40
+    C:\Users\ipane\node_modules\underscore\modules\allKeys.js · 416 bytes · 08/29/2026 10:03:36
+    C:\Users\ipane\node_modules\underscore\modules\keys.js · 565 bytes · 08/29/2026 10:03:40
+    C:\Users\ipane\openclaw-cloud-2026\.env · 8137 bytes · 06/28/2026 11:32:42
+    C:\Users\ipane\openclaw-cloud-2026\.env.backup · 8137 bytes · 06/28/2026 11:32:42
+    C:\Users\ipane\openclaw-cloud-2026\backup-20260714-114321\.env · 316 bytes · 07/12/2026 18:00:26
+    C:\Users\ipane\openclaw-cloud-2026\backup-20260714-114321\.env.backup · 8137 bytes · 06/28/2026 11:32:42
+    C:\Users\ipane\openclaw-cloud-2026\frontend\node_modules\eslint-visitor-keys · 1 bytes · 08/01/2026 17:37:02
+    C:\Users\ipane\openclaw-cloud-2026\nginx\ssl\openclaw.key · 102 bytes · 06/06/2026 08:26:33
+    C:\Users\ipane\openclaw-hb-jewelry\.env.production · 124 bytes · 07/17/2026 14:05:31
+    C:\Users\ipane\openclaw-hb-jewelry\node_modules\eslint-visitor-keys · 1 bytes · 07/12/2026 16:56:00
+    C:\Users\ipane\openclaw-operativo-2026\.env · 1931 bytes · 08/27/2026 12:20:36
+    C:\Users\ipane\openclaw-operativo-2026\.env.local · 2229 bytes · 09/08/2026 14:40:44
+    C:\Users\ipane\openclaw-operativo-2026\scripts\__pycache__\verify_all_cloud_keys.cpython-313.pyc · 2640 bytes · 08/26/2026 18:37:13
+    C:\Users\ipane\openclaw-operativo-2026\scripts\verify_all_cloud_keys.py · 1347 bytes · 08/25/2026 12:33:40
+    C:\Users\ipane\openclaw-ui\node_modules\eslint-visitor-keys · 1 bytes · 07/12/2026 13:18:54
+
+==============================================================================
+3. MENCIONES A PROVIDERS EN EL SISTEMA
+==============================================================================
+
+  [openrouter] → 3 hits
+    _DEEPSEEK_INTEGRACION_MAESTRA.md:18 → | **OpenRouter API** | HTTP REST (`/api/v1/chat/completions`) | `deepseek/deepseek-chat`, `deepseek/deepseek-r1:free` | ...
+    _DEEPSEEK_INTEGRACION_MAESTRA.md:34 → (DeepSeek-R1 via MCP)           (DeepSeek-V3 via OpenRouter)
+    _DEEPSEEK_INTEGRACION_MAESTRA.md:71 → * **Prueba OpenRouter Arbitrage (`hbos_deepseek_arbitrage.py`):**
+
+  [qwen] → 3 hits
+    _FACTORIZACION_MAESTRA.md:94 → 1. **Razonamiento y Lógica Estructural:** FreeLLMAPI (DeepSeek-R1 / Qwen 2.5 72B) ➔ Fallback Groq Llama-3.3-70B (alta ve...
+    _ALIBABA_MAESTRA.md:18 → * **Audio/Voz:** `qwen3-tts-flash` (síntesis de voz complementaria de alta velocidad).
+    _ALIBABA_MAESTRA.md:19 → * **LLM:** `qwen-plus`, `qwen-turbo` y familias Qwen 2.5.
+
+  [alibaba] → 3 hits
+    _ALIBABA_MAESTRA.md:1 → # _ALIBABA_MAESTRA.md — Capa E: Auditoría e Integración del Ecosistema Alibaba Cloud
+    _ALIBABA_MAESTRA.md:4 → > **Canon:** Arquitectura Desacoplada (§D) · Capa E (Alibaba / Bailian)
+    _ALIBABA_MAESTRA.md:8 → ## 1. Auditoría del Ecosistema Previo Alibaba Cloud
+
+  [dashscope] → 3 hits
+    _FACTORIZACION_MAESTRA.md:96 → 3. **Generación Visual y Video:** Wan 2.1 I2V vía DashScope Cloud ➔ Fallback Fal.ai Kling / Luma ➔ Fallback composición ...
+    _ALIBABA_MAESTRA.md:11 → * **Plataforma:** Alibaba Cloud Model Studio (Bailian / DashScope International).
+    _ALIBABA_MAESTRA.md:12 → * **Endpoint API:** `https://dashscope-intl.aliyuncs.com/api/v1/services/aigc/video-generation/video-synthesis`
+
+  [deepseek] → 3 hits
+    _FACTORIZACION_MAESTRA.md:94 → 1. **Razonamiento y Lógica Estructural:** FreeLLMAPI (DeepSeek-R1 / Qwen 2.5 72B) ➔ Fallback Groq Llama-3.3-70B (alta ve...
+    _CIERRE_6_PIEZAS_MAESTRA.md:23 → Evaluado y certificado por el nodo DeepSeek-V3 en la nube:
+    _DEEPSEEK_INTEGRACION_MAESTRA.md:1 → # INTEGRACIÓN MAESTRA DEL ENTORNO DEEPSEEK · COSTO CERO
+
+  [moonshot] → 3 hits
+    routing_rules_295.json:189 → "model_id": "moonshotai/Kimi-K2.6",
+    routing_rules_295.json:1107 → "model_id": "moonshotai/Kimi-K2-Instruct",
+    routing_rules_295.json:1113 → "model_id": "moonshotai/Kimi-K2-Instruct-0905",
+
+  [kimi] → 3 hits
+    regions.json:1 → {"meta":{"source":"Natural Earth 10m physical vectors — ne_10m_geography_regions_polys","url":"https://raw.githubusercon...
+    README.md:314 → 1. **[Decision Transformer](https://huggingface.co/docs/transformers/model_doc/decision_transformer)** (from Berkeley/Fa...
+    _AUDITORIA_TOTAL_20260922_173925.txt:201 → routing_rules_295.json:189 → "model_id": "moonshotai/Kimi-K2.6",
+
+  [glm] → 3 hits
+    _DEEPSEEK_INTEGRACION.md:17 → - **ModelScope (Alibaba):** Acceso a familias Qwen, DeepSeek y GLM.
+    _DEEPSEEK_INTEGRACION.md:37 → | **GLM-4 / GLM-5** | Conocimiento Enciclopédico | Arquitectura Zhipu | Cruce de fuentes primarias y papers científicos....
+    _ROUTING_OPERATIVO_MAESTRA.md:11 → 2. `glm-4.5-flash` (zhipu, prioridad 14)
+
+  [zhipu] → 3 hits
+    _DEEPSEEK_INTEGRACION.md:9 → **DeepSeek Harness** es el entorno de orquestación, evaluación e inferencia estructurada diseñado para maximizar el rend...
+    _DEEPSEEK_INTEGRACION.md:37 → | **GLM-4 / GLM-5** | Conocimiento Enciclopédico | Arquitectura Zhipu | Cruce de fuentes primarias y papers científicos....
+    _ROUTING_OPERATIVO_MAESTRA.md:11 → 2. `glm-4.5-flash` (zhipu, prioridad 14)
+
+  [minimax] → 3 hits
+    _PROVEEDORES_VIDEO.md:15 → - `minimax/h3-max/image-to-video`
+    _PROVEEDORES_VIDEO.md:16 → - `minimax/h3-max-turbo/image-to-video`
+    _PROVEEDORES_VIDEO.md:35 → - **Modelos Disponibles:** Modelos Open Source en el Hub (Wan 2.1 T2V Diffusers, Stable Video Diffusion, MiniMax Lora Co...
+
+  [yi-] → 2 hits
+    landing-point-geo.json:1 → {"type":"FeatureCollection","name":"landing_points","crs":{"type":"name","properties":{"name":"urn:ogc:def:crs:OGC:1.3:C...
+    README.md:416 → 1. **Phi3V** (from Microsoft) released with the paper [Phi-3 Technical Report: A Highly Capable Language Model Locally o...
+
+  [ernie] → 3 hits
+    transformers.js:9284 → case 'ernie4_5':
+    transformers.js:11773 → /* harmony export */   Ernie4_5ForCausalLM: () => (/* binding */ Ernie4_5ForCausalLM),
+    transformers.js:11774 → /* harmony export */   Ernie4_5Model: () => (/* binding */ Ernie4_5Model),
+
+  [hunyuan] → 3 hits
+    README.md:349 → 1. **[Grounding DINO](https://huggingface.co/docs/transformers/model_doc/grounding-dino)** (from IDEA-Research) released...
+    README.md:367 → 1. **[LLaVa](https://huggingface.co/docs/transformers/model_doc/llava)** (from Microsoft Research & University of Wiscon...
+    README.md:368 → 1. **[LLaVA-OneVision](https://huggingface.co/docs/transformers/model_doc/llava_onevision)** (from ByteDance & NTU & CUH...
+
+  [together] → 3 hits
+    CURRENT-STATE.md:1144 → >   frames rotated together and the trail terminated a fuselage-length to one
+    CURRENT-STATE.md:1155 → >   anchor and its reference frame together.
+    CURRENT-STATE.md:1186 → >   two are pinned together, and **the anchor MOVES WITH THE DEFAULT** — both are
+
+  [groq] → 3 hits
+    _FACTORIZACION_MAESTRA.md:94 → 1. **Razonamiento y Lógica Estructural:** FreeLLMAPI (DeepSeek-R1 / Qwen 2.5 72B) ➔ Fallback Groq Llama-3.3-70B (alta ve...
+    hbos_bootstrap.py:55 → req_keys = ["QDRANT_URL", "QDRANT_API_KEY", "GEMINI_API_KEY", "GROQ_API_KEY"]
+    _APP_HBOS_MAESTRA.md:59 → provider: string;            // 'gemini' | 'groq' | 'freellmapi' | 'unbe'
+
+  [perplexity] → 3 hits
+    omnirouter_hbos.js:113 → { nombre: "perplexity",       proveedor: "perplexity",         estado: "activo", prioridad: 4 },
+    seed_cases.js:15 → { id: 12, descripcion: "Resúmenes diarios", herramientas: ["Tareas recurrentes"], modelos: ["Perplexity"], categoria: "v...
+    seed_cases.js:32 → { id: 29, descripcion: "Investigación profunda", herramientas: ["NotebookLM"], modelos: ["Perplexity"], categoria: "apre...
+
+  [cohere] → 3 hits
+    hbos_film_director_agent.py:223 → "coherencia_narrativa": {"veredicto": "PASS"}
+    _AISLAMIENTO_TOTAL_VIDEOS_R59_MAESTRA.md:7 → - **Verificación Criptográfica Previa:** Antes de abrir o publicar cualquier material, se comprueba su coherencia formal...
+    _DIAMANTINO_MASCOTA_MAESTRA.md:31 → Cualquier intento de fusionar ambas figuras degrada la coherencia de marca y viola el criterio de éxito §13.
+
+  [mistral] → 3 hits
+    _GATEWAY_OPERATIVO_MAESTRA.md:43 → {"id": "ollama/mistral:latest", "object": "model", "owned_by": "hbos-local-ollama"},
+    _OLLAMA_OPERATIVO_MAESTRA.md:9 → - **Integración en Gateway:** Exposición transparente en `/v1/models` como `ollama/llama3:latest` y `ollama/mistral:late...
+    _ROUTING_MAESTRA.md:30 → 3. **Nivel de Respaldo Soberano:** Inferencia local privada vía Ollama (`llama3:latest` o `mistral:latest` en `http://lo...
+
+  [ollama] → 3 hits
+    hbos_chat_context_server.py:46 → "ollama": "http://localhost:11434",
+    _AJUSTES_MAESTRA.md:12 → - `ollama_emulation`: `off` (recomendado conmutar a `on` para compatibilidad transparente con clientes CLI de Ollama)
+    _DEEPSEEK_INTEGRACION.md:51 → - Compatibilidad directa con Ollama Local (`query_local_ollama`) para ejecutar pesos DeepSeek R1 cuantizados localmente ...
+
+  [vllm] → 3 hits
+    ort.all.js:40498 → //# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFsiLi4vLi4vY29tbW9uL2xpYi9iYW...
+    ort.js:17440 → //# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFsiLi4vLi4vY29tbW9uL2xpYi9iYW...
+    ort.wasm.js:3530 → //# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFsiLi4vLi4vY29tbW9uL2xpYi9iYW...
+
+  [huggingface] → 3 hits
+    _DEEPSEEK_INTEGRACION.md:18 → - **OpenRouter & HuggingFace:** Rutas `:free` para DeepSeek-R1 y DeepSeek-V3.
+    _ORQUESTADOR_MAESTRA.md:21 → | **Razonamiento Complejo** | $\mathcal{H}_{\text{DeepSeek}}$ | DeepSeek-R1 (HuggingFace) | Qwen 2.5 Coder 32B | LM Stud...
+    _ORQUESTADOR_MAESTRA.md:22 → | **Extracción / Embeddings** | $\mathcal{F}_{768}$ | Gemini Embedding 001 | HuggingFace MiniLM | Qdrant Local Hash 384d...
+
+  [replicate] → 3 hits
+    _PROMPT_PARAMOUNT_v6.md:63 → └── ¿Necesita gratis? → FreeLLMAPI (si soporta cola fal/replicate)
+    _PROVEEDORES_VIDEO.md:44 → ### 2.1. Replicate (Modelo Pay-Per-Use)
+    _PROMPT_PARAMOUNT_v6.md:63 → └── ¿Necesita gratis? → FreeLLMAPI (si soporta cola fal/replicate)
+
+  [stability] → 3 hits
+    _FLUJO_TOTAL_HBOS.md:106 → 2. **Paso C.2:** Aplicación de ajustes acústicos (stability 0.55, similarity 0.85, style 0.30) para autoridad y encanto.
+    CURRENT-STATE.md:3387 → - **Contact-match ties break on hex ascending.** `track_entity` is a mutation fulfilling "follow that one", and the mode...
+    contactMatch.js:115 → * 23:48). So the lookup always commits. What it owes the caller is STABILITY:
+
+  [elevenlabs] → 3 hits
+    _FACTORIZACION_MAESTRA.md:95 → 2. **Síntesis de Voz (Voiceover):** FreeLLMAPI CosyVoice2 / ChatTTS (costo $0.00) ➔ Fallback ElevenLabs Multilingual v2 ...
+    _CIERRE_DIA_2026-09-19.md:51 → - **Estado de Producción:** Preproducción 100% cerrada. Planos 02-09 listos para reanudación tras refresh de cuotas Wan ...
+    _CIERRE_DIA_2026-09-19.md:99 → 2. **Síntesis de Voces Ep04:** Ejecutar generación de bloques 0 al 9 en ElevenLabs tras la renovación de cupo mensual.
+
+  [anthropic] → 3 hits
+    _PROTECCION_MAESTRA.md:15 → - **Aislamiento Absoluto:** Ningún agente ni cliente externo interactúa jamás con claves de OpenAI, Google, Groq, Cerebr...
+    _RADAR_ALEJAVI_MAESTRA.md:27 → | 8 | **Claude 3.5 Sonnet vs GPT-4o: Comparativa Definitiva para Creadores** | 20:45 | Benchmark empírico de razonamient...
+    _SERIE_VIDEOS_MAESTRA.md:26 → * **Hook (0-45s):** "¿Qué pasa cuando se te acaba la cuota de OpenAI o Anthropic en mitad de una producción? Te muestro ...
+
+  [openai] → 3 hits
+    _AGENTE_MAESTRA.md:8 → FreeLLMAPI expone una interfaz OpenAI completa que permite la ejecución de agentes autónomos:
+    _DEEPSEEK_INTEGRACION_MAESTRA.md:19 → | **FreeLLMAPI Daemon (:3001)** | Proxy OpenAI compatible (`http://127.0.0.1:3001/v1`) | `deepseek-v4-pro`, `deepseek-v3...
+    _DEEPSEEK_INTEGRACION.md:23 → 1. **Protocolo Unificado:** DeepSeek Harness se enlaza al puerto local de FreeLLMAPI (`http://localhost:3001/v1`) como c...
+
+  [google] → 3 hits
+    _FACTORIZACION_MAESTRA.md:62 → 3. Validar la disponibilidad de los 7 componentes canónicos en la colección `hbos_directorio` (`FreeLLMAPI`, `Google_Dri...
+    _FACTORIZACION_MAESTRA.md:83 → 2. `Google_Drive_HBOS`: Repositorio persistente organizado en `_MAESTRO`, `01_Guion`, `02_Storyboard`, `03_Assets`, `04_...
+    hbos_community_manager.py:43 → "fuente": "Google DeepMind AlphaFold",
+
+  [gemini] → 3 hits
+    _FACTORIZACION_MAESTRA.md:94 → 1. **Razonamiento y Lógica Estructural:** FreeLLMAPI (DeepSeek-R1 / Qwen 2.5 72B) ➔ Fallback Groq Llama-3.3-70B (alta ve...
+    hbos_verify_unbe.py:62 → mcp_config = r"C:\Users\ipane\.gemini\config\mcp_config.json"
+    hbos_bootstrap.py:20 → MCP_CONFIG = r"C:\Users\ipane\.gemini\config\mcp_config.json"
+
+  [azure] → 3 hits
+    utils.js:59 → if ('\\\\' === path.substring(0, 2)) return true; // Microsoft Azure absolute path
+    README.md:5 → [![Build Status](https://dev.azure.com/vscode/vscode-languageserver-node/_apis/build/status%2Fvscode-languageserver-node...
+    execute_tarea1_tarea2_audit.py:63 → {"proveedor": "Azure Cognitive Services Speech", "prueba_gratuita": "500,000 caracteres/mes gratis", "requiere_tarjeta":...
+
+==============================================================================
+4. FREELLMAPI · config.json
+==============================================================================
+  Ruta: C:\Users\ipane\AppData\Roaming\FreeLLMAPI\config.json
+  Mod: 09/22/2026 17:24:01 · 18 bytes
+
+  [Contenido completo]
+    {
+      "port": 3001
+    }
+
+==============================================================================
+5. FREELLMAPI · freeapi.db
+==============================================================================
+  Ruta: C:\Users\ipane\AppData\Roaming\FreeLLMAPI\freeapi.db
+  Tamaño: 901120 bytes
+  Mod: 09/19/2026 11:56:16
+
+  [Estructura DB vía Python]
+    TABLAS: ['migrations', 'sqlite_sequence', 'api_keys', 'requests', 'rate_limit_usage', 'rate_limit_cooldowns', 'fallback_config', 'profiles', 'profile_models', 'settings', 'users', 'sessions', 'provider_quota_state', 'provider_quota_observations', 'embedding_models', 'media_models', 'quirks', 'quirk_targets', 'catalog_model_tombstones', 'model_overrides', 'request_hourly', 'request_attempts', 'url_tokens', 'models', 'client_profiles', 'custom_model_tombstones', 'playground_conversations', 'server_logs', 'backups', 'idempotency_claims', 'response_cache', 'key_monthly_usage']
+    
+    === migrations (37 filas) ===
+      Columnas: ['id', 'filename', 'applied_at']
+        [1, '20260101_000000_legacy_baseline.ts', '2026-09-19 15:55:24']
+        [2, '20260627_000001_custom_provider_modalities.ts', '2026-09-19 15:55:24']
+        [3, '20260627_000002_catalog_model_state.ts', '2026-09-19 15:55:24']
+        [4, '20260628_120000_request_aggregates.ts', '2026-09-19 15:55:24']
+        [5, '20260630_000001_github_gpt41_context.ts', '2026-09-19 15:55:24']
+    
+    === sqlite_sequence (11 filas) ===
+      Columnas: ['name', 'seq']
+        ['fallback_config', 407]
+        ['embedding_models', 40]
+        ['quirks', 1795]
+        ['quirk_targets', 2213]
+        ['profiles', 1]
+    
+    === api_keys (0 filas) ===
+      Columnas: ['id', 'platform', 'label', 'encrypted_key', 'iv', 'auth_tag', 'status', 'enabled', 'created_at', 'last_checked_at', 'base_url', 'last_health_error', 'model_scope_json', 'proxy_encrypted', 'proxy_iv', 'proxy_auth_tag', 'monthly_request_cap', 'monthly_token_cap']
+    
+    === requests (0 filas) ===
+      Columnas: ['id', 'platform', 'model_id', 'key_id', 'status', 'input_tokens', 'output_tokens', 'latency_ms', 'error', 'created_at', 'ttfb_ms', 'requested_model', 'request_type', 'client_ip', 'client_user_agent', 'served_model', 'client_agent', 'caller']
+    
+    === rate_limit_usage (0 filas) ===
+      Columnas: ['id', 'platform', 'model_id', 'key_id', 'kind', 'tokens', 'created_at_ms', 'created_at']
+    
+    === rate_limit_cooldowns (0 filas) ===
+      Columnas: ['platform', 'model_id', 'key_id', 'expires_at_ms', 'created_at', 'source', 'set_at_ms']
+    
+    === fallback_config (306 filas) ===
+      Columnas: ['id', 'model_db_id', 'priority', 'enabled']
+    
+    === profiles (1 filas) ===
+      Columnas: ['id', 'name', 'emoji', 'color', 'type', 'is_favorite', 'sort_order', 'auto_sort', 'layout_config', 'created_at', 'auto_include_new_models']
+          ERROR en profiles: 'charmap' codec can't encode characters in position 16-17: character maps to <undefined>
+    
+    === profile_models (306 filas) ===
+      Columnas: ['id', 'profile_id', 'model_db_id', 'priority', 'enabled']
+    
+    === settings (15 filas) ===
+      Columnas: ['key', 'value']
+        ['embeddings_default_family', 'gemini-embedding-001']
+        ['unified_api_key', 'freellmapi-70a0cfeb7458ecb31077fe5f0b1646069da621ebb16ff037']
+        ['active_profile_id', '1']
+        ['total_requests', '0']
+        ['total_input_tokens', '0']
+    
+    === users (1 filas) ===
+      Columnas: ['id', 'email', 'password_hash', 'created_at']
+        [1, 'ipanemamarketingusa@gmail.com', 'scrypt$c1b6636351968467f6fa977103780aba$9ef7c8b8473c0a82a2395b430f249d0e0d3f31aa6e539e9f18a88d97591241da63d901f726bf3b4c82dcde05dcedc372e953a7cfff02c32a1ff80f45d0933931', '2026-09-19 15:55:24']
+    
+    === sessions (25 filas) ===
+      Columnas: ['token_hash', 'user_id', 'expires_at_ms', 'created_at']
+        ['4f09c47d96c83c47c883d327b27ed9e0571c6cdf1e00d4e26b65cb1842cde4ee', 1, 1792425324725, '2026-09-19 15:55:24']
+        ['910f13d4ec149c02095a8b42df909ee9f6f4fdb82d5273423ccf8d73e6e86564', 1, 1792425480482, '2026-09-19 15:58:00']
+        ['cc12cdb0a255f9b0bc8194cea8134a001eba81f109dde1463d6bca730e27e54d', 1, 1792425849839, '2026-09-19 16:04:09']
+        ['5187cea2087a3697c5439222ed11c1090c35e5f6d48ab54d2ad371d8e232dbbc', 1, 1792501586388, '2026-09-20 13:06:26']
+        ['ab22b086b743d667b5980bd22c4a9d45de8cc9b306ff587551fe2bdd8d570921', 1, 1792501695850, '2026-09-20 13:08:15']
+    
+    === provider_quota_state (0 filas) ===
+      Columnas: ['platform', 'key_id', 'quota_pool_key', 'metric', 'limit_value', 'remaining_value', 'reset_at', 'reset_strategy', 'source', 'confidence', 'notes', 'observed_at', 'updated_at']
+    
+    === provider_quota_observations (0 filas) ===
+      Columnas: ['id', 'platform', 'key_id', 'provider_account_id', 'model_id', 'quota_pool_key', 'metric', 'status_code', 'limit_value', 'remaining_value', 'reset_at', 'retry_after_ms', 'reset_strategy', 'source', 'confidence', 'notes', 'raw_json', 'endpoint', 'observed_at', 'created_at']
+    
+    === embedding_models (35 filas) ===
+      Columnas: ['id', 'family', 'platform', 'model_id', 'display_name', 'dimensions', 'max_input_tokens', 'priority', 'enabled', 'quota_label', 'key_id']
+        [1, 'gemini-embedding-001', 'google', 'gemini-embedding-001', 'Gemini Embedding', 3072, 2048, 1, 1, '100 rpm ╖ 1K req/day', None]
+        [2, 'llama-nemotron-embed-vl-1b-v2', 'nvidia', 'nvidia/llama-nemotron-embed-vl-1b-v2', 'Nemotron Embed VL 1B', 2048, 8192, 1, 1, '~40 rpm', None]
+        [8, 'bge-m3', 'cloudflare', '@cf/baai/bge-m3', 'BGE-M3', 1024, 8192, 1, 1, '10K neurons/day (shared)', None]
+        [9, 'bge-m3', 'huggingface', 'BAAI/bge-m3', 'BGE-M3 (HF)', 1024, 8192, 3, 1, '$0.10/mo credits', None]
+        [10, 'embeddinggemma-300m', 'cloudflare', '@cf/google/embeddinggemma-300m', 'EmbeddingGemma 300M', 768, 2048, 1, 1, '10K neurons/day (shared)', None]
+    
+    === media_models (21 filas) ===
+      Columnas: ['id', 'platform', 'model_id', 'display_name', 'modality', 'priority', 'enabled', 'quota_label', 'key_id', 'meta_json']
+        [1, 'cloudflare', '@cf/black-forest-labs/flux-1-schnell', 'FLUX.1 [schnell]', 'image', 203, 1, 'Shared 10k neurons/day', None, None]
+        [2, 'cloudflare', '@cf/stabilityai/stable-diffusion-xl-base-1.0', 'Stable Diffusion XL', 'image', 204, 1, 'Shared 10k neurons/day', None, None]
+        [3, 'cloudflare', '@cf/black-forest-labs/flux-2-klein-9b', 'FLUX.2 [klein] 9B', 'image', 205, 1, 'Workers AI free allocation ╖ resets daily', None, '{"requestStyle":"multipart"}']
+        [4, 'cloudflare', '@cf/black-forest-labs/flux-2-klein-4b', 'FLUX.2 [klein] 4B', 'image', 206, 1, 'Workers AI free allocation ╖ resets daily', None, '{"requestStyle":"multipart"}']
+        [5, 'cloudflare', '@cf/myshell-ai/melotts', 'MeloTTS', 'audio', 211, 1, 'MP3 output - multilingual', None, None]
+    
+    === quirks (71 filas) ===
+      Columnas: ['id', 'slug', 'title', 'body', 'severity', 'created_at_ms', 'updated_at_ms']
+        [1725, 'cloudflare-key-format', 'Key is account_id:token', 'Cloudflare Workers AI authenticates with a combined credential in the form "account_id:token", not a bare token.', 'info', 1790112241222, 1790112241222]
+        [1726, 'keyless-anonymous', 'No API key required', 'Routes anonymously ù the catalog ships a keyless sentinel row and calls work with no account or key.', 'info', 1790112241222, 1790112241222]
+        [1727, 'nvidia-rate-limited', 'Recurring free, 40 RPM, eval-only ToS', 'NVIDIA NIM replaced its depleting trial credits with a recurring per-account rate limit (40 RPM default, varies by model), verified June 2026. The trial ToS still scopes usage to evaluation/prototyping, not production.', 'info', 1790112241222, 1790112241222]
+        [1728, 'or-free-cap-account-wide', 'Daily :free cap is account-wide', 'OpenRouterÆs :free daily cap (50/day, or 1000/day once you have ever bought $10 of credits) is shared across ALL :free models on the account, not per model. Per-row rpd values here are therefore optimistic; the routerÆs cooldown handling absorbs the shared 429s.', 'info', 1790112241222, 1790112241222]
+        [1729, 'reasoning-token-room', 'Needs token room', 'Some free routes spend hidden reasoning tokens before visible output. Avoid tiny max_tokens values or requests can finish by length with empty content.', 'info', 1790112241222, 1790112241222]
+    
+    === quirk_targets (87 filas) ===
+      Columnas: ['id', 'quirk_id', 'platform', 'model_glob']
+        [2127, 1725, 'cloudflare', None]
+        [2128, 1726, 'kilo', None]
+        [2129, 1726, 'llm7', None]
+        [2130, 1726, 'ovh', None]
+        [2131, 1727, 'nvidia', None]
+    
+    === catalog_model_tombstones (0 filas) ===
+      Columnas: ['kind', 'platform', 'model_id', 'created_at', 'source', 'reason']
+    
+    === model_overrides (0 filas) ===
+      Columnas: ['platform', 'model_id', 'overrides_json', 'updated_at']
+    
+    === request_hourly (0 filas) ===
+      Columnas: ['hour', 'total_requests', 'success_count', 'error_count', 'input_tokens', 'output_tokens']
+    
+    === request_attempts (0 filas) ===
+      Columnas: ['id', 'request_id', 'ordinal', 'platform', 'model_id', 'key_ordinal', 'outcome', 'start_offset_ms', 'duration_ms', 'error_summary', 'key_label']
+    
+    === url_tokens (0 filas) ===
+      Columnas: ['id', 'token_hash', 'label', 'token_prefix', 'created_at', 'last_used_at', 'revoked_at']
+    
+    === models (306 filas) ===
+      Columnas: ['id', 'platform', 'model_id', 'display_name', 'intelligence_rank', 'speed_rank', 'size_label', 'rpm_limit', 'rpd_limit', 'tpm_limit', 'tpd_limit', 'monthly_token_budget', 'context_window', 'enabled', 'supports_vision', 'key_id', 'supports_tools', 'paid_input_per_m', 'paid_output_per_m', 'source', 'endpoint_scope']
+    
+    === client_profiles (0 filas) ===
+      Columnas: ['id', 'name', 'token_hash', 'encrypted_key', 'iv', 'auth_tag', 'system_prompt', 'enabled', 'created_at', 'updated_at']
+    
+    === custom_model_tombstones (0 filas) ===
+      Columnas: ['endpoint_scope', 'model_id', 'created_at']
+    
+    === playground_conversations (1 filas) ===
+      Columnas: ['id', 'title', 'messages_json', 'model', 'system_prompt', 'created_at_ms', 'updated_at_ms']
+        [1, 'HBOS ╖ CONSULTA OPERATIVA ╖ op=266', '[{"role":"user","content":"HBOS ╖ CONSULTA OPERATIVA ╖ op=266\\n\\nContexto:\\n- Acabas de ser instalada como app nativa en C:\\\\Users\\\\ipane\\\\AppData\\\\Local\\\\Programs\\\\FreeLLMAPI\\\\\\n- Pides huella (Windows Hello) al abrir\\n- Corres en :3001, arrancas sola al iniciar Windows\\n- Todavφa no tengo ning·n provider configurado (\\"0 de 3\\" en Getting started)\\n\\nNecesito que me respondas con evidencia, sin prosa. Si algo no lo puedes verificar, dilo explφcitamente. Nada de \\"OK\\" genΘrico.\\n\\nPREGUNTAS:\\n\\n1. ┐QuΘ providers soportas nativamente? Lista completa con nombre exacto y si tienen free tier.\\n\\n2. De esa lista, ┐cußles funcionan SIN tarjeta de crΘdito y SIN lφmites ridφculos? Ordena de mejor a peor seg·n: lφmite diario, modelos disponibles, facilidad de configuraci≤n.\\n\\n3. ┐QuΘ provider me recomiendas para un flujo HBOS intensivo (m·ltiples llamadas diarias, razonamiento, anßlisis, generaci≤n)? Justifica con datos concretos de lφmites y coste.\\n\\n4. ┐Tienes integraci≤n nativa con OpenRouter, Groq, Google AI Studio, Together, DeepSeek o Mistral? Si sφ, ┐c≤mo se configuran exactamente? Si no, ┐c≤mo se a±aden manualmente?\\n\\n5. ┐Puedes enrutar a modelos locales (Ollama en :11434) y a modelos cloud a la vez? Si sφ, ┐c≤mo se configura el enrutamiento?\\n\\n6. ┐Cußl es el camino de MENOR fricci≤n para tenerte operativa hoy? Dame los pasos exactos, en orden, sin jerga.\\n\\n7. ┐C≤mo te conecto a Qdrant (colecciones hbos_canon, hbos_estado, hbos_auditoria) y al filesystem local (C:\\\\Users\\\\ipane\\\\hbos-deploy\\\\hbos-vector-engine) sin intermediarios? ┐Tienes MCP, API REST, CLI?\\n\\n8. ┐QuΘ API key unificada generas y cußl es tu base URL para conectar clientes OpenAI-compatible (Antigravity, GEV, scripts HBOS)?\\n\\nResponde punto por punto. Con rutas, endpoints y nombres reales. Si algo no lo puedes verificar, dilo. Nada de humo."},{"role":"assistant","content":"No candidate model has a configured, usable provider key. Add provider API keys in the dashboard. All models exhausted. Add more API keys or wait for rate limits to reset. 304 models skipped: no key configured for their platform.","isError":true}]', 'auto', None, 1790112784594, 1790112784648]
+    
+    === server_logs (73 filas) ===
+      Columnas: ['id', 'level', 'source', 'provider', 'model', 'event', 'request_id', 'message', 'created_at_ms']
+        [9, 'warn', 'crypto', None, None, None, None, '[crypto] No ENCRYPTION_KEY set ù generated a local dev key at C:\\Users\\ipane\\AppData\\Roaming\\FreeLLMAPI\\.encryption-key. Set ENCRYPTION_KEY for production.', 1789833324434]
+        [12, 'warn', 'crypto', None, None, None, None, '[crypto] No ENCRYPTION_KEY set ù using the auto-generated key at C:\\Users\\ipane\\AppData\\Roaming\\FreeLLMAPI\\.encryption-key (dev only). Set ENCRYPTION_KEY for production.', 1789833480356]
+        [15, 'warn', 'crypto', None, None, None, None, '[crypto] No ENCRYPTION_KEY set ù using the auto-generated key at C:\\Users\\ipane\\AppData\\Roaming\\FreeLLMAPI\\.encryption-key (dev only). Set ENCRYPTION_KEY for production.', 1789833849745]
+        [26, 'warn', 'ImageNormalize', None, None, None, None, '[ImageNormalize] sharp is unavailable, inbound images will not be resized (set IMAGE_NORMALIZE=off to silence this): Could not load the "sharp" module using the win32-x64 runtime\nPossible solutions:\n- Ensure optional dependencies can be installed:\n    npm install --include=optional sharp\n- Ensure your package manager supports multi-platform installation:\n    See https://sharp.pixelplumbing.com/install#cross-platform\n- Add platform-specific dependencies:\n    npm install --os=win32 --cpu=x64 sharp\n- Consult the installation documentation:\n    See https://sharp.pixelplumbing.com/install', 1789834523042]
+        [43, 'warn', 'FallbackLoop', None, None, None, None, '[FallbackLoop] chat completions routing exhausted (no upstream tried) req=42cb55 requested=gpt-oss-120b candidates=1:\n  5 model(s) skipped: no enabled+healthy key for platform (cloudflare, groq, huggingface, ollama, ovh)', 1789836811861]
+    
+    === backups (0 filas) ===
+      Columnas: ['id', 'filename', 'filepath', 'filesize', 'is_full', 'source', 'created_at', 'tables_json']
+    
+    === idempotency_claims (0 filas) ===
+      Columnas: ['id', 'key_hash', 'request_fingerprint', 'response_status', 'response_body', 'execution_id', 'created_at_ms', 'expires_at_ms']
+    
+    === response_cache (0 filas) ===
+      Columnas: ['cache_key', 'body_json', 'platform', 'model_id', 'key_id', 'prompt_tokens', 'completion_tokens', 'hit_count', 'created_at_ms', 'last_hit_at_ms', 'expires_at_ms']
+    
+    === key_monthly_usage (0 filas) ===
+      Columnas: ['key_id', 'month', 'requests', 'tokens']
+    
+
+==============================================================================
+6. HISTORIAL DE ANTIGRAVITY
+==============================================================================
+  Archivos de log: 50
+
+  [openrouter]
+    transcript_full.jsonl:440
+      {"step_index":441,"source":"MODEL","type":"RUN_COMMAND","status":"DONE","exit_code":0,"created_at":"2026-09-20T17:37:20Z","content":"Created At: 2026-09-20T13:37:20-04:00\nCompleted At: 2026-09-20T13:...
+    transcript_full.jsonl:459
+      {"step_index":460,"source":"MODEL","type":"PLANNER_RESPONSE","status":"DONE","created_at":"2026-09-20T17:37:50Z","thinking":"The script `hbos_verify_unbe.py` needs adjustment; line 80 currently target...
+
+  [qwen]
+    transcript_full.jsonl:429
+      {"step_index":429,"source":"MODEL","type":"VIEW_FILE","status":"DONE","created_at":"2026-09-22T21:32:40Z","content":"Created At: 2026-09-22T17:32:40-04:00\nCompleted At: 2026-09-22T17:32:40-04:00\nFil...
+    transcript_full.jsonl:432
+      {"step_index":432,"source":"MODEL","type":"PLANNER_RESPONSE","status":"DONE","created_at":"2026-09-22T21:32:46Z","content":"# Informe Completo · Guía y Manual Operativo de FreeLLMAPI (Canal ALEJAVI)\n...
+
+  [alibaba]
+    transcript_full.jsonl:24
+      {"step_index":23,"source":"MODEL","type":"LIST_DIRECTORY","status":"DONE","created_at":"2026-09-22T18:47:49Z","content":"Created At: 2026-09-22T14:47:49-04:00\nCompleted At: 2026-09-22T14:47:49-04:00\...
+    transcript_full.jsonl:28
+      {"step_index":27,"source":"MODEL","type":"VIEW_FILE","status":"DONE","created_at":"2026-09-22T18:47:53Z","content":"Created At: 2026-09-22T14:47:53-04:00\nCompleted At: 2026-09-22T14:47:53-04:00\nFile...
+
+  [dashscope]
+    transcript_full.jsonl:28
+      {"step_index":27,"source":"MODEL","type":"VIEW_FILE","status":"DONE","created_at":"2026-09-22T18:47:53Z","content":"Created At: 2026-09-22T14:47:53-04:00\nCompleted At: 2026-09-22T14:47:53-04:00\nFile...
+    transcript.jsonl:28
+      {"step_index":27,"source":"MODEL","type":"VIEW_FILE","status":"DONE","created_at":"2026-09-22T18:47:53Z","content":"Created At: 2026-09-22T14:47:53-04:00\nCompleted At: 2026-09-22T14:47:53-04:00\nFile...
+
+  [deepseek]
+    transcript_full.jsonl:5
+      {"step_index":4,"source":"MODEL","type":"MCP_TOOL","status":"DONE","created_at":"2026-09-22T18:45:03Z","content":"Created At: 2026-09-22T14:45:03-04:00\nCompleted At: 2026-09-22T14:45:12-04:00\n{\"sta...
+    transcript_full.jsonl:12
+      {"step_index":11,"source":"MODEL","type":"LIST_DIRECTORY","status":"DONE","created_at":"2026-09-22T18:47:27Z","content":"Created At: 2026-09-22T14:47:27-04:00\nCompleted At: 2026-09-22T14:47:27-04:00\...
+
+  [kimi]
+    transcript_full.jsonl:103
+      {"step_index":104,"source":"MODEL","type":"RUN_COMMAND","status":"DONE","exit_code":0,"created_at":"2026-09-20T13:09:24Z","content":"Created At: 2026-09-20T09:09:24-04:00\nCompleted At: 2026-09-20T09:...
+    transcript_full.jsonl:426
+      {"step_index":427,"source":"MODEL","type":"VIEW_FILE","status":"DONE","created_at":"2026-09-20T17:37:00Z","content":"Created At: 2026-09-20T13:37:00-04:00\nCompleted At: 2026-09-20T13:37:01-04:00\nFil...
+
+  [glm]
+    transcript_full.jsonl:103
+      {"step_index":104,"source":"MODEL","type":"RUN_COMMAND","status":"DONE","exit_code":0,"created_at":"2026-09-20T13:09:24Z","content":"Created At: 2026-09-20T09:09:24-04:00\nCompleted At: 2026-09-20T09:...
+    transcript_full.jsonl:571
+      {"step_index":572,"source":"MODEL","type":"RUN_COMMAND","status":"DONE","exit_code":0,"created_at":"2026-09-20T18:31:30Z","content":"Created At: 2026-09-20T14:31:30-04:00\nCompleted At: 2026-09-20T14:...
+
+  [zhipu]
+    transcript_full.jsonl:440
+      {"step_index":441,"source":"MODEL","type":"RUN_COMMAND","status":"DONE","exit_code":0,"created_at":"2026-09-20T17:37:20Z","content":"Created At: 2026-09-20T13:37:20-04:00\nCompleted At: 2026-09-20T13:...
+    transcript_full.jsonl:459
+      {"step_index":460,"source":"MODEL","type":"PLANNER_RESPONSE","status":"DONE","created_at":"2026-09-20T17:37:50Z","thinking":"The script `hbos_verify_unbe.py` needs adjustment; line 80 currently target...
+
+  [minimax]
+    transcript_full.jsonl:26
+      {"step_index":25,"source":"MODEL","type":"RUN_COMMAND","status":"DONE","exit_code":0,"created_at":"2026-09-18T11:59:09Z","content":"Created At: 2026-09-18T07:59:09-04:00\nCompleted At: 2026-09-18T07:5...
+    transcript.jsonl:26
+      {"step_index":25,"source":"MODEL","type":"RUN_COMMAND","status":"DONE","exit_code":0,"created_at":"2026-09-18T11:59:09Z","content":"Created At: 2026-09-18T07:59:09-04:00\nCompleted At: 2026-09-18T07:5...
+
+  [yi-]
+    transcript_full.jsonl:635
+      {"step_index":636,"source":"MODEL","type":"SEARCH_WEB","status":"DONE","created_at":"2026-09-20T18:59:09Z","content":"Created At: 2026-09-20T14:59:09-04:00\nCompleted At: 2026-09-20T14:59:12-04:00\nTh...
+    transcript.jsonl:635
+      {"step_index":636,"source":"MODEL","type":"SEARCH_WEB","status":"DONE","created_at":"2026-09-20T18:59:09Z","content":"Created At: 2026-09-20T14:59:09-04:00\nCompleted At: 2026-09-20T14:59:12-04:00\nTh...
+
+  [ernie]
+    transcript_full.jsonl:99
+      {"step_index":98,"source":"MODEL","type":"RUN_COMMAND","status":"DONE","exit_code":0,"created_at":"2026-09-19T14:16:42Z","content":"Created At: 2026-09-19T10:16:42-04:00\nCompleted At: 2026-09-19T10:1...
+    transcript_full.jsonl:104
+      {"step_index":103,"source":"MODEL","type":"PLANNER_RESPONSE","status":"DONE","created_at":"2026-09-19T14:17:06Z","content":"```json\n{\n  \"reporte_inicio\": {\n    \"fase\": \"FASE 1 — INVESTIGACIÓN ...
+
+  [hunyuan]
+    transcript_full.jsonl:735
+      {"step_index":736,"source":"MODEL","type":"PLANNER_RESPONSE","status":"DONE","created_at":"2026-09-19T16:39:06Z","tool_calls":[{"name":"run_command","args":{"CommandLine":"python -c \"\nimport urllib....
+    transcript_full.jsonl:751
+      {"step_index":752,"source":"MODEL","type":"PLANNER_RESPONSE","status":"DONE","created_at":"2026-09-19T16:39:34Z","tool_calls":[{"name":"write_to_file","args":{"CodeContent":"import os\nimport json\nim...
+
+  [together]
+    transcript_full.jsonl:144
+      {"step_index":144,"source":"MODEL","type":"VIEW_FILE","status":"DONE","created_at":"2026-09-22T19:09:09Z","content":"Created At: 2026-09-22T15:09:09-04:00\nCompleted At: 2026-09-22T15:09:09-04:00\nFil...
+    transcript_full.jsonl:432
+      {"step_index":432,"source":"MODEL","type":"PLANNER_RESPONSE","status":"DONE","created_at":"2026-09-22T21:32:46Z","content":"# Informe Completo · Guía y Manual Operativo de FreeLLMAPI (Canal ALEJAVI)\n...
+
+  [groq]
+    transcript_full.jsonl:415
+      {"step_index":415,"source":"MODEL","type":"VIEW_FILE","status":"DONE","created_at":"2026-09-22T21:31:55Z","content":"Created At: 2026-09-22T17:31:55-04:00\nCompleted At: 2026-09-22T17:31:55-04:00\nFil...
+    transcript_full.jsonl:427
+      {"step_index":427,"source":"MODEL","type":"VIEW_FILE","status":"DONE","created_at":"2026-09-22T21:32:34Z","content":"Created At: 2026-09-22T17:32:34-04:00\nCompleted At: 2026-09-22T17:32:34-04:00\nFil...
+
+  [perplexity]
+    transcript_full.jsonl:80
+      {"step_index":80,"source":"MODEL","type":"VIEW_FILE","status":"DONE","created_at":"2026-09-14T10:02:12Z","content":"Created At: 2026-09-14T06:02:12-04:00\nCompleted At: 2026-09-14T06:02:12-04:00\nFile...
+    transcript_full.jsonl:1291
+      {"step_index":1291,"source":"MODEL","type":"RUN_COMMAND","status":"DONE","exit_code":0,"created_at":"2026-09-21T11:17:09Z","content":"Created At: 2026-09-21T07:17:09-04:00\nCompleted At: 2026-09-21T07...
+
+  [cohere]
+    transcript_full.jsonl:109
+      {"step_index":110,"source":"USER_EXPLICIT","type":"USER_INPUT","status":"DONE","created_at":"2026-09-20T13:09:19Z","content":"<USER_REQUEST>\n╔═════════════════════════════════════════════════════════...
+    transcript_full.jsonl:179
+      {"step_index":180,"source":"MODEL","type":"PLANNER_RESPONSE","status":"DONE","created_at":"2026-09-20T13:14:29Z","content":"### BLOQUE 0 · §1.0: DECLARACIÓN DE SOBERANÍA\n```text\nCOORDINANDO EN UNBE,...
+
+  [mistral]
+    transcript_full.jsonl:415
+      {"step_index":415,"source":"MODEL","type":"VIEW_FILE","status":"DONE","created_at":"2026-09-22T21:31:55Z","content":"Created At: 2026-09-22T17:31:55-04:00\nCompleted At: 2026-09-22T17:31:55-04:00\nFil...
+    transcript_full.jsonl:429
+      {"step_index":429,"source":"MODEL","type":"VIEW_FILE","status":"DONE","created_at":"2026-09-22T21:32:40Z","content":"Created At: 2026-09-22T17:32:40-04:00\nCompleted At: 2026-09-22T17:32:40-04:00\nFil...
+
+  [ollama]
+    transcript_full.jsonl:10
+      {"step_index":9,"source":"MODEL","type":"MCP_TOOL","status":"DONE","created_at":"2026-09-22T18:45:34Z","content":"Created At: 2026-09-22T14:45:34-04:00\nCompleted At: 2026-09-22T14:47:25-04:00\n{\"eco...
+    transcript_full.jsonl:24
+      {"step_index":23,"source":"MODEL","type":"LIST_DIRECTORY","status":"DONE","created_at":"2026-09-22T18:47:49Z","content":"Created At: 2026-09-22T14:47:49-04:00\nCompleted At: 2026-09-22T14:47:49-04:00\...
+
+  [vllm]
+    transcript_full.jsonl:99
+      {"step_index":98,"source":"MODEL","type":"RUN_COMMAND","status":"DONE","exit_code":0,"created_at":"2026-09-19T14:16:42Z","content":"Created At: 2026-09-19T10:16:42-04:00\nCompleted At: 2026-09-19T10:1...
+    transcript.jsonl:99
+      {"step_index":98,"source":"MODEL","type":"RUN_COMMAND","status":"DONE","exit_code":0,"created_at":"2026-09-19T14:16:42Z","content":"Created At: 2026-09-19T10:16:42-04:00\nCompleted At: 2026-09-19T10:1...
+
+  [huggingface]
+    transcript_full.jsonl:204
+      {"step_index":204,"source":"MODEL","type":"RUN_COMMAND","status":"DONE","exit_code":0,"created_at":"2026-09-22T19:14:21Z","content":"Created At: 2026-09-22T15:14:21-04:00\nCompleted At: 2026-09-22T15:...
+    transcript_full.jsonl:415
+      {"step_index":415,"source":"MODEL","type":"VIEW_FILE","status":"DONE","created_at":"2026-09-22T21:31:55Z","content":"Created At: 2026-09-22T17:31:55-04:00\nCompleted At: 2026-09-22T17:31:55-04:00\nFil...
+
+  [replicate]
+    transcript_full.jsonl:331
+      {"step_index":330,"source":"MODEL","type":"RUN_COMMAND","status":"DONE","exit_code":0,"created_at":"2026-09-19T06:19:54Z","content":"Created At: 2026-09-19T02:19:54-04:00\nCompleted At: 2026-09-19T02:...
+    transcript_full.jsonl:354
+      {"step_index":353,"source":"MODEL","type":"PLANNER_RESPONSE","status":"DONE","created_at":"2026-09-19T06:22:30Z","content":"### ⚠️ REPORTE CRÍTICO DE CUOTA EN ELEVENLABS (Cero Humo, Solo la Verdad)\n\...
+
+  [stability]
+    transcript_full.jsonl:163
+      {"step_index":164,"source":"MODEL","type":"PLANNER_RESPONSE","status":"DONE","created_at":"2026-09-20T13:13:12Z","thinking":"All six variations have completed execution successfully on the specified c...
+    transcript.jsonl:163
+      {"step_index":164,"source":"MODEL","type":"PLANNER_RESPONSE","status":"DONE","created_at":"2026-09-20T13:13:12Z","thinking":"All six variations have completed execution successfully on the specified c...
+
+  [elevenlabs]
+    transcript_full.jsonl:12
+      {"step_index":11,"source":"MODEL","type":"VIEW_FILE","status":"DONE","created_at":"2026-09-20T13:03:59Z","content":"Created At: 2026-09-20T09:03:59-04:00\nCompleted At: 2026-09-20T09:03:59-04:00\nFile...
+    transcript_full.jsonl:111
+      {"step_index":112,"source":"MODEL","type":"RUN_COMMAND","status":"DONE","exit_code":0,"created_at":"2026-09-20T13:09:50Z","content":"Created At: 2026-09-20T09:09:50-04:00\nCompleted At: 2026-09-20T09:...
+
+  [anthropic]
+    transcript_full.jsonl:419
+      {"step_index":419,"source":"MODEL","type":"VIEW_FILE","status":"DONE","created_at":"2026-09-22T21:32:11Z","content":"Created At: 2026-09-22T17:32:11-04:00\nCompleted At: 2026-09-22T17:32:12-04:00\nFil...
+    transcript_full.jsonl:459
+      {"step_index":460,"source":"MODEL","type":"PLANNER_RESPONSE","status":"DONE","created_at":"2026-09-20T17:37:50Z","thinking":"The script `hbos_verify_unbe.py` needs adjustment; line 80 currently target...
+
+  [openai]
+    transcript_full.jsonl:129
+      {"step_index":129,"source":"MODEL","type":"VIEW_FILE","status":"DONE","created_at":"2026-09-22T19:07:49Z","content":"Created At: 2026-09-22T15:07:49-04:00\nCompleted At: 2026-09-22T15:07:49-04:00\nFil...
+    transcript_full.jsonl:204
+      {"step_index":204,"source":"MODEL","type":"RUN_COMMAND","status":"DONE","exit_code":0,"created_at":"2026-09-22T19:14:21Z","content":"Created At: 2026-09-22T15:14:21-04:00\nCompleted At: 2026-09-22T15:...
+
+  [google]
+    transcript_full.jsonl:24
+      {"step_index":23,"source":"MODEL","type":"LIST_DIRECTORY","status":"DONE","created_at":"2026-09-22T18:47:49Z","content":"Created At: 2026-09-22T14:47:49-04:00\nCompleted At: 2026-09-22T14:47:49-04:00\...
+    transcript_full.jsonl:30
+      {"step_index":29,"source":"MODEL","type":"VIEW_FILE","status":"DONE","created_at":"2026-09-22T18:47:55Z","content":"Created At: 2026-09-22T14:47:55-04:00\nCompleted At: 2026-09-22T14:47:55-04:00\nFile...
+
+  [gemini]
+    transcript_full.jsonl:1
+      {"step_index":0,"source":"USER_EXPLICIT","type":"USER_INPUT","status":"DONE","created_at":"2026-09-22T18:44:58Z","content":"<USER_REQUEST>\nHBOS - continua\n</USER_REQUEST>\n<ADDITIONAL_METADATA>\nThe...
+    transcript_full.jsonl:22
+      {"step_index":21,"source":"MODEL","type":"GREP_SEARCH","status":"DONE","created_at":"2026-09-22T18:47:43Z","content":"Created At: 2026-09-22T14:47:43-04:00\nCompleted At: 2026-09-22T14:47:44-04:00\n{\...
+
+  [azure]
+    transcript_full.jsonl:644
+      {"step_index":643,"source":"USER_EXPLICIT","type":"USER_INPUT","status":"DONE","created_at":"2026-09-19T06:48:35Z","content":"<USER_REQUEST>\n══════════════════════════════════════════════════════════...
+    transcript_full.jsonl:660
+      {"step_index":659,"source":"MODEL","type":"PLANNER_RESPONSE","status":"DONE","created_at":"2026-09-19T06:49:30Z","thinking":"The HTTP 403 status code indicates a quota exhaustion issue. The error mess...
+
+==============================================================================
+7. FREELLMAPI · API :3001
+==============================================================================
+  [--] /api/providers
+  [--] /api/catalog
+  [--] /api/models
+  [--] /api/keys
+  [--] /api/config
+  [--] /api/health
+  [--] /api/status
+  [--] /api/openapi.json
+  [--] /api/swagger.json
+
+==============================================================================
+8. APPS LLM/IA INSTALADAS EN EL SISTEMA
+==============================================================================
+  Apps encontradas: 4
+    C:\Users\ipane\AppData\Local\Programs\antigravity
+    C:\Users\ipane\AppData\Local\Programs\Antigravity IDE
+    C:\Users\ipane\AppData\Local\Programs\FreeLLMAPI
+    C:\Users\ipane\AppData\Local\Programs\Ollama
+
+==============================================================================
+9. PUERTOS ACTIVOS
+==============================================================================
+  :3000 → libre
+  :3001 → com.docker.backend FreeLLMAPI wslrelay (PID 27856 21768 17184) · C:\Program Files\Docker\Docker\resources\com.docker.backend.exe C:\Users\ipane\AppData\Local\Programs\FreeLLMAPI\FreeLLMAPI.exe C:\Program Files\WSL\wslrelay.exe
+  :6333 → com.docker.backend python wslrelay (PID 27856 21768 12140) · C:\Program Files\Docker\Docker\resources\com.docker.backend.exe C:\Users\ipane\AppData\Local\Programs\Python\Python313\python.exe C:\Program Files\WSL\wslrelay.exe
+  :6334 → libre
+  :11434 → ollama (PID 29888) · C:\Users\ipane\AppData\Local\Programs\Ollama\ollama.exe
+  :8080 → com.docker.backend wslrelay (PID 27856 21768) · C:\Program Files\Docker\Docker\resources\com.docker.backend.exe C:\Program Files\WSL\wslrelay.exe
+  :8000 → libre
+  :8888 → libre
+  :1234 → libre
+  :5000 → libre
+
+==============================================================================
+10. RESUMEN
+==============================================================================
+  Reporte completo en: C:\Users\ipane\hbos-deploy\hbos-vector-engine\_AUDITORIA_TOTAL_20260922_173925.txt
+  Variables env keys: 7
+  Archivos config: 145
+  Apps LLM: 4
+
+  Pega el reporte completo para análisis.
