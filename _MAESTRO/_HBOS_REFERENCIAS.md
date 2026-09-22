@@ -34,3 +34,16 @@
 - **Multimodalidad:** ElevenLabs validado con 21 voces (operativo en `step_fase2_voice.py`), Fal.ai auditado (vía Hugging Face router).
 - **Puertos:** FreeLLMAPI `:3001` (247 modelos activos) ⊕ HBOS-Unified-Gateway `:3002`.
 - **UNBE:** §1.0 CUMPLE AL 100%. Qdrant actualizado al rango 45 a 267.
+
+
+---
+
+## Auditoría de Redes Sociales y Marketing (op=268, 2026-09-22T18:18:47.354903)
+
+- **Operación:** Diagnóstico integral de los 10 canales bajo el handle unificado `@ipanemamarketingusa`.
+- **Topología de Canales:** Instagram, TikTok, Facebook, Threads, Telegram, Discord, LinkedIn, YouTube, X, GitHub.
+- **Arquitectura de Identidad:** Capa A Sombrilla (`IPANEMAMARKETINGUSA@gmail.com`) vs Capa B Núcleo (`hbos@gmail.com` / `hbos.ecosystem@gmail.com`).
+- **Roles de Marca:** Álex (Avatar comercial sintético ~35 años) vs Diamantino (Mascota mineral no-humanizada).
+- **Inventario:** Ep01-Ep04, Demis Hassabis v2, 4 formatos responsive (16:9, 9:16, 1:1, 4:5), 45 audios, 39 guiones/prompts, 95 imágenes.
+- **Monetización:** Marketplace Soberano (:3002/marketplace) en 4 niveles ($0, $27, $97/m, $1,500). Plan 30-60-90 activo.
+- **Trazabilidad:** Qdrant Cloud actualizado al rango 45 a 268. Documento canónico: `_AUDITORIA_RRSS_op268.md`.
