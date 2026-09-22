@@ -12,6 +12,23 @@ import subprocess
 from dotenv import load_dotenv
 from qdrant_client import QdrantClient
 
+# --- HBOS RUIDOSO CHECK ---
+import socket as _hbos_sock, sys as _hbos_sys
+def _hbos_port_open(_p):
+    with _hbos_sock.socket(_hbos_sock.AF_INET, _hbos_sock.SOCK_STREAM) as _s:
+        _s.settimeout(2)
+        return _s.connect_ex(("127.0.0.1", _p)) == 0
+_fallos = []
+if not _hbos_port_open(3001): _fallos.append("FreeLLMAPI :3001 CAIDO")
+if not _hbos_port_open(6333): _fallos.append("Qdrant :6333 CAIDO")
+if _fallos:
+    print("=" * 70)
+    print("[FALLO CRÍTICO] UNBE no puede validar:")
+    for _f in _fallos: print("  -", _f)
+    print("=" * 70)
+    _hbos_sys.exit(1)
+# --- FIN HBOS RUIDOSO CHECK ---
+
 load_dotenv('.env.local')
 
 def verificar_unbe():
