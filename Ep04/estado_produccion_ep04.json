@@ -55,5 +55,14 @@
     "error_cloud": "quota_exceeded: 25 credits remaining out of 10000",
     "modelo_listo": "generate_ep04_voices.py listo con guion_v2 (Diamantino/Adam única voz) para síntesis inmediata al recargar"
   },
-  "estado_general": "Listo para producir cuando se renueven créditos"
+  "estado_general": "Master v1 AnchorVivo generado",
+  "master_v1": {
+    "archivo": "ep04_master_v1.mp4",
+    "duracion_seg": 251.49599999999998,
+    "duracion_min": 4.19,
+    "tecnica": "AnchorVivo R62 (420 micro-movimientos humanizados) + clips WAN21 reales",
+    "estado": "GENERADO_OP281",
+    "local": true,
+    "errores_planos": []
+  }
 }
