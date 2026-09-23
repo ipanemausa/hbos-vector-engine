@@ -1,0 +1,44 @@
+{
+  "operacion": "HBOS op=278",
+  "timestamp": "20260923_120434",
+  "tarball": "llmapi_op278_20260923_120434.tar.gz",
+  "sha256": "5BFA0543DE586F7FE04F7222D622D7C04AAD48C57913AB108552AE757A0A6164",
+  "archivos_incluidos": {
+    "freeapi.db": {
+      "path": "C:\\Users\\ipane\\AppData\\Roaming\\FreeLLMAPI\\freeapi.db",
+      "size_bytes": 1454080,
+      "sha256": "2CD997E6784BBA4639C50C9D5F91EDC0AA4A9CB79894FF741878915331BCEB58"
+    },
+    "freeapi.db-wal": {
+      "path": "C:\\Users\\ipane\\AppData\\Roaming\\FreeLLMAPI\\freeapi.db-wal",
+      "size_bytes": 304912,
+      "sha256": "D6534C3765130D655F7DA4AD4EAF1FABE9A140954B76454767DD70E5DFD808E3"
+    },
+    "freeapi.db-shm": {
+      "path": "C:\\Users\\ipane\\AppData\\Roaming\\FreeLLMAPI\\freeapi.db-shm",
+      "size_bytes": 32768,
+      "sha256": "89305D7B1FE1D45E462F7808C49C539B2CD4A07A69F934DE9DDC14948D0E5675"
+    },
+    "freeapi.log": {
+      "path": "C:\\Users\\ipane\\AppData\\Roaming\\FreeLLMAPI\\logs\\freeapi.log",
+      "size_bytes": 96961,
+      "sha256": "2299E1E2E5D8D10BB56FCBF9252037B8546C63CDA21B0AD2F3037CCFF30B3B95"
+    },
+    "config.json": {
+      "path": "C:\\Users\\ipane\\AppData\\Roaming\\FreeLLMAPI\\config.json",
+      "size_bytes": 18,
+      "sha256": "B5E9E1E73770C5E05FE2A0B4C9FC759CD2B35D608FF43C884CF50418B1DFE379"
+    },
+    "kiro_config.json": {
+      "path": "c:\\Users\\ipane\\hbos-deploy\\hbos-vector-engine\\kiro_config.json",
+      "size_bytes": 288,
+      "sha256": "37D6EE04528FE2EF1E371AD2788D83B636F6B4523499581810B37D49B2BAD1B3"
+    }
+  },
+  "replicacion": {
+    "local": "c:\\Users\\ipane\\hbos-deploy\\hbos-vector-engine\\llmapi_op278_20260923_120434.tar.gz",
+    "drive": "G:\\My Drive\\HBOS-Diamantino\\_BACKUP_LLMAPI\\llmapi_op278_20260923_120434.tar.gz",
+    "backup": "C:\\Users\\ipane\\backup_hbos\\_BACKUP_LLMAPI\\llmapi_op278_20260923_120434.tar.gz",
+    "coincidencia_triple": true
+  }
+}

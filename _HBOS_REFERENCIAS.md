@@ -93,3 +93,21 @@
 - **Kiro AI:** Integrado con cifrado AES-256-GCM en `freeapi.db`, modelos `kiro/claude-3-7-sonnet` y `kiro/claude-opus` activos en catálogo (314 modelos totales).
 - **Memoria LLMAPI Comprimida:** Tarball `llmapi_op277_20260923_113744.tar.gz` (0.91 MB) replicado en Drive y Backup con verificación R768 SHA-256.
 - **Trazabilidad Inmutable:** Qdrant Cloud actualizado al rango **45 a 277**. Documentos canónicos: `_AUDITORIA_MAIN_op277.md` y `_CIERRE_op277.md`.
+
+---
+
+## Verificación y Activación de Kiro AI + Cierre Redundante (op=278, 2026-09-23)
+
+- **Cuenta Maestra Unificada:** `ipanemamarketingusa@gmail.com` verificada e iniciada en sesión activa en Kiro Web (`https://app.kiro.dev/home`).
+- **Validación Biométrica Soberana:** Aprobada mediante huella física con Windows Hello Synaptics (`hbos_op278_kiro_token`, token de 60 min emitido y registrado en `auth_ui_audit.json`).
+- **Estado de Kiro AI:**
+  - Plataforma `kiro` (ID=20, status='ready', enabled=1) inyectada con cifrado AES-256-GCM en `freeapi.db`.
+  - Modelos `kiro/claude-3-7-sonnet` y `kiro/claude-opus` catalogados en catálogo SQLite (316 modelos en 23 plataformas).
+  - Kiro Web Free Tier detectado con 50 créditos/mes. Se documentó que Cloud API Keys de Kiro requieren plan Pro/Power o uso local mediante Kiro CLI.
+- **Pruebas Funcionales FreeLLMAPI (:3001):**
+  - Ruteo automático probado con éxito `HTTP 200` (`gemini-2.5-flash`, 980ms, salida "OK").
+  - 255 modelos activos servidos vía `/v1/models`.
+- **Empaquetado Memoria LLMAPI + R768:**
+  - Tarball `llmapi_op278_20260923_120434.tar.gz` respaldado y replicado con SHA-256 `5BFA0543DE586F7FE04F7222D622D7C04AAD48C57913AB108552AE757A0A6164` en Local, Drive (`G:\`) y Backup (`C:\`).
+- **Trazabilidad Inmutable:** Qdrant Cloud actualizado al rango **45 a 278**. Documentos canónicos: `_KIRO_ACTIVADO_op278.md` y `_CIERRE_op278.md`.
+
