@@ -8,3 +8,4 @@
 {"timestamp": "Tue Sep 22 14:17:36 2026", "scope": "llmapi_sovereign_session", "message": "HBOS R32/R42: Autorizar inicio soberano de sesi\u00f3n LLMAPI op=263", "result": "VERIFIED", "expires_at": 1790104656.9543319}
 {"timestamp": "Tue Sep 22 14:23:35 2026", "scope": "llmapi_user_verification", "message": "HBOS: Coloca tu dedo en el sensor de huella Synaptics para autorizar LLMAPI", "result": "VERIFIED", "expires_at": 1790105015.4911637}
 {"timestamp": "Tue Sep 22 14:33:46 2026", "scope": "llmapi_full", "message": "HBOS: Autorizar sesion soberana LLMAPI", "result": "VERIFIED", "expires_at": 1790103826.8308504}
+{"timestamp": "Wed Sep 23 11:25:47 2026", "scope": "hbos_op276_cierre_definitivo", "message": "HBOS op=276: Toca el sensor de huella Synaptics para autorizar el cierre soberano", "result": "VERIFIED", "expires_at": 1790180747.4482636}
