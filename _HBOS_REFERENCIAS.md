@@ -111,3 +111,18 @@
   - Tarball `llmapi_op278_20260923_120434.tar.gz` respaldado y replicado con SHA-256 `5BFA0543DE586F7FE04F7222D622D7C04AAD48C57913AB108552AE757A0A6164` en Local, Drive (`G:\`) y Backup (`C:\`).
 - **Trazabilidad Inmutable:** Qdrant Cloud actualizado al rango **45 a 278**. Documentos canónicos: `_KIRO_ACTIVADO_op278.md` y `_CIERRE_op278.md`.
 
+---
+
+## Autostart Biométrico de FreeLLMAPI al Logon e Instalación Kiro CLI (op=279, 2026-09-23)
+
+- **Instalación Oficial Kiro CLI en Windows:**
+  - Paquete oficial MSI `kiro-cli-x86_64-pc-windows-msvc.msi` (2.23.1.0) descargado de `https://prod.download.cli.kiro.dev/stable/` e instalado.
+  - Binario verificado en: `C:\Users\ipane\AppData\Local\Kiro-Cli\kiro-cli.exe`.
+- **Autostart Biométrico Coordinado:**
+  - Script maestro: `hbos_autostart_biometrico.py`.
+  - Tarea programada Windows: `\ipane\HBOS-Autostart-Biometrico` (Trigger: `AtLogOn`, usuario `ipane`, estado `Ready`).
+  - Tarea antigua `\ipane\HBOS-FreeLLMAPI-Daemon` deshabilitada (`Disabled`) para eliminar bloqueos de consola y colisiones.
+  - Flujo unificado: Encendido de PC → Huella Windows Hello → FreeLLMAPI arranca como daemon silencioso (:3001) → Antigravity conecta MCP Robusto v2.0.0 sin fallos.
+- **Trazabilidad Inmutable:** Qdrant Cloud actualizado al rango **45 a 279**. Documentos canónicos: `_AUTOSTART_BIOMETRICO_op279.md` y `_CIERRE_op279.md`.
+
+
