@@ -1,7 +1,12 @@
 {
-  "api_key": "PENDIENTE_TOKEN_USUARIO",
-  "base_url": "https://api.kiro.dev/v1",
-  "default_model": "claude-3-7-sonnet",
-  "status": "CONFIGURADO_ESPERANDO_TOKEN",
-  "instrucciones": "Registrarse en https://kiro.dev, copiar session token / API key y pegarlo en kiro_config.json"
+  "api_key": "aoaAAAAAGq0TCMsbU_xE1ISA9YYGe-3WsqXTRcL3OSfsE1asdAuhMd_rtJAjEyBWQyPZBt78O2bbv1gv0r2JTQlgEBkc0:MGQCMD80t28C2+X036lzxtXIb3oc0kHB+x2asZTfSqmnPO0c1UESliL5kV6kINwe300cEwIwUBkG+OMQx00BSPNHakc9gQujgn4OA78tpaL9rrXMHiNJk35m9eh+e3SElw0oUZe/",
+  "refresh_token": "aorAAAAAGsq5RIHbtm0qUf8sw5fMtkBKLUSu-bWIWGIExzjCTFbN7k2q3Ha_7MUCoUpMo7Rev0z_SRf1y1_hdLRIEBkc0:MGUCMDPdOZD6iCFj6msG0ckQM7R3c26TGd1VZ8Foyapa6vFk7ssVrZkbwX67zCNMk77FsQIxAJ7ABoHBNzQISlQSUK+reqMBdA4Utn0yEMO5iqxvnyknNQhuoIIrccHNkq8HVTCbig",
+  "expires_at": "2026-09-23T22:01:07.2347914Z",
+  "profile_arn": "arn:aws:codewhisperer:us-east-1:699475941385:profile/EHGA3GRVQMUK",
+  "provider": "google",
+  "auto_refresh": true,
+  "status": "INYECTADO_OP280",
+  "scopes": [],
+  "updated_at": "2026-09-23T21:20:07.473811+00:00",
+  "instrucciones_renovacion": "Ejecutar inject_kiro_token.py para re-inyectar. Si token expirado, primero ejecutar kiro-cli.exe login."
 }

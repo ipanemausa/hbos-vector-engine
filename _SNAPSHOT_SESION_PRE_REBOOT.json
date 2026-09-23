@@ -1,0 +1,32 @@
+{
+  "operacion": "HBOS op=279",
+  "fase": "3.5 · VERIFICAR RETOMA DE SESIÓN",
+  "timestamp_pre_reboot": "2026-09-23T16:51:00-04:00",
+  "antigravity": {
+    "workspace_path": "c:\\Users\\ipane\\hbos-deploy\\hbos-vector-engine",
+    "corpus_name": "ipanemausa/hbos-vector-engine",
+    "conversation_id": "66d774e6-cf16-4892-86a2-eb2d2291623c",
+    "git_branch": "main",
+    "git_head_commit": "830bde40d6b4d359ea98b97a6a78a316ac067545",
+    "settings_restore": {
+      "window.restoreWindows": "all",
+      "files.hotExit": "onExitAndWindowClose"
+    }
+  },
+  "archivos_abiertos_registrados": [
+    "c:\\Users\\ipane\\hbos-deploy\\hbos-vector-engine\\_AUTOSTART_BIOMETRICO_op279.md",
+    "c:\\Users\\ipane\\hbos-deploy\\hbos-vector-engine\\_CIERRE_op279.md",
+    "c:\\Users\\ipane\\hbos-deploy\\hbos-vector-engine\\hbos_autostart_biometrico.py",
+    "c:\\Users\\ipane\\hbos-deploy\\hbos-vector-engine\\_HBOS_REFERENCIAS.md",
+    "c:\\Users\\ipane\\hbos-deploy\\hbos-vector-engine\\diamantino\\README.md",
+    "c:\\Users\\ipane\\hbos-deploy\\hbos-vector-engine\\diamantino\\ep01\\REFERENCIA_DRIVE.md",
+    "c:\\Users\\ipane\\hbos-deploy\\hbos-vector-engine\\generate_fase1_v2.py",
+    "c:\\Users\\ipane\\hbos-deploy\\hbos-vector-engine\\run_fase1_desplazamiento.py",
+    "c:\\Users\\ipane\\hbos-deploy\\hbos-vector-engine\\execute_task4_p15_l08.py"
+  ],
+  "servicios": {
+    "freellmapi_daemon": "http://127.0.0.1:3001",
+    "tarea_autostart": "\\ipane\\HBOS-Autostart-Biometrico",
+    "qdrant_estado": "45 a 279"
+  }
+}
