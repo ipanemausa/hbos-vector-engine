@@ -46,3 +46,7 @@ Thumbs.db
 *.bak_*
 
 *.bak
+
+index.js.bak
+*.tar.gz
+*.gz
