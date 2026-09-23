@@ -1,0 +1,44 @@
+[
+  {
+    "capa": "SQLite + WAL (freeapi.db)",
+    "garantiza": "Estado relacional, catálogo de modelos y API keys cifradas",
+    "prueba": "Query PRAGMA journal_mode y SELECT models",
+    "evidencia": "journal_mode=WAL | Modelos activos=314",
+    "resultado": "PERSISTENTE_ACID"
+  },
+  {
+    "capa": "Qdrant Cloud (Vector Store)",
+    "garantiza": "Memoria semántica, canon (85 reglas), auditoría y rango de operaciones",
+    "prueba": "get_collections + retrieve hbos_estado(1)",
+    "evidencia": "Colecciones=23/17 | Latencia=1.565s | Rango=45 a 274",
+    "resultado": "PERSISTENTE_INMUTABLE"
+  },
+  {
+    "capa": "Sistema Híbrido (R768 + Drive + Backup)",
+    "garantiza": "Recuperación ante desastres físicos y consistencia documental total",
+    "prueba": "Comparación SHA-256 triple de _HBOS_REFERENCIAS.md",
+    "evidencia": "Local=83745150198B... | Drive=83745150198B... | Backup=83745150198B...",
+    "resultado": "TRIPLE_REDUNDANCIA_OK"
+  },
+  {
+    "capa": "Tarea Programada Windows (Daemon Liveness)",
+    "garantiza": "Persistencia de ejecución del proceso :3001 (auto-reinicio en fallo)",
+    "prueba": "Get-ScheduledTask State + Ping HTTP :3001",
+    "evidencia": "TaskState=Ready | Puerto :3001 HTTP 200=True",
+    "resultado": "SUPERVISION_ACTIVA"
+  },
+  {
+    "capa": "Ollama Local (:11434)",
+    "garantiza": "Inferencia de emergencia offline sin dependencia de internet",
+    "prueba": "GET /api/tags",
+    "evidencia": "HTTP 200 | Modelos locales descargados=0",
+    "resultado": "DAEMON_LISTENING"
+  },
+  {
+    "capa": "Gateway :3002 & DeepSeek Harness",
+    "garantiza": "Enrutamiento inteligente multicriterio (295 reglas soberanas)",
+    "prueba": "Integridad archivo routing_rules_295.json",
+    "evidencia": "Existe=True | Tamaño=38567 bytes",
+    "resultado": "REGLAS_CANONICAS_OK"
+  }
+]

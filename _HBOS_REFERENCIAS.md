@@ -47,3 +47,20 @@
 - **Inventario:** Ep01-Ep04, Demis Hassabis v2, 4 formatos responsive (16:9, 9:16, 1:1, 4:5), 45 audios, 39 guiones/prompts, 95 imágenes.
 - **Monetización:** Marketplace Soberano (:3002/marketplace) en 4 niveles ($0, $27, $97/m, $1,500). Plan 30-60-90 activo.
 - **Trazabilidad:** Qdrant Cloud actualizado al rango 45 a 268. Documento canónico: `_AUDITORIA_RRSS_op268.md`.
+
+---
+
+## MCP Robusto y Garantía de Persistencia Multicapa (op=275, 2026-09-23)
+
+- **MCP Modificado:** `C:\Users\ipane\.gemini\config\hbos-freellmapi\index.js` actualizado a v2.0.0 (backup en `index.js.bak`).
+- **Alternativa Elegida:** Arquitectura Híbrida A + C + D:
+  - Reintentos progresivos (`fetchWithRetry`, 3 intentos) para absorber el arranque en frío de `:3001`.
+  - Fallback directo a SQLite `freeapi.db` vía `node:sqlite` (Node.js v24) en modo solo lectura para `list_models` si `:3001` no ha abierto el puerto (314 modelos siempre disponibles en 4ms).
+  - Fallback a Ollama local (`127.0.0.1:11434`) para `chat` en caso de indisponibilidad temporal.
+  - Respuestas degradadas limpias sin arrojar excepciones no controladas ni cerrar el transporte `stdio` en Antigravity.
+- **Garantía de Persistencia Multicapa:**
+  - *Datos e Historial:* Qdrant Cloud (23 colecciones activas) + Sistema Híbrido (Triple Redundancia SHA-256 en Local, Drive y Backup).
+  - *Configuración y Catálogo:* SQLite en modo WAL (`freeapi.db`), con 314 modelos y 10 proveedores cifrados con AES-256-GCM.
+  - *Ejecución / Liveness:* Tarea programada Windows `HBOS-FreeLLMAPI-Daemon` (RunLevel Highest, auto-reinicio 3x/min).
+- **Trazabilidad:** Qdrant Cloud actualizado al rango 45 a 275. Documentos canónicos: `_MCP_ROBUSTO_op275.md` y `_PERSISTENCIA_GARANTIZADA_op275.md`.
+
