@@ -1,0 +1,7 @@
+{
+  "api_key": "PENDIENTE_TOKEN_USUARIO",
+  "base_url": "https://api.kiro.dev/v1",
+  "default_model": "claude-3-7-sonnet",
+  "status": "CONFIGURADO_ESPERANDO_TOKEN",
+  "instrucciones": "Registrarse en https://kiro.dev, copiar session token / API key y pegarlo en kiro_config.json"
+}
