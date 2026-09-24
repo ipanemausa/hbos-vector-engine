@@ -1,29 +1,23 @@
 # HBOS · ANCLA ACTUAL · 92426Tarde
-op=305
-commit_previo=e1ab470
+op=307
+commit=7539fd9
 fecha=2026-09-24
-hora=15:28
+hora=15:43
 estado=operativo
 fuente_verdad=SQLite freeapi.db + Git
 
-## REGLA DE FACTORIZACION (universal, sin excepcion)
-factorizacion=PROTOCOLO DE ENTRADA OBLIGATORIO
-  forma=PROMPT -> FASE -> CAPA -> CONDICIONAL -> COMPLETO
-  mecanismo=Python en archivo temporal | sin comillas anidadas | sin here-strings rotos
-  excepcion=ninguna
-  razon=PowerShell no factoriza | FreeLLMAPI factoriza pero pierdes control
-  aplica_a=TODO input, sin importar longitud ni origen
+## HOOK DE ENTRADA
+hook=hbos_hook_entrada.ps1
+funcion=detecta input crudo · agente emergente · fuerza emergente · regla superior
+estrategias=BLOQUEA | FACTORIZA | HIBRIDO | FORZAR
+comandos=hbos-factorize, hbos-force
 
-## INTEGRACION GOOGLE AI
-integrado=Google AI aprendizaje acompanado (patron emulado, no dependencia)
-perfil_aprendizaje=creado
-nodo_qdrant=documentado
-documento=hbos_conocimiento/google_ai_aprendizaje_24sep2026.md
+## REGLAS
+r77=matematica como logica suprema
+r78=factorizacion universal del input
+protocolo=PROMPT -> FASE -> CAPA -> DAG -> COMPLETO
 
 ## SISTEMA
-portable=si (hbos-init.ps1 detecta raiz desde cualquier punto)
-backup=local (C:\Users\ipane\hbos-backups) + drive (G:\My Drive\HBOS) + git
+portable=si
+backup=local + drive + git
 redundancia=triple
-
-## PENDIENTES
-pendiente=vectorizacion real en Qdrant Cloud + Ep05
