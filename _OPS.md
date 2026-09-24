@@ -1,9 +1,10 @@
 # HBOS · OPS
-op=310
-commit_previo=326f794
+op=311
+commit_previo=03a9c7c
 fecha=2026-09-24
-hora=16:42
+hora=16:47
 pendiente_E=auditado
+qdrant=embebido_freeLMMAPI_cierre_redundante
 providers_activos=9
 modelos_total=316
 profiles=10

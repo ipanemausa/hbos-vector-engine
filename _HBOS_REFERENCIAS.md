@@ -137,3 +137,16 @@
 - puerto_3005=cerrado
 - last_checked_at=None
 - decision=pendiente A/B (limpiar fila o arrancar bridge)
+
+## Qdrant (cierre redundante 2026-09-24 · op=311)
+- modo=embebido en FreeLLMAPI
+- puerto_6333=cerrado (esperado, NO es KO)
+- acceso=via FreeLLMAPI
+- motivo=KO falso en bloque 2026-09-24 16:39
+- estado=operativo
+
+## Kiro (2026-09-24 · op=311)
+- id=20, platform=kiro, label=Kiro AI (Claude 3.7 / Opus)
+- bridge=http://127.0.0.1:3005/v1
+- enabled=0, puerto_3005=cerrado
+- decision=pendiente A/B
