@@ -1,25 +1,19 @@
 # HBOS · ANCLA ACTUAL · 92426Tarde
-op=307
-commit_previo=76a21e9
+op=308
+commit_previo=a67eb9d
 fecha=2026-09-24
-hora=15:46
-estado=operativo · hook validado · DAG cerrado
-fuente_verdad=SQLite freeapi.db + Git
+hora=15:48
+estado=operativo · diagnostico de pendientes
 
-## HOOK DE ENTRADA
-hook=hbos_hook_entrada.ps1
-funcion=detecta input crudo · agente emergente · fuerza emergente · regla superior
-estrategias=BLOQUEA | FACTORIZA | HIBRIDO | FORZAR
-comandos=hbos-factorize, hbos-force
-estado_validado=DAG fase1+fase2+fase3 OK
-
-## REGLAS
-r77=matematica como logica suprema
-r78=factorizacion universal del input
-protocolo=PROMPT -> FASE -> CAPA -> DAG -> COMPLETO
-emergencia=si output muestra '>>' -> cerrar ventana, abrir nueva
+## PENDIENTES (DAG)
+orden=D -> A -> B -> C
+D=validar perfil aprendizaje (base)
+A=vectorizacion (desbloquea lectura)
+B=Ep05 (usa maestros vectorizados)
+C=HuggingFace+Kiro (opcional, no bloquea)
 
 ## SISTEMA
 portable=si
+hook=activo
 backup=local + drive + git
 redundancia=triple
