@@ -1,37 +1,44 @@
-# HBOS · ANCLA FINAL DE JORNADA · 92426Tarde
-op=309
-commit_previo=de22e7f
+# HBOS · ANCLA ACTUAL · op=310
+op=310
+commit_previo=326f794
 fecha=2026-09-24
-hora=15:52
-estado=JORNADA CERRADA · sistema coherente · ciclo abierto para manana
+hora=16:42
+estado=operativo · E auditado
+
+## PENDIENTE E · PREMIUM SIN PAGAR PREMIUM
+estado=auditado
+top_tier_accesibles=3
+providers_activos=9
+providers_total=11
+modelos_total=316
+profiles=10
+fallback_total=316
+ruta=free tiers top-tier + fallback + perfiles
+recomendacion=GoogleAIStudio + Groq + Cerebras (2-3 primero)
+regla=anadir 2-3 · verificar · ampliar si funciona
+no_hacer=anadir todos de golpe · romper cadenas actuales
+
+## KIRO (descubrimiento 2026-09-24)
+id=20
+platform=kiro
+label=Kiro AI (Claude 3.7 / Opus)
+bridge=http://127.0.0.1:3005/v1
+enabled=0
+status_db=healthy (cosmetico)
+puerto_3005=cerrado
+decision=pendiente A/B
+
+## DAG MANANA
+orden=D -> A -> B -> C -> E -> cierre canonico
+D=validar perfil aprendizaje
+A=vectorizacion real
+B=Ep05
+C=HuggingFace + Kiro
+E=premium sin pagar premium
 
 ## SISTEMA
-portable=si (hbos-init.ps1 corre desde cualquier punto)
-hook_entrada=activo (detecta input crudo · agente emergente · fuerza emergente · regla superior)
-factorizacion=universal (PROMPT -> FASE -> CAPA -> DAG -> COMPLETO)
-fuente_verdad=SQLite freeapi.db + Git
-backup=local (C:\Users\ipane\hbos-backups) + Drive (G:\My Drive\HBOS) + Git
+portable=si
+hook=activo
+factorizacion=universal (APP+R768 · FASE->CAPA->DAG->COMPLETO)
+backup=local + drive + git
 redundancia=triple
-
-## ESTADO HOY
-op_inicio=302
-op_cierre=309
-commits_hoy=b4e7b25 -> de22e7f -> (nuevo)
-hitos=hooks de entrada, DAG de cierre, diagnostico A/B/C/D, sistema portable
-
-## PENDIENTES (DAG · manana)
-orden=D -> A -> B -> C -> cierre canonico
-D=validar perfil aprendizaje (base, creado en SQLite)
-A=vectorizacion real (Qdrant Cloud + hbos_conocimiento)
-B=Ep05 (pipeline AnchorVivo)
-C=HuggingFace + Kiro (opcional, no bloquea)
-nota=cada paso se ejecuta UNA VEZ. No hay loop. DAG lineal y finito.
-
-## REGLAS
-r77=matematica como logica suprema
-r78=factorizacion universal del input
-emergencia=si output muestra '>>' -> cerrar ventana, abrir nueva
-
-## CONTINUIDAD
-manana_primera_accion=D (validar perfil aprendizaje)
-comando_arranque=. "C:\Users\ipane\hbos-deploy\hbos-vector-engine\hbos-init.ps1"

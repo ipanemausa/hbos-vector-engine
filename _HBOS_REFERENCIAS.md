@@ -126,3 +126,14 @@
 - **Trazabilidad Inmutable:** Qdrant Cloud actualizado al rango **45 a 279**. Documentos canónicos: `_AUTOSTART_BIOMETRICO_op279.md` y `_CIERRE_op279.md`.
 
 
+
+## Kiro AI (descubrimiento 2026-09-24)
+- id_db=20
+- platform=kiro
+- label=Kiro AI (Claude 3.7 / Opus)
+- bridge_url=http://127.0.0.1:3005/v1
+- enabled=0
+- status_db=healthy (cosmetico, nunca chequeado)
+- puerto_3005=cerrado
+- last_checked_at=None
+- decision=pendiente A/B (limpiar fila o arrancar bridge)
