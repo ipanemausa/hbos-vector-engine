@@ -1,8 +1,6 @@
 # HBOS · OPS
-op=304
-commit_previo=897670a
+op=305
+commit_previo=e1ab470
 fecha=2026-09-24
 fuente=git+sqlite
-perfil_aprendizaje=creado
-vectorizacion_doc=creada
-
+factorizacion=universal-obligatoria
