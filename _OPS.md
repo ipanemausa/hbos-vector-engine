@@ -1,8 +1,8 @@
 # HBOS · OPS
-op=311
-commit_previo=03a9c7c
+op=312
+commit_previo=5d12975
 fecha=2026-09-24
-hora=16:47
+hora=16:50
 pendiente_E=auditado
 qdrant=embebido_freeLMMAPI_cierre_redundante
 providers_activos=9

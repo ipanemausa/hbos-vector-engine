@@ -1,8 +1,8 @@
-# HBOS · ANCLA ACTUAL · op=311
-op=311
-commit_previo=03a9c7c
+# HBOS · ANCLA ACTUAL · op=312
+op=312
+commit_previo=5d12975
 fecha=2026-09-24
-hora=16:47
+hora=16:50
 estado=operativo · E auditado · Qdrant cierre redundante
 
 ## QDRANT (cierre redundante 2026-09-24)
