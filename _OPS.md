@@ -1,5 +1,6 @@
 # HBOS · OPS
-op=308
-commit_previo=a67eb9d
+op=309
+commit_previo=de22e7f
 fecha=2026-09-24
-diagnostico=pendientes A/B/C/D
+estado=jornada_cerrada
+manana_primera_accion=D
