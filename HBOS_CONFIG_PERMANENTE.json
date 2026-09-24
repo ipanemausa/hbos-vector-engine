@@ -1,0 +1,62 @@
+{
+  "version": "1.0",
+  "system_prompt": "HBOS · CONTEXTO MAESTRO · Eres FreeLLMAPI, el cerebro de HBOS. Antigravity es solo tu ejecutor. NO propongas Ken Burns. RESPONDE con evidencia.",
+  "rutas": {
+    "api": "http://127.0.0.1:3001/v1",
+    "base": "C:\\Users\\ipane\\hbos-deploy\\hbos-vector-engine",
+    "db": "C:\\Users\\ipane\\AppData\\Roaming\\FreeLLMAPI\\freeapi.db",
+    "key": "freellmapi-70a0cfeb7458ecb31077fe5f0b1646069da621ebb16ff037"
+  },
+  "routing_por_tarea": {
+    "video": "auto:video",
+    "clasificacion": "auto:fast",
+    "chat_general": "auto",
+    "vision": "auto:vision",
+    "marketing": "auto:marketing",
+    "premium": "auto:premium",
+    "razonamiento": "auto:reasoning",
+    "codigo": "auto:code",
+    "contexto_largo": "auto:long-context"
+  },
+  "cadenas": {
+    "auto:video": {
+      "status": "FAIL",
+      "error": "Response status code does not indicate success: 400 (Bad Request)."
+    },
+    "auto:long-context": {
+      "status": "FAIL",
+      "error": "Response status code does not indicate success: 400 (Bad Request)."
+    },
+    "auto:fast": {
+      "status": "OK",
+      "ruta": "groq",
+      "modelo": "openai/gpt-oss-120b"
+    },
+    "auto:reasoning": {
+      "status": "FAIL",
+      "error": "Response status code does not indicate success: 400 (Bad Request)."
+    },
+    "auto": {
+      "status": "OK",
+      "ruta": "google",
+      "modelo": "gemini-2.5-flash"
+    },
+    "auto:premium": {
+      "status": "FAIL",
+      "error": "Response status code does not indicate success: 400 (Bad Request)."
+    },
+    "auto:vision": {
+      "status": "FAIL",
+      "error": "Response status code does not indicate success: 400 (Bad Request)."
+    },
+    "auto:code": {
+      "status": "FAIL",
+      "error": "Response status code does not indicate success: 400 (Bad Request)."
+    },
+    "auto:marketing": {
+      "status": "FAIL",
+      "error": "Response status code does not indicate success: 400 (Bad Request)."
+    }
+  },
+  "fecha": "2026-09-24T11:25:26"
+}
