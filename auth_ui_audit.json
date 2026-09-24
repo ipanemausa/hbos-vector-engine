@@ -12,3 +12,4 @@
 {"timestamp": "Wed Sep 23 11:49:01 2026", "scope": "hbos_op278_kiro_token", "message": "HBOS op=278: Inyectar token de Kiro AI (Claude 3.7 Sonnet + Opus)", "result": "VERIFIED", "expires_at": 1790182141.112927}
 {"timestamp": "Wed Sep 23 17:05:09 2026", "scope": "hbos_op280_kiro_token", "message": "HBOS op=280: Inyectar token real de Kiro AI (Claude 3.7 / Opus)", "result": "VERIFIED", "expires_at": 1790201109.9316456}
 {"timestamp": "Thu Sep 24 10:44:12 2026", "scope": "hbos_freellmapi_autostart", "message": "HBOS: Autorizar inicio de FreeLLMAPI al iniciar sesi\u00f3n (Windows Hello)", "result": "VERIFIED", "expires_at": 1790264652.8163538}
+{"timestamp": "Thu Sep 24 14:45:57 2026", "scope": "hbos_freellmapi_autostart", "message": "HBOS: Autorizar inicio de FreeLLMAPI al iniciar sesi\u00f3n (Windows Hello)", "result": "VERIFIED", "expires_at": 1790279157.641706}
