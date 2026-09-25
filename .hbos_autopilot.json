@@ -28,15 +28,36 @@
   "freellmapi": {
     "base_url": "http://127.0.0.1:3001",
     "port": 3001,
-    "expected_min_models": 200,
-    "api_key": "freellmapi-70a0cfeb7458ecb31077fe5f0b1646069da621ebb16ff037"
+    "expected_min_models": 316,
+    "api_key": "freellmapi-LOAD_FROM_ENV",
+    "expected_providers": 11
   },
   "fallbacks_canonicos": {
-    "generar_voces": ["cosyvoice2", "elevenlabs", "edge_tts_alvaro"],
-    "generar_video": ["dashscope_wan21", "fal_ai", "dashscope_wan21_queue"],
-    "generar_imagen": ["nano_banana", "huggingface_sdxl", "flux1_dev"],
-    "generar_texto": ["gemini_1_5_flash", "groq_llama_3_3_70b", "deepseek_v3"],
-    "verificar_datos": ["deepseek_r1", "gemini_1_5_pro", "qwen_2_5_coder"]
+    "generar_voces": [
+      "cosyvoice2",
+      "elevenlabs",
+      "edge_tts_alvaro"
+    ],
+    "generar_video": [
+      "dashscope_wan21",
+      "fal_ai",
+      "dashscope_wan21_queue"
+    ],
+    "generar_imagen": [
+      "nano_banana",
+      "huggingface_sdxl",
+      "flux1_dev"
+    ],
+    "generar_texto": [
+      "gemini_1_5_flash",
+      "groq_llama_3_3_70b",
+      "deepseek_v3"
+    ],
+    "verificar_datos": [
+      "deepseek_r1",
+      "gemini_1_5_pro",
+      "qwen_2_5_coder"
+    ]
   },
   "schedule": {
     "watchdog_interval_minutes": 30,

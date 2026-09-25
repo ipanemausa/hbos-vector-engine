@@ -51,3 +51,9 @@ Thumbs.db
 index.js.bak
 *.tar.gz
 *.gz
+
+# HBOS secretos
+_BACKUPS/
+config/
+kiro-credentials.json
+protocols/

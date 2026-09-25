@@ -16,7 +16,7 @@
   "upstreams": {
     "freellmapi": {
       "base_url": "http://127.0.0.1:3001/v1",
-      "api_key": "freellmapi-70a0cfeb7458ecb31077fe5f0b1646069da621ebb16ff037",
+      "api_key": "freellmapi-LOAD_FROM_ENV",
       "enabled": true
     },
     "gemini_cloud_node": {
