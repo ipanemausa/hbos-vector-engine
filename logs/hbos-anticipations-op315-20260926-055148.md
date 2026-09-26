@@ -36,3 +36,7 @@
 - **5.2** · `disk full` → `verify space before compress`
 - **5.3** · `uncommitted changes left` → `git add -A · commit · push`
 - **5.3** · `push conflict` → `pull --rebase · re-push`
+- **5.4** · `convention drift` → `use convention from L1.7`
+- **5.5** · `ledger corrupted` → `verify chain integrity`
+- **5.6** · `notebooklm upload manual` → `user uploads MD · registers note id`
+- **5.7** · `session close write fails` → `retry once · log`
