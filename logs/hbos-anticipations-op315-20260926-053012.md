@@ -1,0 +1,49 @@
+# Anticipations · op=315 · 20260926-053012
+
+- **0.1** · error: `git not initialized or repo moved` · mitigation: `verify .git exists · halt if missing`
+- **0.2** · error: `qdrant unreachable` · mitigation: `soft-fail · continue · arbitrage not affected`
+- **0.3** · error: `canon drift` · mitigation: `compare against close report · log`
+- **0.4** · error: `header convention not found` · mitigation: `do NOT invent · halt`
+- **0.5** · error: `freellmapi key missing/empty` · mitigation: `soft-fail · arbitrage via other providers · continue`
+- **0.5** · error: `freellmapi header absent in call` · mitigation: `always send Authorization: Bearer`
+- **0.5b** · error: `category missing in model payload` · mitigation: `fallback to 'unknown'`
+- **0.6** · error: `kiro key expires daily` · mitigation: `auto-refresh task must run · if stale → SOFT-FAIL → arbitrage`
+- **0.6** · error: `kiro header absent` · mitigation: `always send Authorization: Bearer <local-key>`
+- **0.6b** · error: `invariant drift` · mitigation: `log drift · SOFT-FAIL · continue · do NOT halt`
+- **0.5** · error: `freellmapi call without Authorization header` · mitigation: `always load config\freellmapi-key.txt · send Bearer`
+- **0.5** · error: `kiro call without Authorization header` · mitigation: `always send Bearer hbos-kiro-local-key-2026`
+- **0.5** · error: `invariant 326 without source` · mitigation: `read expected from config\op315-invariant.txt · do not hardcode`
+- **0.5** · error: `kiro key expires daily` · mitigation: `auto-refresh task must run · verify timestamp`
+- **0.5.1** · error: `ledger file missing` · mitigation: `recreate header`
+- **0.5.2** · error: `notebooklm no public write API` · mitigation: `export MD · manual/semi-auto upload`
+- **0.5.3** · error: `genesis collision` · mitigation: `extremely unlikely · sha256[:16]`
+- **0.5.4** · error: `duplicates/gaps in qdrant` · mitigation: `list them · fix in phase 4`
+- **0.5.4** · error: `model count mismatch 312 vs 326` · mitigation: `read from config/op315-invariant.txt · do not hardcode`
+- **0.5.5** · error: `session interrupted mid-phase` · mitigation: `resume from last checkpoint in hbos_sessions`
+- **1.1** · error: `chains endpoint missing` · mitigation: `read from UI config file instead · mirror only`
+- **1.1** · error: `no crear cadenas · ya existen 9` · mitigation: `read-only · mirror to qdrant`
+- **1.2** · error: `strategy endpoint missing` · mitigation: `read from UI config · mirror only`
+- **1.3** · error: `roadmap panel location unknown` · mitigation: `read from UI · document location`
+- **1.4** · error: `mirror write fails` · mitigation: `log · SOFT-FAIL · continue (R42: qdrant reinforces, does not source)`
+- **1.5** · error: `telemetry duplicates llmapi metrics` · mitigation: `only add what llmapi does NOT expose`
+- **2.1** · error: `source malformed` · mitigation: `validate before ingest`
+- **2.2** · error: `source malformed` · mitigation: `validate before ingest`
+- **2.3** · error: `source malformed` · mitigation: `validate before ingest`
+- **2.4** · error: `source malformed` · mitigation: `validate before ingest`
+- **2.5** · error: `source malformed` · mitigation: `validate before ingest`
+- **3.1** · error: `secrets leaked via muse` · mitigation: `never pass secrets through muse · OK/KO only`
+- **3.2** · error: `secrets leaked via muse` · mitigation: `never pass secrets through muse · OK/KO only`
+- **3.3** · error: `secrets leaked via muse` · mitigation: `never pass secrets through muse · OK/KO only`
+- **3.4** · error: `secrets leaked via muse` · mitigation: `never pass secrets through muse · OK/KO only`
+- **4.1** · error: `rule collision with existing` · mitigation: `check qdrant first (R32)`
+- **4.2** · error: `rule collision with existing` · mitigation: `check qdrant first (R32)`
+- **4.3** · error: `rule collision with existing` · mitigation: `check qdrant first (R32)`
+- **4.4** · error: `rule collision with existing` · mitigation: `check qdrant first (R32)`
+- **4.5** · error: `rule collision with existing` · mitigation: `check qdrant first (R32)`
+- **4.6** · error: `rule collision with existing` · mitigation: `check qdrant first (R32)`
+- **5.1** · error: `state inconsistent at close` · mitigation: `re-verify phase 0 gates`
+- **5.2** · error: `disk full` · mitigation: `verify space before compress`
+- **5.3** · error: `merge conflict on push` · mitigation: `pull --rebase · re-push`
+- **5.4** · error: `header convention drift` · mitigation: `read convention from qdrant (L0.4)`
+- **5.5** · error: `ledger corrupted` · mitigation: `verify chain integrity before export`
+- **5.7** · error: `session close write fails` · mitigation: `retry once · log · continue`

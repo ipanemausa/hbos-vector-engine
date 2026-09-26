@@ -1,0 +1,38 @@
+# Anticipations · op=315 · 20260926-055148
+
+- **0.1** · `git missing` → `verify .git`
+- **0.2** · `qdrant down → everything fails` → `halt · restore qdrant first`
+- **0.3** · `canon drift` → `compare close report · log`
+- **0.4** · `convention missing` → `do NOT invent · halt`
+- **0.5** · `no auth header` → `always send Bearer from config`
+- **0.6** · `kiro key expires daily` → `auto-refresh task must run`
+- **0.6** · `no auth header` → `always send Bearer local key`
+- **0.7** · `invariant drift` → `log · SOFT-FAIL · continue`
+- **0.8** · `gemini not reachable` → `soft-fail · use agent panel`
+- **1.1** · `qdrant unreachable` → `halt if critical`
+- **1.2** · `protocol set incomplete` → `list gaps`
+- **1.3** · `anticipations missing` → `create on first write`
+- **1.4** · `chains mirror empty` → `mirror in phase 2`
+- **1.5** · `approvals missing` → `create on first write`
+- **1.6** · `context drift` → `reconcile in phase 2`
+- **1.7** · `convention missing` → `halt · do not invent`
+- **1.8** · `gaps unclear` → `list explicit additions`
+- **2.1** · `duplicate rules` → `check existence before write (R32)`
+- **2.2** · `duplicate protocols` → `check existence before write`
+- **2.3** · `missing today errors` → `add no-auth freellmapi · no-auth kiro · invariant source`
+- **2.4** · `mirror duplicates source` → `mirror only · never source (R42)`
+- **2.5** · `ledger write fails` → `retry once`
+- **2.6** · `unexpected additions` → `log · document · apply auto-edit`
+- **3.1** · `gemini unreachable` → `use agent panel · soft-fail`
+- **3.2** · `summary too long` → `compress input/output`
+- **3.3** · `map incomplete` → `regenerate from ledger`
+- **3.4** · `quiz trivial` → `self-test for system`
+- **3.5** · `audio slow` → `optional · skip if time-critical`
+- **3.6** · `persist fails` → `retry · log · continue`
+- **4.1** · `matrix incomplete` → `halt · do not close`
+- **4.2** · `gaps found` → `halt · list · fix`
+- **4.3** · `chain broken` → `halt · investigate`
+- **5.1** · `inconsistent state` → `re-run phase 0 gates`
+- **5.2** · `disk full` → `verify space before compress`
+- **5.3** · `uncommitted changes left` → `git add -A · commit · push`
+- **5.3** · `push conflict` → `pull --rebase · re-push`

@@ -16,3 +16,4 @@
 {"timestamp": "Fri Sep 25 20:59:46 2026", "scope": "rotate_hbos_umbrella", "message": "HBOS: Autoriza con huella Windows Hello para ROTAR la API sombrilla", "result": "VERIFIED", "expires_at": 1790385286.2305045}
 {"timestamp": "Fri Sep 25 21:02:19 2026", "scope": "rotate_hbos_umbrella", "message": "HBOS: Autoriza con huella Windows Hello para ROTAR la API sombrilla", "result": "VERIFIED", "expires_at": 1790385439.353742}
 {"timestamp": "Fri Sep 25 21:02:25 2026", "scope": "reopen_protected_keys", "message": "HBOS: Autoriza con huella Windows Hello para REABRIR las keys protegidas con la nueva sombrilla", "result": "VERIFIED", "expires_at": 1790385445.4426599}
+{"timestamp": "Sat Sep 26 04:15:40 2026", "scope": "hbos_freellmapi_autostart", "message": "HBOS: Autorizar inicio de FreeLLMAPI al iniciar sesi\u00f3n (Windows Hello)", "result": "VERIFIED", "expires_at": 1790414140.7020643}
