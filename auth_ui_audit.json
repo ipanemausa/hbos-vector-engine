@@ -13,3 +13,6 @@
 {"timestamp": "Wed Sep 23 17:05:09 2026", "scope": "hbos_op280_kiro_token", "message": "HBOS op=280: Inyectar token real de Kiro AI (Claude 3.7 / Opus)", "result": "VERIFIED", "expires_at": 1790201109.9316456}
 {"timestamp": "Thu Sep 24 10:44:12 2026", "scope": "hbos_freellmapi_autostart", "message": "HBOS: Autorizar inicio de FreeLLMAPI al iniciar sesi\u00f3n (Windows Hello)", "result": "VERIFIED", "expires_at": 1790264652.8163538}
 {"timestamp": "Thu Sep 24 14:45:57 2026", "scope": "hbos_freellmapi_autostart", "message": "HBOS: Autorizar inicio de FreeLLMAPI al iniciar sesi\u00f3n (Windows Hello)", "result": "VERIFIED", "expires_at": 1790279157.641706}
+{"timestamp": "Fri Sep 25 20:59:46 2026", "scope": "rotate_hbos_umbrella", "message": "HBOS: Autoriza con huella Windows Hello para ROTAR la API sombrilla", "result": "VERIFIED", "expires_at": 1790385286.2305045}
+{"timestamp": "Fri Sep 25 21:02:19 2026", "scope": "rotate_hbos_umbrella", "message": "HBOS: Autoriza con huella Windows Hello para ROTAR la API sombrilla", "result": "VERIFIED", "expires_at": 1790385439.353742}
+{"timestamp": "Fri Sep 25 21:02:25 2026", "scope": "reopen_protected_keys", "message": "HBOS: Autoriza con huella Windows Hello para REABRIR las keys protegidas con la nueva sombrilla", "result": "VERIFIED", "expires_at": 1790385445.4426599}
