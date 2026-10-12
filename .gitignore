@@ -21,6 +21,7 @@ ep02_preview.gif
 *.log
 *.cache
 *.zip
+hbos_state.json
 scratch/
 temp/
 tmp/
