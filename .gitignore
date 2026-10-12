@@ -16,15 +16,20 @@ ep02_preview.gif
 !docs/**/*.png
 !docs/**/*.jpg
 
-# Temporales de producción
+# Temporales y salidas de producción
 *.tmp
 *.log
 *.cache
+*.zip
 scratch/
 temp/
 tmp/
 gev-app/
 Ep04/05_Master/temp*/
+hbos_output/
+hbos_poses_output/
+hbos_voice_output/
+hbos_logs*
 
 # Entornos y secretos
 .env
