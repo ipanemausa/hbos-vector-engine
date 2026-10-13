@@ -1,0 +1,29 @@
+{
+  "timestamp": 1791921251.3359616,
+  "all_ok": true,
+  "gates": {
+    "G0": {
+      "status": "APROBADO",
+      "detalle": "Estructura de manifiesto y schema validados conforme al protocolo"
+    },
+    "G1": {
+      "status": "APROBADO",
+      "detalle": "max_render_time_s=8s (≤8s) + license_check='Commercial'"
+    },
+    "G2": {
+      "status": "APROBADO",
+      "score": 0.962,
+      "detalle": "Coherencia R768 = 0.962 > 0.95 vs canon Nano Banana"
+    },
+    "G3": {
+      "status": "APROBADO",
+      "detalle": "Asset tangible generado y verificado (C:\\Users\\ipane\\hbos-deploy\\hbos-vector-engine\\hbos_vibe_final.zip)"
+    }
+  },
+  "meta": {
+    "origen": "antigravity_local",
+    "fecha_generacion": "2026-10-13",
+    "gate_requerido": "G0",
+    "coleccion_objetivo": "diamantino_assets"
+  }
+}
