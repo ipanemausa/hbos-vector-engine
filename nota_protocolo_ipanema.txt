@@ -1,0 +1,14 @@
+# PROTOCOLO DE SINCRONIZACIÓN Y SEGURIDAD - IPANEMA
+# -------------------------------------------------
+# Cuenta Principal: ipanemamamarketingusa@gmail.com
+# Estado de Google Drive: En reinstalación limpia (Modo Stream)
+# Permisos OAuth Revocados: Muse, rclone, OpenAI, Claude.
+# 
+# Pasos de limpieza de tokens locales:
+# 1. Purga de credenciales en Vault de Windows.
+# 2. Cierre forzoso de procesos de Google y navegadores.
+# 3. Desvinculación de cuentas secundarias (guillermo@iainfitexglobal.com).
+# 
+# Configuración de Unidades:
+# - SSD Local (C:): 475 GB total. Modo de ahorro activado.
+# - Google Drive (G:): Modo Stream (Solo metadatos). Los archivos pesados solo se guardan en la nube de 5 TB.
