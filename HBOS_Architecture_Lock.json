@@ -25,7 +25,8 @@
       "hbos-model-muse": { "dimension": 384, "metric": "Cosine", "role": "Modelos de Muse para asistencia creativa", "status": "ACTIVE" },
       "hbos-vector": { "dimension": 384, "metric": "Cosine", "role": "Conocimiento general del sistema", "status": "ACTIVE" },
       "hbos-sessions": { "dimension": 384, "metric": "Cosine", "role": "Estado de las sesiones del enjambre", "status": "ACTIVE" },
-      "hbos-transcripciones": { "dimension": 384, "metric": "Cosine", "role": "Transcripciones y conocimiento de Alejavi", "status": "ACTIVE" }
+      "hbos-transcripciones": { "dimension": 384, "metric": "Cosine", "role": "Transcripciones y conocimiento de Alejavi", "status": "ACTIVE" },
+      "hbos-voice-profiles": { "dimension": 384, "metric": "Cosine", "role": "Perfiles biométricos vocales y prosodia real (Paisa Pro)", "status": "ACTIVE" }
     }
   },
   "swarm_agents": {
