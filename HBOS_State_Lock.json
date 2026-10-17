@@ -1,15 +1,19 @@
 {
   "version": "8.3",
-  "dag_type": "MASTER_DAG_R768_HBOS_UNIFIED_v6_0_AUTO_SYNC",
+  "dag_type": "MASTER_DAG_v8.3_HBOS_SOVEREIGN_SWARM",
   "reference_code": "R768",
   "protocol": "IPANE_MASTER_STARTUP_PROTOCOL_v8.1",
-  "session_id": "session-20261017-112422",
-  "timestamp": "2026-10-17T11:24:22.835862",
+  "session_id": "session-20261017-120600",
+  "timestamp": "2026-10-17T12:06:00.000000",
   "compute_mode": "CLOUD_ONLY",
-  "biometric_authorization": {
-    "verified": true,
-    "provider": "Windows Hello Synaptics",
-    "scope": "master_dag_r768_v6_closure"
+  "facts_verified": {
+    "master_sample_m4a_path": "G:\\My Drive\\HBOS-fabrica\\2026-10-07\\voz-guillermo-video08-v2-limpia.m4a",
+    "master_sample_m4a_exists": true,
+    "master_sample_size_bytes": 7315310,
+    "laion_installed": false,
+    "vca_node_status": "BLOCKED_PENDING_LAION_INSTALLATION",
+    "qdrant_canonical_collections_count": 13,
+    "canonical_dimension": 384
   },
   "vector_brain": {
     "cloud_provider": "Qdrant Cloud (GCP us-east4)",
@@ -19,9 +23,13 @@
     "status": "GREEN_SYNCHRONIZED"
   },
   "active_task_queue": [
-    "DAG v6.0 Pipeline Completed",
-    "Architecture & Collections Locked (384d)",
-    "Auto-Sync & Sovereign Closure in Progress"
+    "N0: Real diagnosis completed without simulation",
+    "N1: Scripts #13 & #17 generated (GuiaHoy)",
+    "N2: VCA Voice Cloning BLOCKED (LAION missing)",
+    "N3: Visual assets & storyboards generated",
+    "N4: Video assembly prepared (no synthetic voice simulated)",
+    "N5: YouTube metadata prepared (NO PUBLISH)",
+    "N6: Git auto-sync to main executed"
   ],
   "zero_drift_policy": true,
   "closure_status": "LOCKED"
