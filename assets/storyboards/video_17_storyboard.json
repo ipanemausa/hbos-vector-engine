@@ -1,0 +1,69 @@
+{
+  "project": "Video #17 - Web Interactiva",
+  "resolution": "1920x1080",
+  "fps": 60,
+  "brand_palette": {
+    "primary": "#0F172A",
+    "accent_cyan": "#06B6D4",
+    "accent_purple": "#8B5CF6",
+    "text_highlight": "#F8FAFC"
+  },
+  "scenes": [
+    {
+      "scene_id": 1,
+      "title": "Hook Din\u00e1mico: Canvas Reactivo",
+      "duration": "00:00 - 00:30",
+      "camera": "Orbital suave con zoom in sutil al nodo central",
+      "visual_elements": [
+        "Grid hologr\u00e1fico tridimensional",
+        "Nodos de datos flotantes pulsando en cian",
+        "Logo Gu\u00edaHoy integrado"
+      ],
+      "audio_cue": "BGM Sci-Fi sutil con crescendo tecnol\u00f3gico"
+    },
+    {
+      "scene_id": 2,
+      "title": "Arquitectura de Componentes",
+      "duration": "00:30 - 02:00",
+      "camera": "Plano frontal con divisi\u00f3n de pantalla: C\u00f3digo izquierda, UI reactiva derecha",
+      "visual_elements": [
+        "L\u00edneas de c\u00f3digo destacadas con syntax highlighter oscuro",
+        "Renderizado en vivo sin lag"
+      ],
+      "audio_cue": "Clicks de UI limpios y transiciones suaves"
+    },
+    {
+      "scene_id": 3,
+      "title": "Integraci\u00f3n Vectorial Qdrant",
+      "duration": "02:00 - 03:45",
+      "camera": "Perspectiva isom\u00e9trica mostrando el cluster 384d conectando con la nube",
+      "visual_elements": [
+        "Esferas de embedding conect\u00e1ndose por tensores",
+        "Etiquetas de latencia < 15ms"
+      ],
+      "audio_cue": "Pulso grave de confirmaci\u00f3n de sincronizaci\u00f3n"
+    },
+    {
+      "scene_id": 4,
+      "title": "Demostraci\u00f3n de Performance y Despliegue",
+      "duration": "03:45 - 04:45",
+      "camera": "Dolly out con m\u00e9tricas Lighthouse en pantalla completa: 100/100 en verde",
+      "visual_elements": [
+        "Gr\u00e1fica de rendimiento",
+        "Badge de despliegue exitoso en Vercel"
+      ],
+      "audio_cue": "Transici\u00f3n de subida y campana de \u00e9xito"
+    },
+    {
+      "scene_id": 5,
+      "title": "Outro y Llamada a la Acci\u00f3n",
+      "duration": "04:45 - 05:15",
+      "camera": "Plano medio con tarjetas interactivas de videos recomendados y bot\u00f3n de suscripci\u00f3n",
+      "visual_elements": [
+        "End screen animado de Gu\u00edaHoy",
+        "Caja de comentarios destacada"
+      ],
+      "audio_cue": "Outro signature theme"
+    }
+  ]
+}

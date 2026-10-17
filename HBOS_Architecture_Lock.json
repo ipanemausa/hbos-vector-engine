@@ -1,0 +1,40 @@
+{
+  "version": "5.0-R768",
+  "protocol": "IPANE_MASTER_STARTUP_PROTOCOL_v8.1",
+  "timestamp": "2026-10-17T11:20:30.000000",
+  "compute_mode": "CLOUD_ONLY",
+  "environment_division": {
+    "antigravity": "Configuración, Auditoría de Red y Blindaje de Infraestructura",
+    "muse": "Ejecución de Pipelines de Producción Creativa"
+  },
+  "qdrant_cloud": {
+    "endpoint": "https://38f50573-516c-4d44-a391-eb35457eeada.us-east4-0.gcp.cloud.qdrant.io:6333",
+    "dns_resolution_strategy": "DoH_Cloudflare_Bypass",
+    "resolved_ip": "34.186.107.230",
+    "canonical_dimension": 384,
+    "collections_locked": {
+      "hbos-agent-go": { "dimension": 384, "metric": "Cosine", "role": "Gemini Orchestration (GO) - Cerebro central del enjambre", "status": "ACTIVE" },
+      "hbos-agent-ga": { "dimension": 384, "metric": "Cosine", "role": "GPT Architect (GA) - Escritura de guiones y copywriting", "status": "ACTIVE" },
+      "hbos-agent-fl": { "dimension": 384, "metric": "Cosine", "role": "Flow (FL) - Agente visual y de renderizado", "status": "ACTIVE" },
+      "hbos-agent-vca": { "dimension": 384, "metric": "Cosine", "role": "Voice Cloning Agent (VCA) - Clonación de voz y audio", "status": "ACTIVE" },
+      "hbos-agent-ytda": { "dimension": 384, "metric": "Cosine", "role": "YouTube Developer Agent (YTDA) - Publicación y SEO", "status": "ACTIVE" },
+      "hbos-agent-gaisa": { "dimension": 384, "metric": "Cosine", "role": "Google AI Studio Agent (GAISA) - Investigación de IA", "status": "ACTIVE" },
+      "hbos-model-openai": { "dimension": 384, "metric": "Cosine", "role": "Modelos OpenAI y ChatGPT UI (intelligent free models)", "status": "ACTIVE" },
+      "hbos-model-gemini": { "dimension": 384, "metric": "Cosine", "role": "Modelos Gemini y Google AI Pro", "status": "ACTIVE" },
+      "hbos-model-flow": { "dimension": 384, "metric": "Cosine", "role": "Modelos de Flow (FL) para generación de video", "status": "ACTIVE" },
+      "hbos-model-muse": { "dimension": 384, "metric": "Cosine", "role": "Modelos de Muse para asistencia creativa", "status": "ACTIVE" },
+      "hbos-vector": { "dimension": 384, "metric": "Cosine", "role": "Conocimiento general del sistema", "status": "ACTIVE" },
+      "hbos-sessions": { "dimension": 384, "metric": "Cosine", "role": "Estado de las sesiones del enjambre", "status": "ACTIVE" },
+      "hbos-transcripciones": { "dimension": 384, "metric": "Cosine", "role": "Transcripciones y conocimiento de Alejavi", "status": "ACTIVE" }
+    }
+  },
+  "swarm_agents": {
+    "GA": { "role": "GPT Architect", "compute": "CLOUD_ONLY", "status": "LOCKED" },
+    "FL": { "role": "Flow Visual/Creative Engine", "compute": "CLOUD_ONLY", "status": "LOCKED" },
+    "VCA": { "role": "Voice Cloning Agent", "compute": "CLOUD_ONLY", "status": "LOCKED" },
+    "YTDA": { "role": "YouTube Developer Agent", "compute": "CLOUD_ONLY", "status": "LOCKED" },
+    "GAISA": { "role": "Google AI Studio Agent", "compute": "CLOUD_ONLY", "status": "LOCKED" },
+    "GO": { "role": "Gemini Orchestration", "compute": "CLOUD_ONLY", "status": "LOCKED" }
+  },
+  "status": "IMMUTABLE_LOCKED"
+}
