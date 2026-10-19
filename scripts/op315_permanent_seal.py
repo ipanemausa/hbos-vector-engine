@@ -185,6 +185,29 @@ def seal():
     print("SEALED", os.path.basename(p), "head", prev); print(md_path)
     print("refresh drive_ok=%s qdrant_ok=%s chunks=%d" % (fin["drive_ok"], fin["qdrant_ok"], fin["chunks"]))
 
+def run():
+    prepare()
+    if ROOT not in sys.path:
+        sys.path.insert(0, ROOT)
+    from hbos_auth_ui import HBOSAuthUI
+    auth = HBOSAuthUI(timeout_minutes=60)
+    verif = auth.authorize(
+        scope="llmapi_user_verification",
+        message="HBOS: Autorización Biométrica Synaptics para sellado permanente OP=315",
+        force=False
+    )
+    if not verif:
+        print("[!] Biometría no autorizada o cancelada.")
+        sys.exit(1)
+    seal()
+
+
 if __name__ == "__main__":
-    {"prepare": prepare, "seal": seal}[sys.argv[1]]()
+    action = sys.argv[1].lower() if len(sys.argv) > 1 else "run"
+    actions = {"prepare": prepare, "seal": seal, "run": run}
+    if action not in actions:
+        print(f"Uso: python scripts/op315_permanent_seal.py [prepare|seal|run]")
+        sys.exit(1)
+    actions[action]()
+
 
