@@ -2,7 +2,7 @@
 function hbos-chat {
     param([Parameter(Mandatory=$true)][string]$prompt, [string]$model = "auto")
     $body = @{ model = $model; messages = @(@{ role = "user"; content = $prompt }) } | ConvertTo-Json -Depth 5 -Compress
-    $headers = @{ "Authorization" = "Bearer freellmapi-70a0cfeb7458ecb31077fe5f0b1646069da621ebb16ff037"; "Content-Type" = "application/json" }
+    $headers = @{ "Authorization" = "Bearer $env:FREELLMAPI_KEY"; "Content-Type" = "application/json" }
     try {
         Invoke-WebRequest -Uri "http://127.0.0.1:3001/v1/chat/completions" -Method POST -Headers $headers -Body $body -UseBasicParsing | Select-Object -ExpandProperty Content
     } catch { Write-Host "[HBOS] Error hbos-chat: $($_.Exception.Message)" -ForegroundColor Red }

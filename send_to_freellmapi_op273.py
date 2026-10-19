@@ -126,7 +126,7 @@ print(f"Longitud del prompt generado: {len(prompt)} caracteres (~{len(prompt)//4
 url = 'http://127.0.0.1:3001/v1/chat/completions'
 headers = {
     'Content-Type': 'application/json',
-    'Authorization': 'Bearer freellmapi-70a0cfeb7458ecb31077fe5f0b1646069da621ebb16ff037'
+    'Authorization': 'Bearer freellmapi-REDACTED'
 }
 payload = {
     'model': 'auto',

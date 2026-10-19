@@ -8,7 +8,7 @@ with open("chat_req.json", "w", encoding="utf-8") as f:
 
 cmd = [
     "curl.exe", "-s", "http://127.0.0.1:3001/v1/chat/completions",
-    "-H", "Authorization: Bearer freellmapi-70a0cfeb7458ecb31077fe5f0b1646069da621ebb16ff037",
+    "-H", "Authorization: Bearer freellmapi-REDACTED",
     "-H", "Content-Type: application/json",
     "-d", "@chat_req.json"
 ]

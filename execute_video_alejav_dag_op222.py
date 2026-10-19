@@ -148,7 +148,7 @@ def main():
     print(f"[*] Qdrant Cloud OK: {len(cols)} colecciones activas.")
     
     # Check FreeLLMAPI :3001
-    freellm_key = "freellmapi-70a0cfeb7458ecb31077fe5f0b1646069da621ebb16ff037"
+    freellm_key = (__import__("os").environ.get("FREELLMAPI_KEY") or (lambda p: open(p, encoding="utf-8").read().strip() if __import__("os").path.exists(p) else "")(r"C:\Users\ipane\hbos-deploy\hbos-vector-engine\config\freellmapi-key.txt"))
     req_m = urllib.request.Request("http://127.0.0.1:3001/v1/models", headers={"Authorization": f"Bearer {freellm_key}"})
     with urllib.request.urlopen(req_m, timeout=5) as r:
         m_data = json.loads(r.read().decode('utf-8'))
@@ -568,7 +568,7 @@ El despliegue 24/7 en VPS actúa como nodo satélite de UNBE:
 ## 1. Ajustes Avanzados en Base de Datos (`settings`)
 Valores auditados en el entorno activo:
 - `embeddings_default_family`: `gemini-embedding-001`
-- `unified_api_key`: `freellmapi-70a0cfeb7458ecb31077fe5f0b1646069da621ebb16ff037`
+- `unified_api_key`: `freellmapi-REDACTED`
 - `active_profile_id`: `1`
 - `ollama_emulation`: `off` (recomendado conmutar a `on` para compatibilidad transparente con clientes CLI de Ollama)
 - `enable_mcp`: `0` (conmutable a `1` para exponer catálogo como servidor MCP directo)

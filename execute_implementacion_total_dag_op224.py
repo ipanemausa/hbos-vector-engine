@@ -148,7 +148,7 @@ def main():
     print(f"[*] Qdrant Cloud OK: {len(cols)} colecciones activas.")
     
     # Check FreeLLMAPI :3001
-    freellm_key = "freellmapi-70a0cfeb7458ecb31077fe5f0b1646069da621ebb16ff037"
+    freellm_key = (__import__("os").environ.get("FREELLMAPI_KEY") or (lambda p: open(p, encoding="utf-8").read().strip() if __import__("os").path.exists(p) else "")(r"C:\Users\ipane\hbos-deploy\hbos-vector-engine\config\freellmapi-key.txt"))
     req_m = urllib.request.Request("http://127.0.0.1:3001/v1/models", headers={"Authorization": f"Bearer {freellm_key}"})
     with urllib.request.urlopen(req_m, timeout=5) as r:
         m_data = json.loads(r.read().decode('utf-8'))

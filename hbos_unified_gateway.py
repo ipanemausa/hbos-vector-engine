@@ -39,6 +39,24 @@ CONFIG_PATH = os.path.join(os.path.dirname(__file__), "gateway_config.json")
 with open(CONFIG_PATH, "r", encoding="utf-8") as f:
     CONFIG = json.load(f)
 
+def _resolve_env_refs(node):
+    """Resolve 'env:NAME' string values (no secrets stored in git). Fallback for FREELLMAPI_KEY: config/freellmapi-key.txt"""
+    if isinstance(node, dict):
+        return {k: _resolve_env_refs(v) for k, v in node.items()}
+    if isinstance(node, list):
+        return [_resolve_env_refs(v) for v in node]
+    if isinstance(node, str) and node.startswith("env:"):
+        name = node[4:]
+        val = os.getenv(name)
+        if not val and name == "FREELLMAPI_KEY":
+            kp = os.path.join(os.path.dirname(__file__), "config", "freellmapi-key.txt")
+            if os.path.exists(kp):
+                val = open(kp, "r", encoding="utf-8").read().strip()
+        return val or ""
+    return node
+
+CONFIG = _resolve_env_refs(CONFIG)
+
 # Cargar las 295 reglas de enrutamiento
 RULES_PATH = os.path.join(os.path.dirname(__file__), "routing_rules_295.json")
 ROUTING_RULES = []

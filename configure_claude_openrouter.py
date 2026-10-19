@@ -14,7 +14,7 @@ from cryptography.hazmat.primitives.ciphers.aead import AESGCM
 
 FREEAPI_DB = r"C:\Users\ipane\AppData\Roaming\FreeLLMAPI\freeapi.db"
 ENC_KEY_FILE = r"C:\Users\ipane\AppData\Roaming\FreeLLMAPI\.encryption-key"
-UNIFIED_API_KEY = "freellmapi-70a0cfeb7458ecb31077fe5f0b1646069da621ebb16ff037"
+UNIFIED_API_KEY = (__import__("os").environ.get("FREELLMAPI_KEY") or (lambda p: open(p, encoding="utf-8").read().strip() if __import__("os").path.exists(p) else "")(r"C:\Users\ipane\hbos-deploy\hbos-vector-engine\config\freellmapi-key.txt"))
 BASE = "http://127.0.0.1:3001"
 
 conn = sqlite3.connect(FREEAPI_DB)

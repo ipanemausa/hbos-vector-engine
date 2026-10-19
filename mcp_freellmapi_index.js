@@ -6,7 +6,7 @@ import {
 } from '@modelcontextprotocol/sdk/types.js';
 
 const BASE_URL = 'http://127.0.0.1:3001';
-const UNIFIED_API_KEY = 'freellmapi-70a0cfeb7458ecb31077fe5f0b1646069da621ebb16ff037';
+const UNIFIED_API_KEY = (process.env.FREELLMAPI_KEY || "");
 
 const server = new Server(
   {

@@ -34,16 +34,17 @@ if (Test-Path $envFile) {
 Set-Content -Path $envFile -Value $content -Encoding UTF8
 Write-Host "[OK] .env" -ForegroundColor Green
 
-# 3. gateway_config.json
+# 3. gateway_config.json (versionado en git: NUNCA guardar la key en claro, solo la referencia env:)
 $gwFile = "$root\gateway_config.json"
 if (Test-Path $gwFile) {
     $json = Get-Content $gwFile -Raw | ConvertFrom-Json
     if ($json.upstreams.freellmapi) {
-        $json.upstreams.freellmapi.api_key = $key
+        $json.upstreams.freellmapi.api_key = "env:FREELLMAPI_KEY"
     }
     $json | ConvertTo-Json -Depth 10 | Set-Content -Path $gwFile -Encoding UTF8
-    Write-Host "[OK] gateway_config.json" -ForegroundColor Green
+    Write-Host "[OK] gateway_config.json (referencia env:FREELLMAPI_KEY)" -ForegroundColor Green
 }
+
 
 # 4. sesion actual
 $env:FREELLMAPI_KEY = $key

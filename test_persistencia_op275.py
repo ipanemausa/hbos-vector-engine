@@ -101,7 +101,7 @@ try:
     ).strip()
     p3001 = False
     try:
-        r = requests.get("http://127.0.0.1:3001/v1/models", headers={"Authorization": "Bearer freellmapi-70a0cfeb7458ecb31077fe5f0b1646069da621ebb16ff037"}, timeout=2)
+        r = requests.get("http://127.0.0.1:3001/v1/models", headers={"Authorization": "Bearer freellmapi-REDACTED"}, timeout=2)
         p3001 = (r.status_code == 200)
     except: pass
     results.append({

@@ -6,7 +6,7 @@ function hbos-run {
     )
     
     $headers = @{
-        "Authorization" = "Bearer freellmapi-70a0cfeb7458ecb31077fe5f0b1646069da621ebb16ff037"
+        "Authorization" = "Bearer $env:FREELLMAPI_KEY"
         "Content-Type" = "application/json"
     }
     

@@ -49,7 +49,7 @@
 ## 3. Estado Estructural de la Base de Datos (`freeapi.db`)
 
 - **API Keys Habilitadas:** 9 plataformas (`openrouter`, `google`, `groq`, `huggingface`, `ollama`, `kilo`, `ovh`, `llm7`, `github`).
-- **Unified API Key Activa:** `freellmapi-70a0cfeb7458ecb31077fe5f0b1646069da621ebb16ff037`
+- **Unified API Key Activa:** `freellmapi-REDACTED`
 - **Tablas de Sub-Keys y Perfiles de Clientes:** `client_profiles` y `url_tokens` operativas en el esquema SQLite para emisión de sub-cuentas.
 
 ---

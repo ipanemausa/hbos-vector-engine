@@ -25,7 +25,7 @@ python start_freellmapi_daemon.py  # Modo Daemon / IsDaemon
 * **Status:** `HTTP 200 OK`
 * **Latencia de Respuesta:** `0.031 segundos`
 * **Catálogo de Modelos:** `235 modelos` activos y listos para inferencia multi-proveedor.
-* **Token de Autorización:** `freellmapi-70a0cfeb7458ecb31077fe5f0b1646069da621ebb16ff037`.
+* **Token de Autorización:** `freellmapi-REDACTED`.
 
 ---
 

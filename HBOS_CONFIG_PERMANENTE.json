@@ -5,7 +5,7 @@
     "api": "http://127.0.0.1:3001/v1",
     "base": "C:\\Users\\ipane\\hbos-deploy\\hbos-vector-engine",
     "db": "C:\\Users\\ipane\\AppData\\Roaming\\FreeLLMAPI\\freeapi.db",
-    "key": "freellmapi-70a0cfeb7458ecb31077fe5f0b1646069da621ebb16ff037"
+    "key": "env:FREELLMAPI_KEY"
   },
   "routing_por_tarea": {
     "video": "auto:video",

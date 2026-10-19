@@ -64,3 +64,9 @@ _BACKUPS/
 config/
 kiro-credentials.json
 protocols/
+
+# HBOS secretos explicitos (op=315)
+config/freellmapi-key.txt
+config/freellmapi-inventory.json
+config/op315-pending.json
+.env.local

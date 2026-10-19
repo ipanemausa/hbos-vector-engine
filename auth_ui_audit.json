@@ -33,3 +33,5 @@
 {"timestamp": "Thu Oct 15 18:16:58 2026", "scope": "master_dag_v7", "message": "HBOS: Coloca tu dedo en el sensor Synaptics para autorizar Master DAG v7.0", "result": "VERIFIED", "expires_at": 1792106218.621043}
 {"timestamp": "Fri Oct 16 16:49:36 2026", "scope": "hbos_freellmapi_autostart", "message": "HBOS: Autorizar inicio de FreeLLMAPI al iniciar sesi\u00f3n (Windows Hello)", "result": "VERIFIED", "expires_at": 1792187376.847977}
 {"timestamp": "Fri Oct 16 17:32:56 2026", "scope": "hbos_master_dac_v8_2", "message": "HBOS MASTER DAC v8.2: Autorizacion Biometrica Synaptics (Windows Hello)", "result": "VERIFIED", "expires_at": 1792197176.1240165}
+{"timestamp": "Mon Oct 19 11:26:21 2026", "scope": "llmapi_user_verification", "message": "HBOS: Coloca tu dedo en el sensor de huella Synaptics para autorizar LLMAPI", "result": "VERIFIED", "expires_at": 1792427181.9159834}
+{"timestamp": "Mon Oct 19 11:28:06 2026", "scope": "llmapi_user_verification", "message": "HBOS: Coloca tu dedo en el sensor de huella Synaptics para autorizar LLMAPI", "result": "VERIFIED", "expires_at": 1792427286.2953255}

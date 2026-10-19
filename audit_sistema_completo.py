@@ -122,7 +122,7 @@ print("\n--- FASE 3: AUDITORÍA DE FREELMAPI (op 208) ---")
 freellmapi_online = False
 total_models = 0
 try:
-    api_key = 'freellmapi-70a0cfeb7458ecb31077fe5f0b1646069da621ebb16ff037'
+    api_key = (__import__("os").environ.get("FREELLMAPI_KEY") or (lambda p: open(p, encoding="utf-8").read().strip() if __import__("os").path.exists(p) else "")(r"C:\Users\ipane\hbos-deploy\hbos-vector-engine\config\freellmapi-key.txt"))
     req = urllib.request.Request('http://127.0.0.1:3001/v1/models', headers={'Authorization': f'Bearer {api_key}'})
     with urllib.request.urlopen(req, timeout=5) as resp:
         if resp.status == 200:

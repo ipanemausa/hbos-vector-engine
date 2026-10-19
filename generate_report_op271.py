@@ -34,7 +34,7 @@ for h in hash_results:
 md.append("\n---\n")
 md.append("## 3. Estado Estructural de la Base de Datos (`freeapi.db`)\n")
 md.append("- **API Keys Habilitadas:** 9 plataformas (`openrouter`, `google`, `groq`, `huggingface`, `ollama`, `kilo`, `ovh`, `llm7`, `github`).")
-md.append("- **Unified API Key Activa:** `freellmapi-70a0cfeb7458ecb31077fe5f0b1646069da621ebb16ff037`")
+md.append("- **Unified API Key Activa:** `freellmapi-REDACTED`")
 md.append("- **Tablas de Sub-Keys y Perfiles de Clientes:** `client_profiles` y `url_tokens` operativas en el esquema SQLite para emisión de sub-cuentas.")
 
 md.append("\n---\n")

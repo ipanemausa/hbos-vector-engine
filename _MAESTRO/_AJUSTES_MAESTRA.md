@@ -7,7 +7,7 @@
 ## 1. Ajustes Avanzados en Base de Datos (`settings`)
 Valores auditados en el entorno activo:
 - `embeddings_default_family`: `gemini-embedding-001`
-- `unified_api_key`: `freellmapi-70a0cfeb7458ecb31077fe5f0b1646069da621ebb16ff037`
+- `unified_api_key`: `freellmapi-REDACTED`
 - `active_profile_id`: `1`
 - `ollama_emulation`: `off` (recomendado conmutar a `on` para compatibilidad transparente con clientes CLI de Ollama)
 - `enable_mcp`: `0` (conmutable a `1` para exponer catálogo como servidor MCP directo)

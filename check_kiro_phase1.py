@@ -27,7 +27,7 @@ print("1.2 kiro_config.json:", cfg)
 # 1.3 /v1/models
 headers = {
     "Content-Type": "application/json",
-    "Authorization": "Bearer freellmapi-70a0cfeb7458ecb31077fe5f0b1646069da621ebb16ff037"
+    "Authorization": "Bearer freellmapi-REDACTED"
 }
 r_m = requests.get("http://127.0.0.1:3001/v1/models", headers=headers, timeout=5)
 kiro_models = [m["id"] for m in r_m.json().get("data", []) if "kiro" in m["id"]]

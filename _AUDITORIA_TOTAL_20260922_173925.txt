@@ -378,7 +378,7 @@ Hostname: DESKTOP-BUSONST
     === settings (15 filas) ===
       Columnas: ['key', 'value']
         ['embeddings_default_family', 'gemini-embedding-001']
-        ['unified_api_key', 'freellmapi-70a0cfeb7458ecb31077fe5f0b1646069da621ebb16ff037']
+        ['unified_api_key', 'freellmapi-REDACTED']
         ['active_profile_id', '1']
         ['total_requests', '0']
         ['total_input_tokens', '0']

@@ -72,7 +72,7 @@ kiro_call_resp = ""
 try:
     r_k = requests.post(
         "http://127.0.0.1:3001/v1/chat/completions",
-        headers={"Content-Type": "application/json", "Authorization": "Bearer freellmapi-70a0cfeb7458ecb31077fe5f0b1646069da621ebb16ff037"},
+        headers={"Content-Type": "application/json", "Authorization": "Bearer freellmapi-REDACTED"},
         json={"model": "kiro/claude-opus", "messages": [{"role": "user", "content": "Ping"}]},
         timeout=5
     )
@@ -150,7 +150,7 @@ print(f"  • Ollama Local (:11434): {ol_status}")
 print("\n>>> FASE 4: PRUEBAS FUNCIONALES END-TO-END <<<")
 headers = {
     "Content-Type": "application/json",
-    "Authorization": "Bearer freellmapi-70a0cfeb7458ecb31077fe5f0b1646069da621ebb16ff037"
+    "Authorization": "Bearer freellmapi-REDACTED"
 }
 
 # 4.1 /v1/models

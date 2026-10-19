@@ -88,7 +88,7 @@ def check_freellmapi():
     if not port_open:
         return {"status": "FAIL", "reason": "Puerto 3001 cerrado / Daemon inactivo", "latencia": round(time.time() - t0, 3)}
     
-    api_key = "freellmapi-70a0cfeb7458ecb31077fe5f0b1646069da621ebb16ff037"
+    api_key = (__import__("os").environ.get("FREELLMAPI_KEY") or (lambda p: open(p, encoding="utf-8").read().strip() if __import__("os").path.exists(p) else "")(r"C:\Users\ipane\hbos-deploy\hbos-vector-engine\config\freellmapi-key.txt"))
     try:
         headers = {"Authorization": f"Bearer {api_key}", "Accept": "application/json"}
         req = urllib.request.Request("http://127.0.0.1:3001/v1/models", headers=headers)

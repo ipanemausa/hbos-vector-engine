@@ -10,7 +10,7 @@ import path from 'node:path';
 
 const BASE_URL = 'http://127.0.0.1:3001';
 const OLLAMA_URL = 'http://127.0.0.1:11434';
-const UNIFIED_API_KEY = 'freellmapi-70a0cfeb7458ecb31077fe5f0b1646069da621ebb16ff037';
+const UNIFIED_API_KEY = (process.env.FREELLMAPI_KEY || "");
 const DB_PATH = path.join(process.env.APPDATA || path.join(os.homedir(), 'AppData', 'Roaming'), 'FreeLLMAPI', 'freeapi.db');
 
 const server = new Server(

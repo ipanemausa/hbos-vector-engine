@@ -101,7 +101,7 @@ Siguiendo la regla de oro: **Las claves que fallaron verificación previa (Groq 
 Llamada curl ejecutada con la clave unificada `freellmapi-70a0cfeb...`:
 ```bash
 curl.exe http://127.0.0.1:3001/v1/chat/completions \
-  -H "Authorization: Bearer freellmapi-70a0cfeb7458ecb31077fe5f0b1646069da621ebb16ff037" \
+  -H "Authorization: Bearer freellmapi-REDACTED" \
   -H "Content-Type: application/json" \
   -d "{\"model\":\"auto\",\"messages\":[{\"role\":\"user\",\"content\":\"hola\"}]}"
 ```

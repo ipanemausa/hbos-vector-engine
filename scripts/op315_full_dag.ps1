@@ -134,7 +134,13 @@ Add-Approval "0" "0.4" "header convention loaded" "PASS" | Out-Null
 # L0.5 FreeLLMAPI state
 Log "[L0.5] FreeLLMAPI state" "White"
 try {
-    $models = Invoke-RestMethod -Uri "http://127.0.0.1:3001/v1/models" -Method Get -TimeoutSec 10
+    $fk = $env:FREELLMAPI_KEY
+    if (-not $fk) {
+        $kp = Join-Path $root "config\freellmapi-key.txt"
+        if (Test-Path $kp) { $fk = (Get-Content $kp -Raw).Trim() }
+    }
+    if (-not $fk) { throw "FREELLMAPI_KEY not set (env or config\freellmapi-key.txt)" }
+    $models = Invoke-RestMethod -Uri "http://127.0.0.1:3001/v1/models" -Method Get -Headers @{ Authorization = "Bearer $fk" } -TimeoutSec 10
     $modelCount = $models.data.Count
     Log "  models returned: $modelCount" "White"
     $l05 = Gate-Check "L0.5 FreeLLMAPI reachable" ($modelCount -gt 0)
@@ -144,11 +150,18 @@ try {
     Gate-Check "L0.5 FreeLLMAPI reachable" $false | Out-Null
 }
 
-# L0.6 Model count INVARIANT
-Log "[L0.6] Model count invariant = 326" "White"
-$l06 = Gate-Check "L0.6 Model count = 326" ($modelCount -eq 326)
-if ($l06) { Add-Approval "0" "0.6" "invariant 326 confirmed" "PASS" | Out-Null }
-else      { Add-Approval "0" "0.6" "invariant drift: $modelCount ≠ 326" "FAIL" | Out-Null }
+# L0.6 Model count INVARIANT (audited topology 2026-10-19: count==281 | google/openai/luna YES | sol_astra AGENT_LAYER)
+Log "[L0.6] Model count invariant updated: 326 -> 281 audited (FreeLLMAPI base layer; Sol/Astra on Muse agent layer)" "White"
+$requiredEntries = @('google|gemini','openai|gpt','luna')
+$missing = @()
+if ($models -and $models.data) {
+    foreach ($req in $requiredEntries) {
+        if (-not ($models.data | Where-Object { $_.id -match $req })) { $missing += $req }
+    }
+} else { $missing = $requiredEntries }
+$l06 = Gate-Check "L0.6 count==281 | google | openai | luna | sol_astra=AGENT_LAYER" (($modelCount -eq 281) -and ($missing.Count -eq 0))
+if ($l06) { Add-Approval "0" "0.6" "invariant 281 audited topology (google:YES openai:YES luna:YES sol_astra:AGENT_LAYER)" "PASS" | Out-Null }
+else      { Add-Approval "0" "0.6" "invariant 281 not met: count=$modelCount missing=[$($missing -join ',')]" "FAIL" | Out-Null }
 
 # L0.7 Kiro
 Log "[L0.7] Kiro state" "White"

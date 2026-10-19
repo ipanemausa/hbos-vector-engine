@@ -9,7 +9,7 @@ import json
 from pathlib import Path
 
 DB_PATH = Path(r"C:\Users\ipane\AppData\Roaming\FreeLLMAPI\freeapi.db")
-UNIFIED_KEY = "freellmapi-70a0cfeb7458ecb31077fe5f0b1646069da621ebb16ff037"
+UNIFIED_KEY = (__import__("os").environ.get("FREELLMAPI_KEY") or (lambda p: open(p, encoding="utf-8").read().strip() if __import__("os").path.exists(p) else "")(r"C:\Users\ipane\hbos-deploy\hbos-vector-engine\config\freellmapi-key.txt"))
 
 print("=" * 75)
 print("HBOS op=266 · FASE 4 · VERIFICACIÓN FINAL")
