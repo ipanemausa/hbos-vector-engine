@@ -129,13 +129,20 @@ def qreq(method, path, body=None):
     return json.load(urllib.request.urlopen(r, timeout=20))
 
 def sync_note(md_path, md):
-    """Copy note to Drive (G: mount) and upsert chunks to Qdrant. Returns dict with verification flags."""
-    data = md.encode("utf-8"); sha = hashlib.sha256(data).hexdigest()
+    """Write markdown in binary utf-8, copy to Drive (G: mount), and upsert chunks to Qdrant. Returns verification dict."""
+    with open(md_path, "wb") as f:
+        f.write(md.encode("utf-8"))
+    data = open(md_path, "rb").read()
+    sha = hashlib.sha256(data).hexdigest()
     res = {"sha": sha, "drive_ok": False, "qdrant_ok": False, "chunks": 0, "why": []}
     try:
-        if not os.path.isdir(DRIVE_DIR): raise RuntimeError("Drive folder not mounted")
-        dst = os.path.join(DRIVE_DIR, os.path.basename(md_path)); shutil.copyfile(md_path, dst)
-        res["drive_ok"] = hashlib.sha256(open(dst, "rb").read()).hexdigest() == sha
+        if not os.path.isdir(DRIVE_DIR): raise RuntimeError(f"Drive folder not mounted: {DRIVE_DIR}")
+        dst = os.path.join(DRIVE_DIR, os.path.basename(md_path))
+        shutil.copyfile(md_path, dst)
+        dst_sha = hashlib.sha256(open(dst, "rb").read()).hexdigest()
+        res["drive_ok"] = (dst_sha == sha)
+        if not res["drive_ok"]:
+            res["why"].append(f"drive sha mismatch: {dst_sha[:10]} vs {sha[:10]}")
     except Exception as e: res["why"].append("drive:" + str(e)[:60])
     try:
         size = qreq("GET", f"/collections/{QCOL}")["result"]["config"]["params"]["vectors"]["size"]
@@ -146,7 +153,10 @@ def sync_note(md_path, md):
             pts.append({"id": pid, "vector": emb(f"{sec} {txt}"), "payload": {"doc": os.path.basename(md_path), "seccion": sec, "tipo": "nota_notebooklm", "fecha": fecha, "version": "op315", "op": 315, "chunk_index": i, "sha256": sha, "texto": txt[:4000], "agentes": ["Sol", "Luna", "Astra"]}})
         qreq("PUT", f"/collections/{QCOL}/points?wait=true", {"points": pts})
         got = qreq("POST", f"/collections/{QCOL}/points", {"ids": [p["id"] for p in pts], "with_payload": False})["result"]
-        res["chunks"], res["qdrant_ok"] = len(pts), len(got) == len(pts) and len(pts) > 0
+        res["chunks"] = len(pts)
+        res["qdrant_ok"] = len(got) == len(pts) and len(pts) > 0
+        if not res["qdrant_ok"]:
+            res["why"].append(f"qdrant points count mismatch: {len(got)} vs {len(pts)}")
     except Exception as e: res["why"].append("qdrant:" + str(e)[:60])
     return res
 
@@ -160,7 +170,6 @@ def seal():
     md_path = os.path.join(LOGS, f"hbos-approvals-op315-notebooklm-{ts}.md")
     md = build_md(rows, prev, snap, ts, "PRE-SEAL · biometric (Windows Hello) confirmed")
     assert live not in md, "secret leaked into note"
-    open(md_path, "w", encoding="utf-8").write(md)
     res = sync_note(md_path, md)                                   # L5.6 unattended: Drive + Qdrant
     ok = res["drive_ok"] and res["qdrant_ok"]
     prev = append(rows, prev, "5", "5.6", (f"[L5.6] Industrial notes auto-sync -> Drive/Qdrant completed ; note sha256 {res['sha'][:16]} ; drive={DRIVE_DIR} ; qdrant={QCOL} chunks={res['chunks']}" if ok else f"[L5.6] Industrial notes auto-sync FAILED ; drive_ok={res['drive_ok']} qdrant_ok={res['qdrant_ok']} ; {' ; '.join(res['why'])}"), "PASS" if ok else "FAIL", "auto")
@@ -171,11 +180,11 @@ def seal():
     write_ledger(p, header, rows)
     md = build_md(rows, prev, snap, ts, "SEALED · biometric (Windows Hello) confirmed")
     assert live not in md, "secret leaked into note"
-    open(md_path, "w", encoding="utf-8").write(md)
     fin = sync_note(md_path, md)                                   # refresh Drive/Qdrant with the sealed version (same ids, overwritten)
-    os.remove(PENDING)
+    if os.path.exists(PENDING): os.remove(PENDING)
     print("SEALED", os.path.basename(p), "head", prev); print(md_path)
     print("refresh drive_ok=%s qdrant_ok=%s chunks=%d" % (fin["drive_ok"], fin["qdrant_ok"], fin["chunks"]))
 
 if __name__ == "__main__":
     {"prepare": prepare, "seal": seal}[sys.argv[1]]()
+
