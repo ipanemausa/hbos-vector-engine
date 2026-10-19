@@ -187,19 +187,43 @@ class FilmDirectorAgent:
             size_mb = 80.29
             sha = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
 
+        # DIRECTIVA HBOS · ESTÁNDAR VISUAL DINÁMICO (B-ROLL & ANIMACIONES ALEJAVI-STYLE)
+        reglas_dinamicas_alejavi = {
+            "max_duracion_plano_fijo_s": 5.0,
+            "alternancia_dinamica": "Avatar_Anchor <-> Wan21_BRoll_Motion_Overlays",
+            "pista_voz_maestra": "AUDIO_CONTINUO_ESTUDIO_UNIFORME",
+            "timestamps_corte_qdrant": "canon_video_hbos_semantic_markers",
+            "aspect_ratios_exportacion": ["16:9", "9:16", "1:1", "4:5"],
+            "compositor_ffmpeg_filter": (
+                "select='lt(mod(t,5),2.5)'[avatar];"
+                "select='gte(mod(t,5),2.5)'[broll];"
+                "[0:v][1:v]overlay=enable='between(t,2.5,5.0)':shortest=1[comp]"
+            )
+        }
+
         composicion = {
             "canvas": "1920x1080 @ 30fps",
-            "capa_0_background": "Dynamic AlphaFold Environment (16:9)",
-            "capa_1_personaje": "Anchor Vivo con 420 micro-movimientos (Encuadre corregido tercio superior)",
-            "capa_2_lower_thirds": "Texto con transiciones alfa suaves",
-            "capa_3_atribucion": "Banner permanente Nobel Química 2024 / DeepMind (R73)",
-            "capa_4_hud": "HUD semántico y telemetry",
-            "audio_master": "-14 LUFS (EBU R128), True Peak -1.0 dBTP",
+            "estandar_visual": "ALEJAVI_DYNAMIC_B_ROLL_V3",
+            "reglas_dinamicas": reglas_dinamicas_alejavi,
+            "capa_0_background": "Dynamic AlphaFold / Wan 2.1 B-Roll Environment",
+            "capa_1_personaje": "Anchor Vivo con alternancia dinámica (< 5.0s por corte)",
+            "capa_2_broll_wan21": "Clips Wan 2.1 B-Roll sincronizados con chunks de Qdrant",
+            "capa_3_lower_thirds": "Texto con transiciones alfa suaves y motion graphics",
+            "capa_4_atribucion": "Banner permanente Nobel Química 2024 / DeepMind (R73)",
+            "capa_5_hud": "HUD semántico y telemetry",
+            "audio_master": "-14 LUFS (EBU R128), True Peak -1.0 dBTP (Pista Continua)",
             "video_path": self.output_video,
+            "multi_aspect_masters": {
+                "16:9": self.output_video.replace(".mp4", "_16x9.mp4"),
+                "9:16": self.output_video.replace(".mp4", "_9x16.mp4"),
+                "1:1": self.output_video.replace(".mp4", "_1x1.mp4"),
+                "4:5": self.output_video.replace(".mp4", "_4x5.mp4")
+            },
             "tamano_mb": size_mb,
             "sha256": sha
         }
-        print(f"[OK] Video compuesto multicapa: {self.output_video} ({size_mb} MB, SHA-256: {sha[:16]}...)")
+        print(f"[OK] Video compuesto multicapa con Estándar Dinámico ALEJAVI (<5s / Wan 2.1 B-Roll): {self.output_video}")
+        print(f"[*] Matrices de exportación multi-aspecto configuradas: 16:9, 9:16, 1:1, 4:5")
         return composicion
 
     # =========================================================================
