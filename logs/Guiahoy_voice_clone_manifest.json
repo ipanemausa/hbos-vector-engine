@@ -2,7 +2,7 @@
   "voice_clone_name": "Guiahoy",
   "naming_policy": "STRICT_BRAND_ONLY_UNIDO (Guiahoy) — Sin nombre personal",
   "ready_for_any_video": true,
-  "timestamp_utc": "2026-10-30T18:50:10.312756+00:00",
+  "timestamp_utc": "2026-10-30T19:04:48.655822+00:00",
   "acoustic_guardrails_verified": {
     "f0_mean_hz": 109.2,
     "f0_band_p5_p95_hz": [
@@ -52,27 +52,27 @@
     "Guiahoy_PRUEBA_CLON_VOZ_menos14LUFS": {
       "filename": "Guiahoy_PRUEBA_CLON_VOZ_menos14LUFS.wav",
       "path": "G:\\My Drive\\HBOS_Creative\\02_Voice_Profiles\\Guiahoy_PRUEBA_CLON_VOZ_menos14LUFS.wav",
-      "size_bytes": 1728078,
-      "size_mb": 1.65,
-      "duration_sec": 18.0,
+      "size_bytes": 1968078,
+      "size_mb": 1.88,
+      "duration_sec": 20.5,
       "codec": "pcm_s16le",
       "sample_rate": 48000,
       "channels": 1,
-      "sha256": "943be41afafb2c0f2e9aac422f62408ccdb3370e345b5aa46657be2798f046d2",
-      "integrated_lufs": -15.2,
+      "sha256": "0f0432a0e9628f28134aee62e90fafd94331a9881ea074dcb0849674ef0713b4",
+      "integrated_lufs": -14.8,
       "standard": "EBU R128 (-14 LUFS)"
     },
     "Guiahoy_ELEVENLABS_CLON_VERIFICADO_menos14LUFS": {
       "filename": "Guiahoy_ELEVENLABS_CLON_VERIFICADO_menos14LUFS.wav",
       "path": "G:\\My Drive\\HBOS_Creative\\02_Voice_Profiles\\Guiahoy_ELEVENLABS_CLON_VERIFICADO_menos14LUFS.wav",
-      "size_bytes": 939250,
-      "size_mb": 0.9,
-      "duration_sec": 4.89,
+      "size_bytes": 1517746,
+      "size_mb": 1.45,
+      "duration_sec": 15.81,
       "codec": "pcm_s16le",
       "sample_rate": 48000,
-      "channels": 2,
-      "sha256": "4f165144ae30aef22c4a248a48be5da95cf4fefddd0c0a8d9a639c609e5a1ea6",
-      "integrated_lufs": -14.4,
+      "channels": 1,
+      "sha256": "4b3787c7480a4db4ea6ea579550b0f697001f306a1d9b8508f487a9ebdd5ff31",
+      "integrated_lufs": -16.2,
       "standard": "EBU R128 (-14 LUFS)"
     }
   }

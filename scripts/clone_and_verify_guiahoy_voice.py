@@ -27,7 +27,8 @@ LOCAL_MANIFEST_PATH = Path(r"c:\Users\ipane\hbos-deploy\hbos-vector-engine\logs\
 QDRANT_URL = "http://127.0.0.1:6333"
 
 PRIMARY_SOURCE_M4A = Path(r"G:\My Drive\HBOS-fabrica\2026-10-07\voz-guillermo-video08-LIMPIA-FINAL-v3.m4a")
-EXISTING_ELEVENLABS_CLONE_WAV = Path(r"G:\My Drive\HBOS_Qdrant_Engine\voz-clon-elevenlabs_master_menos14lufs_2026-10-29.wav")
+CLEAN_MASCOTAS_MASTER_WAV = Path(r"G:\My Drive\HBOS_Qdrant_Engine\03_MEDIA_VAULT_FINAL\Audio_Master_Canal_IA_Gratis_Editado.wav")
+CLEAN_CLONE_Q6_WAV = Path(r"G:\My Drive\HBOS-fabrica\2026-10-06\p1-q6-ref-r3a-rapida.wav")
 
 
 def probe_audio(path: Path) -> dict:
@@ -152,18 +153,31 @@ def prepare_guiahoy_masters():
             "-ar", "48000", "-ac", "1", "-c:a", "pcm_s16le", str(wav_clone_90s)
         ], capture_output=True, check=True)
 
-    # Generar muestra de comprobación de 18s ("Guiahoy_PRUEBA_CLON_VOZ_menos14LUFS.wav")
-    # aplicando la cadena canónica del protocolo (highpass=f=80 + atempo=1.0 + loudnorm=-14 LUFS)
+    # Generar muestra limpia de Mascotas/Personajes (S9: 1007.20s -> 28.5s) con cero ruido inicial
+    wav_mascotas_clean = DRIVE_OUT_DIR / "Guiahoy_MASCOTAS_CLIPS_LIMPIO_menos14LUFS.wav"
+    src_for_proof = CLEAN_MASCOTAS_MASTER_WAV if CLEAN_MASCOTAS_MASTER_WAV.exists() else PRIMARY_SOURCE_M4A
+    start_sec = "1007.20" if CLEAN_MASCOTAS_MASTER_WAV.exists() else "15.0"
+
     subprocess.run([
-        "ffmpeg", "-y", "-ss", "0", "-t", "18", "-i", str(PRIMARY_SOURCE_M4A),
-        "-af", "highpass=f=80,loudnorm=I=-14:TP=-1.5:LRA=11",
+        "ffmpeg", "-y", "-ss", start_sec, "-t", "28.50", "-i", str(src_for_proof),
+        "-af", "highpass=f=85,afftdn=nf=-25,afade=t=in:st=0:d=0.06,loudnorm=I=-14:TP=-1.5:LRA=11",
+        "-ar", "48000", "-ac", "1", "-c:a", "pcm_s16le", str(wav_mascotas_clean)
+    ], capture_output=True, check=True)
+
+    subprocess.run([
+        "ffmpeg", "-y", "-ss", start_sec, "-t", "20.50", "-i", str(src_for_proof),
+        "-af", "highpass=f=85,afftdn=nf=-25,afade=t=in:st=0:d=0.06,loudnorm=I=-14:TP=-1.5:LRA=11",
         "-ar", "48000", "-ac", "1", "-c:a", "pcm_s16le", str(wav_proof_sample)
     ], capture_output=True, check=True)
 
-    # Copiar también el clon ElevenLabs verificado del motor bajo el nombre Guiahoy
+    # Actualizar muestra del clon verificado sin zumbido ni ruido inicial
     wav_elevenlabs_clone = DRIVE_OUT_DIR / "Guiahoy_ELEVENLABS_CLON_VERIFICADO_menos14LUFS.wav"
-    if EXISTING_ELEVENLABS_CLONE_WAV.exists():
-        shutil.copy2(EXISTING_ELEVENLABS_CLONE_WAV, wav_elevenlabs_clone)
+    if CLEAN_CLONE_Q6_WAV.exists():
+        subprocess.run([
+            "ffmpeg", "-y", "-i", str(CLEAN_CLONE_Q6_WAV),
+            "-af", "highpass=f=85,afftdn=nf=-25,afade=t=in:st=0:d=0.05,loudnorm=I=-14:TP=-1.5:LRA=11",
+            "-ar", "48000", "-ac", "1", "-c:a", "pcm_s16le", str(wav_elevenlabs_clone)
+        ], capture_output=True, check=True)
 
     return wav_full_48k, wav_icl_30s, wav_clone_90s, wav_proof_sample, wav_elevenlabs_clone
 

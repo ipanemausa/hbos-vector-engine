@@ -174,13 +174,11 @@ class GuiahoyVideoPipeline:
         cmd_trim = [
             "ffmpeg", "-y",
             "-i", raw_voice_path,
-            "-f", "lavfi", "-i", "sine=frequency=220:sample_rate=48000",
-            "-filter_complex",
-            "[0:a]silenceremove=start_periods=1:start_silence=0.1:start_threshold=-38dB:"
-            "stop_periods=-1:stop_silence=0.22:stop_threshold=-38dB,aformat=sample_rates=48000:channel_layouts=stereo,volume=1.4[v_clean];"
-            "[1:a]aformat=sample_rates=48000:channel_layouts=stereo,volume=0.04[bg_pad];"
-            "[v_clean][bg_pad]amix=inputs=2:duration=first:dropout_transition=1[a_out]",
-            "-map", "[a_out]",
+            "-af",
+            "highpass=f=85,afftdn=nf=-25,"
+            "silenceremove=start_periods=1:start_silence=0.05:start_threshold=-40dB:"
+            "stop_periods=-1:stop_silence=0.30:stop_threshold=-40dB,"
+            "afade=t=in:st=0:d=0.05,aformat=sample_rates=48000:channel_layouts=stereo",
             "-t", "9.0",
             trimmed_voice_path
         ]
