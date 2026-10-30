@@ -1,0 +1,201 @@
+{
+  "timestamp": "2026-10-29T21:07:00.680017+00:00",
+  "status": "E2E_ALL_MODULES_PASSED",
+  "step_0_rea_clean_room": {
+    "status": "REA_DECONSTRUCTION_COMPLETE",
+    "rea_version": "6.8.0",
+    "evidence_count": 2,
+    "js_evidence_id": "ev_a944bca7f6021204dde498e7408defcf30926712242aeeeb5a2314bd7895fb1a",
+    "sqlite_evidence_id": "ev_440e88a941de960b25d285fe7f6c8e42327c8236efe57990b3775577ffd0c399",
+    "bundle_path": "C:\\Users\\ipane\\hbos-deploy\\hbos-vector-engine\\logs\\rea_evidence\\rea_clean_room_evidence_bundle.json"
+  },
+  "module_1_erp": {
+    "invoice_number": "HBOS-INV-2026-0001",
+    "status": "EMITIDO_APROBADO",
+    "version": 3,
+    "immutability_lock_verified": true,
+    "credit_note_number": "HBOS-NC-2026-0002",
+    "invoice_currency": "USD",
+    "subtotal": 21075.0,
+    "indirect_tax_total": 4741.88,
+    "withholding_tax_total": 3122.47,
+    "net_payable": 22694.41,
+    "multi_currency_equivalencies": {
+      "USD": {
+        "net_payable": 22694.41,
+        "exchange_rate": 1.0
+      },
+      "COP": {
+        "net_payable": 94560041.67,
+        "exchange_rate": 4166.666667
+      },
+      "MXN": {
+        "net_payable": 453888.2,
+        "exchange_rate": 20.0
+      },
+      "EUR": {
+        "net_payable": 20916.51,
+        "exchange_rate": 0.921659
+      }
+    },
+    "pdf_path": "C:\\Users\\ipane\\hbos-deploy\\hbos-vector-engine\\output_masters\\erp_invoices\\HBOS-INV-2026-0001.pdf",
+    "pdf_sha256": "136d25660809e9d58f7f3c402374b5e02bb4c07ed2ec3db39356031bf796f068",
+    "pdf_size_bytes": 6153
+  },
+  "module_2_multimedia": {
+    "video_path": "C:\\Users\\ipane\\hbos-deploy\\hbos-vector-engine\\output_masters\\guiahoy_e2e\\guiahoy_autonomous_reel_e2e.mp4",
+    "sha256": "ab093f3f617363ba36efd86293c348598929e017b79d0edb2edfdcd235ee78b5",
+    "file_size_bytes": 2566038,
+    "resolution": "1080x1920 (9:16 Vertical Reels / Screen Studio)",
+    "fps": 30,
+    "raw_voice_duration_sec": 5.29,
+    "silence_trimmed_duration_sec": 4.89,
+    "subtitles_ass_path": "C:\\Users\\ipane\\hbos-deploy\\hbos-vector-engine\\output_masters\\guiahoy_e2e\\temp_assets\\guiahoy_animated_subs.ass",
+    "subtitles_segments_count": 5,
+    "avatars_integrated": [
+      "Guillermo_3D_Presenter",
+      "Diamantino_3D_Mascot"
+    ],
+    "autopilot_telemetry": {
+      "total_frames_rendered": 147,
+      "fps": 30,
+      "camera_bubble_relocations": [
+        {
+          "frame": 0,
+          "time_sec": 0.0,
+          "window_id": "WIN_1_HBOS_GLOBAL_ERP",
+          "preferred_corner": "BOTTOM_RIGHT",
+          "relocated_to": "BOTTOM_LEFT",
+          "reason": "OCCLUSION_AVOIDANCE_ACTIVE_UI_AND_CURSOR"
+        },
+        {
+          "frame": 52,
+          "time_sec": 1.73,
+          "window_id": "WIN_2_REA_CLEAN_ROOM_IDE",
+          "preferred_corner": "BOTTOM_LEFT",
+          "relocated_to": "TOP_RIGHT",
+          "reason": "OCCLUSION_AVOIDANCE_ACTIVE_UI_AND_CURSOR"
+        },
+        {
+          "frame": 103,
+          "time_sec": 3.43,
+          "window_id": "WIN_3_QDRANT_BROLL_MATRIX",
+          "preferred_corner": "TOP_RIGHT",
+          "relocated_to": "TOP_LEFT",
+          "reason": "OCCLUSION_AVOIDANCE_ACTIVE_UI_AND_CURSOR"
+        },
+        {
+          "frame": 108,
+          "time_sec": 3.6,
+          "window_id": "WIN_3_QDRANT_BROLL_MATRIX",
+          "preferred_corner": "TOP_RIGHT",
+          "relocated_to": "BOTTOM_LEFT",
+          "reason": "OCCLUSION_AVOIDANCE_ACTIVE_UI_AND_CURSOR"
+        }
+      ],
+      "cursor_click_auto_zooms": [
+        {
+          "frame": 26,
+          "time_sec": 0.87,
+          "window_id": "WIN_1_HBOS_GLOBAL_ERP",
+          "clicked_button": "[ APROBAR Y EMITIR FACTURA (LOCK) ]",
+          "cursor_xy": [
+            785.0,
+            1510.0
+          ],
+          "peak_zoom_factor": 1.28
+        },
+        {
+          "frame": 27,
+          "time_sec": 0.9,
+          "window_id": "WIN_1_HBOS_GLOBAL_ERP",
+          "clicked_button": "[ APROBAR Y EMITIR FACTURA (LOCK) ]",
+          "cursor_xy": [
+            785.0,
+            1510.0
+          ],
+          "peak_zoom_factor": 1.28
+        },
+        {
+          "frame": 77,
+          "time_sec": 2.57,
+          "window_id": "WIN_2_REA_CLEAN_ROOM_IDE",
+          "clicked_button": "[ VERIFICAR EVIDENCIA REA (ev_sha256) ]",
+          "cursor_xy": [
+            280.0,
+            1510.0
+          ],
+          "peak_zoom_factor": 1.28
+        },
+        {
+          "frame": 78,
+          "time_sec": 2.6,
+          "window_id": "WIN_2_REA_CLEAN_ROOM_IDE",
+          "clicked_button": "[ VERIFICAR EVIDENCIA REA (ev_sha256) ]",
+          "cursor_xy": [
+            280.0,
+            1510.0
+          ],
+          "peak_zoom_factor": 1.28
+        },
+        {
+          "frame": 125,
+          "time_sec": 4.17,
+          "window_id": "WIN_3_QDRANT_BROLL_MATRIX",
+          "clicked_button": "[ SELLAR DAG & MASTER -14 LUFS ]",
+          "cursor_xy": [
+            785.0,
+            390.0
+          ],
+          "peak_zoom_factor": 1.28
+        },
+        {
+          "frame": 126,
+          "time_sec": 4.2,
+          "window_id": "WIN_3_QDRANT_BROLL_MATRIX",
+          "clicked_button": "[ SELLAR DAG & MASTER -14 LUFS ]",
+          "cursor_xy": [
+            785.0,
+            390.0
+          ],
+          "peak_zoom_factor": 1.28
+        }
+      ],
+      "intelligent_jump_cuts": [
+        {
+          "frame": 0,
+          "time_sec": 0.0,
+          "from_window": "INIT",
+          "to_window": "WIN_1_HBOS_GLOBAL_ERP",
+          "transition_type": "ZERO_JITTER_SYNC_JUMP_CUT"
+        },
+        {
+          "frame": 52,
+          "time_sec": 1.73,
+          "from_window": "WIN_1_HBOS_GLOBAL_ERP",
+          "to_window": "WIN_2_REA_CLEAN_ROOM_IDE",
+          "transition_type": "ZERO_JITTER_SYNC_JUMP_CUT"
+        },
+        {
+          "frame": 103,
+          "time_sec": 3.43,
+          "from_window": "WIN_2_REA_CLEAN_ROOM_IDE",
+          "to_window": "WIN_3_QDRANT_BROLL_MATRIX",
+          "transition_type": "ZERO_JITTER_SYNC_JUMP_CUT"
+        }
+      ]
+    },
+    "audio_mastering": {
+      "target_lufs": -14.0,
+      "master_wav_lufs": -14.14,
+      "final_mp4_lufs": -14.18,
+      "true_peak_db": -1.5,
+      "ebu_r128_compliant": true
+    },
+    "timestamp": "2026-10-29T21:07:00.645173+00:00"
+  },
+  "module_3_qdrant": {
+    "collection": "hbos_erp_fiscal_rules",
+    "points_upserted": 7
+  }
+}

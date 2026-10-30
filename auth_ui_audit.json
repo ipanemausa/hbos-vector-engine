@@ -37,3 +37,6 @@
 {"timestamp": "Mon Oct 19 11:28:06 2026", "scope": "llmapi_user_verification", "message": "HBOS: Coloca tu dedo en el sensor de huella Synaptics para autorizar LLMAPI", "result": "VERIFIED", "expires_at": 1792427286.2953255}
 {"timestamp": "Mon Oct 19 11:44:39 2026", "scope": "llmapi_user_verification", "message": "HBOS: Coloca tu dedo en el sensor de huella Synaptics para autorizar LLMAPI", "result": "VERIFIED", "expires_at": 1792428279.0181873}
 {"timestamp": "Mon Oct 19 15:31:23 2026", "scope": "llmapi_user_verification", "message": "HBOS: Autorizaci\u00f3n Biom\u00e9trica Synaptics para sellado permanente OP=315", "result": "VERIFIED", "expires_at": 1792441883.2270045}
+{"timestamp": "Tue Oct 20 10:47:26 2026", "scope": "hbos_freellmapi_autostart", "message": "HBOS: Autorizar inicio de FreeLLMAPI al iniciar sesi\u00f3n (Windows Hello)", "result": "VERIFIED", "expires_at": 1792511246.3500564}
+{"timestamp": "Thu Oct 22 12:39:35 2026", "scope": "hbos_freellmapi_autostart", "message": "HBOS: Autorizar inicio de FreeLLMAPI al iniciar sesi\u00f3n (Windows Hello)", "result": "VERIFIED", "expires_at": 1792690775.8312342}
+{"timestamp": "Thu Oct 29 12:20:07 2026", "scope": "hbos_freellmapi_autostart", "message": "HBOS: Autorizar inicio de FreeLLMAPI al iniciar sesi\u00f3n (Windows Hello)", "result": "VERIFIED", "expires_at": 1793294407.8473554}

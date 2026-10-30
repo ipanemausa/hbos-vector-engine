@@ -1,0 +1,130 @@
+{
+  "schema": "REACleanRoomDeconstructionBundle",
+  "schema_version": 1,
+  "rea_package": {
+    "name": "rea-agents",
+    "mcp_name": "io.github.morluto/rea",
+    "version": "6.8.0",
+    "repository_path": "C:\\Users\\ipane\\hbos-deploy\\hbos-vector-engine\\tools\\rea",
+    "installed_skill_path": "C:\\Users\\ipane\\hbos-deploy\\hbos-vector-engine\\.agents\\skills\\reverse-engineer-anything\\SKILL.md",
+    "skill_sha256": "5e074e4b9b01358291aba1d2119b3766b360be5b64483ce1d3fe5f2649b363c1",
+    "node_runtime": "v24.19.0"
+  },
+  "evidence_records": [
+    {
+      "evidence_id": "ev_a944bca7f6021204dde498e7408defcf30926712242aeeeb5a2314bd7895fb1a",
+      "operation": "analyze_javascript_application",
+      "provider": {
+        "id": "rea-js-static",
+        "name": "REA Static JavaScript Analyzer",
+        "version": "6.8.0"
+      },
+      "subject": {
+        "name": "gev-app-camera-and-tracking-reference",
+        "digest": {
+          "sha256": "17440719407f39ccce6cbe24e05a34199665214a10f9c03581e0ce14e5e93368"
+        },
+        "local_path": "C:\\Users\\ipane\\hbos-deploy\\hbos-vector-engine\\gev-app\\src\\cameraVerbs.js"
+      },
+      "confidence": "observed",
+      "authority": "shipped-artifact",
+      "normalized_result": {
+        "analyzed_files": [
+          "gev-app/src/cameraVerbs.js",
+          "gev-app/src/cockpitTracking.js"
+        ],
+        "exported_symbols": [
+          "prefersReducedMotion",
+          "approachValue",
+          "routeRampFraction",
+          "routeSpeedProfile",
+          "routeBankTargetDeg",
+          "routeAltitudeOffsetM",
+          "routeEyeHeightM",
+          "routeFloorHoldM",
+          "signedTurnRad",
+          "routeCorridorCells",
+          "routeColdSeedFloorM",
+          "probeMeshFloorM",
+          "createRouteFlight",
+          "advanceRouteFlight",
+          "activeCameraMotionId",
+          "interruptCameraMotionIfActive",
+          "interruptCameraMotion",
+          "getActiveCameraMotion",
+          "initCameraVerbs",
+          "moveCamera",
+          "adjustOrbitRange",
+          "flyRoute",
+          "restoreAircraftTrackingOwner",
+          "aircraftTrackingTarget",
+          "enterCockpitWithTracking"
+        ],
+        "extracted_clean_room_invariants": {
+          "c1_continuous_damping": "Two-stage exponential smoothing (lead rate 2.2/s, settle rate 1.6/s) eliminates camera jitter during transitions",
+          "trapezoid_velocity_profile": "Ease-in and ease-out ramp fractions prevent abrupt motion snaps on zoom and pan",
+          "collision_free_hud_ownership": "Explicit UI bounding-box avoidance relocates floating camera viewport when cursor/focus enters active target quadrant",
+          "transactional_window_handoff": "Atomic state handoff between windows/scenes guarantees zero-shake jump cuts"
+        }
+      },
+      "limitations": [
+        "Static AST/module boundary inspection only; zero proprietary code copied."
+      ]
+    },
+    {
+      "evidence_id": "ev_440e88a941de960b25d285fe7f6c8e42327c8236efe57990b3775577ffd0c399",
+      "operation": "inspect_sqlite_database",
+      "provider": {
+        "id": "rea-sqlite-snapshot",
+        "name": "REA Node24 SQLite Inspector",
+        "version": "6.8.0"
+      },
+      "subject": {
+        "name": "hbos_erp_e2e_production.db",
+        "digest": {
+          "sha256": "24705f682adf8aff764d797e603c5b96556ccd3cbd1e3d16d8fd6364d7d73487"
+        },
+        "local_path": "C:\\Users\\ipane\\hbos-deploy\\hbos-vector-engine\\data\\hbos_erp_e2e_production.db"
+      },
+      "confidence": "observed",
+      "authority": "shipped-artifact",
+      "normalized_result": {
+        "engine": "v24.19.0",
+        "schema_scope": "database",
+        "tables_count": 4,
+        "schema_declarations": [
+          {
+            "name": "rea_agents",
+            "type": "table",
+            "sql": "CREATE TABLE rea_agents (\n                agent_id TEXT PRIMARY KEY,\n                agent_role TEXT NOT NULL CHECK(agent_role IN ('CLIENT', 'SUPPLIER', 'INTERNAL_ENTITY')),\n                legal_name TEXT NOT NULL,\n                commercial_name TEXT,\n                country_code TEXT NOT NULL,\n                jurisdiction_code TEXT NOT NULL,\n                tax_id_type TEXT NOT NULL,\n                tax_id_number TEXT NOT NULL,\n                tax_id_verified INTEGER NOT NULL DEFAULT 0,\n                default_currency TEXT NOT NULL DEFAULT 'USD',\n                email TEXT,\n                address TEXT,\n                created_at TEXT NOT NULL\n            )"
+          },
+          {
+            "name": "rea_audit_versions",
+            "type": "table",
+            "sql": "CREATE TABLE rea_audit_versions (\n                audit_id TEXT PRIMARY KEY,\n                invoice_id TEXT NOT NULL,\n                document_number TEXT NOT NULL,\n                version INTEGER NOT NULL,\n                event_action TEXT NOT NULL,\n                previous_status TEXT,\n                new_status TEXT NOT NULL,\n                snapshot_json TEXT NOT NULL,\n                prev_hash TEXT NOT NULL,\n                current_hash TEXT NOT NULL,\n                timestamp TEXT NOT NULL\n            )"
+          },
+          {
+            "name": "rea_invoices",
+            "type": "table",
+            "sql": "CREATE TABLE rea_invoices (\n                invoice_id TEXT PRIMARY KEY,\n                document_number TEXT UNIQUE NOT NULL,\n                document_type TEXT NOT NULL CHECK(document_type IN ('STANDARD_INVOICE', 'CREDIT_NOTE', 'RECTIFYING_INVOICE')),\n                status TEXT NOT NULL CHECK(status IN ('BORRADOR', 'EMITIDO_APROBADO', 'RECTIFICADO_ANULADO')),\n                version INTEGER NOT NULL DEFAULT 1,\n                parent_invoice_id TEXT,\n                issuer_agent_id TEXT NOT NULL,\n                counterparty_agent_id TEXT NOT NULL,\n                invoice_currency TEXT NOT NULL,\n                functional_currency TEXT NOT NULL DEFAULT 'USD',\n                exchange_rate REAL NOT NULL,\n                subtotal REAL NOT NULL,\n                indirect_tax_total REAL NOT NULL,\n                withholding_tax_total REAL NOT NULL,\n                gross_total REAL NOT NULL,\n                net_payable REAL NOT NULL,\n                functional_net_payable REAL NOT NULL,\n                lines_json TEXT NOT NULL,\n                tax_breakdown_json TEXT NOT NULL,\n                equivalencies_json TEXT NOT NULL,\n                immutable_lock INTEGER NOT NULL DEFAULT 0,\n                content_sha256 TEXT NOT NULL,\n                created_at TEXT NOT NULL,\n                approved_at TEXT,\n                FOREIGN KEY(issuer_agent_id) REFERENCES rea_agents(agent_id),\n                FOREIGN KEY(counterparty_agent_id) REFERENCES rea_agents(agent_id)\n            )"
+          },
+          {
+            "name": "rea_resources",
+            "type": "table",
+            "sql": "CREATE TABLE rea_resources (\n                resource_id TEXT PRIMARY KEY,\n                sku TEXT UNIQUE NOT NULL,\n                name TEXT NOT NULL,\n                resource_type TEXT NOT NULL CHECK(resource_type IN ('SERVICE', 'DIGITAL_ASSET', 'HARDWARE')),\n                unit_price REAL NOT NULL,\n                currency TEXT NOT NULL DEFAULT 'USD',\n                created_at TEXT NOT NULL\n            )"
+          }
+        ],
+        "clean_room_erp_specifications": {
+          "entity_model": "Actors/Counterparties (Clients & Suppliers) with jurisdiction-bound Tax ID validation (US EIN, CO NIT Mod-11, CL RUT Mod-11, MX RFC)",
+          "hybrid_tax_engine": "Real-time Multi-Currency FX selector (USD, COP, MXN, EUR) + US Sales Tax & LATAM IVA/ReteFuente/ReteIVA/ReteICA matrix",
+          "state_machine": "Strict two-state lifecycle: BORRADOR (mutable, versioned) -> EMITIDO_APROBADO (immutable_lock=1, SHA-256 hash-chained)",
+          "rectification_flow": "Direct mutation blocked on approved invoices; adjustments require linked CREDIT_NOTE or RECTIFYING_INVOICE"
+        }
+      },
+      "limitations": [
+        "Read-only quiescent SQLite inspection via Node.js native DatabaseSync."
+      ]
+    }
+  ],
+  "timestamp": "2026-10-29T21:06:37.991Z"
+}
