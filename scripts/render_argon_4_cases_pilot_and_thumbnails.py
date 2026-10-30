@@ -654,10 +654,12 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
             str(pilot_mp4_drive)
         ], cwd=str(WORKSPACE_ROOT), check=True, capture_output=True)
 
-        # 4. Copiar a HBOS_Qdrant_Engine\03_MEDIA_VAULT_FINAL, Descargas y Escritorio
-        for dst_folder in [QDRANT_VAULT_DIR, Path(r"C:\Users\ipane\Downloads"), Path(r"C:\Users\ipane\Desktop")]:
-            if dst_folder.exists():
-                shutil.copy2(pilot_mp4_drive, dst_folder / "pilot_30s_argon_antigravity_4_casos_16x9.mp4")
+        # 4. Sincronizar exclusivamente en Google Drive via rclone (Regla C2 / C3: 0 Peso en el PC)
+        subprocess.run([
+            "rclone", "copy", str(pilot_mp4_drive), "gdrive:HBOS_Qdrant_Engine/03_MEDIA_VAULT_FINAL/"
+        ], check=False, capture_output=True)
+        if QDRANT_VAULT_DIR.exists() and not (QDRANT_VAULT_DIR / "pilot_30s_argon_antigravity_4_casos_16x9.mp4").exists():
+            shutil.copy2(pilot_mp4_drive, QDRANT_VAULT_DIR / "pilot_30s_argon_antigravity_4_casos_16x9.mp4")
 
         # 5. Guardar clicks.json en Drive
         clicks_path = PROJECT_DRIVE_DIR / "clicks.json"

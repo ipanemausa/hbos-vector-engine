@@ -1,0 +1,120 @@
+{
+  "status": "PC_CLEANED_AND_RCLONE_GDRIVE_SEALED",
+  "rclone_config": {
+    "rclone_conf_path": "C:\\Users\\ipane\\AppData\\Roaming\\rclone\\rclone.conf",
+    "remotes": [
+      "gdrive:",
+      "hbos_qdrant_engine:",
+      "hbos_creative:"
+    ]
+  },
+  "desktop_and_downloads_cleaned": [
+    {
+      "path": "C:\\Users\\ipane\\Desktop\\Guiahoy_Pista2_Aprobada_menos14LUFS.mp3",
+      "freed_mb": 0.6
+    },
+    {
+      "path": "C:\\Users\\ipane\\Desktop\\Guiahoy_Pista2_Aprobada_menos14LUFS.wav",
+      "freed_mb": 2.38
+    },
+    {
+      "path": "C:\\Users\\ipane\\Desktop\\Guiahoy_Pista3_Video08_Make_menos14LUFS.mp3",
+      "freed_mb": 0.57
+    },
+    {
+      "path": "C:\\Users\\ipane\\Desktop\\Guiahoy_Pista3_Video08_Make_menos14LUFS.wav",
+      "freed_mb": 2.29
+    },
+    {
+      "path": "C:\\Users\\ipane\\Desktop\\pilot_30s_argon_antigravity_4_casos_16x9.mp4",
+      "freed_mb": 8.86
+    },
+    {
+      "path": "C:\\Users\\ipane\\Downloads\\Guiahoy_Pista2_Aprobada_menos14LUFS.mp3",
+      "freed_mb": 0.6
+    },
+    {
+      "path": "C:\\Users\\ipane\\Downloads\\Guiahoy_Pista2_Aprobada_menos14LUFS.wav",
+      "freed_mb": 2.38
+    },
+    {
+      "path": "C:\\Users\\ipane\\Downloads\\Guiahoy_Pista3_Video08_Make_menos14LUFS.mp3",
+      "freed_mb": 0.57
+    },
+    {
+      "path": "C:\\Users\\ipane\\Downloads\\Guiahoy_Pista3_Video08_Make_menos14LUFS.wav",
+      "freed_mb": 2.29
+    },
+    {
+      "path": "C:\\Users\\ipane\\Downloads\\pilot_30s_argon_antigravity_4_casos_16x9.mp4",
+      "freed_mb": 8.86
+    }
+  ],
+  "repo_untracked_media_offloaded_to_gdrive": [
+    {
+      "source": "c:\\Users\\ipane\\hbos-deploy\\hbos-vector-engine\\output_master_evaluacion.mp4",
+      "dest": "hbos_qdrant_engine:03_MEDIA_VAULT_FINAL/legacy_pc_offload/",
+      "freed_mb": 1.44
+    },
+    {
+      "source": "c:\\Users\\ipane\\hbos-deploy\\hbos-vector-engine\\output_masters\\masterclass_hbos_integral_16x9.mp4",
+      "dest": "hbos_qdrant_engine:03_MEDIA_VAULT_FINAL/legacy_pc_offload/",
+      "freed_mb": 11.59
+    },
+    {
+      "source": "c:\\Users\\ipane\\hbos-deploy\\hbos-vector-engine\\output_masters\\masterclass_hbos_integral_9x16.mp4",
+      "dest": "hbos_qdrant_engine:03_MEDIA_VAULT_FINAL/legacy_pc_offload/",
+      "freed_mb": 6.93
+    },
+    {
+      "source": "c:\\Users\\ipane\\hbos-deploy\\hbos-vector-engine\\output_masters\\master_evaluacion_integral.mp4",
+      "dest": "hbos_qdrant_engine:03_MEDIA_VAULT_FINAL/legacy_pc_offload/",
+      "freed_mb": 0.0
+    },
+    {
+      "source": "c:\\Users\\ipane\\hbos-deploy\\hbos-vector-engine\\output_masters\\temp_blocks",
+      "dest": "hbos_qdrant_engine:03_MEDIA_VAULT_FINAL/legacy_pc_offload/temp_blocks/",
+      "freed_mb": 13.72
+    },
+    {
+      "source": "c:\\Users\\ipane\\hbos-deploy\\hbos-vector-engine\\output_masters\\guiahoy_e2e",
+      "dest": "hbos_qdrant_engine:03_MEDIA_VAULT_FINAL/legacy_pc_offload/guiahoy_e2e/",
+      "freed_mb": 6.91
+    },
+    {
+      "source": "c:\\Users\\ipane\\hbos-deploy\\hbos-vector-engine\\assets\\canvas",
+      "dest": "hbos_creative:01_Visual_Packs/canvas_offload/",
+      "freed_mb": 9.23
+    },
+    {
+      "source": "c:\\Users\\ipane\\hbos-deploy\\hbos-vector-engine\\assets\\voice\\dataset_guillermo",
+      "dest": "hbos_creative:02_Voice_Profiles/dataset_offload/",
+      "freed_mb": 8.45
+    }
+  ],
+  "total_media_offloaded_mb": 87.67,
+  "ram_before": {
+    "used_gb": 10.34,
+    "available_gb": 1.46,
+    "percent": 87.6
+  },
+  "ram_after": {
+    "used_gb": 9.13,
+    "available_gb": 2.67,
+    "percent": 77.3,
+    "ram_recovered_gb": 1.21
+  },
+  "c_drive_free_gb": {
+    "before": 94.07,
+    "after": 94.13
+  },
+  "ram_working_set_trim": {
+    "processes_working_set_trimmed": 212
+  },
+  "critical_services_intact": {
+    "qdrant_local_6333": true,
+    "freellmapi_3001": true,
+    "kiro_10088": false
+  },
+  "timestamp_utc": "2026-10-30T20:09:23.849108+00:00"
+}
