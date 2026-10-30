@@ -144,6 +144,9 @@ class GuiahoyVideoPipeline:
         trimmed_voice_path = os.path.join(self.temp_dir, "voice_silence_trimmed.wav")
 
         cloned_candidates = [
+            r"G:\My Drive\HBOS_Creative\02_Voice_Profiles\Guiahoy_PRUEBA_CLON_VOZ_menos14LUFS.wav",
+            r"G:\My Drive\HBOS_Creative\02_Voice_Profiles\Guiahoy_ELEVENLABS_CLON_VERIFICADO_menos14LUFS.wav",
+            r"G:\My Drive\HBOS_Creative\02_Voice_Profiles\Guiahoy_MASTER_48k_menos14LUFS.wav",
             os.path.join(self.workspace_root, "..", "production_media", "guillermo_voice_cloned_f5.wav"),
             os.path.join(self.workspace_root, "assets", "voice", "guillermo_voice_real_master.aac"),
         ]
@@ -518,16 +521,16 @@ class GuiahoyVideoPipeline:
         draw.text((bx + 22, by + 18), f"CAMARA AUTOPILOT [{corner_name}]", fill=(0, 229, 255, 255))
         draw.text((bx + 22, by + 46), "Anti-Oclusion UI Activa · 3D Dual", fill=(120, 255, 180, 255))
 
-        # Paste 3D Presenter (Guillermo) & 3D Mascot (Diamantino) side by side inside the bubble
+        # Paste 3D Presenter (Guiahoy) & 3D Mascot (Diamantino) side by side inside the bubble
         canvas.paste(self.presenter_img, (bx + 25, by + 85))
         canvas.paste(self.mascot_img, (bx + 215, by + 85))
 
-        draw.text((bx + 35, by + 250), "GUILLERMO 3D", fill=(255, 255, 255, 255))
+        draw.text((bx + 35, by + 250), "GUIAHOY 3D", fill=(255, 255, 255, 255))
         draw.text((bx + 215, by + 250), "DIAMANTINO 3D", fill=(255, 179, 0, 255))
 
         # Live Voice Waveform bar inside bubble
         draw.rounded_rectangle([bx + 22, by + 295, bx + bw - 22, by + 365], radius=14, fill=(20, 32, 54, 255), outline=(255, 179, 0, 200), width=2)
-        draw.text((bx + 40, by + 320), "VOZ STUDIO 48kHz · -14.0 LUFS", fill=(255, 179, 0, 255))
+        draw.text((bx + 32, by + 320), "CLON VOZ: Guiahoy · -14.0 LUFS", fill=(255, 179, 0, 255))
 
     def _generate_high_conversion_ass_subtitles(self, script_segments: List[Dict[str, Any]], total_duration: float) -> str:
         ass_path = os.path.join(self.temp_dir, "guiahoy_animated_subs.ass")
@@ -648,7 +651,8 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
             "silence_trimmed_duration_sec": round(final_dur, 2),
             "subtitles_ass_path": ass_path,
             "subtitles_segments_count": len(script_segments),
-            "avatars_integrated": ["Guillermo_3D_Presenter", "Diamantino_3D_Mascot"],
+            "voice_clone_name": "Guiahoy",
+            "avatars_integrated": ["Guiahoy_3D_Presenter", "Diamantino_3D_Mascot"],
             "autopilot_telemetry": autopilot_telemetry,
             "audio_mastering": {
                 "target_lufs": -14.0,
