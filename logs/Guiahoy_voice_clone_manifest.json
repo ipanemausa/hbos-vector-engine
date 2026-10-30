@@ -1,9 +1,16 @@
 {
   "voice_clone_name": "Guiahoy",
   "naming_policy": "STRICT_BRAND_ONLY_UNIDO (Guiahoy) — Sin nombre personal",
-  "operator_ear_verdict": "APPROVED_TRACK_2 (2026-10-30 — highpass 65Hz + graves 115Hz +1.6dB, cero filtro FFT, -14 LUFS)",
+  "registered_ecosystem_names": {
+    "drive_qdrant_workspace": "HBOS_Qdrant_Engine (G:\\My Drive\\HBOS_Qdrant_Engine)",
+    "notebook_source_folder": "00_CORE_BIBLIAS (G:\\My Drive\\HBOS_Qdrant_Engine\\00_CORE_BIBLIAS)",
+    "media_vault_folder": "03_MEDIA_VAULT_FINAL (G:\\My Drive\\HBOS_Qdrant_Engine\\03_MEDIA_VAULT_FINAL)",
+    "vector_engine_repo": "hbos-vector-engine (C:\\Users\\ipane\\hbos-deploy\\hbos-vector-engine & G:\\My Drive\\HBOS_VECTOR_PERSISTENCE\\hbos-vector-engine)",
+    "operational_account": "hbos.quadrant@gmail.com (HBOS Quadrant)"
+  },
+  "operator_ear_verdict": "APPROVED_WARM_NATURAL_CHAIN (2026-10-30 — highpass 65Hz + graves 115Hz +1.6dB, cero filtro FFT, -14 LUFS)",
   "ready_for_any_video": true,
-  "timestamp_utc": "2026-10-30T19:27:16.516203+00:00",
+  "timestamp_utc": "2026-10-30T19:39:07.595864+00:00",
   "acoustic_guardrails_verified": {
     "f0_mean_hz": 109.2,
     "f0_band_p5_p95_hz": [
@@ -50,9 +57,9 @@
       "channels": 1,
       "sha256": "b6dd685ea8ced0b16c1502056086d8dc50dbbad5290fb3a56ddeba0ced9309ec"
     },
-    "Guiahoy_PRUEBA_CLON_VOZ_menos14LUFS": {
-      "filename": "Guiahoy_PRUEBA_CLON_VOZ_menos14LUFS.wav",
-      "path": "G:\\My Drive\\HBOS_Creative\\02_Voice_Profiles\\Guiahoy_PRUEBA_CLON_VOZ_menos14LUFS.wav",
+    "Guiahoy_MASCOTAS_CLIPS_LIMPIO_menos14LUFS": {
+      "filename": "Guiahoy_MASCOTAS_CLIPS_LIMPIO_menos14LUFS.wav",
+      "path": "G:\\My Drive\\HBOS_Creative\\02_Voice_Profiles\\Guiahoy_MASCOTAS_CLIPS_LIMPIO_menos14LUFS.wav",
       "size_bytes": 2496078,
       "size_mb": 2.38,
       "duration_sec": 26.0,
@@ -63,9 +70,22 @@
       "integrated_lufs": -14.8,
       "standard": "EBU R128 (-14 LUFS)"
     },
-    "Guiahoy_ELEVENLABS_CLON_VERIFICADO_menos14LUFS": {
-      "filename": "Guiahoy_ELEVENLABS_CLON_VERIFICADO_menos14LUFS.wav",
-      "path": "G:\\My Drive\\HBOS_Creative\\02_Voice_Profiles\\Guiahoy_ELEVENLABS_CLON_VERIFICADO_menos14LUFS.wav",
+    "Guiahoy_Pista3_Video08_Make_menos14LUFS": {
+      "filename": "Guiahoy_Pista3_Video08_Make_menos14LUFS.wav",
+      "path": "G:\\My Drive\\HBOS_Creative\\02_Voice_Profiles\\Guiahoy_Pista3_Video08_Make_menos14LUFS.wav",
+      "size_bytes": 2400078,
+      "size_mb": 2.29,
+      "duration_sec": 25.0,
+      "codec": "pcm_s16le",
+      "sample_rate": 48000,
+      "channels": 1,
+      "sha256": "78d9578d57cb8c13ad8c1e6a261e4b614b7da5a4cd9771b09251d1b109223c20",
+      "integrated_lufs": -15.0,
+      "standard": "EBU R128 (-14 LUFS)"
+    },
+    "Guiahoy_PRUEBA_CLON_VOZ_menos14LUFS": {
+      "filename": "Guiahoy_PRUEBA_CLON_VOZ_menos14LUFS.wav",
+      "path": "G:\\My Drive\\HBOS_Creative\\02_Voice_Profiles\\Guiahoy_PRUEBA_CLON_VOZ_menos14LUFS.wav",
       "size_bytes": 2496078,
       "size_mb": 2.38,
       "duration_sec": 26.0,

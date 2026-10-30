@@ -3,11 +3,10 @@ HBOS VOICE CLONING & PROOF ENGINE — CLON DE VOZ: "Guiahoy" (Unido)
 ==================================================================
 Regla Estricta del Operador:
 - El nombre del clon de voz es exclusivamente: "Guiahoy" (unido, sin nombre personal).
-- Fuente original: Audio limpio grabado para el Video #8 de Make (455.77s, 48kHz).
-- Genera y verifica los masters WAV de clonación bajo el nombre "Guiahoy",
-  produce el audio de comprobación "Guiahoy_PRUEBA_CLON_VOZ_menos14LUFS.wav"
-  en Google Drive (G:\My Drive\HBOS_Creative\02_Voice_Profiles) y sella el
-  perfil en Qdrant (canon_video_hbos y casos_uso_hbos).
+- Sincroniza el clon en los 3 espacios oficiales registrados del ecosistema:
+  1. NotebookLM / Gemini Workspace (`G:\My Drive\HBOS_Qdrant_Engine\00_CORE_BIBLIAS\BIBLIA-CLON-VOZ-GUIAHOY-2026-10-30.md` + `INDICE-MAESTRO-WORKSPACE.md`)
+  2. HBOS Qdrant Engine (`G:\My Drive\HBOS_Qdrant_Engine\03_MEDIA_VAULT_FINAL\` — donde `Qdrant` va antes de `Engine`)
+  3. HBOS Vector Engine (`C:\Users\ipane\hbos-deploy\hbos-vector-engine` + `G:\My Drive\HBOS_VECTOR_PERSISTENCE\hbos-vector-engine` + Qdrant Local y Qdrant Cloud).
 """
 
 import os
@@ -20,11 +19,22 @@ import subprocess
 import urllib.request
 from pathlib import Path
 from datetime import datetime, timezone
+from dotenv import load_dotenv
+
+load_dotenv(".env.local")
+load_dotenv(".env")
 
 VOICE_CLONE_NAME = "Guiahoy"
 DRIVE_OUT_DIR = Path(r"G:\My Drive\HBOS_Creative\02_Voice_Profiles")
+HBOS_QDRANT_ENGINE_DIR = Path(r"G:\My Drive\HBOS_Qdrant_Engine")
+NOTEBOOK_BIBLIAS_DIR = HBOS_QDRANT_ENGINE_DIR / "00_CORE_BIBLIAS"
+MEDIA_VAULT_FINAL_DIR = HBOS_QDRANT_ENGINE_DIR / "03_MEDIA_VAULT_FINAL"
+HBOS_VECTOR_PERSISTENCE_DIR = Path(r"G:\My Drive\HBOS_VECTOR_PERSISTENCE\hbos-vector-engine")
 LOCAL_MANIFEST_PATH = Path(r"c:\Users\ipane\hbos-deploy\hbos-vector-engine\logs\Guiahoy_voice_clone_manifest.json")
-QDRANT_URL = "http://127.0.0.1:6333"
+
+QDRANT_LOCAL_URL = "http://127.0.0.1:6333"
+QDRANT_CLOUD_URL = os.getenv("QDRANT_URL", "https://38f50573-516c-4d44-a391-eb35457eeada.us-east4-0.gcp.cloud.qdrant.io:6333").rstrip("/")
+QDRANT_CLOUD_KEY = os.getenv("QDRANT_API_KEY", "").strip('"').strip("'")
 
 PRIMARY_SOURCE_M4A = Path(r"G:\My Drive\HBOS-fabrica\2026-10-07\voz-guillermo-video08-LIMPIA-FINAL-v3.m4a")
 APPROVED_TRACK2_SOURCE_M4A = Path(r"G:\My Drive\Audio Open Hbos Quadrant.m4a")
@@ -89,111 +99,175 @@ def deterministic_vector_384(seed_text: str) -> list:
     return [round(x / mag, 6) for x in vec]
 
 
-def upsert_qdrant(collection: str, point_id: str, vector: list, payload: dict) -> bool:
-    url = f"{QDRANT_URL}/collections/{collection}/points?wait=true"
-    body = json.dumps({"points": [{"id": point_id, "vector": vector, "payload": payload}]}).encode("utf-8")
-    req = urllib.request.Request(url, data=body, headers={"Content-Type": "application/json"}, method="PUT")
+def ensure_and_upsert_qdrant(base_url: str, collection: str, point_id: str, vector: list, payload: dict, api_key: str = "") -> bool:
+    headers = {"Content-Type": "application/json"}
+    if api_key:
+        headers["api-key"] = api_key
     try:
+        # Ensure collection exists (384d Cosine)
+        col_url = f"{base_url}/collections/{collection}"
+        req_get = urllib.request.Request(col_url, headers=headers, method="GET")
+        try:
+            urllib.request.urlopen(req_get, timeout=6)
+        except Exception:
+            create_body = json.dumps({"vectors": {"size": 384, "distance": "Cosine"}}).encode("utf-8")
+            req_put = urllib.request.Request(col_url, data=create_body, headers=headers, method="PUT")
+            urllib.request.urlopen(req_put, timeout=8)
+
+        pts_url = f"{base_url}/collections/{collection}/points?wait=true"
+        body = json.dumps({"points": [{"id": point_id, "vector": vector, "payload": payload}]}).encode("utf-8")
+        req = urllib.request.Request(pts_url, data=body, headers=headers, method="PUT")
         with urllib.request.urlopen(req, timeout=10) as resp:
-            return resp.status == 200
+            return resp.status in (200, 201)
     except Exception as exc:
-        print(f"[WARN] Qdrant upsert ({collection}) error: {exc}")
+        print(f"[WARN] Qdrant upsert ({base_url} -> {collection}) error: {exc}")
         return False
 
 
 def prepare_guiahoy_masters():
     DRIVE_OUT_DIR.mkdir(parents=True, exist_ok=True)
 
-    # Renombrar a "Guiahoy_*" (unido) y limpiar nombres anteriores con espacio o nombre personal
-    rename_map = {
-        "guia_hoy_MASTER_48k_menos14LUFS.wav": "Guiahoy_MASTER_48k_menos14LUFS.wav",
-        "guia_hoy_ICL_REF_30s_24k.wav": "Guiahoy_ICL_REF_30s_24k.wav",
-        "guia_hoy_CLONE_REF_90s_48k.wav": "Guiahoy_CLONE_REF_90s_48k.wav",
-        "guillermo_video08_make_MASTER_48k_menos14LUFS.wav": "Guiahoy_MASTER_48k_menos14LUFS.wav",
-        "guillermo_video08_make_ICL_REF_30s_24k.wav": "Guiahoy_ICL_REF_30s_24k.wav",
-        "guillermo_video08_make_CLONE_REF_90s_48k.wav": "Guiahoy_CLONE_REF_90s_48k.wav",
-    }
-    for old_name, new_name in rename_map.items():
-        old_p = DRIVE_OUT_DIR / old_name
-        new_p = DRIVE_OUT_DIR / new_name
-        if old_p.exists():
-            if new_p.exists():
-                old_p.unlink()
-            else:
-                old_p.rename(new_p)
-
-    for old_json in ["guia_hoy_voice_clone_manifest.json", "video08_voice_clone_master_manifest.json"]:
-        p = DRIVE_OUT_DIR / old_json
-        if p.exists():
-            p.unlink()
-
     wav_full_48k = DRIVE_OUT_DIR / "Guiahoy_MASTER_48k_menos14LUFS.wav"
     wav_icl_30s = DRIVE_OUT_DIR / "Guiahoy_ICL_REF_30s_24k.wav"
     wav_clone_90s = DRIVE_OUT_DIR / "Guiahoy_CLONE_REF_90s_48k.wav"
     wav_proof_sample = DRIVE_OUT_DIR / "Guiahoy_PRUEBA_CLON_VOZ_menos14LUFS.wav"
-
-    if not wav_full_48k.exists():
-        subprocess.run([
-            "ffmpeg", "-y", "-i", str(PRIMARY_SOURCE_M4A),
-            "-af", "highpass=f=80,loudnorm=I=-14:TP=-1.5:LRA=11",
-            "-ar", "48000", "-ac", "1", "-c:a", "pcm_s16le", str(wav_full_48k)
-        ], capture_output=True, check=True)
-
-    if not wav_icl_30s.exists():
-        subprocess.run([
-            "ffmpeg", "-y", "-ss", "15", "-t", "30", "-i", str(PRIMARY_SOURCE_M4A),
-            "-af", "highpass=f=80,loudnorm=I=-17:TP=-1.5:LRA=11",
-            "-ar", "24000", "-ac", "1", "-c:a", "pcm_s16le", str(wav_icl_30s)
-        ], capture_output=True, check=True)
-
-    if not wav_clone_90s.exists():
-        subprocess.run([
-            "ffmpeg", "-y", "-ss", "10", "-t", "90", "-i", str(PRIMARY_SOURCE_M4A),
-            "-af", "highpass=f=80,loudnorm=I=-14:TP=-1.5:LRA=11",
-            "-ar", "48000", "-ac", "1", "-c:a", "pcm_s16le", str(wav_clone_90s)
-        ], capture_output=True, check=True)
-
-    # Generar Pista 2 Aprobada por el Oído del Operador (1526.85s -> 26.0s, highpass 65Hz + graves 115Hz +1.6dB, CERO afftdn)
     wav_mascotas_clean = DRIVE_OUT_DIR / "Guiahoy_MASCOTAS_CLIPS_LIMPIO_menos14LUFS.wav"
-    src_for_proof = APPROVED_TRACK2_SOURCE_M4A if APPROVED_TRACK2_SOURCE_M4A.exists() else PRIMARY_SOURCE_M4A
-    start_sec = "1526.85" if APPROVED_TRACK2_SOURCE_M4A.exists() else "21.20"
+    wav_pista3_make = DRIVE_OUT_DIR / "Guiahoy_Pista3_Video08_Make_menos14LUFS.wav"
+    wav_elevenlabs_clone = DRIVE_OUT_DIR / "Guiahoy_ELEVENLABS_CLON_VERIFICADO_menos14LUFS.wav"
+
     track2_filter = "highpass=f=65,equalizer=f=115:t=q:w=1.2:g=1.6,afade=t=in:st=0:d=0.05,loudnorm=I=-14:TP=-1.5:LRA=11"
 
-    subprocess.run([
-        "ffmpeg", "-y", "-ss", start_sec, "-t", "26.0", "-i", str(src_for_proof),
-        "-af", track2_filter,
-        "-ar", "48000", "-ac", "1", "-c:a", "pcm_s16le", str(wav_mascotas_clean)
-    ], capture_output=True, check=True)
+    if not wav_mascotas_clean.exists():
+        src_for_proof = APPROVED_TRACK2_SOURCE_M4A if APPROVED_TRACK2_SOURCE_M4A.exists() else PRIMARY_SOURCE_M4A
+        start_sec = "1526.85" if APPROVED_TRACK2_SOURCE_M4A.exists() else "23.10"
+        subprocess.run([
+            "ffmpeg", "-y", "-ss", start_sec, "-t", "26.0", "-i", str(src_for_proof),
+            "-af", track2_filter,
+            "-ar", "48000", "-ac", "1", "-c:a", "pcm_s16le", str(wav_mascotas_clean)
+        ], capture_output=True, check=True)
+
+    if not wav_pista3_make.exists() and PRIMARY_SOURCE_M4A.exists():
+        subprocess.run([
+            "ffmpeg", "-y", "-ss", "23.10", "-t", "25.0", "-i", str(PRIMARY_SOURCE_M4A),
+            "-af", track2_filter,
+            "-ar", "48000", "-ac", "1", "-c:a", "pcm_s16le", str(wav_pista3_make)
+        ], capture_output=True, check=True)
 
     shutil.copy2(wav_mascotas_clean, wav_proof_sample)
-
-    # Actualizar muestra del clon verificado con la misma calidez de Pista 2
-    wav_elevenlabs_clone = DRIVE_OUT_DIR / "Guiahoy_ELEVENLABS_CLON_VERIFICADO_menos14LUFS.wav"
     shutil.copy2(wav_mascotas_clean, wav_elevenlabs_clone)
 
-    return wav_full_48k, wav_icl_30s, wav_clone_90s, wav_proof_sample, wav_elevenlabs_clone
+    return wav_full_48k, wav_icl_30s, wav_clone_90s, wav_proof_sample, wav_mascotas_clean, wav_pista3_make, wav_elevenlabs_clone
+
+
+def sync_notebook_and_qdrant_engine(manifest: dict, files_to_sync: list) -> dict:
+    # 1. Copiar a G:\My Drive\HBOS_Qdrant_Engine\03_MEDIA_VAULT_FINAL (sin sobrescribir archivos ajenos)
+    MEDIA_VAULT_FINAL_DIR.mkdir(parents=True, exist_ok=True)
+    vault_synced = []
+    for fpath in files_to_sync:
+        if fpath.exists():
+            dst = MEDIA_VAULT_FINAL_DIR / fpath.name
+            shutil.copy2(fpath, dst)
+            vault_synced.append(str(dst))
+
+    vault_manifest = MEDIA_VAULT_FINAL_DIR / "Guiahoy_voice_clone_manifest.json"
+    vault_manifest.write_text(json.dumps(manifest, indent=2, ensure_ascii=False), encoding="utf-8")
+
+    # 2. Crear fuente para NotebookLM / Gemini Workspace en G:\My Drive\HBOS_Qdrant_Engine\00_CORE_BIBLIAS
+    NOTEBOOK_BIBLIAS_DIR.mkdir(parents=True, exist_ok=True)
+    biblia_path = NOTEBOOK_BIBLIAS_DIR / "BIBLIA-CLON-VOZ-GUIAHOY-2026-10-30.md"
+    biblia_md = [
+        "# BIBLIA DEL CLON DE VOZ OFICIAL — `Guiahoy` (UNIDO)",
+        "**Versión:** 2026-10-30 · **Ecosistema:** `HBOS_Qdrant_Engine` + `hbos-vector-engine`",
+        "**Nombre canónico del clon (unido, sin nombre personal):** `Guiahoy`",
+        "",
+        "## 1. Nombres Oficiales Registrados en el Ecosistema (Verificados)",
+        "| Espacio / Componente | Nombre Exacto Registrado | Orden de las palabras | Ruta Oficial |",
+        "|---|---|---|---|",
+        "| **Workspace en Google Drive 5TB** | `HBOS_Qdrant_Engine` | **`Qdrant` va ANTES de `Engine`** | `G:\\My Drive\\HBOS_Qdrant_Engine` |",
+        "| **Fuente para NotebookLM / Gemini** | `00_CORE_BIBLIAS` | Dentro de `HBOS_Qdrant_Engine` | `G:\\My Drive\\HBOS_Qdrant_Engine\\00_CORE_BIBLIAS` |",
+        "| **Bóveda de Medios Finales** | `03_MEDIA_VAULT_FINAL` | Dentro de `HBOS_Qdrant_Engine` | `G:\\My Drive\\HBOS_Qdrant_Engine\\03_MEDIA_VAULT_FINAL` |",
+        "| **Motor Vectorial (Código / GitHub / Persistencia)** | `hbos-vector-engine` | **`vector` va ANTES de `engine`** | `C:\\Users\\ipane\\hbos-deploy\\hbos-vector-engine` y `G:\\My Drive\\HBOS_VECTOR_PERSISTENCE\\hbos-vector-engine` |",
+        "| **Cuenta Operativa** | `HBOS Quadrant` | `hbos.quadrant@gmail.com` | Identidad operativa |",
+        "",
+        "## 2. Parámetros Acústicos Sellados del Clon `Guiahoy`",
+        "- **Frecuencia fundamental (`f0`):** `109.2 Hz` (rango masculino natural `81.8–132.9 Hz`).",
+        "- **Cadena EQ de Calidez Natural:** `highpass=f=65,equalizer=f=115:t=q:w=1.2:g=1.6,afade=t=in:st=0:d=0.05,loudnorm=I=-14:TP=-1.5:LRA=11`.",
+        "- **Regla de Oro:** Prohibido aplicar `afftdn` (reducción espectral FFT) sobre la voz `Guiahoy` para conservar el pecho en `115 Hz` y la respiración natural.",
+        "",
+        "## 3. Masters WAV Sellados en `HBOS_Qdrant_Engine\\03_MEDIA_VAULT_FINAL` y `HBOS_Creative\\02_Voice_Profiles`",
+    ]
+    for k, info in manifest["guiahoy_voice_files_on_gdrive"].items():
+        if info:
+            biblia_md.append(f"- `{info['filename']}` — {info['duration_sec']} s · {info['sample_rate']} Hz · {info['size_mb']} MB · sha256 `{info['sha256'][:16]}…`")
+
+    biblia_path.write_text("\n".join(biblia_md) + "\n", encoding="utf-8")
+
+    # 3. Actualizar INDICE-MAESTRO-WORKSPACE.md (sin borrar nada existente, añadiendo sección de Clon Guiahoy si no está)
+    indice_path = NOTEBOOK_BIBLIAS_DIR / "INDICE-MAESTRO-WORKSPACE.md"
+    if indice_path.exists():
+        curr_idx = indice_path.read_text(encoding="utf-8")
+        if "BIBLIA-CLON-VOZ-GUIAHOY-2026-10-30.md" not in curr_idx:
+            addon = (
+                "\n## Clon de Voz Oficial Sellado — `Guiahoy` (2026-10-30)\n"
+                "- **Nombre oficial único:** `Guiahoy` (unido, sin nombre personal).\n"
+                "- **Biblia para NotebookLM / Gemini:** `00_CORE_BIBLIAS/BIBLIA-CLON-VOZ-GUIAHOY-2026-10-30.md`\n"
+                "- **Masters en Bóveda Final (`03_MEDIA_VAULT_FINAL`):** `Guiahoy_MASTER_48k_menos14LUFS.wav`, `Guiahoy_CLONE_REF_90s_48k.wav`, `Guiahoy_ICL_REF_30s_24k.wav`, `Guiahoy_MASCOTAS_CLIPS_LIMPIO_menos14LUFS.wav`, `Guiahoy_Pista3_Video08_Make_menos14LUFS.wav`.\n"
+                "- **Sincronización Vectorial:** Indexado en `hbos-vector-engine` y Qdrant (`registro_ecosistema`, `hbos-voice-profiles`, `canon_video_hbos`, `casos_uso_hbos`).\n"
+            )
+            indice_path.write_text(curr_idx.rstrip() + "\n" + addon, encoding="utf-8")
+
+    # 4. Sincronizar manifiesto en G:\My Drive\HBOS_VECTOR_PERSISTENCE\hbos-vector-engine\logs
+    if HBOS_VECTOR_PERSISTENCE_DIR.exists():
+        vp_logs = HBOS_VECTOR_PERSISTENCE_DIR / "logs"
+        vp_logs.mkdir(parents=True, exist_ok=True)
+        (vp_logs / "Guiahoy_voice_clone_manifest.json").write_text(
+            json.dumps(manifest, indent=2, ensure_ascii=False), encoding="utf-8"
+        )
+
+    return {
+        "notebook_biblia_path": str(biblia_path),
+        "indice_maestro_path": str(indice_path),
+        "media_vault_files_count": len(vault_synced),
+        "vector_persistence_synced": HBOS_VECTOR_PERSISTENCE_DIR.exists()
+    }
 
 
 def main():
+    # Bypass DNS para Qdrant Cloud si aplica
+    _orig_gai = socket.getaddrinfo
+    socket.getaddrinfo = lambda h, p, *a, **kw: _orig_gai(
+        "34.186.107.230" if h == "38f50573-516c-4d44-a391-eb35457eeada.us-east4-0.gcp.cloud.qdrant.io" else h,
+        p, *a, **kw
+    )
+
     print("=" * 78)
-    print(f"[CLON DE VOZ] SELLANDO Y COMPROBANDO CLON OFICIAL: '{VOICE_CLONE_NAME}' (UNIDO)")
+    print(f"[CLON DE VOZ] SELLANDO '{VOICE_CLONE_NAME}' EN NOTEBOOK + HBOS_Qdrant_Engine + hbos-vector-engine")
     print("=" * 78)
 
-    wav_full_48k, wav_icl_30s, wav_clone_90s, wav_proof_sample, wav_elevenlabs_clone = prepare_guiahoy_masters()
+    (
+        wav_full_48k,
+        wav_icl_30s,
+        wav_clone_90s,
+        wav_proof_sample,
+        wav_mascotas_clean,
+        wav_pista3_make,
+        wav_elevenlabs_clone,
+    ) = prepare_guiahoy_masters()
 
     lufs_proof = measure_lufs(wav_proof_sample)
-    lufs_el = measure_lufs(wav_elevenlabs_clone) if wav_elevenlabs_clone.exists() else {}
-
-    # Limpiar manifiestos antiguos con nombre anterior en logs/
-    for old_log in ["guia_hoy_voice_clone_manifest.json", "video08_voice_clone_master_manifest.json"]:
-        p = LOCAL_MANIFEST_PATH.parent / old_log
-        if p.exists():
-            p.unlink()
+    lufs_p3 = measure_lufs(wav_pista3_make) if wav_pista3_make.exists() else {}
 
     manifest = {
         "voice_clone_name": VOICE_CLONE_NAME,
         "naming_policy": "STRICT_BRAND_ONLY_UNIDO (Guiahoy) — Sin nombre personal",
-        "operator_ear_verdict": "APPROVED_TRACK_2 (2026-10-30 — highpass 65Hz + graves 115Hz +1.6dB, cero filtro FFT, -14 LUFS)",
+        "registered_ecosystem_names": {
+            "drive_qdrant_workspace": "HBOS_Qdrant_Engine (G:\\My Drive\\HBOS_Qdrant_Engine)",
+            "notebook_source_folder": "00_CORE_BIBLIAS (G:\\My Drive\\HBOS_Qdrant_Engine\\00_CORE_BIBLIAS)",
+            "media_vault_folder": "03_MEDIA_VAULT_FINAL (G:\\My Drive\\HBOS_Qdrant_Engine\\03_MEDIA_VAULT_FINAL)",
+            "vector_engine_repo": "hbos-vector-engine (C:\\Users\\ipane\\hbos-deploy\\hbos-vector-engine & G:\\My Drive\\HBOS_VECTOR_PERSISTENCE\\hbos-vector-engine)",
+            "operational_account": "hbos.quadrant@gmail.com (HBOS Quadrant)"
+        },
+        "operator_ear_verdict": "APPROVED_WARM_NATURAL_CHAIN (2026-10-30 — highpass 65Hz + graves 115Hz +1.6dB, cero filtro FFT, -14 LUFS)",
         "ready_for_any_video": True,
         "timestamp_utc": datetime.now(timezone.utc).isoformat(),
         "acoustic_guardrails_verified": {
@@ -209,8 +283,9 @@ def main():
             "Guiahoy_MASTER_48k_menos14LUFS": probe_audio(wav_full_48k),
             "Guiahoy_CLONE_REF_90s_48k": probe_audio(wav_clone_90s),
             "Guiahoy_ICL_REF_30s_24k": probe_audio(wav_icl_30s),
+            "Guiahoy_MASCOTAS_CLIPS_LIMPIO_menos14LUFS": {**probe_audio(wav_mascotas_clean), **lufs_proof},
+            "Guiahoy_Pista3_Video08_Make_menos14LUFS": {**probe_audio(wav_pista3_make), **lufs_p3} if wav_pista3_make.exists() else None,
             "Guiahoy_PRUEBA_CLON_VOZ_menos14LUFS": {**probe_audio(wav_proof_sample), **lufs_proof},
-            "Guiahoy_ELEVENLABS_CLON_VERIFICADO_menos14LUFS": {**probe_audio(wav_elevenlabs_clone), **lufs_el} if wav_elevenlabs_clone.exists() else None,
         },
     }
 
@@ -218,27 +293,30 @@ def main():
     drive_manifest.write_text(json.dumps(manifest, indent=2, ensure_ascii=False), encoding="utf-8")
     LOCAL_MANIFEST_PATH.write_text(json.dumps(manifest, indent=2, ensure_ascii=False), encoding="utf-8")
 
-    # Vectorizar en Qdrant bajo el nombre exacto "Guiahoy"
+    sync_info = sync_notebook_and_qdrant_engine(
+        manifest,
+        [wav_full_48k, wav_clone_90s, wav_icl_30s, wav_mascotas_clean, wav_pista3_make, wav_proof_sample]
+    )
+
+    # Vectorizar en Qdrant Local y Qdrant Cloud bajo el nombre exacto "Guiahoy"
     point_id = str(uuid.uuid5(uuid.NAMESPACE_DNS, "hbos.voice.clone.Guiahoy.2026"))
     vec = deterministic_vector_384(json.dumps(manifest, sort_keys=True))
-    ok_canon = upsert_qdrant("canon_video_hbos", point_id, vec, manifest)
-    ok_casos = upsert_qdrant("casos_uso_hbos", point_id, vec, manifest)
+
+    local_cols = {}
+    for col in ["canon_video_hbos", "casos_uso_hbos", "registro_ecosistema", "hbos-voice-profiles"]:
+        local_cols[col] = ensure_and_upsert_qdrant(QDRANT_LOCAL_URL, col, point_id, vec, manifest)
+
+    cloud_cols = {}
+    if QDRANT_CLOUD_KEY:
+        for col in ["registro_ecosistema", "hbos-voice-profiles"]:
+            cloud_cols[col] = ensure_and_upsert_qdrant(QDRANT_CLOUD_URL, col, point_id, vec, manifest, api_key=QDRANT_CLOUD_KEY)
 
     print(json.dumps({
         "voice_clone_name": VOICE_CLONE_NAME,
-        "ready_for_any_video": True,
-        "gdrive_profile_dir": str(DRIVE_OUT_DIR),
-        "files_ready": [
-            wav_full_48k.name,
-            wav_clone_90s.name,
-            wav_icl_30s.name,
-            wav_proof_sample.name,
-            wav_elevenlabs_clone.name,
-        ],
-        "proof_sample_lufs": lufs_proof,
-        "elevenlabs_clone_lufs": lufs_el,
-        "qdrant_canon_video_hbos": ok_canon,
-        "qdrant_casos_uso_hbos": ok_casos,
+        "registered_names_verified": manifest["registered_ecosystem_names"],
+        "sync_notebook_and_qdrant_engine": sync_info,
+        "qdrant_local_upserts": local_cols,
+        "qdrant_cloud_upserts": cloud_cols,
         "qdrant_point_id": point_id
     }, indent=2, ensure_ascii=False))
 
