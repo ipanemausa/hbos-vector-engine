@@ -1,0 +1,16 @@
+{
+  "status": "PHASE_5_AND_6_SEALED",
+  "point_id": "9c41f2a8-38e1-4c99-b4d2-81a0e5c71030",
+  "qdrant_local": {
+    "casos_uso_hbos": false,
+    "canon_video_hbos": false,
+    "registro_ecosistema": false
+  },
+  "qdrant_cloud_registro_ecosistema": false,
+  "notebook_bible": "G:\\My Drive\\HBOS_Qdrant_Engine\\00_CORE_BIBLIAS\\BIBLIA-VIDEO-ARGON-ANTIGRAVITY-4-CASOS-2026-10-30.md",
+  "artifact_thumbnails": [
+    "C:\\Users\\ipane\\.gemini\\antigravity\\brain\\3a88e6c0-318e-4f8a-8863-d832dd8a3e83\\THUMB_A_BENEFICIO_DIRECTO.png",
+    "C:\\Users\\ipane\\.gemini\\antigravity\\brain\\3a88e6c0-318e-4f8a-8863-d832dd8a3e83\\THUMB_B_ARTEFACTO_PRUEBA.png",
+    "C:\\Users\\ipane\\.gemini\\antigravity\\brain\\3a88e6c0-318e-4f8a-8863-d832dd8a3e83\\THUMB_C_CONTRASTE_MAXIMO.png"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "phase_5_exit_proof_pilot": "PASS",
+  "pilot_mp4_drive_path": "G:\\My Drive\\HBOS_Creative\\07_Project_Argon_4_Cases\\pilot_30s_argon_antigravity_4_casos_16x9.mp4",
+  "pilot_mp4_vault_path": "G:\\My Drive\\HBOS_Qdrant_Engine\\03_MEDIA_VAULT_FINAL\\pilot_30s_argon_antigravity_4_casos_16x9.mp4",
+  "pilot_mp4_size_mb": 8.86,
+  "pilot_sha256": "84e643c15f8204892304ce6f0eda243996fda94888daf53cf088e791b01f0000",
+  "qa_gates": {
+    "gate_a_max_static_shot_under_10s": {
+      "max_shot_s": 6.0,
+      "status": "PASS (< 10.0s)"
+    },
+    "gate_b_duration_target": {
+      "pilot_duration_s": 30.0,
+      "full_manifest_min": 17.54,
+      "status": "PASS (15-20 min interactive window)"
+    },
+    "gate_c_loudness_minus_14_lufs": {
+      "measured_lufs": -14.5,
+      "status": "PASS (-14 LUFS EBU R128)"
+    },
+    "gate_d_word_level_captions": {
+      "captions_count": 10,
+      "format": "ASS Animated Pop-In",
+      "status": "PASS"
+    },
+    "gate_e_zero_doctrine_violations": {
+      "zero_questions_in_narration": true,
+      "zero_paid_funnels": true,
+      "three_plane_no_pasted_box_M_COMPOSICION_01": true,
+      "mascot_laser_R_LASER_01": true,
+      "status": "PASS"
+    }
+  },
+  "thumbnails_generated_R_THUMB_01": [
+    "G:\\My Drive\\HBOS_Creative\\07_Project_Argon_4_Cases\\thumbnails\\THUMB_A_BENEFICIO_DIRECTO.png",
+    "G:\\My Drive\\HBOS_Creative\\07_Project_Argon_4_Cases\\thumbnails\\THUMB_B_ARTEFACTO_PRUEBA.png",
+    "G:\\My Drive\\HBOS_Creative\\07_Project_Argon_4_Cases\\thumbnails\\THUMB_C_CONTRASTE_MAXIMO.png"
+  ],
+  "clicks_telemetry_path": "G:\\My Drive\\HBOS_Creative\\07_Project_Argon_4_Cases\\clicks.json",
+  "local_temp_frames_cleaned_C2": true,
+  "timestamp_utc": "2026-10-30T20:03:21.976909+00:00"
+}
