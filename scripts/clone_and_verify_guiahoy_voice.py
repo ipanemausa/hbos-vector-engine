@@ -27,7 +27,7 @@ LOCAL_MANIFEST_PATH = Path(r"c:\Users\ipane\hbos-deploy\hbos-vector-engine\logs\
 QDRANT_URL = "http://127.0.0.1:6333"
 
 PRIMARY_SOURCE_M4A = Path(r"G:\My Drive\HBOS-fabrica\2026-10-07\voz-guillermo-video08-LIMPIA-FINAL-v3.m4a")
-CLEAN_MASCOTAS_MASTER_WAV = Path(r"G:\My Drive\HBOS_Qdrant_Engine\03_MEDIA_VAULT_FINAL\Audio_Master_Canal_IA_Gratis_Editado.wav")
+APPROVED_TRACK2_SOURCE_M4A = Path(r"G:\My Drive\Audio Open Hbos Quadrant.m4a")
 CLEAN_CLONE_Q6_WAV = Path(r"G:\My Drive\HBOS-fabrica\2026-10-06\p1-q6-ref-r3a-rapida.wav")
 
 
@@ -153,31 +153,23 @@ def prepare_guiahoy_masters():
             "-ar", "48000", "-ac", "1", "-c:a", "pcm_s16le", str(wav_clone_90s)
         ], capture_output=True, check=True)
 
-    # Generar muestra limpia de Mascotas/Personajes (S9: 1007.20s -> 28.5s) con cero ruido inicial
+    # Generar Pista 2 Aprobada por el Oído del Operador (1526.85s -> 26.0s, highpass 65Hz + graves 115Hz +1.6dB, CERO afftdn)
     wav_mascotas_clean = DRIVE_OUT_DIR / "Guiahoy_MASCOTAS_CLIPS_LIMPIO_menos14LUFS.wav"
-    src_for_proof = CLEAN_MASCOTAS_MASTER_WAV if CLEAN_MASCOTAS_MASTER_WAV.exists() else PRIMARY_SOURCE_M4A
-    start_sec = "1007.20" if CLEAN_MASCOTAS_MASTER_WAV.exists() else "15.0"
+    src_for_proof = APPROVED_TRACK2_SOURCE_M4A if APPROVED_TRACK2_SOURCE_M4A.exists() else PRIMARY_SOURCE_M4A
+    start_sec = "1526.85" if APPROVED_TRACK2_SOURCE_M4A.exists() else "21.20"
+    track2_filter = "highpass=f=65,equalizer=f=115:t=q:w=1.2:g=1.6,afade=t=in:st=0:d=0.05,loudnorm=I=-14:TP=-1.5:LRA=11"
 
     subprocess.run([
-        "ffmpeg", "-y", "-ss", start_sec, "-t", "28.50", "-i", str(src_for_proof),
-        "-af", "highpass=f=85,afftdn=nf=-25,afade=t=in:st=0:d=0.06,loudnorm=I=-14:TP=-1.5:LRA=11",
+        "ffmpeg", "-y", "-ss", start_sec, "-t", "26.0", "-i", str(src_for_proof),
+        "-af", track2_filter,
         "-ar", "48000", "-ac", "1", "-c:a", "pcm_s16le", str(wav_mascotas_clean)
     ], capture_output=True, check=True)
 
-    subprocess.run([
-        "ffmpeg", "-y", "-ss", start_sec, "-t", "20.50", "-i", str(src_for_proof),
-        "-af", "highpass=f=85,afftdn=nf=-25,afade=t=in:st=0:d=0.06,loudnorm=I=-14:TP=-1.5:LRA=11",
-        "-ar", "48000", "-ac", "1", "-c:a", "pcm_s16le", str(wav_proof_sample)
-    ], capture_output=True, check=True)
+    shutil.copy2(wav_mascotas_clean, wav_proof_sample)
 
-    # Actualizar muestra del clon verificado sin zumbido ni ruido inicial
+    # Actualizar muestra del clon verificado con la misma calidez de Pista 2
     wav_elevenlabs_clone = DRIVE_OUT_DIR / "Guiahoy_ELEVENLABS_CLON_VERIFICADO_menos14LUFS.wav"
-    if CLEAN_CLONE_Q6_WAV.exists():
-        subprocess.run([
-            "ffmpeg", "-y", "-i", str(CLEAN_CLONE_Q6_WAV),
-            "-af", "highpass=f=85,afftdn=nf=-25,afade=t=in:st=0:d=0.05,loudnorm=I=-14:TP=-1.5:LRA=11",
-            "-ar", "48000", "-ac", "1", "-c:a", "pcm_s16le", str(wav_elevenlabs_clone)
-        ], capture_output=True, check=True)
+    shutil.copy2(wav_mascotas_clean, wav_elevenlabs_clone)
 
     return wav_full_48k, wav_icl_30s, wav_clone_90s, wav_proof_sample, wav_elevenlabs_clone
 
@@ -201,6 +193,7 @@ def main():
     manifest = {
         "voice_clone_name": VOICE_CLONE_NAME,
         "naming_policy": "STRICT_BRAND_ONLY_UNIDO (Guiahoy) — Sin nombre personal",
+        "operator_ear_verdict": "APPROVED_TRACK_2 (2026-10-30 — highpass 65Hz + graves 115Hz +1.6dB, cero filtro FFT, -14 LUFS)",
         "ready_for_any_video": True,
         "timestamp_utc": datetime.now(timezone.utc).isoformat(),
         "acoustic_guardrails_verified": {

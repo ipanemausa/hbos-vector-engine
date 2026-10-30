@@ -144,8 +144,8 @@ class GuiahoyVideoPipeline:
         trimmed_voice_path = os.path.join(self.temp_dir, "voice_silence_trimmed.wav")
 
         cloned_candidates = [
+            r"G:\My Drive\HBOS_Creative\02_Voice_Profiles\Guiahoy_MASCOTAS_CLIPS_LIMPIO_menos14LUFS.wav",
             r"G:\My Drive\HBOS_Creative\02_Voice_Profiles\Guiahoy_PRUEBA_CLON_VOZ_menos14LUFS.wav",
-            r"G:\My Drive\HBOS_Creative\02_Voice_Profiles\Guiahoy_ELEVENLABS_CLON_VERIFICADO_menos14LUFS.wav",
             r"G:\My Drive\HBOS_Creative\02_Voice_Profiles\Guiahoy_MASTER_48k_menos14LUFS.wav",
             os.path.join(self.workspace_root, "..", "production_media", "guillermo_voice_cloned_f5.wav"),
             os.path.join(self.workspace_root, "assets", "voice", "guillermo_voice_real_master.aac"),
@@ -175,9 +175,7 @@ class GuiahoyVideoPipeline:
             "ffmpeg", "-y",
             "-i", raw_voice_path,
             "-af",
-            "highpass=f=85,afftdn=nf=-25,"
-            "silenceremove=start_periods=1:start_silence=0.05:start_threshold=-40dB:"
-            "stop_periods=-1:stop_silence=0.30:stop_threshold=-40dB,"
+            "highpass=f=65,equalizer=f=115:t=q:w=1.2:g=1.6,"
             "afade=t=in:st=0:d=0.05,aformat=sample_rates=48000:channel_layouts=stereo",
             "-t", "9.0",
             trimmed_voice_path
