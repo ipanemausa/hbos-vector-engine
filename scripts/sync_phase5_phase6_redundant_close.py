@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
+r"""
 Sync Phase 5 (QA Gates + 30s Pilot Exit Proof + 3 Thumbnails) and Phase 6 (Redundant Close)
 across:
 1. Artifact directory (copy 3 thumbnails for direct visual inspection in chat)
@@ -11,9 +11,14 @@ import hashlib
 import json
 import os
 import shutil
+import socket
 import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
+from dotenv import load_dotenv
+
+load_dotenv(".env.local")
+load_dotenv(".env")
 
 PROJECT_DIR = Path(r"G:\My Drive\HBOS_Creative\07_Project_Argon_4_Cases")
 BIBLIAS_DIR = Path(r"G:\My Drive\HBOS_Qdrant_Engine\00_CORE_BIBLIAS")
@@ -21,13 +26,13 @@ ARTIFACT_DIR = Path(r"C:\Users\ipane\.gemini\antigravity\brain\3a88e6c0-318e-4f8
 REPO_LOGS = Path(r"c:\Users\ipane\hbos-deploy\hbos-vector-engine\logs")
 
 
-def deterministic_vector(seed_text: str, dim: int = 768) -> list:
+def deterministic_vector_384(seed_text: str) -> list:
     vec = []
     counter = 0
-    while len(vec) < dim:
+    while len(vec) < 384:
         h = hashlib.sha256(f"{seed_text}:{counter}".encode("utf-8")).digest()
         for i in range(0, len(h), 4):
-            if len(vec) >= dim:
+            if len(vec) >= 384:
                 break
             val = int.from_bytes(h[i:i+4], "little", signed=True) / 2147483648.0
             vec.append(round(val, 6))
@@ -36,24 +41,38 @@ def deterministic_vector(seed_text: str, dim: int = 768) -> list:
     return [round(x / norm, 6) for x in vec]
 
 
-def upsert_qdrant(base_url: str, collection: str, point_id: str, vector: list, payload: dict, api_key: str = None) -> bool:
-    url = f"{base_url.rstrip('/')}/collections/{collection}/points?wait=true"
-    body = json.dumps({"points": [{"id": point_id, "vector": vector, "payload": payload}]}).encode("utf-8")
+def ensure_and_upsert_qdrant(base_url: str, collection: str, point_id: str, vector: list, payload: dict, api_key: str = "") -> bool:
     headers = {"Content-Type": "application/json"}
     if api_key:
         headers["api-key"] = api_key
-    req = urllib.request.Request(url, data=body, headers=headers, method="PUT")
     try:
-        with urllib.request.urlopen(req, timeout=20) as resp:
+        col_url = f"{base_url.rstrip('/')}/collections/{collection}"
+        req_get = urllib.request.Request(col_url, headers=headers, method="GET")
+        try:
+            urllib.request.urlopen(req_get, timeout=6)
+        except Exception:
+            create_body = json.dumps({"vectors": {"size": 384, "distance": "Cosine"}}).encode("utf-8")
+            req_put = urllib.request.Request(col_url, data=create_body, headers=headers, method="PUT")
+            urllib.request.urlopen(req_put, timeout=8)
+
+        pts_url = f"{base_url.rstrip('/')}/collections/{collection}/points?wait=true"
+        body = json.dumps({"points": [{"id": point_id, "vector": vector, "payload": payload}]}).encode("utf-8")
+        req = urllib.request.Request(pts_url, data=body, headers=headers, method="PUT")
+        with urllib.request.urlopen(req, timeout=12) as resp:
             return resp.status in (200, 201)
     except Exception:
         return False
 
 
 def main():
+    _orig_gai = socket.getaddrinfo
+    socket.getaddrinfo = lambda h, p, *a, **kw: _orig_gai(
+        "34.186.107.230" if h == "38f50573-516c-4d44-a391-eb35457eeada.us-east4-0.gcp.cloud.qdrant.io" else h,
+        p, *a, **kw
+    )
+
     qa_report = json.loads((PROJECT_DIR / "qa_report_phase5.json").read_text(encoding="utf-8"))
 
-    # Copy thumbnails to artifact directory for visual embedding
     copied_thumbs = []
     for thumb_str in qa_report["thumbnails_generated_R_THUMB_01"]:
         src = Path(thumb_str)
@@ -61,7 +80,6 @@ def main():
         shutil.copy2(src, dst)
         copied_thumbs.append(str(dst))
 
-    # Write NotebookLM Bible for the Video Production & Yesterday+Today Synergy
     biblia_video = BIBLIAS_DIR / "BIBLIA-VIDEO-ARGON-ANTIGRAVITY-4-CASOS-2026-10-30.md"
     md_content = f"""# BIBLIA DE PRODUCCIÓN INTERACTIVA: GEMINI ARGON + ANTIGRAVITY (4 CASOS DE USO REALES)
 
@@ -89,9 +107,8 @@ def main():
 """
     biblia_video.write_text(md_content, encoding="utf-8")
 
-    # Vectorize in Qdrant Local & Cloud
     point_id = "9c41f2a8-38e1-4c99-b4d2-81a0e5c71030"
-    vec = deterministic_vector("HBOS_ARGON_4_CASOS_PILOT_30S_GUIAHOY_PHASE5_PHASE6_2026_10_30", 768)
+    vec = deterministic_vector_384("HBOS_ARGON_4_CASOS_PILOT_30S_GUIAHOY_PHASE5_PHASE6_2026_10_30")
     payload = {
         "entity": "VIDEO_PILOT_AND_MANIFEST_ARGON_ANTIGRAVITY_4_CASES",
         "voice_clone_id": "Guiahoy",
@@ -107,23 +124,11 @@ def main():
 
     local_results = {}
     for col in ["casos_uso_hbos", "canon_video_hbos", "registro_ecosistema"]:
-        local_results[col] = upsert_qdrant("http://localhost:6333", col, point_id, vec, payload)
+        local_results[col] = ensure_and_upsert_qdrant("http://127.0.0.1:6333", col, point_id, vec, payload)
 
-    cloud_url = os.environ.get("QDRANT_CLOUD_URL", "https://89291068-c3b0-4e3f-9d7a-2b5a4e9f1b2c.us-east4-0.gcp.cloud.qdrant.io:6333")
-    cloud_key = os.environ.get("QDRANT_API_KEY", "")
-    env_file = Path(r"c:\Users\ipane\hbos-deploy\hbos-vector-engine\.env")
-    if env_file.exists():
-        for line in env_file.read_text(encoding="utf-8", errors="ignore").splitlines():
-            if line.startswith("QDRANT_CLOUD_URL=") and not os.environ.get("QDRANT_CLOUD_URL"):
-                cloud_url = line.split("=", 1)[1].strip().strip('"').strip("'")
-            elif line.startswith("QDRANT_API_KEY=") and not cloud_key:
-                cloud_key = line.split("=", 1)[1].strip().strip('"').strip("'")
-            elif line.startswith("QDRANT_URL=") and "cloud.qdrant.io" in line:
-                cloud_url = line.split("=", 1)[1].strip().strip('"').strip("'")
-
-    cloud_ok = False
-    if cloud_key:
-        cloud_ok = upsert_qdrant(cloud_url, "registro_ecosistema", point_id, vec, payload, api_key=cloud_key)
+    cloud_url = os.getenv("QDRANT_URL", "https://38f50573-516c-4d44-a391-eb35457eeada.us-east4-0.gcp.cloud.qdrant.io:6333").rstrip("/")
+    cloud_key = os.getenv("QDRANT_API_KEY", "").strip('"').strip("'")
+    cloud_ok = ensure_and_upsert_qdrant(cloud_url, "registro_ecosistema", point_id, vec, payload, api_key=cloud_key) if cloud_key else False
 
     summary = {
         "status": "PHASE_5_AND_6_SEALED",
