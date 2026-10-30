@@ -1,6 +1,6 @@
 {
   "dag_version": "v1 — 2026-10-30",
-  "timestamp_utc": "2026-10-30T19:42:03.770419+00:00",
+  "timestamp_utc": "2026-10-30T19:47:05.255825+00:00",
   "phase_0_debug_and_projection": {
     "pre_debug_reference_format_mapped": "OK (Cold Open, Context, Case 1 Screen Studio REA, Case 2 ERP LATAM PyME, Case 3 Auto Video Editor Skill, Case 4 Meta-Pipeline Proof, Close)",
     "fixed_inputs_inventory": {
@@ -26,7 +26,7 @@
     "total_scenes_compiled": 137,
     "script_drive_path": "G:\\My Drive\\HBOS_Creative\\07_Project_Argon_4_Cases\\script_argon_antigravity_4_casos.md",
     "manifest_drive_path": "G:\\My Drive\\HBOS_Creative\\07_Project_Argon_4_Cases\\scene_manifest.json",
-    "manifest_sha256": "2c390cc64388cea77590fdcb9a68a5f4abe47c01a30b129119563c4491029e95"
+    "manifest_sha256": "0a702895dd3430112e08b7991a1c68ff82f9f396bb12736bdda55436b21c1ede"
   },
   "gate_halt_report": {
     "gate_id": "GATE-P2-VOICE-SYNTH-REACHABILITY",

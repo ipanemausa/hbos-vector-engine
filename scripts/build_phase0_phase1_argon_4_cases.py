@@ -225,6 +225,17 @@ def build_scenes_and_script():
             mascot = mascots[scene_counter % len(mascots)]
             trig = triggers[scene_counter % len(triggers)]
 
+            if case_name == "COLD_OPEN":
+                emo = {"mode": "IMPACTO_HOOK", "elevenlabs": {"stability": 0.42, "similarity_boost": 0.92, "style": 0.55}, "google_tts_style": "energetic, authoritative hook with warm chest resonance"}
+            elif case_name == "CLOSE":
+                emo = {"mode": "CIERRE_INSPIRADOR", "elevenlabs": {"stability": 0.58, "similarity_boost": 0.93, "style": 0.40}, "google_tts_style": "inspiring, calm mentor closing a masterclass"}
+            elif case_name == "CASE_4_META_PIPELINE_PROOF" or trig == "MASCOT_LASER_DEPLOY":
+                emo = {"mode": "CALIDEZ_PERSONAJES", "elevenlabs": {"stability": 0.40, "similarity_boost": 0.90, "style": 0.60}, "google_tts_style": "warm, affectionate, conversational storyteller"}
+            elif trig in ("TERMINAL_OUTPUT_REVEAL", "BEFORE_AFTER_SPLIT_WIPE"):
+                emo = {"mode": "ASOMBRO_DEMO_EN_VIVO", "elevenlabs": {"stability": 0.48, "similarity_boost": 0.92, "style": 0.50}, "google_tts_style": "enthusiastic and impressed demonstrating a live working result"}
+            else:
+                emo = {"mode": "INGENIERIA_PRECISA", "elevenlabs": {"stability": 0.65, "similarity_boost": 0.94, "style": 0.30}, "google_tts_style": "clear, confident senior engineer explaining architecture"}
+
             scene_obj = {
                 "scene_id": f"SCN_{scene_counter:03d}",
                 "case": case_name,
@@ -236,6 +247,7 @@ def build_scenes_and_script():
                 "avatar_state": ch["avatar_base"],
                 "mascot_cue": f"{mascot}_canonical_2026_10_05 (laser_pointer_active)",
                 "visual_change_trigger": trig,
+                "emotion_intonation": emo,
                 "narration_text": line_text
             }
             scenes.append(scene_obj)

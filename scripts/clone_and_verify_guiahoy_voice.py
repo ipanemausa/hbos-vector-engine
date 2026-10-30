@@ -153,8 +153,23 @@ def prepare_guiahoy_masters():
             "-ar", "48000", "-ac", "1", "-c:a", "pcm_s16le", str(wav_pista3_make)
         ], capture_output=True, check=True)
 
-    shutil.copy2(wav_mascotas_clean, wav_proof_sample)
-    shutil.copy2(wav_mascotas_clean, wav_elevenlabs_clone)
+    # Unir Pista #3 (60s de estudio 129kbps: dicción profesional) + Pista #2 (30s emocional: calidez mascotas)
+    # en Guiahoy_CLONE_REF_90s_48k.wav para que el clon tenga el rango completo (Profesional + Emocional)
+    if PRIMARY_SOURCE_M4A.exists() and APPROVED_TRACK2_SOURCE_M4A.exists():
+        subprocess.run([
+            "ffmpeg", "-y",
+            "-ss", "23.10", "-t", "60.0", "-i", str(PRIMARY_SOURCE_M4A),
+            "-ss", "1526.85", "-t", "30.0", "-i", str(APPROVED_TRACK2_SOURCE_M4A),
+            "-filter_complex", (
+                f"[0:a]{track2_filter},aformat=sample_rates=48000:channel_layouts=mono[a3];"
+                f"[1:a]{track2_filter},aformat=sample_rates=48000:channel_layouts=mono[a2];"
+                "[a3][a2]acrossfade=d=0.05:c1=tri:c2=tri"
+            ),
+            "-ar", "48000", "-ac", "1", "-c:a", "pcm_s16le", str(wav_clone_90s)
+        ], capture_output=True, check=True)
+
+    shutil.copy2(wav_pista3_make, wav_proof_sample)
+    shutil.copy2(wav_pista3_make, wav_elevenlabs_clone)
 
     return wav_full_48k, wav_icl_30s, wav_clone_90s, wav_proof_sample, wav_mascotas_clean, wav_pista3_make, wav_elevenlabs_clone
 
@@ -189,12 +204,22 @@ def sync_notebook_and_qdrant_engine(manifest: dict, files_to_sync: list) -> dict
         "| **Motor Vectorial (Código / GitHub / Persistencia)** | `hbos-vector-engine` | **`vector` va ANTES de `engine`** | `C:\\Users\\ipane\\hbos-deploy\\hbos-vector-engine` y `G:\\My Drive\\HBOS_VECTOR_PERSISTENCE\\hbos-vector-engine` |",
         "| **Cuenta Operativa** | `HBOS Quadrant` | `hbos.quadrant@gmail.com` | Identidad operativa |",
         "",
-        "## 2. Parámetros Acústicos Sellados del Clon `Guiahoy`",
+        "## 2. Parámetros Acústicos Sellados del Clon `Guiahoy` (Fusión Pista #3 + Pista #2)",
+        "- **Referencia Maestra Híbrida (`Guiahoy_CLONE_REF_90s_48k.wav`):** Une **60 s de Pista #3** (`129 kbps`, dicción profesional de estudio) + **30 s de Pista #2** (calidez emocional y cercanía de personajes).",
         "- **Frecuencia fundamental (`f0`):** `109.2 Hz` (rango masculino natural `81.8–132.9 Hz`).",
         "- **Cadena EQ de Calidez Natural:** `highpass=f=65,equalizer=f=115:t=q:w=1.2:g=1.6,afade=t=in:st=0:d=0.05,loudnorm=I=-14:TP=-1.5:LRA=11`.",
         "- **Regla de Oro:** Prohibido aplicar `afftdn` (reducción espectral FFT) sobre la voz `Guiahoy` para conservar el pecho en `115 Hz` y la respiración natural.",
         "",
-        "## 3. Masters WAV Sellados en `HBOS_Qdrant_Engine\\03_MEDIA_VAULT_FINAL` y `HBOS_Creative\\02_Voice_Profiles`",
+        "## 3. Matriz de Inyección de Emociones y Entonación Según el Caso (Por Escena)",
+        "| Modo Emocional | Cuándo se activa | ElevenLabs (`stability` / `similarity` / `style`) | Google Cloud TTS (`speech_metadata.style`) |",
+        "|---|---|---|---|",
+        "| **`IMPACTO_HOOK`** | *Cold Open* y apertura de casos | `0.42` / `0.92` / `0.55` | `energetic, authoritative hook with warm chest resonance` |",
+        "| **`INGENIERIA_PRECISA`** | Explicación de arquitectura, código y fiscalidad (*Casos 1 y 2*) | `0.65` / `0.94` / `0.30` | `clear, confident senior engineer explaining architecture` |",
+        "| **`ASOMBRO_DEMO_EN_VIVO`** | Pruebas funcionando en pantalla y comparativas antes/después | `0.48` / `0.92` / `0.50` | `enthusiastic and impressed demonstrating a live working result` |",
+        "| **`CALIDEZ_PERSONAJES`** | Intervenciones de las 7 mascotas-gema y *Caso 4 Meta* (estilo Pista #2) | `0.40` / `0.90` / `0.60` | `warm, affectionate, conversational storyteller` |",
+        "| **`CIERRE_INSPIRADOR`** | Conclusiones y firma final (*Close*) | `0.58` / `0.93` / `0.40` | `inspiring, calm mentor closing a masterclass` |",
+        "",
+        "## 4. Masters WAV Sellados en `HBOS_Qdrant_Engine\\03_MEDIA_VAULT_FINAL` y `HBOS_Creative\\02_Voice_Profiles`",
     ]
     for k, info in manifest["guiahoy_voice_files_on_gdrive"].items():
         if info:

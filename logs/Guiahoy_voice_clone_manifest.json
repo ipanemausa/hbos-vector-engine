@@ -10,7 +10,7 @@
   },
   "operator_ear_verdict": "APPROVED_WARM_NATURAL_CHAIN (2026-10-30 — highpass 65Hz + graves 115Hz +1.6dB, cero filtro FFT, -14 LUFS)",
   "ready_for_any_video": true,
-  "timestamp_utc": "2026-10-30T19:39:07.595864+00:00",
+  "timestamp_utc": "2026-10-30T19:47:02.158160+00:00",
   "acoustic_guardrails_verified": {
     "f0_mean_hz": 109.2,
     "f0_band_p5_p95_hz": [
@@ -38,13 +38,13 @@
     "Guiahoy_CLONE_REF_90s_48k": {
       "filename": "Guiahoy_CLONE_REF_90s_48k.wav",
       "path": "G:\\My Drive\\HBOS_Creative\\02_Voice_Profiles\\Guiahoy_CLONE_REF_90s_48k.wav",
-      "size_bytes": 8640078,
+      "size_bytes": 8635278,
       "size_mb": 8.24,
-      "duration_sec": 90.0,
+      "duration_sec": 89.95,
       "codec": "pcm_s16le",
       "sample_rate": 48000,
       "channels": 1,
-      "sha256": "1a889c17b5acd6ef4c058d82b253a67f6de8525c1af998c4887ebc6bc5e6e837"
+      "sha256": "aad778f64acedd246bb6a1a068ec406fa34d30ba3dca3c2b9873715212023be8"
     },
     "Guiahoy_ICL_REF_30s_24k": {
       "filename": "Guiahoy_ICL_REF_30s_24k.wav",
@@ -67,7 +67,7 @@
       "sample_rate": 48000,
       "channels": 1,
       "sha256": "4897ce71317fe6db4ac161fc19cb1633d063f4429a91f5395b5c724ad0e2b699",
-      "integrated_lufs": -14.8,
+      "integrated_lufs": -15.0,
       "standard": "EBU R128 (-14 LUFS)"
     },
     "Guiahoy_Pista3_Video08_Make_menos14LUFS": {
@@ -86,14 +86,14 @@
     "Guiahoy_PRUEBA_CLON_VOZ_menos14LUFS": {
       "filename": "Guiahoy_PRUEBA_CLON_VOZ_menos14LUFS.wav",
       "path": "G:\\My Drive\\HBOS_Creative\\02_Voice_Profiles\\Guiahoy_PRUEBA_CLON_VOZ_menos14LUFS.wav",
-      "size_bytes": 2496078,
-      "size_mb": 2.38,
-      "duration_sec": 26.0,
+      "size_bytes": 2400078,
+      "size_mb": 2.29,
+      "duration_sec": 25.0,
       "codec": "pcm_s16le",
       "sample_rate": 48000,
       "channels": 1,
-      "sha256": "4897ce71317fe6db4ac161fc19cb1633d063f4429a91f5395b5c724ad0e2b699",
-      "integrated_lufs": -14.8,
+      "sha256": "78d9578d57cb8c13ad8c1e6a261e4b614b7da5a4cd9771b09251d1b109223c20",
+      "integrated_lufs": -15.0,
       "standard": "EBU R128 (-14 LUFS)"
     }
   }
