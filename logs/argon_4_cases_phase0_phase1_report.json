@@ -1,6 +1,6 @@
 {
   "dag_version": "v1 — 2026-10-30",
-  "timestamp_utc": "2026-10-30T19:23:05.655160+00:00",
+  "timestamp_utc": "2026-10-30T19:42:03.770419+00:00",
   "phase_0_debug_and_projection": {
     "pre_debug_reference_format_mapped": "OK (Cold Open, Context, Case 1 Screen Studio REA, Case 2 ERP LATAM PyME, Case 3 Auto Video Editor Skill, Case 4 Meta-Pipeline Proof, Close)",
     "fixed_inputs_inventory": {
@@ -10,22 +10,23 @@
       "live_elevenlabs_synthesis_api_reachability": "HALT_AT_PHASE_2_GATE (HTTP 401 on .env.local placeholder ELEVENLABS_API_KEY; Google TTS requires Paid Tier 1)"
     },
     "zero_shot_projection": {
-      "declaration": "STRUCTURAL_PROJECTION_ACTIVE",
-      "target_duration_s": 1920.0,
-      "actual_manifest_duration_s": 1927.3,
+      "declaration": "STRUCTURAL_PROJECTION_ACTIVE (15-20 min 100% Interactive Target)",
+      "target_duration_s": 1050.0,
+      "target_window_min": "15.0 - 20.0 min (100% interactive)",
+      "actual_manifest_duration_s": 1052.1,
       "visual_change_cadence_s": "5.2s - 8.0s (strict 5.0s-9.5s window)",
-      "projected_retention_30s_hook": ">= 78% (3-plane presenter + immediate 4-case agenda proof)",
-      "projected_avg_view_duration": ">= 52% (continuous 1.0x->1.35x cursor autozoom + real 4th meta-case)"
+      "projected_retention_30s_hook": ">= 82% (3-plane presenter + immediate 4-case agenda proof)",
+      "projected_avg_view_duration": ">= 58% (17.5m zero-fluff interactive build + 1.0x->1.35x cursor autozoom + real 4th meta-case)"
     }
   },
   "phase_1_script_and_manifest": {
     "pre_debug_zero_questions": true,
     "pre_debug_zero_copied_lines_or_paid_offers": true,
     "post_debug_schema_valid": true,
-    "total_scenes_compiled": 250,
+    "total_scenes_compiled": 137,
     "script_drive_path": "G:\\My Drive\\HBOS_Creative\\07_Project_Argon_4_Cases\\script_argon_antigravity_4_casos.md",
     "manifest_drive_path": "G:\\My Drive\\HBOS_Creative\\07_Project_Argon_4_Cases\\scene_manifest.json",
-    "manifest_sha256": "66e21d1d4f4227e5151dfef23cf84e9740c195b4b4e2da0a9a1d2031863b87a3"
+    "manifest_sha256": "2c390cc64388cea77590fdcb9a68a5f4abe47c01a30b129119563c4491029e95"
   },
   "gate_halt_report": {
     "gate_id": "GATE-P2-VOICE-SYNTH-REACHABILITY",

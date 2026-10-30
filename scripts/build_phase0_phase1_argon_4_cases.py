@@ -55,7 +55,7 @@ def upsert_qdrant(collection: str, point_id: str, vector: list, payload: dict) -
 CHAPTER_BLUEPRINTS = [
     {
         "case": "COLD_OPEN",
-        "target_duration_s": 90.0,
+        "target_duration_s": 75.0,
         "mascot_rotation": ["Diamantino", "Rubin"],
         "avatar_base": "AVM_01_HOOK_OPENING (Gaze to camera, 3-plane rim-light + contact shadow)",
         "screen_context": "Antigravity 2.0 IDE · 4-Case Master DAG Workspace",
@@ -72,7 +72,7 @@ CHAPTER_BLUEPRINTS = [
     },
     {
         "case": "CONTEXT_ARGON_ANTIGRAVITY",
-        "target_duration_s": 180.0,
+        "target_duration_s": 105.0,
         "mascot_rotation": ["Zafir", "Esmeralda"],
         "avatar_base": "AVM_02_EXPLAIN_CONCEPT (3-plane slight 3D tilt, gaze alternating camera/screen)",
         "screen_context": "Antigravity 2.0 Model Selector + Qdrant Vector Telemetry",
@@ -89,7 +89,7 @@ CHAPTER_BLUEPRINTS = [
     },
     {
         "case": "CASE_1_SCREEN_STUDIO_REA",
-        "target_duration_s": 450.0,
+        "target_duration_s": 240.0,
         "mascot_rotation": ["Diamantino", "Citrilo"],
         "avatar_base": "AVM_07_CODE_WALKTHROUGH (Gaze to screen during demo, rim-lit foreground)",
         "screen_context": "Antigravity 2.0 · tools/rea + studio/video/guiahoy_pipeline.py",
@@ -106,7 +106,7 @@ CHAPTER_BLUEPRINTS = [
     },
     {
         "case": "CASE_2_ERP_PYME_LATAM",
-        "target_duration_s": 480.0,
+        "target_duration_s": 240.0,
         "mascot_rotation": ["Rubin", "Esmeralda"],
         "avatar_base": "AVM_05_DEEP_ARCHITECTURE (Analytical posture, laser cue on tax table)",
         "screen_context": "Antigravity 2.0 · core/erp/rea_erp_engine.py + PDF Invoice Viewer",
@@ -123,13 +123,13 @@ CHAPTER_BLUEPRINTS = [
     },
     {
         "case": "CASE_3_AUTO_VIDEO_EDITOR_SKILL",
-        "target_duration_s": 420.0,
+        "target_duration_s": 210.0,
         "mascot_rotation": ["Amatista", "Grafito"],
         "avatar_base": "AVM_06_DATA_EMPHASIS (Precision nod + before/after waveform inspection)",
         "screen_context": "Antigravity 2.0 · .agents/skills/guiahoy-video-producer/SKILL.md + FFmpeg EBU R128",
         "BaseLines": [
             "El Caso Tres automatiza la posproducción audiovisual mediante una habilidad dedicada conectada directamente al agente dentro de Antigravity.",
-            "Entregamos al pipeline una grabación cruda y la habilidad aplica primero un filtro pasa-altos a ochenta y cinco hercios junto con limpieza espectral FFT.",
+            "Entregamos al pipeline una grabación cruda y la habilidad aplica primero un filtro pasa-altos a sesenta y cinco hercios junto con ecualización cálida de pecho.",
             "A continuación, el detector de silencios recorta las pausas muertas superiores a trescientos milisegundos conservando la cadencia natural de respiración.",
             "El generador de subtítulos construye el archivo ASS con animación de entrada palabra por palabra y resaltado cromático de alto contraste.",
             "Finalmente, el masterizador de audio ejecuta normalización EBU R ciento veintiocho de doble pasada hasta clavar la sonoridad integrada en menos catorce punto cero LUFS.",
@@ -140,7 +140,7 @@ CHAPTER_BLUEPRINTS = [
     },
     {
         "case": "CASE_4_META_PIPELINE_PROOF",
-        "target_duration_s": 210.0,
+        "target_duration_s": 120.0,
         "mascot_rotation": ["Diamantino", "Zafir"],
         "avatar_base": "AVM_10_BENCHMARK_PROOF (Direct reveal of scene_manifest.json and Drive vault)",
         "screen_context": "Antigravity 2.0 · scene_manifest.json + Google Drive 5TB Vault + Qdrant",
@@ -156,7 +156,7 @@ CHAPTER_BLUEPRINTS = [
     },
     {
         "case": "CLOSE",
-        "target_duration_s": 90.0,
+        "target_duration_s": 60.0,
         "mascot_rotation": ["Diamantino", "Rubin", "Esmeralda", "Zafir", "Amatista", "Citrilo", "Grafito"],
         "avatar_base": "AVM_15_CLOSING_SIGNATURE (Full presenter + 7 Gem Mascots sign-off)",
         "screen_context": "Antigravity 2.0 · Final Production Summary & Next Build Roadmap",
@@ -305,12 +305,13 @@ def main():
                 "live_elevenlabs_synthesis_api_reachability": "HALT_AT_PHASE_2_GATE (HTTP 401 on .env.local placeholder ELEVENLABS_API_KEY; Google TTS requires Paid Tier 1)"
             },
             "zero_shot_projection": {
-                "declaration": "STRUCTURAL_PROJECTION_ACTIVE",
-                "target_duration_s": 1920.0,
+                "declaration": "STRUCTURAL_PROJECTION_ACTIVE (15-20 min 100% Interactive Target)",
+                "target_duration_s": 1050.0,
+                "target_window_min": "15.0 - 20.0 min (100% interactive)",
                 "actual_manifest_duration_s": total_duration_s,
                 "visual_change_cadence_s": f"{min_dur}s - {max_dur}s (strict 5.0s-9.5s window)",
-                "projected_retention_30s_hook": ">= 78% (3-plane presenter + immediate 4-case agenda proof)",
-                "projected_avg_view_duration": ">= 52% (continuous 1.0x->1.35x cursor autozoom + real 4th meta-case)"
+                "projected_retention_30s_hook": ">= 82% (3-plane presenter + immediate 4-case agenda proof)",
+                "projected_avg_view_duration": ">= 58% (17.5m zero-fluff interactive build + 1.0x->1.35x cursor autozoom + real 4th meta-case)"
             }
         },
         "phase_1_script_and_manifest": {
