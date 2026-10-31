@@ -1,0 +1,12 @@
+{
+  "status": "FULL_17M32S_MASTER_VIDEO_COMPLETED",
+  "master_mp4_creative_drive": "G:\\My Drive\\HBOS_Creative\\07_Project_Argon_4_Cases\\MASTER_17M32S_ARGON_ANTIGRAVITY_4_CASOS_16x9.mp4",
+  "master_mp4_qdrant_vault": "G:\\My Drive\\HBOS_Qdrant_Engine\\03_MEDIA_VAULT_FINAL\\MASTER_17M32S_ARGON_ANTIGRAVITY_4_CASOS_16x9.mp4",
+  "duration_seconds": 1052.1,
+  "duration_minutes": 17.54,
+  "total_scenes_rendered": 137,
+  "size_mb": 202.15,
+  "sha256": "c2cb6472c39672cee62972e629ac47514f7efc05e9b86cc59250af3dd88853cf",
+  "pc_local_weight_mb": 0.0,
+  "timestamp_utc": "2026-10-31T09:55:05.594230+00:00"
+}
