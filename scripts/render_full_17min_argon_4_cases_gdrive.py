@@ -436,6 +436,12 @@ def main():
         check=False,
         capture_output=True,
     )
+    if QDRANT_VAULT_DIR.exists() and not MASTER_MP4_VAULT.exists():
+        shutil.copy2(MASTER_MP4_DRIVE, MASTER_MP4_VAULT)
+
+    # RULE_AUTO_LAUNCH_01: Disparar apertura automática inmediata post-render
+    target_launch = MASTER_MP4_VAULT if MASTER_MP4_VAULT.exists() else MASTER_MP4_DRIVE
+    os.startfile(str(target_launch))
 
     size_mb = round(MASTER_MP4_DRIVE.stat().st_size / (1024 * 1024), 2)
     sha256 = hashlib.sha256(MASTER_MP4_DRIVE.read_bytes()).hexdigest()

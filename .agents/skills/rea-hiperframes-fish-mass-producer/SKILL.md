@@ -23,8 +23,11 @@ Esta skill empaquetada en scope local ejecuta el **DAG Extendido Zero-Drift** de
    - `F5-TTS-Spanish` + `Wav2Vec2-Large-XLSR-53-Spanish` (`CTC Forced Alignment` cada `20 ms`), mapa `sync_map.json` con triggers de efectos (`ui_click`, `whoosh_transition`, `ambient_wash`) y subtítulos `.ass` palabra por palabra a `-14 LUFS`.
 5. **Nodo 5 & Debug — Zero-Drift & Bóveda Google Drive (`03_MEDIA_VAULT_FINAL`):**
    - Verificación SHA-256 y registro versionado append-only en Qdrant Cloud (`registro_ecosistema: true`).
+6. **Regla Dura `RULE_AUTO_LAUNCH_01` (Auto-Preview & Instant File Launch Post-Render):**
+   - Todo activo multimedia generado (`.mp4`, `.wav`, `.png`, `.ass`, `.md`) dispara automáticamente `os.startfile(str(vault_path))` desde `G:\My Drive\HBOS_Qdrant_Engine\03_MEDIA_VAULT_FINAL\...` más reproductor embebido `<agent-embed>` en el chat. Prohibido dejar archivos huérfanos sin previsualización inmediata.
 
 ## Ejecución
 ```powershell
 python scripts/execute_extended_dag_rea_hiperframes_fish.py
 ```
+

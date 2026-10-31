@@ -264,7 +264,7 @@ def main():
     }
 
     # =========================================================================
-    # NODO 5: VERIFICACIÓN E2E & SELLADO DE BÓVEDA
+    # NODO 5: VERIFICACIÓN E2E, AUTO-LAUNCH (RULE_AUTO_LAUNCH_01) & SELLADO BÓVEDA
     # =========================================================================
     pilot_vault_path = VAULT_DIR / "pilot_30s_argon_antigravity_4_casos_16x9.mp4"
     master_vault_path = VAULT_DIR / "MASTER_17M32S_ARGON_ANTIGRAVITY_4_CASOS_16x9.mp4"
@@ -273,11 +273,20 @@ def main():
     assert pilot_sha256 == CANONICAL_PILOT_SHA256, "ABORT: SHA-256 Pilot alterado"
     assert master_sha256 == CANONICAL_MASTER_SHA256, "ABORT: SHA-256 Master alterado"
 
+    # RULE_AUTO_LAUNCH_01: Disparar apertura automática inmediata del activo en pantalla
+    auto_launched_files = []
+    for asset_path in [master_vault_path, pilot_vault_path]:
+        if asset_path.exists():
+            os.startfile(str(asset_path))
+            auto_launched_files.append(str(asset_path))
+
     nodo_5 = {
         "node": "NODO_5_VERIFICACION_E2E_Y_SELLADO_BOVEDA",
         "destination_vault": str(VAULT_DIR),
         "pilot_30s_sha256": pilot_sha256,
         "master_17m32s_sha256": master_sha256,
+        "rule_auto_launch_01_triggered": True,
+        "auto_launched_assets": auto_launched_files,
         "integrity_verified": True,
         "status": "VERIFIED",
     }
@@ -357,3 +366,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

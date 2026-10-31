@@ -658,8 +658,12 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
         subprocess.run([
             "rclone", "copy", str(pilot_mp4_drive), "gdrive:HBOS_Qdrant_Engine/03_MEDIA_VAULT_FINAL/"
         ], check=False, capture_output=True)
-        if QDRANT_VAULT_DIR.exists() and not (QDRANT_VAULT_DIR / "pilot_30s_argon_antigravity_4_casos_16x9.mp4").exists():
-            shutil.copy2(pilot_mp4_drive, QDRANT_VAULT_DIR / "pilot_30s_argon_antigravity_4_casos_16x9.mp4")
+        vault_pilot = QDRANT_VAULT_DIR / "pilot_30s_argon_antigravity_4_casos_16x9.mp4"
+        if QDRANT_VAULT_DIR.exists() and not vault_pilot.exists():
+            shutil.copy2(pilot_mp4_drive, vault_pilot)
+
+        # RULE_AUTO_LAUNCH_01: Disparar apertura automática inmediata post-render
+        os.startfile(str(vault_pilot if vault_pilot.exists() else pilot_mp4_drive))
 
         # 5. Guardar clicks.json en Drive
         clicks_path = PROJECT_DRIVE_DIR / "clicks.json"
