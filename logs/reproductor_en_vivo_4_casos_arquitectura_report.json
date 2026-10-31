@@ -1,0 +1,18 @@
+{
+  "status": "STATUS 200 OK - RENDERED, SEALED & AUTO-LAUNCHED",
+  "vault_mp4_path": "G:\\My Drive\\HBOS_Qdrant_Engine\\03_MEDIA_VAULT_FINAL\\REPRODUCTOR_EN_VIVO_ARGON_ANTIGRAVITY_4_CASOS_ARQUITECTURA_16x9.mp4",
+  "size_mb": 11.43,
+  "sha256": "257b5e29b6b24bdde6c2018f3b7884292a74ab3b4e23ec1f36eeae1ac6b5ec39",
+  "duration_s": 32.0,
+  "format": "1920x1080 @ 30fps (16:9)",
+  "voice_clone": "Guiahoy (109.2 Hz, -14.0 LUFS, 0 afftdn, Fish Audio Drama 3 tags)",
+  "cases_rendered": [
+    "HOOK · REPRODUCTOR EN VIVO GEMINI ARGON + ANTIGRAVITY 2.0",
+    "CASO 1 · ORQUESTACIÓN MULTI-AGENTE & RAG VECTORIAL QDRANT (768D)",
+    "CASO 2 · FACTORIZACIÓN MATRICIAL 3D (ESPACIO + TIEMPO + NEGOCIO)",
+    "CASO 3 · PIPELINE DAG ZERO-DRIFT E2E & AISLAMIENTO GOOGLE DRIVE 5TB",
+    "CASO 4 · AUTOMATIZACIÓN CREATIVA MASIVA (REA + HIPERFRAMES + FISH AUDIO)"
+  ],
+  "rule_auto_launch_01_fired": true,
+  "timestamp_utc": "2026-10-31T10:46:33.704966+00:00"
+}

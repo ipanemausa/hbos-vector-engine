@@ -10,3 +10,4 @@ description: REGLA DURA RULE_AUTO_LAUNCH_01 — Auto-Preview & Instant File Laun
   1. `os.startfile(str(vault_path))` / `Start-Process` apuntando directamente a la ruta en Google Drive (`G:\My Drive\HBOS_Qdrant_Engine\03_MEDIA_VAULT_FINAL\...`), y
   2. Previsualización embebida inmediata en el chat (`<agent-embed>` o artefacto interactivo autocontenido).
 - **Prohibición Estricta:** PROHIBIDO dejar archivos huérfanos sin previsualización. El ciclo de cada escena o entregable E2E se considera incompleto hasta que el usuario (Guillermo) pueda ver y escuchar el resultado en pantalla de inmediato.
+
