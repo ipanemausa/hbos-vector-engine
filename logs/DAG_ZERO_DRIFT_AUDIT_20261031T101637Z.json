@@ -1,0 +1,121 @@
+{
+  "dag_execution_id": "DAG_ZERO_DRIFT_20261031T101637Z",
+  "audit_status": "STATUS 200 OK - ALL PROTOCOLS VERIFIED & UNALTERED",
+  "FASE_0": {
+    "node": "FASE_0_PRE_FLIGHT_ALIGNMENT",
+    "workspace_root": "G:\\My Drive\\HBOS_Qdrant_Engine",
+    "workspace_exists": true,
+    "sealed_rules": {
+      "Rule_ZeroCost_ZeroWeight_pc_media_mb": 0.0,
+      "Rule_R30_Secrets_exposed": 0,
+      "Rule_Isolation_overwrite_protection": "STRICT_VERSIONED_APPEND_ONLY",
+      "Accounts": {
+        "Operativa": "hbos.quadrant@gmail.com",
+        "Boveda": "ipanemamarketingusa@gmail.com"
+      }
+    },
+    "status": "VERIFIED"
+  },
+  "NODO_1": {
+    "node": "NODO_1_FACTORIZACION_ACUSTICA_GUIAHOY",
+    "canonical_voice_name": "Guiahoy",
+    "acoustic_ref_master": "G:\\My Drive\\HBOS_Qdrant_Engine\\03_MEDIA_VAULT_FINAL\\Guiahoy_CLONE_REF_90s_48k.wav",
+    "acoustic_ref_sha256": "aad778f64acedd246bb6a1a068ec406fa34d30ba3dca3c2b9873715212023be8",
+    "target_fundamental_freq_f0_hz": 109.2,
+    "eq_chain_spec": "highpass=f=65,equalizer=f=115:t=q:w=1.2:g=1.6,afade=t=in:st=0:d=0.05,loudnorm=I=-14:TP=-1.5:LRA=11",
+    "afftdn_prohibition_verified": true,
+    "dynamic_emotional_matrix_modes_verified": [
+      "ASOMBRO_DEMO_EN_VIVO",
+      "CALIDEZ_PERSONAJES",
+      "CIERRE_INSPIRADOR",
+      "IMPACTO_HOOK",
+      "INGENIERIA_PRECISA"
+    ],
+    "status": "VERIFIED"
+  },
+  "NODO_2": {
+    "node": "NODO_2_FACTORIZACION_VISUAL_COMPOSICION",
+    "format_spec": "1920x1080 @ 30fps (16:9)",
+    "rule_M_COMPOSICION_01": {
+      "rectangular_box_eliminated": true,
+      "rgba_transparent_poses_integrated": true,
+      "lighting": "Rim light cian/dorado + ground contact shadow",
+      "animation_idle": "M-IDLE-01 organic breathing (sinusoidal)"
+    },
+    "pilot_probe": {
+      "width": 1920,
+      "height": 1080,
+      "r_frame_rate": "30/1",
+      "duration_s": 30.0
+    },
+    "master_probe": {
+      "width": 1920,
+      "height": 1080,
+      "r_frame_rate": "30/1",
+      "duration_s": 1052.1
+    },
+    "status": "VERIFIED"
+  },
+  "NODO_3": {
+    "node": "NODO_3_TELEMETRIA_INTERACCION_Y_7_GEMAS",
+    "telemetry_interpolation": "Quintic C1/C2 (6t^5 - 15t^4 + 10t^3)",
+    "autozoom_trigger": "1.00x -> 1.35x",
+    "anti_occlusion_relocations_logged": 2,
+    "rule_R_LASER_01_canonical_gems": [
+      "Diamantino",
+      "Rubin",
+      "Zafir",
+      "Esmeralda",
+      "Amatista",
+      "Citrilo",
+      "Grafito"
+    ],
+    "dual_laser_beam_with_pulse": true,
+    "status": "VERIFIED"
+  },
+  "NODO_4": {
+    "node": "NODO_4_ALINEACION_FONETICA_Y_SUBTITULOS_ASS",
+    "alignment_engine": "F5-TTS-Spanish + Wav2Vec2-Large-XLSR-53-Spanish (CTC Forced Alignment 20ms)",
+    "sync_map_creative_path": "G:\\My Drive\\HBOS_Creative\\07_Project_Argon_4_Cases\\sync_map.json",
+    "sync_map_vault_versioned_path": "G:\\My Drive\\HBOS_Qdrant_Engine\\03_MEDIA_VAULT_FINAL\\sync_map_137_scenes_20261031T101637Z.json",
+    "ass_subtitles_path": "G:\\My Drive\\HBOS_Creative\\07_Project_Argon_4_Cases\\subtitles_full_17m32s.ass",
+    "audio_master_lufs": -14.0,
+    "status": "VERIFIED"
+  },
+  "NODO_5": {
+    "node": "NODO_5_VERIFICACION_E2E_Y_SELLADO_BOVEDA",
+    "manifest_constraints": {
+      "total_duration_min": 17.54,
+      "total_duration_s": 1052.1,
+      "total_scenes": 137,
+      "scene_window_s": [
+        5.2,
+        8.0
+      ],
+      "static_shots_gte_10s": 0
+    },
+    "destination_vault": "G:\\My Drive\\HBOS_Qdrant_Engine\\03_MEDIA_VAULT_FINAL",
+    "pilot_30s_canonical_sha256": "84e643c15f8204892304ce6f0eda243996fda94888daf53cf088e791b01f0000",
+    "pilot_30s_integrity_match": true,
+    "master_17m32s_sha256": "c2cb6472c39672cee62972e629ac47514f7efc05e9b86cc59250af3dd88853cf",
+    "status": "VERIFIED"
+  },
+  "NODO_DEBUG": {
+    "node": "NODO_DEBUG_ZERO_DRIFT_PROTOCOL",
+    "RETIRED_PRESETS_CHECK": "PASS (0 rectangular avatar boxes — M-COMPOSICION-01 intact)",
+    "FREQUENCY_DRIFT_CHECK": "PASS (f0 = 109.2 Hz exact, 0 afftdn filters)",
+    "AUDIT_STATUS": "STATUS 200 OK - ALL PROTOCOLS VERIFIED & UNALTERED"
+  },
+  "timestamp_utc": "2026-10-31T10:16:39.574233+00:00",
+  "qdrant_versioned_registration": {
+    "new_point_id": "1a1338fe-780d-5e3b-8150-4fabb458ac46",
+    "overwrite_existing_points": false,
+    "qdrant_local": {
+      "registro_ecosistema": true,
+      "canon_video_hbos": true,
+      "casos_uso_hbos": true,
+      "hbos-voice-profiles": true
+    },
+    "qdrant_cloud_registro_ecosistema": true
+  }
+}
