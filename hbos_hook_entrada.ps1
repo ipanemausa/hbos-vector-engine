@@ -61,13 +61,4 @@ function hbos-force {
     Invoke-Expression $Input
 }
 
-# AddToHistoryHandler: marca input crudo, no lo ejecuta como comando
-Set-PSReadLineOption -AddToHistoryHandler {
-    param([string]$Line)
-    if (Test-HbosInputCrudo -Line $Line) {
-        Write-Host "[HBOS] Input crudo detectado. No ejecutado como comando." -ForegroundColor Yellow
-        Write-Host "[HBOS] Usa: hbos-factorize 'tu input'  o  hbos-force 'tu input'" -ForegroundColor Yellow
-        return $false
-    }
-    return $true
-} -ErrorAction SilentlyContinue
+# AddToHistoryHandler desactivado para garantizar que Enter y Shift+Enter funcionen sin bloqueos

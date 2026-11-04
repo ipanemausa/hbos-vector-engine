@@ -1,0 +1,13 @@
+{
+  "status": "STATUS 200 OK - STUDIO_MASTER_GUIAHOY_ARGON RENDERED, SEALED & AUTO-LAUNCHED",
+  "destination_vault_mp4": "G:\\My Drive\\HBOS_Qdrant_Engine\\03_MEDIA_VAULT_FINAL\\STUDIO_MASTER_GUIAHOY_ARGON.mp4",
+  "scenes_rendered": 137,
+  "duration_s": 1052.1,
+  "duration_min": 17.54,
+  "size_mb": 112.21,
+  "sha256": "b76f49f41bee9c345aa8dfdd3ff14ef2976718b549a45091c7b8cf524e7dac15",
+  "director_cam_automation": "Wide Studio 1.00x -> Smoothstep C1 Zoom In 1.35x -> Wide Studio 1.00x",
+  "voice_master": "Guiahoy (f0 = 109.2 Hz, -14.0 LUFS, 0 afftdn)",
+  "rule_auto_launch_01_fired": true,
+  "timestamp_utc": "2026-11-01T21:34:32.348112+00:00"
+}
