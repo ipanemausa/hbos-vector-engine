@@ -1,0 +1,141 @@
+import os
+import time
+import json
+import sqlite3
+import subprocess
+import urllib.request
+import urllib.error
+from pathlib import Path
+
+# --- CONFIGURACION DE ENTORNO LOCAL ---
+BASE_DIR = Path(__file__).resolve().parent
+os.chdir(BASE_DIR)
+BASE_DRIVE = Path(r"G:\My Drive\HBOS_BACKUP\radar_investigacion")
+QUEUE_FILE = BASE_DRIVE / "queue_urls.txt"
+OUTPUT_DIR = BASE_DRIVE / "hechos"
+GATEWAY_URL = "http://127.0.0.1:3001/v1/chat/completions"
+DB_PATH = r"C:\Users\ipane\AppData\Roaming\freellmapi\freeapi.db"
+LOG_FILE = BASE_DIR / "daemon.log"
+
+OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+if not QUEUE_FILE.exists():
+    QUEUE_FILE.write_text("", encoding="utf-8")
+
+SYSTEM_PROMPT = """You are an ASD-STE100 technical extractor.
+Process the video transcript and extract ONLY:
+1. TECHNICAL BOTTLENECK: Core problem statement.
+2. RESOLUTION MECHANISM: Architecture, algorithm, or tool applied.
+3. MINIMAL IMPLEMENTATION: Exact command or code block.
+Rules: No conversational filler. Maximum density. Zero fluff."""
+
+
+def log(msg):
+    line = f"{time.strftime('%Y-%m-%d %H:%M:%S')} | {msg}"
+    print(line, flush=True)
+    try:
+        with open(LOG_FILE, "a", encoding="utf-8") as f:
+            f.write(line + "\n")
+    except Exception:
+        pass
+
+
+def obtener_token():
+    # La llave JAMAS se imprime ni se registra; se lee en el PC, en el momento de usarla.
+    try:
+        conn = sqlite3.connect(f"file:{DB_PATH}?mode=ro", uri=True)
+        cur = conn.cursor()
+        cur.execute("SELECT value FROM settings WHERE key='unified_api_key' LIMIT 1")
+        row = cur.fetchone()
+        conn.close()
+        return row[0] if row else None
+    except Exception as e:
+        log(f"[ERROR] No se pudo leer la llave del gateway: {type(e).__name__}")
+        return None
+
+
+def get_transcript(url):
+    # Limpieza previa: ningun resto de un intento anterior
+    for stale in Path(".").glob("temp_subs*.vtt"):
+        stale.unlink()
+
+    # Fallback por pista (fix resultante 2026-11-11): un idioma por intento.
+    # Antes un solo --sub-lang "es,es-419,en": un HTTP 429 en la pista 'es'
+    # abortaba todo yt-dlp sin intentar las demas. Orden: 'en' primero
+    # (descarga estable verificada), luego 'es' y 'es-419'.
+    for lang in ["en", "es", "es-419"]:
+        cmd = [
+            "yt-dlp",
+            "--skip-download",
+            "--write-auto-subs",
+            "--write-subs",
+            "--sub-lang", lang,
+            "--sub-format", "vtt",
+            "--output", "temp_subs",
+            url
+        ]
+        subprocess.run(cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, timeout=240)
+
+        for f in Path(".").glob("temp_subs*.vtt"):
+            text_lines = f.read_text(encoding="utf-8", errors="ignore").splitlines()
+            clean = [l for l in text_lines if "-->" not in l and not l.strip().isdigit() and l.strip()]
+            f.unlink()
+            return " ".join(clean[:4000])
+    return None
+
+
+def synthesize_text(raw_text):
+    token = obtener_token()
+    if not token:
+        raise RuntimeError("sin llave del gateway")
+    payload = {
+        "model": "auto:fast",
+        "messages": [
+            {"role": "system", "content": SYSTEM_PROMPT},
+            {"role": "user", "content": f"Transcript:\n{raw_text}"}
+        ],
+        "temperature": 0.1,
+        "max_tokens": 1200
+    }
+    req = urllib.request.Request(
+        GATEWAY_URL,
+        data=json.dumps(payload).encode("utf-8"),
+        headers={"Content-Type": "application/json", "Authorization": f"Bearer {token}"}
+    )
+    with urllib.request.urlopen(req, timeout=120) as resp:
+        data = json.loads(resp.read().decode("utf-8"))
+        return data["choices"][0]["message"]["content"]
+
+
+log("[*] HackerTube Daemon activo (v2: auth + log). Esperando URLs en queue_urls.txt...")
+
+while True:
+    try:
+        if QUEUE_FILE.exists():
+            lines = QUEUE_FILE.read_text(encoding="utf-8").strip().splitlines()
+            if lines:
+                current_url = lines[0].strip()
+                remaining = lines[1:]
+
+                if current_url.startswith("http"):
+                    log(f"[>] Procesando: {current_url}")
+                    try:
+                        text = get_transcript(current_url)
+                        if text:
+                            log(f"[i] Transcripcion OK ({len(text.split())} palabras). Sintetizando...")
+                            resumen = synthesize_text(text)
+                            doc_id = int(time.time())
+                            out_file = OUTPUT_DIR / f"radar_{doc_id}.md"
+                            out_file.write_text(f"# FUENTE: {current_url}\n\n{resumen}", encoding="utf-8")
+                            log(f"[OK] Sintesis asentada en: {out_file.name}")
+                        else:
+                            log("[!] No se encontraron subtitulos para esta URL.")
+                    except urllib.error.HTTPError as e:
+                        log(f"[ERROR] Gateway HTTP {e.code} en sintesis de {current_url}")
+                    except Exception as e:
+                        log(f"[ERROR] Proceso de {current_url}: {type(e).__name__}: {e}")
+
+                QUEUE_FILE.write_text("\n".join(remaining), encoding="utf-8")
+    except Exception as e:
+        log(f"[ERROR] Ciclo daemon: {type(e).__name__}: {e}")
+
+    time.sleep(15)

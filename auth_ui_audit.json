@@ -47,3 +47,5 @@
 {"timestamp": "Wed Nov  4 08:10:49 2026", "scope": "hbos_freellmapi_autostart", "message": "HBOS: Autorizar inicio de FreeLLMAPI al iniciar sesi\u00f3n (Windows Hello)", "result": "VERIFIED", "expires_at": 1793801449.1291919}
 {"timestamp": "Wed Nov  4 11:16:22 2026", "scope": "hbos_freellmapi_autostart", "message": "HBOS: Autorizar inicio de FreeLLMAPI al iniciar sesi\u00f3n (Windows Hello)", "result": "VERIFIED", "expires_at": 1793812582.7706013}
 {"timestamp": "Thu Nov  5 14:02:46 2026", "scope": "hbos_freellmapi_autostart", "message": "HBOS: Autorizar inicio de FreeLLMAPI al iniciar sesi\u00f3n (Windows Hello)", "result": "VERIFIED", "expires_at": 1793908966.3337243}
+{"timestamp": "Sat Nov  7 08:58:56 2026", "scope": "hbos_freellmapi_autostart", "message": "HBOS: Autorizar inicio de FreeLLMAPI al iniciar sesi\u00f3n (Windows Hello)", "result": "VERIFIED", "expires_at": 1794063536.827468}
+{"timestamp": "Fri Nov 20 08:04:12 2026", "scope": "hbos_freellmapi_autostart", "message": "HBOS: Autorizar inicio de FreeLLMAPI al iniciar sesi\u00f3n (Windows Hello)", "result": "VERIFIED", "expires_at": 1795183452.464784}

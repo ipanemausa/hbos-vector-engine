@@ -1,0 +1,11 @@
+ACTA EJECUTIVA DE CIERRE Y UNIFICACIÓN — MOTOR GUÍA HOY / HBOS
+Fecha: 2026-11-21 | Titular: Guillermo Alonso Hoyos (Guía Hoy)
+Estándar: public_safe | Política: 0 SaaS Tax | Estado: UNIFICADO Y SELLADO
+
+1. EJE ÚNICO CONSOLIDADO: Especialización Guía Hoy / HBOS (Módulos E1–E4 + Proyecto Final)
+   - Protocolo de campo: Piloto Controlado de 72 Horas (RTPD -30%, MPPR +25%, IEO +20%).
+   - Casos en reserva ordenada: Muncher, HBJewelry y Producción Guía Hoy.
+2. DEPURACIÓN Y PAUSA ORDENADA:
+   - Ruido técnico aislado, duplicados pendientes de depuración y external_comms_hold: true hasta el lunes.
+3. CONFIRMACIÓN DE CIERRE EN VIVO:
+Confirmado el cierre unificado para el sábado 21 de

@@ -78,3 +78,11 @@ tools/rea/
 data/*.db
 output_masters/temp_blocks/
 output_masters/guiahoy_e2e/temp_assets/
+
+.vercel
+.env*
+logs/
+artifacts/
+backups/
+workspace_radar/
+stage_2026_11_23/

@@ -1,0 +1,51 @@
+=== ESPECIFICACION DEL DAG POR FASES Y CAPAS — GUIA HOY / HBOS (GUILLERMO ALONSO HOYOS - 0 SAAS TAX - PUBLIC_SAFE) ===
+
+[NIVEL-01]: 00_PRE_DEBUG_FASE_CERO - Prioridad Maxima
+[ENTRADA-01]: Contexto inicial del problema/tarea.
+[COMPUERTA-01]: Bloqueo si el contexto inicial contiene referencias a infraestructura privada (IPs, puertos, rutas de sistema) o incumple la politica de 0 SaaS Tax.
+[SALIDA-01]: Contexto inicial saneado y validado como public_safe y 0_SaaS_Tax_compliant.
+[CPA-DAG-01-PASS]: APROBADO | public_safe=OK | 0_saas_tax=OK
+
+[NIVEL-02]: 01_CAPA_CORE_CONTRATOS - Prioridad Alta
+[ENTRADA-02]: Contexto inicial saneado. Requerimiento explicito de un Playbook o Contrato JSON para la tarea.
+[COMPUERTA-02]: Bloqueo si el Playbook no existe, su schema_definition es invalido o el max_input_tokens excede un limite predefinido para evitar bloat.
+[SALIDA-02]: Playbook de ejecucion y Contrato JSON de entrada/salida validos y cargados.
+[CPA-DAG-02-PASS]: APROBADO | public_safe=OK | 0_saas_tax=OK
+
+[NIVEL-03]: 02_ENTRE_FASES_HANDOFF - Prioridad Media-Alta
+[ENTRADA-03]: Playbook cargado. Output de un Agente o Nodo previo.
+[COMPUERTA-03]: Bloqueo si el output recibido viola el output_contract.schema_definition del Playbook o si contiene alucinaciones detectables por reglas de texto.
+[SALIDA-03]: Output validado conforme al Contrato JSON, listo para el siguiente Agente o Nodo.
+[CPA-DAG-03-PASS]: APROBADO | public_safe=OK | 0_saas_tax=OK
+
+[NIVEL-04]: 03_EJECUCION_EE - Prioridad Media
+[ENTRADA-04]: Output validado del Handoff. Agente especializado o Nodo de Arbitraje seleccionado.
+[COMPUERTA-04]: Bloqueo si el Agente o Nodo de Arbitraje no responde dentro del timeout_seconds o si devuelve un error que no permite reintento (Fail-Fast por proveedor/estado).
+[SALIDA-04]: Resultado Crudo de la ejecucion del Agente o Nodo, con registro de model_used y latency.
+[CPA-DAG-04-PASS]: APROBADO | public_safe=OK | 0_saas_tax=OK
+
+[NIVEL-05]: 04_SELLADO_R768 - Prioridad Media-Baja
+[ENTRADA-05]: Resultado Crudo de la ejecucion. Payload estructurado para indexacion.
+[COMPUERTA-05]: Bloqueo si el Payload no incluye el id_chunk obligatorio, el vector no es de 768 dimensiones o la similitud_coseno es inferior a 0.82 para verificar la escritura.
+[SALIDA-05]: id_chunk del artefacto sellado en memoria vectorial y confirmacion de verificacion_escritura_exitosa.
+[CPA-DAG-05-PASS]: APROBADO | public_safe=OK | 0_saas_tax=OK
+
+[NIVEL-06]: 05_PRUEBA_VERIFICACION - Prioridad Baja
+[ENTRADA-06]: id_chunk del artefacto sellado. Metrica de Verificacion especifica definida.
+[COMPUERTA-06]: Bloqueo si la Metrica de Verificacion no es cuantificable, si el resultado_prueba no cumple el umbral_esperado o si no hay un log_auditado del proceso de prueba.
+[SALIDA-06]: Reporte de Prueba con resultado_final y cumplimiento_metrica.
+[CPA-DAG-06-PASS]: APROBADO | public_safe=OK | 0_saas_tax=OK
+
+[NIVEL-07]: 06_INFORME_TRAZABILIDAD - Prioridad Baja
+[ENTRADA-07]: Reporte de Prueba consolidado.
+[COMPUERTA-07]: Bloqueo si el Reporte de Prueba carece de firma_digital_auditor o si los resultados contradicen la Fuente de Verdad inicial.
+[SALIDA-07]: Informe Final de Trazabilidad con historial_auditable y estado_ejecucion.
+[CPA-DAG-07-PASS]: APROBADO | public_safe=OK | 0_saas_tax=OK
+
+[NIVEL-08]: 07_APLICACION_TERRITORIO - Prioridad Baja
+[ENTRADA-08]: Informe Final de Trazabilidad. Contexto Regional (ej. PyME, Semillero, Gobernacion).
+[COMPUERTA-08]: Bloqueo si la aplicabilidad propuesta incumple el 0 SaaS Tax, si el costo_total_implementacion no es cero en licencias o si no hay beneficio_medible_claro para el territorio.
+[SALIDA-08]: Propuesta de Valor Territorial para Antioquia con impacto_0_SaaS_Tax y plan_accion_verificable.
+[CPA-DAG-08-PASS]: APROBADO | public_safe=OK | 0_saas_tax=OK
+
+[CPA-DAG-FASES-CAPAS-COMPLETO]: LISTO_PARA_PWSH | public_safe=OK | 0_saas_tax=OK

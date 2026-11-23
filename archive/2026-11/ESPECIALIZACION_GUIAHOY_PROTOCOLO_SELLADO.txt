@@ -1,0 +1,22 @@
+ESPECIALIZACIÓN GUÍA HOY / HBOS — PROTOCOLO PRÁCTICO DE LABORATORIO (SELLADO 2026-11-21)
+Autor: Guillermo Alonso Hoyos (Guía Hoy)
+Política: 0 SaaS Tax | Nivel de exposición: public_safe | Sin Docker
+
+1. ARQUITECTURA REAL VERIFICADA
+- Puerto 3001: Router principal (hbos-run)
+- Puerto 3002: Gateway unificado (hbos_unified_gateway.py)
+- Puerto 6333: Qdrant (colección hbos_knowledge_r768 - fuente única de verdad)
+
+2. CONTRATO DE EJECUCIÓN DEL LABORATORIO (MÓDULOS E1-E4 + PROYECTO FINAL)
+- Entrada estructurada en JSON con anclaje obligatorio en hbos_knowledge_r768 antes de inferencia.
+- Tope estricto de max_tokens (<= 2048) para estabilidad y control de consumo.
+- Salida filtrada bajo estándar public_safe sin exposición de infraestructura interna.
+
+3. EVALUACIÓN APLICADA — PILOTO CONTROLADO DE 72 HORAS
+- Fase 1 (00h-24h) Diagnóstico e Ingesta JSON + Fail-Fast -> KPI: RTPD (-30%)
+- Fase 2 (24h-48h) Memoria Semántica y Reglas de Arbitraje -> KPI: MPPR (+25%)
+- Fase 3 (48h-72h) Prueba End-to-End y Auditoría Antes/Después -> KPI: IEO (+20%)
+
+4. ESTADO AL CIERRE DEL SÁBADO 2026-11-21
+- Base vectorial hbos_knowledge_r768 verificada y respaldada.
+- En espera de respuestas institucionales el lunes para definir ruta de despliegue.
