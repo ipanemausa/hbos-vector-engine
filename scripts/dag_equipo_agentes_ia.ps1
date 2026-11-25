@@ -1,4 +1,4 @@
-﻿# ═══════════════════════════════════════════════════════════════════
+# ═══════════════════════════════════════════════════════════════════
 # HBOS · DAG FACTORIZADO CANÓNICO: EQUIPO DE AGENTES DE IA (10 MIN)
 # Ubicación: C:\Users\ipane\hbos-deploy\hbos-vector-engine\scripts\dag_equipo_agentes_ia.ps1
 # Destino de Producción: G:\My Drive\Guiahoy_Produccion\2026-11-25
