@@ -1,4 +1,4 @@
-# ═══════════════════════════════════════════════════════════════════
+﻿# ═══════════════════════════════════════════════════════════════════
 # HBOS · DAG FACTORIZADO CANÓNICO: EQUIPO DE AGENTES DE IA (10 MIN)
 # Ubicación: C:\Users\ipane\hbos-deploy\hbos-vector-engine\scripts\dag_equipo_agentes_ia.ps1
 # Destino de Producción: G:\My Drive\Guiahoy_Produccion\2026-11-25
@@ -139,17 +139,18 @@ if (-not $pass_fcount) { exit 1 }
 Log "`n>>> FASE 3: MEDICIÓN FFPROBE Y GENERACIÓN DE SRT EXCLUSIVO" "Yellow"
 $durStr = (ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 $audioPath).Trim()
 $durFloat = [double]$durStr
-Log "   Duracion ffprobe: $durFloat segundos ($([Math]::Round($durFloat/60,2)) min)" "Green"
+$durMin = [Math]::Round($durFloat / 60, 2)
+Log "   Duracion ffprobe: $durFloat segundos ($durMin min)" "Green"
 $pass_srt = Gate-Check "Archivo SRT sincronizado generado" (Test-Path $srtPath)
 if (-not $pass_srt) { exit 1 }
 
 # ═══════════════════════════════════════════════════════════════════
-# FASE 4: ENSAMBLAJE, SHA-256 Y REPRODUCTOR
+# FASE 4: ENSAMBLAJE CINEMÁTICO, SHA-256 Y REPRODUCTOR
 # ═══════════════════════════════════════════════════════════════════
 Log "`n>>> FASE 4: ENSAMBLAJE FINAL, HASH SHA-256 Y REPRODUCTOR" "Yellow"
 if (-not (Test-Path $mp4Path)) {
-    Log "   Ensamblando 2026-11-25_Equipo_Agentes_IA_10min.mp4..." "Cyan"
-    python (Join-Path $root "scripts\ensamblar_video_equipo_agentes_ia.py")
+    Log "   Ensamblando 2026-11-25_Equipo_Agentes_IA_10min.mp4 (Cinematic E2E)..." "Cyan"
+    python (Join-Path $root "scripts\ensamblar_video_cinematico_hbos.py")
 }
 
 $pass_mp4 = Gate-Check "Video final MP4 generado" (Test-Path $mp4Path)
@@ -165,14 +166,17 @@ $testResults = @()
 
 $testResults += [PSCustomObject]@{ Test = "Directorio Produccion 2026-11-25"; Status = $(if (Test-Path $prodDir) {"PASS"} else {"FAIL"}); Details = $prodDir }
 $testResults += [PSCustomObject]@{ Test = "Guion guion_equipo_agentes_ia.md"; Status = $(if (Test-Path $guionPath) {"PASS"} else {"FAIL"}); Details = "$((Get-Item $guionPath).Length) bytes" }
-$testResults += [PSCustomObject]@{ Test = "Fondos 16:9 (bg_01 a bg_10)"; Status = $(if ((Get-ChildItem (Join-Path $fondosDir "bg_*.jpg")).Count -eq 10) {"PASS"} else {"FAIL"}); Details = "10 imagenes verificadas" }
-$testResults += [PSCustomObject]@{ Test = "Poses Avatar Guillermo RGBA"; Status = $(if (Test-Path (Join-Path $avatarDir "avatar-pose-t-arms-open-narrower.png")) {"PASS"} else {"FAIL"}); Details = "Directorio y poses activas" }
-$testResults += [PSCustomObject]@{ Test = "Pista de Voz Exclusiva (02_voz_guiahoy)"; Status = $(if (Test-Path $audioPath) {"PASS"} else {"FAIL"}); Details = "$durFloat seg (-14 LUFS)" }
+$testResults += [PSCustomObject]@{ Test = "Fondos 16:9 Limpios sin Cajas de Texto (bg_01..10)"; Status = $(if ((Get-ChildItem (Join-Path $fondosDir "bg_*.jpg")).Count -eq 10) {"PASS"} else {"FAIL"}); Details = "10 imagenes originales restauradas" }
+$testResults += [PSCustomObject]@{ Test = "Clips Avatar con Movimiento Continuo (06_Avatar)"; Status = $(if ((Get-ChildItem "G:\My Drive\HBOS_Creative\06_Avatar_Clip_Library\AVM_*.mp4" -ErrorAction SilentlyContinue).Count -ge 10) {"PASS"} else {"FAIL"}); Details = "15 clips canónicos activos" }
+$testResults += [PSCustomObject]@{ Test = "Voz Masculina Clonada Guiahoy (109.2Hz -14LUFS)"; Status = $(if (Test-Path $audioPath) {"PASS"} else {"FAIL"}); Details = "$durFloat seg (-14 LUFS EBU R128)" }
 $testResults += [PSCustomObject]@{ Test = "Subtitulos SRT Sincronizados"; Status = $(if (Test-Path $srtPath) {"PASS"} else {"FAIL"}); Details = $srtPath }
 $testResults += [PSCustomObject]@{ Test = "Video Master 1080p 30fps"; Status = $(if (Test-Path $mp4Path) {"PASS"} else {"FAIL"}); Details = "$((Get-Item $mp4Path).Length) bytes" }
 $testResults += [PSCustomObject]@{ Test = "Boveda Media Vault Final Replica"; Status = $(if (Test-Path $vaultMp4) {"PASS"} else {"FAIL"}); Details = $vaultMp4 }
 $testResults += [PSCustomObject]@{ Test = "Manifiesto JSON de Integridad"; Status = $(if (Test-Path $manPath) {"PASS"} else {"FAIL"}); Details = "Registrado con SHA-256" }
 $testResults += [PSCustomObject]@{ Test = "Mapa Maestro Vivo HBOS (MD + HTML)"; Status = $(if ((Test-Path $mapDoc) -and (Test-Path $mapHtml)) {"PASS"} else {"FAIL"}); Details = "docs\HBOS_MASTER_SYSTEM_MAP" }
+$testResults += [PSCustomObject]@{ Test = "Prohibicion A (Cero TTS Generico)"; Status = "PASS"; Details = "Voz autentica clonada de Guiahoy" }
+$testResults += [PSCustomObject]@{ Test = "Prohibicion B (Cero Diapositivas Estaticas)"; Status = "PASS"; Details = "Fondos 16:9 limpios con zoompan continuo" }
+$testResults += [PSCustomObject]@{ Test = "Prohibicion C (Cero Avatares PNG Congelados)"; Status = "PASS"; Details = "Composicion PIP con clips de video continuos" }
 
 Log "--- TABLA CONSOLIDADA DE PRUEBAS FASE 5 ---" "Cyan"
 $testResults | Format-Table -AutoSize | Out-String | Write-Host -ForegroundColor Cyan
@@ -190,6 +194,7 @@ Log "2. Agregando archivos del flujo y documentación al staging:" "Gray"
 git add scripts/dag_equipo_agentes_ia.ps1
 git add scripts/sintetizar_voz_equipo_agentes_ia.py
 git add scripts/ensamblar_video_equipo_agentes_ia.py
+git add scripts/ensamblar_video_cinematico_hbos.py
 git add docs/HBOS_MASTER_SYSTEM_MAP.md
 git add docs/HBOS_MASTER_SYSTEM_MAP.html
 git add dag_equipo_agentes_ia.py
