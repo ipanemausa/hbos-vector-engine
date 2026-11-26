@@ -1,4 +1,4 @@
-﻿# ═══════════════════════════════════════════════════════════════════════════════
+# ═══════════════════════════════════════════════════════════════════════════════
 # HBOS · LANZADOR ÚNICO DIARIO DE PRODUCCIÓN AUDIOVISUAL AUTÓNOMA
 # Ubicación: C:\Users\ipane\hbos-deploy\hbos-vector-engine\scripts\hbos_daily_video_master.ps1
 # Gobernanza: HBOS_DAILY_VIDEO_MASTER_PROMPT & RULE_AUTO_LAUNCH_01
